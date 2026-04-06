@@ -1,0 +1,24 @@
+# Credentials & secrets
+credentials/
+*.key
+*.pickle
+client_secret.json
+
+# Media files (trop lourds)
+input/*.mp3
+input/*.mp4
+input/*.wav
+input/*.png
+input/*.jpg
+input/clips/
+input/clips_slow/
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+.DS_Store
