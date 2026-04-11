@@ -3,6 +3,7 @@ Module youtube.py - Upload des MP4 sur YouTube via YouTube Data API v3
 """
 
 import os
+import json
 import time
 import pickle
 
@@ -13,44 +14,44 @@ import googleapiclient.errors
 from googleapiclient.http import MediaFileUpload
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.force-ssl"]
-API_SERVICE = "youtube"
-API_VERSION = "v3"
+API_SERVICE  = "youtube"
+API_VERSION  = "v3"
 
 CLIENT_SECRETS_PATH = "credentials/client_secret.json"
-OAUTH_TOKEN_PATH = "credentials/youtube_oauth.pickle"
+OAUTH_TOKEN_PATH    = "credentials/youtube_oauth.pickle"
 
-CHUNK_SIZE = 4 * 1024 * 1024
+CHUNK_SIZE = 4 * 1024 * 1024  # 4 Mo par chunk
 
 
-class UploadLimitExceeded(Exception):
-    """Levée quand YouTube refuse l'upload pour limite quotidienne dépassée."""
-
+# ─── Authentification ─────────────────────────────────────────────────────────
 
 def _authentifier(base_dir: str):
     """
     Retourne un service YouTube authentifié.
     - Si credentials/youtube_oauth.pickle existe → rechargement du token.
     - Sinon → flux OAuth2 navigateur (génère le pickle pour les prochaines fois).
-    Nécessite credentials/client_secret.json.
+    Nécessite credentials/client_secret.json (téléchargé depuis Google Cloud Console).
     """
-    token_path = os.path.join(base_dir, OAUTH_TOKEN_PATH)
+    token_path  = os.path.join(base_dir, OAUTH_TOKEN_PATH)
     secret_path = os.path.join(base_dir, CLIENT_SECRETS_PATH)
 
     creds = None
 
+    # Charger le token existant
     if os.path.exists(token_path):
         with open(token_path, "rb") as f:
             creds = pickle.load(f)
         print("  → Token OAuth2 chargé depuis le cache.")
 
+    # Rafraîchir si expiré
     if creds and creds.expired and creds.refresh_token:
         import google.auth.transport.requests
-
         creds.refresh(google.auth.transport.requests.Request())
         with open(token_path, "wb") as f:
             pickle.dump(creds, f)
         print("  → Token rafraîchi automatiquement.")
 
+    # Nouveau flux OAuth2 (première utilisation)
     if not creds or not creds.valid:
         if not os.path.exists(secret_path):
             raise FileNotFoundError(
@@ -71,7 +72,14 @@ def _authentifier(base_dir: str):
     return googleapiclient.discovery.build(API_SERVICE, API_VERSION, credentials=creds)
 
 
+# ─── Gestion des playlists ────────────────────────────────────────────────────
+
 def _trouver_ou_creer_playlist(youtube, nom: str) -> str:
+    """
+    Cherche une playlist par nom dans la chaîne.
+    La crée si elle n'existe pas. Retourne l'ID de la playlist.
+    """
+    # Chercher dans les playlists existantes
     req = youtube.playlists().list(part="snippet", mine=True, maxResults=50)
     while req:
         resp = req.execute()
@@ -82,13 +90,14 @@ def _trouver_ou_creer_playlist(youtube, nom: str) -> str:
                 return playlist_id
         req = youtube.playlists().list_next(req, resp)
 
+    # Créer la playlist
     print(f"  → Création de la playlist : \"{nom}\"...")
     resp = youtube.playlists().insert(
         part="snippet,status",
         body={
             "snippet": {
                 "title": nom,
-                "description": "Playlist gérée automatiquement par Assirem Music PROD Pipeline",
+                "description": f"Playlist gérée automatiquement par Assirem Music PROD Pipeline",
             },
             "status": {"privacyStatus": "public"},
         },
@@ -99,6 +108,7 @@ def _trouver_ou_creer_playlist(youtube, nom: str) -> str:
 
 
 def _ajouter_a_playlist(youtube, video_id: str, playlist_id: str) -> None:
+    """Ajoute une vidéo à une playlist."""
     youtube.playlistItems().insert(
         part="snippet",
         body={
@@ -113,7 +123,13 @@ def _ajouter_a_playlist(youtube, video_id: str, playlist_id: str) -> None:
     ).execute()
 
 
+# ─── Upload ───────────────────────────────────────────────────────────────────
+
 def _uploader_video(youtube, chemin: str, titre: str, description: str, tags: list) -> str:
+    """
+    Upload un MP4 sur YouTube avec reprise automatique en cas d'erreur réseau.
+    Retourne l'ID de la vidéo uploadée.
+    """
     taille_mo = os.path.getsize(chemin) / (1024 * 1024)
     print(f"  → Upload : {os.path.basename(chemin)} ({taille_mo:.1f} Mo)...")
 
@@ -122,7 +138,7 @@ def _uploader_video(youtube, chemin: str, titre: str, description: str, tags: li
             "title": titre,
             "description": description,
             "tags": tags,
-            "categoryId": "10",
+            "categoryId": "10",  # Musique
             "defaultLanguage": "fr",
         },
         "status": {
@@ -136,8 +152,8 @@ def _uploader_video(youtube, chemin: str, titre: str, description: str, tags: li
 
     response = None
     erreurs_consecutives = 0
-    max_erreurs = 10
-    erreurs_reseau = (500, 502, 503, 504)
+    MAX_ERREURS = 10
+    ERREURS_RESEAU = (500, 502, 503, 504)
 
     while response is None:
         try:
@@ -148,9 +164,9 @@ def _uploader_video(youtube, chemin: str, titre: str, description: str, tags: li
                 print(f"\r     [{barres}] {pct}%", end="", flush=True)
             erreurs_consecutives = 0
         except googleapiclient.errors.HttpError as e:
-            if e.resp.status in erreurs_reseau:
+            if e.resp.status in ERREURS_RESEAU:
                 erreurs_consecutives += 1
-                if erreurs_consecutives > max_erreurs:
+                if erreurs_consecutives > MAX_ERREURS:
                     raise RuntimeError(
                         f"Trop d'erreurs réseau consécutives lors de l'upload : {e}"
                     )
@@ -158,39 +174,28 @@ def _uploader_video(youtube, chemin: str, titre: str, description: str, tags: li
                 print(f"\n  ⚠️  Erreur {e.resp.status}, nouvelle tentative dans {attente}s...")
                 time.sleep(attente)
             else:
-                if "uploadLimitExceeded" in str(e):
-                    raise UploadLimitExceeded(
-                        f"⛔ Limite d'upload YouTube atteinte pour aujourd'hui.\n"
-                        f"  YouTube limite le nombre de vidéos uploadées par jour par chaîne.\n"
-                        f"  → Réessayez demain, ou vérifiez/authentifiez votre chaîne pour augmenter la limite.\n"
-                        f"  → Détail : {e}"
-                    )
                 raise RuntimeError(f"Erreur YouTube API lors de l'upload : {e}")
 
-    print()
-    return response["id"]
+    print()  # nouvelle ligne après la barre de progression
+    video_id = response["id"]
+    return video_id
 
+
+# ─── Point d'entrée principal ─────────────────────────────────────────────────
 
 def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     """
     Upload chaque MP4 de la liste sur YouTube, crée/trouve la playlist,
     et ajoute chaque vidéo à la playlist.
-    Lève UploadLimitExceeded si YouTube refuse (limite quotidienne).
     """
     if not videos:
         print("  → Aucune vidéo à uploader.")
         return
 
-    slug = config.get("slug", "unknown")
-    titre = config.get("title", "Assirem Music")
-    description = config.get("description", "")
-    tags = config.get("tags", [])
-    playlist_nom = config.get("playlist_name", "Assirem Music")
-
-    # Afficher le compteur du jour
-    tracker = _charger_tracker(base_dir)
-    if tracker["uploads"] > 0:
-        print(f"  📊 Uploads aujourd'hui : {tracker['uploads']} vidéo(s) ({', '.join(tracker['slugs'])})")
+    titre         = config.get("title", "Assirem Music")
+    description   = config.get("description", "")
+    tags          = config.get("tags", [])
+    playlist_nom  = config.get("playlist_name", "Assirem Music")
 
     print("  → Authentification YouTube...")
     youtube = _authentifier(base_dir)
@@ -199,6 +204,7 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     playlist_id = _trouver_ou_creer_playlist(youtube, playlist_nom)
 
     for i, chemin_video in enumerate(videos, 1):
+        # Adapter le titre si plusieurs vidéos (mode individual)
         if len(videos) > 1:
             nom_fichier = os.path.splitext(os.path.basename(chemin_video))[0]
             titre_video = f"{titre} - {nom_fichier.replace('_', ' ').title()}"
@@ -211,45 +217,5 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
         print(f"  → Ajout à la playlist \"{playlist_nom}\"...")
         _ajouter_a_playlist(youtube, video_id, playlist_id)
 
-        # Mise à jour du tracker
-        tracker["uploads"] += 1
-        if slug not in tracker["slugs"]:
-            tracker["slugs"].append(slug)
-        _sauver_tracker(base_dir, tracker)
-
         url = f"https://www.youtube.com/watch?v={video_id}"
         print(f"  ✅ Vidéo publiée : {url}")
-        print(f"  📊 Total uploads aujourd'hui : {tracker['uploads']}")
-
-
-# ── Tracker d'uploads journalier ─────────────────────────────────────────────
-
-import json
-from datetime import date as _date
-
-_TRACKER_FILE = "youtube_upload_tracker.json"
-
-
-def _charger_tracker(base_dir: str) -> dict:
-    """Charge le tracker du jour (remet à zéro si c'est un nouveau jour)."""
-    path = os.path.join(base_dir, _TRACKER_FILE)
-    today = str(_date.today())
-    if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        if data.get("date") == today:
-            return data
-    return {"date": today, "uploads": 0, "slugs": []}
-
-
-def _sauver_tracker(base_dir: str, tracker: dict) -> None:
-    """Persiste le tracker sur disque."""
-    path = os.path.join(base_dir, _TRACKER_FILE)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(tracker, f, ensure_ascii=False, indent=2)
-
-
-def get_upload_count_today(base_dir: str) -> tuple:
-    """Retourne (nb_uploads_aujourd'hui, liste_de_slugs)."""
-    tracker = _charger_tracker(base_dir)
-    return tracker["uploads"], tracker["slugs"]

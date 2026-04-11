@@ -1,0 +1,191 @@
+{
+  "date": "2026-04-07",
+  "priority_slug": "lofi",
+  "tracks": [
+    {
+      "slug": "lofi",
+      "priority": 1,
+      "suno_prompt": "Lofi hip hop, nostalgic and rainy, 80 BPM, piano and vinyl crackle, lo-fi drum kit, soft bass, late night study vibes, Japanese aesthetic, warm and melancholic",
+      "mode": "medium",
+      "title": "🌧️ Lofi Hip Hop Radio — Late Night Study & Chill Beats 2026 | Assirem Music PROD",
+      "description": "🎧 Dive into the perfect late-night study session with our handcrafted Lofi Hip Hop beats, generated entirely with AI.\n\nIdeal for: studying 📚, coding 💻, relaxing 😌, sleeping 💤, or just vibing at 2AM.\n\n✨ Generated with SUNO AI v5.5 | Visuals by Leonardo AI\n\n━━━━━━━━━━━━━━━━━━━━━━\n🎵 TRACKLIST\n━━━━━━━━━━━━━━━━━━━━━━\n[00:00] Rainy Window\n[05:00] Vinyl Dreams\n[10:00] Midnight Coffee\n[15:00] Soft Glow\n[20:00] Paper Cranes\n[25:00] Blue Hour\n━━━━━━━━━━━━━━━━━━━━━━\n\n🔔 Subscribe for daily AI music: @AssiremMusicProd\n📌 Save this video for your next study session!\n\n#LofiHipHop #StudyMusic #ChillBeats #AIMusic #AssiremMusicProd #NoCopyright #StudyWithMe #RelaxingMusic #LofiRadio",
+      "tags": ["lofi hip hop", "study music", "chill beats", "ai music", "assirem music prod", "no copyright", "lofi radio", "relaxing music", "study with me", "background music", "lofi 2026"],
+      "playlist_name": "☁️ Lofi Study Sessions — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: cozy Japanese apartment building exterior at night, rain falling softly on narrow Tokyo street below, warm amber light glowing from a single window on the 3rd floor, neon reflections on wet pavement, lo-fi anime aesthetic, soft film grain, cinematic wide angle, purple and amber palette, 4K ultra detailed",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Slow camera push-in through a rain-streaked window glass, bokeh raindrops in the foreground, warm interior glow beckoning from inside, condensation on the glass, dreamy and intimate atmosphere, lo-fi anime aesthetic, shallow depth of field, cinematic 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium shot interior: a cozy study desk lit by a warm amber lamp, open notebook with handwritten notes, steaming cup of coffee, headphones resting on textbooks, a spinning vinyl record player in the background, lo-fi anime style, warm soft lighting, ultra detailed, 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Close-up insert: a vinyl record spinning slowly on a turntable, needle gently riding the groove, soft amber light catching the grooves, dust particles floating in warm light, nostalgic and warm, macro photography style, lo-fi aesthetic, ultra sharp detail, 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Medium shot: a person silhouetted at the window, looking out at the rainy city night, headphones on, holding a warm mug, city lights blurred behind rain-streaked glass, peaceful solitude, lo-fi anime aesthetic, warm backlight, cinematic 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Wide final shot: aerial view of a quiet Tokyo neighborhood at night in the rain, warm apartment lights dotting the darkness like fireflies, streets reflecting neon, peaceful urban solitude, lo-fi anime cityscape, soft grain film texture, purple-amber night palette, 4K stunning",
+          "motion_strength": 2
+        }
+      ]
+    },
+    {
+      "slug": "phonk",
+      "priority": 2,
+      "suno_prompt": "Drift phonk, dark and aggressive, 140 BPM, 808 bass, Memphis trap samples, distorted hi-hats, cowbell, adrenaline rush and night drive vibes, underground energy",
+      "mode": "medium",
+      "title": "⚡ DRIFT PHONK MIX 2026 — Dark Memphis Beats for Racing & Motivation | Assirem Music PROD",
+      "description": "🔥 The hardest Drift Phonk mix of 2026 — pure Memphis darkness meets modern trap energy. Perfect for workouts, night drives, and getting in the zone.\n\n⚡ Generated with SUNO AI v5.5 | Visuals by Leonardo AI\n\n━━━━━━━━━━━━━━━━━━━━━━\n🎵 TRACKLIST\n━━━━━━━━━━━━━━━━━━━━━━\n[00:00] Shadow Drift\n[05:00] Neon Wheels\n[10:00] Memphis Ghost\n[15:00] Dark Circuit\n[20:00] Turbo Rage\n[25:00] Phonk King\n━━━━━━━━━━━━━━━━━━━━━━\n\n🔔 Subscribe for daily AI music: @AssiremMusicProd\n💪 Share with your gym crew!\n\n#DriftPhonk #PhonkMusic #DarkPhonk #AIMusic #AssiremMusicProd #NoCopyright #GymMotivation #MemphisPhonk #TrapBeats #Phonk2026",
+      "tags": ["drift phonk", "phonk music", "dark phonk", "memphis phonk", "ai music", "assirem music prod", "no copyright", "gym motivation", "workout music", "trap beats", "phonk 2026"],
+      "playlist_name": "⚡ Drift Phonk Bangers — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: empty rain-slicked urban highway at 3AM, orange streetlights creating long reflections on wet asphalt, distant city skyline glowing dark purple, thick fog rolling in, desolate and ominous atmosphere, dark Memphis aesthetic, cinematic wide angle, neon-noir color palette, 4K ultra detailed",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Low angle dramatic shot: a blacked-out sports car approaching fast through the night, headlights cutting through fog, tire smoke rising, neon pink and cyan light trails streaking across wet ground, speed blur, dark Memphis aesthetic, hyper-realistic render, cinematic 4K",
+          "motion_strength": 7
+        },
+        {
+          "prompt": "Medium shot side view: car drifting hard around a corner, tires screaming, smoke engulfing the rear, neon lights of an underground parking structure in background, aggressive and intense energy, dark cinematic lighting, red and black color grading, 4K ultra detail",
+          "motion_strength": 7
+        },
+        {
+          "prompt": "Close-up insert: steering wheel gripped with both hands in black gloves, dashboard glowing red with RPM gauge in the red zone, knuckles tense, aggressive detail shot, dramatic underlighting, dark Memphis aesthetic, macro cinematic shot, 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium dramatic shot: driver silhouette behind wheel backlit by city lights, face partially obscured, smoke rising around the car, raw power and focus, dark and cinematic, deep shadows, purple and orange rim lighting, 4K",
+          "motion_strength": 5
+        },
+        {
+          "prompt": "Wide final aerial shot: the car disappearing into the foggy city night, light trails fading, empty wet highway stretching to the horizon, city lights glowing in the distant haze, cinematic drone perspective, dark purple and neon palette, 4K stunning",
+          "motion_strength": 4
+        }
+      ]
+    },
+    {
+      "slug": "afrohouse",
+      "priority": 3,
+      "suno_prompt": "Afro house with jazz influences, uplifting and soulful, 124 BPM, deep bass, congas and djembe percussion, Rhodes piano, sunset rooftop energy, African spiritual groove",
+      "mode": "medium",
+      "title": "🌍 Afro House & Jazz House Mix 2026 — Deep Groove Sunset Vibes | Assirem Music PROD",
+      "description": "🌅 Feel the deep groove of Afro House blended with Jazz House elegance. Perfect for sunset sessions, rooftop gatherings, and soulful moments.\n\n🌍 Generated with SUNO AI v5.5 | Visuals by Leonardo AI\n\n━━━━━━━━━━━━━━━━━━━━━━\n🎵 TRACKLIST\n━━━━━━━━━━━━━━━━━━━━━━\n[00:00] Savanna Groove\n[05:00] Lagos Sunset\n[10:00] Jazz Horizon\n[15:00] Deep Roots\n[20:00] African Soul\n[25:00] Midnight Tribe\n━━━━━━━━━━━━━━━━━━━━━━\n\n🔔 Subscribe for daily AI music: @AssiremMusicProd\n\n#AfroHouse #JazzHouse #AIMusic #AssiremMusicProd #NoCopyright #DeepHouse #SunsetVibes #AfricanMusic",
+      "tags": ["afro house", "jazz house", "deep house", "afrobeats", "ai music", "assirem music prod", "no copyright", "sunset vibes", "african music", "house music 2026"],
+      "playlist_name": "🌍 Afro House Sunset Sessions — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: vast African savanna at golden hour, acacia trees silhouetted against a blazing orange and magenta sky, endless horizon, dust haze catching warm light, majestic and deeply spiritual atmosphere, cinematic photography, rich earthy palette of gold and burnt orange, 4K ultra detailed",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Slow camera travelling forward through the savanna, tall golden grass parting gently in a warm evening breeze, sun low on the horizon ahead, dust particles glowing in the golden light, immersive movement toward something beautiful, cinematic warm tones, 4K",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Medium shot: a vibrant rooftop terrace at sunset overlooking a Lagos-inspired cityscape, people in colorful African fashion, candles and lanterns lit, palm trees swaying, warm festive energy, rich colors of gold, terracotta and green, 4K cinematic",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Close-up insert: hands playing a djembe drum, skilled fingers striking the skin in rhythmic motion, golden bracelets catching the light, warm amber bokeh background, textured leather drum skin detail, musical and soulful, macro cinematic photography, 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium shot: silhouettes of people dancing on a rooftop at sunset, bodies moving in joyful rhythm against a blazing sky of orange and purple, energy and liberation, backlit by the setting sun, cinematic silhouette photography, rich warm tones, 4K",
+          "motion_strength": 5
+        },
+        {
+          "prompt": "Wide final shot: the savanna at dusk, a vast sky turning deep blue and violet overhead with the last golden light on the horizon, a lone acacia tree center frame, absolute peace and grandeur, cinematic drone perspective, earthy African palette, 4K stunning",
+          "motion_strength": 2
+        }
+      ]
+    },
+    {
+      "slug": "meditation",
+      "priority": 4,
+      "suno_prompt": "Spring healing ambient, peaceful and meditative, 60 BPM, singing bowls, soft piano, nature sounds (birds, gentle stream), binaural frequencies, cherry blossom morning energy, mindfulness",
+      "mode": "medium",
+      "title": "🌸 Spring Meditation Music 2026 — Healing Ambient for Mindfulness & Yoga | Assirem Music PROD",
+      "description": "🌸 Welcome spring with this deeply peaceful ambient meditation music. Let go of stress, find your center, and breathe with the rhythm of renewal.\n\n✨ Generated with SUNO AI v5.5 | Visuals by Leonardo AI\n\nPerfect for: meditation 🧘, yoga 🧘‍♀️, breathwork 🌬️, sleep 💤, spa sessions 🛁\n\n━━━━━━━━━━━━━━━━━━━━━━\n🎵 TRACKLIST\n━━━━━━━━━━━━━━━━━━━━━━\n[00:00] Cherry Blossom Dawn\n[05:00] Breath of Spring\n[10:00] Healing Flow\n[15:00] Inner Silence\n[20:00] Petal Rain\n[25:00] Renewal\n━━━━━━━━━━━━━━━━━━━━━━\n\n🔔 Subscribe for daily AI music: @AssiremMusicProd\n\n#MeditationMusic #SpringAmbient #HealingMusic #AIMusic #AssiremMusicProd #NoCopyright #YogaMusic #Mindfulness",
+      "tags": ["meditation music", "spring ambient", "healing music", "ai music", "assirem music prod", "no copyright", "yoga music", "mindfulness", "ambient music", "relaxing music 2026"],
+      "playlist_name": "🌸 Meditation & Healing Ambients — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: a serene Japanese garden at dawn in early spring, cherry blossom trees in full bloom under a pale pink and lavender sky, morning mist hovering over a still koi pond, absolute stillness, ethereal and sacred atmosphere, cinematic photography, pastel blush and lavender palette, 8K ultra detailed",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Slow gentle camera drift forward along a stone pathway through the cherry blossom garden, soft pink petals drifting down in slow motion, dappled morning light filtering through the branches, peaceful and contemplative movement, dreamlike soft bokeh, pastel tones, cinematic 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium shot: a traditional Japanese wooden pavilion over the koi pond, paper lantern hanging gently swaying, cherry blossom petals floating on the still water surface, reflections of pink trees in the pond, morning golden light, serene and healing, cinematic photography, soft pastel palette, 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Close-up insert: a single cherry blossom petal landing on perfectly still water, ripple expanding in slow motion, reflections of pink sky in the water, macro photography, extreme detail of the petal texture and water surface, translucent and ethereal, 4K ultra sharp",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Medium shot: a person in white linen seated in meditation pose on the wooden bridge, eyes closed, hands resting in mudra position on knees, soft cherry blossoms falling around them, morning light bathing them in gold, profound inner peace, cinematic spiritual photography, 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Wide final aerial shot: the entire Japanese garden seen from above in spring bloom, a pink cloud of cherry blossoms, the still reflecting pond at the center, misty mountains in the far background, absolute peace and renewal, cinematic drone photography, pastel pink lavender and soft green palette, 8K stunning",
+          "motion_strength": 2
+        }
+      ]
+    },
+    {
+      "slug": "melodic-techno",
+      "priority": 5,
+      "suno_prompt": "Melodic techno, dark and hypnotic, 130 BPM, pulsing synthesizers, ethereal pads, progressive bassline, underground club atmosphere, late night focus and introspection",
+      "mode": "medium",
+      "title": "🔮 Melodic Techno Mix 2026 — Dark Progressive Beats for Late Night Focus | Assirem Music PROD",
+      "description": "🔮 Journey into the depths of melodic techno — hypnotic basslines, ethereal pads, and dark progressive energy.\n\n⚡ Generated with SUNO AI v5.5 | Visuals by Leonardo AI\n\nPerfect for: deep work 💡, late night coding 💻, focus sessions 🎯\n\n━━━━━━━━━━━━━━━━━━━━━━\n🎵 TRACKLIST\n━━━━━━━━━━━━━━━━━━━━━━\n[00:00] Void Protocol\n[05:00] Neural Pulse\n[10:00] Dark Orbit\n[15:00] Frequency X\n[20:00] Midnight Algorithm\n[25:00] Infinite Loop\n━━━━━━━━━━━━━━━━━━━━━━\n\n🔔 Subscribe for daily AI music: @AssiremMusicProd\n🎧 Best experienced with headphones!\n\n#MelodicTechno #DarkTechno #AIMusic #AssiremMusicProd #NoCopyright #TechnoMix #DeepFocus #ElectronicMusic",
+      "tags": ["melodic techno", "dark techno", "progressive techno", "ai music", "assirem music prod", "no copyright", "techno mix", "deep focus music", "electronic music", "techno 2026"],
+      "playlist_name": "🔮 Melodic Techno Journeys — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: a vast underground industrial space, brutalist concrete architecture stretching to darkness, distant pulsing blue and purple laser beams cutting through thick fog, a crowd of silhouettes far below, scale and power, dark cinematic photography, deep purple and electric blue palette, 4K ultra detailed",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Slow camera push forward through a corridor of strobing blue lights, fog rolling along the ground, geometric light installations on walls pulsing rhythmically, hypnotic and immersive movement through darkness, long exposure light trails, cyberpunk aesthetic, 4K cinematic",
+          "motion_strength": 5
+        },
+        {
+          "prompt": "Medium shot: the heart of the club, DJ behind a glowing modular synthesizer setup, laser beams fanning out above the crowd, purple smoke machines at full intensity, backlit by deep violet and electric blue light walls, dark energy and focus, cinematic photography, 4K",
+          "motion_strength": 5
+        },
+        {
+          "prompt": "Close-up insert: hands adjusting modular synthesizer patch cables and knobs, neon blue and purple under-lighting, tactile and precise, circuit boards and waveforms visible on screens in background, technology and art fused, macro cinematic shot, 4K ultra detail",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium dramatic shot: a lone figure standing on an elevated platform overlooking the crowd below, arms slightly raised, backlit by massive LED wall displaying abstract waveforms, godlike perspective, dark and electric atmosphere, deep purple rim lighting, cinematic silhouette, 4K",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Wide final aerial shot: the entire underground venue from above, geometric laser grid over the dancing crowd, fog filling the space, pulsing purple and blue light show, architectural grandeur of darkness and light, cinematic drone perspective, deep violet and electric blue palette, 4K stunning",
+          "motion_strength": 3
+        }
+      ]
+    }
+  ]
+}

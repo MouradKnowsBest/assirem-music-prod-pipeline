@@ -1,0 +1,235 @@
+{
+  "date": "2026-04-07",
+  "priority_slug": "pluggnb-dreamwave",
+  "tracks": [
+    {
+      "slug": "pluggnb-dreamwave",
+      "priority": 1,
+      "category": "trending",
+      "suno_prompt": "PluggnB, dreamy trap, 80 BPM, wavy 808 bass, smooth R&B vocals with autotune, lush synth pads, soft hi-hats, lo-fi bedroom feel, romantic and melancholic mood, slow-burning trap beat, ethereal reverb layers",
+      "mode": "medium",
+      "title": "Dreaming in PluggnB — Lo-Fi R&B Trap Wave 2026 | Assirem Music PROD",
+      "description": "🌙 Drifting through neon nights on a cloud of PluggnB — the genre taking over TikTok in 2026. Dreamy 808s, smooth R&B vocals, and slow-burning vibes for late-night sessions.\n\n✨ AI-generated music by Assirem Music PROD via SUNO AI v5.5\n🎬 Cinematic visuals by Leonardo AI\n\n#PluggnB #LoFiRnB #TrapWave #DreamyVibes #AIMusic #AssiremMusicProd #TikTokMusic2026 #NoCopyrightMusic #ChillTrap #RnBTrap",
+      "tags": ["pluggnb", "lo-fi r&b", "trap wave", "dreamy trap", "chill trap", "r&b 2026", "tiktok music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🔥 Trending Vibes 2026 — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: neon-drenched city skyline at 3AM, rain-slicked streets reflecting purple and blue neon signs, fog rolling through urban canyon, cinematic 4K ultra detailed",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Slow camera travelling down a wet city street, bokeh neon lights blurring in the background, smooth dolly push forward through mist, cinematic 4K",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Medium shot: cozy bedroom studio interior, soft LED lights in purple hues, mixing board glowing, vinyl records on wall, warm intimate atmosphere, ultra detailed 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Close-up insert: hands hovering over a illuminated synthesizer keyboard, fingers brushing keys gently, neon reflections on fingertips, macro cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Medium emotional shot: silhouette of a lone figure in a rain-covered window, city lights blurred behind, head resting on glass, introspective mood, cinematic 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Wide final shot: aerial view of the city at night pulling back slowly, thousands of glowing windows, misty skyline, peaceful urban solitude, 4K stunning",
+          "motion_strength": 2
+        }
+      ]
+    },
+    {
+      "slug": "kpop-electropop-surge",
+      "priority": 2,
+      "category": "trending",
+      "suno_prompt": "K-pop inspired electronic pop, 120 BPM, punchy synth lead, bright euphoric chorus, dynamic drop, layered harmonies, polished production, BTS influenced sound, energetic neon dance-pop, stadium anthemic feel",
+      "mode": "medium",
+      "title": "K-Pop Wave 2026 — Euphoric Electronic Pop Anthem | Assirem Music PROD",
+      "description": "⚡ Riding the K-Pop wave of 2026! BTS just hit #1 on Billboard Hot 100 with 'Swim' — and the world is moving to the beat. Euphoric, polished, and absolutely electric.\n\n✨ AI-generated music by Assirem Music PROD via SUNO AI v5.5\n🎬 Cinematic visuals by Leonardo AI\n\n#KPop2026 #ElectronicPop #KPopWave #BTSWave #AIMusic #AssiremMusicProd #DancePop #NoCopyrightMusic #PopAnthem #ViralMusic",
+      "tags": ["k-pop", "electronic pop", "dance pop", "k-pop 2026", "bts wave", "euphoric pop", "stadium anthem", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🔥 Trending Vibes 2026 — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: massive neon-lit K-pop concert stage at night, thousands of glowing light sticks in the crowd, smoke machines, laser beams cutting the sky, 4K ultra detailed",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Slow camera travelling through backstage corridor toward a bright stage entrance, neon signs on walls, hype banners, movement toward the light, cinematic 4K",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Medium shot: modern Seoul streetscape at night, K-pop billboard advertisements glowing, young people in stylish outfits walking, vibrant street energy, ultra detailed 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Close-up insert: glowing concert light stick held up high, crowd lights twinkling behind like a galaxy, colorful bokeh, macro cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Medium emotional shot: performer silhouette center-stage, arms outstretched, spotlight beam overhead, massive crowd in background, peak euphoric moment, cinematic 4K",
+          "motion_strength": 5
+        },
+        {
+          "prompt": "Wide final shot: aerial drone pullback from the stadium, entire arena glowing with fan light sticks, city lights of Seoul stretching to horizon, 4K stunning",
+          "motion_strength": 2
+        }
+      ]
+    },
+    {
+      "slug": "afrofuturism-cosmic-beat",
+      "priority": 3,
+      "category": "trending",
+      "suno_prompt": "Afrofuturism electronic, 108 BPM, kora melodies fused with pulsing synths, cosmic percussion with talking drum, Afrobeats groove, futuristic African atmosphere, Burna Boy meets Hans Zimmer, hypnotic and uplifting, celestial reverb",
+      "mode": "medium",
+      "title": "Afrofuturism Rising — Cosmic Afrobeats Electronic 2026 | Assirem Music PROD",
+      "description": "🌍✨ The future sounds African. Afrofuturism is one of the biggest music trends of 2026 — kora meets cosmos, ancient rhythms collide with futuristic synths. This is Africa reimagined among the stars.\n\n✨ AI-generated music by Assirem Music PROD via SUNO AI v5.5\n🎬 Cinematic visuals by Leonardo AI\n\n#Afrofuturism #Afrobeats #AfricanElectronic #CosmicAfro #AIMusic #AssiremMusicProd #BurnaBoySounds #FuturisticAfrica #NoCopyrightMusic #WorldMusic2026",
+      "tags": ["afrofuturism", "afrobeats", "african electronic", "cosmic afro", "kora synth fusion", "burna boy style", "futuristic africa", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🔥 Trending Vibes 2026 — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: futuristic African city at golden hour, Afrofuturist architecture blending traditional motifs with sleek glass towers, savanna in background meeting the skyline, 4K ultra detailed",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Slow camera travelling upward along a giant baobab tree wrapped in glowing fiber optic lights, stars appearing above, otherworldly atmosphere, cinematic 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium shot: a griot musician in flowing white and gold robes playing a futuristic kora made of light, holographic notes floating in the air, ultra detailed 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Close-up insert: hands plucking kora strings radiating light, each string vibrating with visible sound waves, golden particles floating upward, macro cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Medium emotional shot: dancer in Afrofuturist costume performing under a sky full of stars and aurora borealis over the Sahara, arms reaching toward the cosmos, cinematic 4K",
+          "motion_strength": 5
+        },
+        {
+          "prompt": "Wide final shot: panoramic view of the African continent from low orbit, city lights twinkling below, stars and nebula above, cosmic and serene, 4K stunning",
+          "motion_strength": 2
+        }
+      ]
+    },
+    {
+      "slug": "cinematic-hope-2026",
+      "priority": 4,
+      "category": "news_surf",
+      "news_event": "Iran-US conflict escalation / Middle East tensions April 2026",
+      "suno_prompt": "Epic cinematic orchestral score, 68 BPM, sweeping strings, French horn, timpani, choir of voices, themes of hope and resilience, Hans Zimmer and John Williams inspired, emotional and contemplative, building to triumphant resolution, peace and humanity",
+      "mode": "medium",
+      "title": "Hope & Resilience — Epic Cinematic Orchestral Score 2026 | Assirem Music PROD",
+      "description": "🕊️ In times of uncertainty, music speaks of hope. This epic orchestral score is a tribute to humanity's resilience — a cinematic journey through struggle toward light. For everyone searching for peace in 2026.\n\n✨ AI-generated music by Assirem Music PROD via SUNO AI v5.5\n🎬 Cinematic visuals by Leonardo AI\n\n#EpicCinematic #OrchestraMusic #HopeAndResilience #CinematicScore2026 #EpicOrchestral #AIMusic #AssiremMusicProd #NoCopyrightMusic #InspirationalMusic #EpicMusic2026",
+      "tags": ["epic cinematic", "orchestral score", "hope and resilience", "cinematic music 2026", "epic orchestral", "hans zimmer style", "inspirational music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🎬 Epic Cinematic Collection — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: vast desolate landscape at dawn, cracked earth stretching to horizon, a single ray of sunlight breaking through storm clouds on the horizon, 4K ultra detailed",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Slow camera travelling across a barren plain toward a distant glowing horizon, camera low to the ground, dust particles catching the first light of dawn, cinematic 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium shot: diverse group of silhouetted figures standing together on a hilltop, looking toward the sunrise, arms at their sides, unified and still, ultra detailed 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Close-up insert: a single white dove feather resting on cracked earth, morning dew forming on its surface, golden light refracting through each droplet, macro cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Medium emotional shot: a child's hands cupping a small glowing light like a flame, warmth illuminating a peaceful face, eyes closed in hope, soft golden atmosphere, cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Wide final shot: aerial view of the Earth from high above, sun rising over the curvature of the planet, clouds glowing orange and pink, peaceful and majestic, 4K stunning",
+          "motion_strength": 2
+        }
+      ]
+    },
+    {
+      "slug": "world-brazil-bossa-nova",
+      "priority": 5,
+      "category": "world_music",
+      "country": "Brazil",
+      "country_local": "Brasil",
+      "country_flag": "🇧🇷",
+      "suno_prompt": "Brazilian Bossa Nova meets electronic chill, 95 BPM, classic nylon-string guitar, samba percussion brushed kit, smooth jazz chords, warm bass, breezy flute, tropical lo-fi atmosphere, Rio de Janeiro sunset vibes, nostalgic and soulful, João Gilberto inspired",
+      "mode": "medium",
+      "title": "🇧🇷 Brazilian Bossa Nova & Samba | Bossa Nova Brasileira — Assirem Music PROD",
+      "description": "🌴🇧🇷 Do Rio com amor — a Bossa Nova e o Samba vivem eternamente. This AI-crafted tribute blends the soul of João Gilberto with modern lo-fi chill vibes for the world to enjoy.\n\nUma viagem musical ao coração do Brasil — de Ipanema às estrelas.\n\n✨ AI-generated music by Assirem Music PROD via SUNO AI v5.5\n🎬 Cinematic visuals by Leonardo AI\n\n#BossaNova #Samba #MúsicaBrasileira #Brazil #BossaNova2026 #MúsicaDoMundo #AIMusic #AssiremMusicProd #NoCopyrightMusic #WorldMusic #LoFiBrazil",
+      "tags": ["bossa nova", "samba", "música brasileira", "brazil music", "rio de janeiro vibes", "lofi brazil", "world music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🌍 World Music Series — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": false,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "scenes": [
+        {
+          "prompt": "Wide establishing shot: Ipanema beach at golden hour, Dois Irmãos mountains silhouetted against an orange sky, gentle waves rolling in, perfect Brazilian summer evening, 4K ultra detailed",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Slow camera travelling along the Copacabana promenade at sunset, coconut palms swaying gently, the mosaic sidewalk glowing warm in golden light, ocean to one side, cinematic 4K",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Medium shot: an open-air boteco terrace in Rio, a musician in a linen shirt playing acoustic guitar, cold beer sweating on the table, fairy lights above, warm and intimate, ultra detailed 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Close-up insert: nylon guitar strings being gently plucked, fingers in classic bossa nova position, golden afternoon light on warm wood of guitar body, macro cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Medium emotional shot: a couple dancing samba on a rooftop terrace, Christ the Redeemer visible on the mountain behind them, twilight sky in shades of purple and gold, cinematic 4K",
+          "motion_strength": 5
+        },
+        {
+          "prompt": "Wide final shot: aerial view of Rio de Janeiro at dusk, Guanabara Bay reflecting the city lights beginning to twinkle, Sugarloaf Mountain silhouette, peaceful and magnificent, 4K stunning",
+          "motion_strength": 2
+        }
+      ]
+    }
+  ]
+}

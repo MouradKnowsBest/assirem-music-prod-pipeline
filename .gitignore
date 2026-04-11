@@ -1,24 +1,71 @@
-# Credentials & secrets
+# Secrets
 credentials/
+.env
+*.env
 *.key
-*.pickle
-client_secret.json
-
-# Media files (trop lourds)
-input/*.mp3
-input/*.mp4
-input/*.wav
-input/*.png
-input/*.jpg
-input/clips/
-input/clips_slow/
-output/
+*.pem
+token.json
+client_secret*.json
+service-account*.json
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
-.env
+.venv/
+venv/
 
-# OS
+# Node
+node_modules/
+
+# OS / editor
 .DS_Store
+.claude/
+.vscode/
+.idea/
+*.swp
+
+# Media (never track in git)
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.aac
+*.ogg
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Runtime / generated dirs
+input/
+input archive/
+output/
+old/input/
+old/input archive/
+old/input archive copy/
+old/input copy/
+old/output/
+old/output copy/
+old/logs/
+dossier sans titre/
+
+# Browser profiles (NEVER commit)
+**/.browser-profile/
+**/browser-profile/
+**/Cache/
+**/Cache_Data/
+
+# Logs and DBs
+*.log
+*.sqlite
+*.db
+
+# Extra credential variants
+**/credentials*/
+**/credential*/
