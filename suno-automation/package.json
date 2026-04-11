@@ -1,0 +1,19 @@
+{
+  "name": "suno-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation to generate and download tracks from Suno",
+  "main": "src/main.js",
+  "scripts": {
+    "login": "node src/login.js",
+    "generate": "node src/main.js",
+    "generate:headless": "HEADLESS=true node src/main.js",
+    "generate:force": "FORCE=true node src/main.js"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "slugify": "^1.6.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

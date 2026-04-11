@@ -1,0 +1,7 @@
+node_modules/
+.browser-profile/
+processed.json
+screenshots/
+*.mp3
+*.wav
+.env

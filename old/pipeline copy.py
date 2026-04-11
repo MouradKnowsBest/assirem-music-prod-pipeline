@@ -29,8 +29,9 @@ import traceback
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
 
+from modules.visual  import generer_visuel
 from modules.video   import generer_videos
-from modules.youtube import uploader_videos, UploadLimitExceeded, get_upload_count_today
+from modules.youtube import uploader_videos
 
 # ─── Couleurs ────────────────────────────────────────────────────────────────
 VERT  = "\033[92m"; ROUGE = "\033[91m"; JAUNE = "\033[93m"
@@ -131,15 +132,8 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
 
     # ── Étape visuelle ────────────────────────────────────────────────────────
     if not args.skip_visual:
-        engine = getattr(args, "visual_engine", "leonardo")
-        if engine == "wavespeed":
-            from modules.wavespeed import generer_visuel
-            engine_label = "WaveSpeed AI"
-        else:
-            from modules.visual import generer_visuel
-            engine_label = "Leonardo AI"
         etape += 1
-        titre_etape(etape, total_etapes, f"Génération cinématique ({engine_label}) — {slug}")
+        titre_etape(etape, total_etapes, f"Génération cinématique (Leonardo AI) — {slug}")
         t0 = time.time()
         try:
             generer_visuel(track, BASE_DIR, force=args.force)
@@ -183,10 +177,6 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
         try:
             uploader_videos(track, videos, BASE_DIR)
             succes(f"Upload terminé en {time.time()-t0:.1f}s")
-        except UploadLimitExceeded as e:
-            erreur(f"Échec upload [{slug}] : {e}")
-            if args.debug: traceback.print_exc()
-            raise  # remonter pour stopper les uploads restants
         except Exception as e:
             erreur(f"Échec upload [{slug}] : {e}")
             if args.debug: traceback.print_exc()
@@ -207,13 +197,10 @@ def main():
     parser.add_argument("--all",          action="store_true", help="Lance tous les tracks")
     parser.add_argument("--list",         action="store_true", help="Liste les tracks disponibles")
     parser.add_argument("--force",        action="store_true", help="Écrase les fichiers existants")
-    parser.add_argument("--skip-visual",    action="store_true")
-    parser.add_argument("--skip-video",     action="store_true")
-    parser.add_argument("--skip-upload",    action="store_true")
-    parser.add_argument("--debug",          action="store_true")
-    parser.add_argument("--visual-engine",  type=str, default="leonardo",
-                        choices=["leonardo", "wavespeed"],
-                        help="Moteur de génération visuelle (défaut: leonardo)")
+    parser.add_argument("--skip-visual",  action="store_true")
+    parser.add_argument("--skip-video",   action="store_true")
+    parser.add_argument("--skip-upload",  action="store_true")
+    parser.add_argument("--debug",        action="store_true")
     args = parser.parse_args()
 
     print(f"\n{GRAS}{'═'*60}{RESET}")
@@ -270,13 +257,6 @@ def main():
     # ── Boucle sur les tracks ─────────────────────────────────────────────────
     debut_global = time.time()
     resultats    = {}
-    upload_bloque = False  # True si YouTube a refusé (limite atteinte)
-    slugs_en_attente = []  # tracks dont l'upload reste à faire
-
-    # Afficher le compteur d'uploads du jour
-    nb_uploads, slugs_uploades = get_upload_count_today(BASE_DIR)
-    if nb_uploads > 0:
-        print(f"\n  📊 Uploads YouTube aujourd'hui : {nb_uploads} vidéo(s) ({', '.join(slugs_uploades)})")
 
     for i, track in enumerate(selection, 1):
         slug       = track["slug"]
@@ -284,27 +264,7 @@ def main():
         titre_track(slug, i, len(selection), priority=is_priority)
 
         etape_offset = (i - 1) * etapes_par_track
-
-        if upload_bloque and not args.skip_upload:
-            # On continue visual/video mais on saute l'upload
-            warning(f"Upload ignoré (limite YouTube atteinte) — à relancer demain avec :")
-            info(f"python3 pipeline.py --slug {slug} --skip-visual --skip-video")
-            args_temp = argparse.Namespace(**vars(args))
-            args_temp.skip_upload = True
-            videos = run_track(track, args_temp, etape_offset, total_etapes)
-            slugs_en_attente.append(slug)
-        else:
-            try:
-                videos = run_track(track, args, etape_offset, total_etapes)
-            except UploadLimitExceeded:
-                upload_bloque = True
-                videos = []
-                # Récupérer les vidéos existantes pour le résultat
-                output_dir = os.path.join(BASE_DIR, "output", slug)
-                videos = [f for f in glob.glob(os.path.join(output_dir, "*.mp4"))
-                          if not os.path.basename(f).startswith("_")]
-                slugs_en_attente.append(slug)
-
+        videos = run_track(track, args, etape_offset, total_etapes)
         resultats[slug] = videos
 
     # ── Résumé global ─────────────────────────────────────────────────────────
@@ -314,15 +274,7 @@ def main():
     print(f"{GRAS}{'═'*60}{RESET}")
     for slug, vids in resultats.items():
         statut = f"{VERT}✅ {len(vids)} vidéo(s){RESET}" if vids else f"{ROUGE}❌ échec{RESET}"
-        if slug in slugs_en_attente:
-            statut += f" {JAUNE}(upload en attente){RESET}"
         print(f"  {slug:20s} → {statut}")
-
-    if slugs_en_attente:
-        print(f"\n{JAUNE}{GRAS}  ⚠️  {len(slugs_en_attente)} track(s) en attente d'upload (limite YouTube atteinte){RESET}")
-        print(f"{JAUNE}  → Relancez demain avec :{RESET}")
-        for s in slugs_en_attente:
-            print(f"{JAUNE}     python3 pipeline.py --slug {s} --skip-visual --skip-video{RESET}")
     print()
 
 

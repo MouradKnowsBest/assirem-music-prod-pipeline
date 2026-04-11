@@ -1,0 +1,32 @@
+[
+  {
+    "id": "001",
+    "slug": "lofi",
+    "title": "Lofi Hip Hop — Late Night Study",
+    "prompt": "Lofi hip hop, nostalgic and rainy, 80 BPM, piano and vinyl crackle, lo-fi drum kit, soft bass, late night study vibes, Japanese aesthetic, warm and melancholic, instrumental only"
+  },
+  {
+    "id": "002",
+    "slug": "phonk",
+    "title": "Drift Phonk — Dark Memphis",
+    "prompt": "Drift phonk, dark and aggressive, 140 BPM, 808 bass, Memphis trap samples, distorted hi-hats, cowbell, sinister synth melody, car racing vibes, underground energy, instrumental only"
+  },
+  {
+    "id": "003",
+    "slug": "afrohouse",
+    "title": "Afro House — Jazz Sunset",
+    "prompt": "Afro house with jazz influences, uplifting and soulful, 124 BPM, deep bass, congas and djembe percussion, warm Rhodes chords, African sunset vibes, dancefloor energy, instrumental only"
+  },
+  {
+    "id": "004",
+    "slug": "meditation",
+    "title": "Spring Healing Ambient — Mindfulness",
+    "prompt": "Spring healing ambient, peaceful and meditative, 60 BPM, singing bowls, soft piano, nature sounds (birds, gentle stream), binaural frequencies, cherry blossom morning energy, mindfulness, instrumental only"
+  },
+  {
+    "id": "005",
+    "slug": "melodic-techno",
+    "title": "Melodic Techno — Dark Hypnotic",
+    "prompt": "Melodic techno, dark and hypnotic, 130 BPM, pulsing synthesizers, ethereal pads, progressive bassline, industrial textures, underground club energy, Berlin nightlife atmosphere, instrumental only"
+  }
+]

@@ -19,8 +19,10 @@ import threading
 import requests
 
 LEONARDO_API_BASE = "https://cloud.leonardo.ai/api/rest/v1"
-DEFAULT_MODEL = "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3"
+DEFAULT_MODEL     = "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3"
 
+
+# ─── Helpers ─────────────────────────────────────────────────────────────────
 
 def _lire_cle_api(base_dir: str) -> str:
     path = os.path.join(base_dir, "credentials", "leonardo.key")
@@ -45,18 +47,17 @@ def _headers(cle: str) -> dict:
 
 def _spinner(label: str, stop: threading.Event) -> threading.Thread:
     def _run():
-        syms = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+        syms  = ["⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏"]
         debut = time.time()
         i = 0
         while not stop.is_set():
-            sys.stdout.write(f"\r  {syms[i % len(syms)]} {label} ({int(time.time() - debut)}s)")
+            sys.stdout.write(f"\r  {syms[i%len(syms)]} {label} ({int(time.time()-debut)}s)")
             sys.stdout.flush()
             i += 1
             time.sleep(0.1)
         elapsed = int(time.time() - debut)
         sys.stdout.write(f"\r  ✅ {label} — {elapsed}s                    \n")
         sys.stdout.flush()
-
     t = threading.Thread(target=_run, daemon=True)
     t.start()
     return t
@@ -70,16 +71,14 @@ def _attendre_generation(cle: str, gen_id: str, label: str) -> dict:
         time.sleep(5)
         r = requests.get(
             f"{LEONARDO_API_BASE}/generations/{gen_id}",
-            headers=_headers(cle),
-            timeout=30,
+            headers=_headers(cle), timeout=30
         )
         if r.status_code != 200:
             stop.set()
             raise RuntimeError(f"Polling error ({r.status_code}) : {r.text}")
         gen = r.json().get("generations_by_pk", {})
         if gen.get("status") == "COMPLETE":
-            stop.set()
-            time.sleep(0.15)
+            stop.set(); time.sleep(0.15)
             return gen
         if gen.get("status") == "FAILED":
             stop.set()
@@ -88,8 +87,11 @@ def _attendre_generation(cle: str, gen_id: str, label: str) -> dict:
     raise TimeoutError(f"Timeout génération Leonardo (ID: {gen_id})")
 
 
+# ─── Génération image pour une scène ─────────────────────────────────────────
+
 def _generer_image_scene(
-    cle: str, model_id: str, prompt: str, dest: str, id_cache: str, idx: int, total: int
+    cle: str, model_id: str, prompt: str,
+    dest: str, id_cache: str, idx: int, total: int
 ) -> str:
     """Génère l'image d'une scène. Retourne l'image_id Leonardo."""
     print(f"  → Scène {idx}/{total} — image : \"{prompt[:55]}...\"")
@@ -99,10 +101,8 @@ def _generer_image_scene(
         json={
             "prompt": prompt,
             "modelId": model_id,
-            "width": 1536,
-            "height": 864,
-            "num_images": 1,
-            "public": False,
+            "width": 1536, "height": 864,
+            "num_images": 1, "public": False,
         },
         timeout=30,
     )
@@ -113,12 +113,12 @@ def _generer_image_scene(
     if not gen_id:
         raise RuntimeError(f"Réponse inattendue scène {idx} : {r.json()}")
 
-    gen = _attendre_generation(cle, gen_id, f"Image scène {idx}/{total}")
-    images = gen.get("generated_images", [])
+    gen      = _attendre_generation(cle, gen_id, f"Image scène {idx}/{total}")
+    images   = gen.get("generated_images", [])
     if not images:
         raise RuntimeError(f"Scène {idx} : aucune image retournée.")
 
-    image_id = images[0]["id"]
+    image_id  = images[0]["id"]
     image_url = images[0]["url"]
 
     resp = requests.get(image_url, timeout=60)
@@ -134,8 +134,11 @@ def _generer_image_scene(
     return image_id
 
 
+# ─── Génération clip Motion pour une scène ───────────────────────────────────
+
 def _generer_clip_scene(
-    cle: str, image_id: str, motion_strength: int, dest: str, idx: int, total: int
+    cle: str, image_id: str, motion_strength: int,
+    dest: str, idx: int, total: int
 ) -> None:
     """Génère le clip Motion d'une scène depuis son image_id."""
     print(f"  → Scène {idx}/{total} — clip Motion (force: {motion_strength})...")
@@ -152,7 +155,7 @@ def _generer_clip_scene(
     if not gen_id:
         raise RuntimeError(f"Réponse Motion inattendue scène {idx} : {r.json()}")
 
-    gen = _attendre_generation(cle, gen_id, f"Clip scène {idx}/{total}")
+    gen    = _attendre_generation(cle, gen_id, f"Clip scène {idx}/{total}")
     images = gen.get("generated_images", [])
     if not images:
         raise RuntimeError(f"Scène {idx} : aucun clip retourné.")
@@ -170,35 +173,38 @@ def _generer_clip_scene(
     print(f"     → clip_{idx:03d}.mp4 ({taille} Ko)")
 
 
+# ─── Point d'entrée principal ─────────────────────────────────────────────────
+
 def generer_visuel(track: dict, base_dir: str, force: bool = False) -> list:
     """
     Génère image + clip pour chaque scène d'un track.
     Retourne la liste des clips dans l'ORDRE des scènes (narratif).
     """
-    slug = track["slug"]
-    scenes = track.get("scenes", [])
-    model_id = track.get("leonardo_model", DEFAULT_MODEL)
+    slug      = track["slug"]
+    scenes    = track.get("scenes", [])
+    model_id  = track.get("leonardo_model", DEFAULT_MODEL)
 
     if not scenes:
         raise ValueError(f"Track '{slug}' : aucune scène définie dans scenes[].")
 
     output_dir = os.path.join(base_dir, "output", slug)
     scenes_dir = os.path.join(output_dir, "scenes")
-    clips_dir = os.path.join(output_dir, "clips")
+    clips_dir  = os.path.join(output_dir, "clips")
     os.makedirs(scenes_dir, exist_ok=True)
-    os.makedirs(clips_dir, exist_ok=True)
+    os.makedirs(clips_dir,  exist_ok=True)
 
     print(f"  → {len(scenes)} scène(s) cinématiques pour le track '{slug}'")
     cle = _lire_cle_api(base_dir)
 
     clips = []
     for i, scene in enumerate(scenes, 1):
-        prompt = scene.get("prompt", "")
-        motion = scene.get("motion_strength", 5)
+        prompt   = scene.get("prompt", "")
+        motion   = scene.get("motion_strength", 5)
         img_path = os.path.join(scenes_dir, f"scene_{i:03d}.png")
         id_cache = os.path.join(scenes_dir, f".id_{i:03d}")
-        clp_path = os.path.join(clips_dir, f"clip_{i:03d}.mp4")
+        clp_path = os.path.join(clips_dir,  f"clip_{i:03d}.mp4")
 
+        # ── Image ──────────────────────────────────────────────────────────
         if os.path.exists(img_path) and os.path.exists(id_cache) and not force:
             image_id = open(id_cache).read().strip()
             print(f"  → Scène {i}/{len(scenes)} image déjà présente (ID: {image_id})")
@@ -207,13 +213,16 @@ def generer_visuel(track: dict, base_dir: str, force: bool = False) -> list:
                 cle, model_id, prompt, img_path, id_cache, i, len(scenes)
             )
 
+        # ── Clip Motion ────────────────────────────────────────────────────
         if os.path.exists(clp_path) and not force:
             taille = os.path.getsize(clp_path) // 1024
             print(f"  → Scène {i}/{len(scenes)} clip déjà présent ({taille} Ko)")
         else:
             _generer_clip_scene(cle, image_id, motion, clp_path, i, len(scenes))
+            if i < len(scenes):
+                time.sleep(2)  # éviter rate limiting entre générations
 
         clips.append(clp_path)
 
+    print(f"\n  → {len(clips)} clip(s) prêts dans output/{slug}/clips/")
     return clips
-
