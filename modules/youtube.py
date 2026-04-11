@@ -113,13 +113,29 @@ def _ajouter_a_playlist(youtube, video_id: str, playlist_id: str) -> None:
     ).execute()
 
 
-def _uploader_video(youtube, chemin: str, titre: str, description: str, tags: list) -> str:
+def _uploader_video(
+    youtube,
+    chemin: str,
+    titre: str,
+    description: str,
+    tags: list,
+    is_short: bool = False,
+) -> str:
     taille_mo = os.path.getsize(chemin) / (1024 * 1024)
-    print(f"  → Upload : {os.path.basename(chemin)} ({taille_mo:.1f} Mo)...")
+    label = "Short" if is_short else "Upload"
+    print(f"  → {label} : {os.path.basename(chemin)} ({taille_mo:.1f} Mo)...")
+
+    # YouTube détecte automatiquement les Shorts via ratio d'aspect vertical
+    # + durée ≤ 60s, mais on ajoute #Shorts au titre/description pour l'algo.
+    if is_short:
+        if "#Shorts" not in titre and "#shorts" not in titre:
+            titre = f"{titre} #Shorts"
+        if "#Shorts" not in description and "#shorts" not in description:
+            description = f"{description}\n\n#Shorts"
 
     body = {
         "snippet": {
-            "title": titre,
+            "title": titre[:100],  # YouTube limite à 100 caractères
             "description": description,
             "tags": tags,
             "categoryId": "10",
@@ -175,6 +191,10 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     """
     Upload chaque MP4 de la liste sur YouTube, crée/trouve la playlist,
     et ajoute chaque vidéo à la playlist.
+
+    Une vidéo dont le chemin contient '/shorts/' est uploadée en mode Short
+    (avec #Shorts ajouté automatiquement) et N'EST PAS ajoutée à la playlist.
+
     Lève UploadLimitExceeded si YouTube refuse (limite quotidienne).
     """
     if not videos:
@@ -187,7 +207,6 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     tags = config.get("tags", [])
     playlist_nom = config.get("playlist_name", "Assirem Music")
 
-    # Afficher le compteur du jour
     tracker = _charger_tracker(base_dir)
     if tracker["uploads"] > 0:
         print(f"  📊 Uploads aujourd'hui : {tracker['uploads']} vidéo(s) ({', '.join(tracker['slugs'])})")
@@ -199,26 +218,34 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     playlist_id = _trouver_ou_creer_playlist(youtube, playlist_nom)
 
     for i, chemin_video in enumerate(videos, 1):
-        if len(videos) > 1:
+        is_short = os.sep + "shorts" + os.sep in chemin_video or "/shorts/" in chemin_video
+
+        if len(videos) > 1 and not is_short:
             nom_fichier = os.path.splitext(os.path.basename(chemin_video))[0]
             titre_video = f"{titre} - {nom_fichier.replace('_', ' ').title()}"
+        elif is_short:
+            # Short : titre plus court, sans le branding long
+            titre_video = titre.split("—")[0].strip()[:90]
         else:
             titre_video = titre
 
-        print(f"\n  ── Vidéo {i}/{len(videos)} : {os.path.basename(chemin_video)}")
-        video_id = _uploader_video(youtube, chemin_video, titre_video, description, tags)
+        print(f"\n  ── {'Short' if is_short else 'Vidéo'} {i}/{len(videos)} : {os.path.basename(chemin_video)}")
+        video_id = _uploader_video(
+            youtube, chemin_video, titre_video, description, tags, is_short=is_short
+        )
 
-        print(f"  → Ajout à la playlist \"{playlist_nom}\"...")
-        _ajouter_a_playlist(youtube, video_id, playlist_id)
+        if not is_short:
+            print(f"  → Ajout à la playlist \"{playlist_nom}\"...")
+            _ajouter_a_playlist(youtube, video_id, playlist_id)
 
-        # Mise à jour du tracker
         tracker["uploads"] += 1
         if slug not in tracker["slugs"]:
             tracker["slugs"].append(slug)
         _sauver_tracker(base_dir, tracker)
 
         url = f"https://www.youtube.com/watch?v={video_id}"
-        print(f"  ✅ Vidéo publiée : {url}")
+        label = "Short publié" if is_short else "Vidéo publiée"
+        print(f"  ✅ {label} : {url}")
         print(f"  📊 Total uploads aujourd'hui : {tracker['uploads']}")
 
 

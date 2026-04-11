@@ -5,7 +5,8 @@ Workflow medium/long :
   A) Concat MP3 depuis input/<slug>/ (ou input/ en fallback) → audio N min
   B) Ralentit les clips de scène ×6 (~5s → ~30s) → clips_slow/
   C) Boucle les clips ralentis EN ORDRE (narratif) → vidéo loop
-  D) Mixe vidéo + audio → output/<slug>/<slug>.mp4
+  D) Mixe vidéo + audio + fade in/out + title_card + end_card → output/<slug>/<slug>.mp4
+  E) (optionnel) Génère un short vertical 9:16 → output/<slug>/shorts/<slug>_short.mp4
 """
 
 import os
@@ -23,6 +24,33 @@ DUREES = {
 }
 FACTEUR_RALENTI = 6
 
+# Timeout par défaut pour les commandes FFmpeg (60 min).
+# Suffisant pour une vidéo de 2h en preset fast.
+FFMPEG_TIMEOUT_DEFAULT = 60 * 60
+
+# Polices candidates pour drawtext (macOS + Linux).
+# La première qui existe est utilisée. Override via env ASSIREM_FONT=<path>.
+_FONT_CANDIDATES = [
+    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "/System/Library/Fonts/Helvetica.ttc",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
+]
+
+
+def _font_path() -> str:
+    """Retourne un chemin de police utilisable par drawtext."""
+    env = os.environ.get("ASSIREM_FONT")
+    if env and os.path.exists(env):
+        return env
+    for p in _FONT_CANDIDATES:
+        if os.path.exists(p):
+            return p
+    # Dernier recours : FFmpeg utilise sa police par défaut sans fontfile
+    return ""
+
 
 def _slug_safe(texte: str) -> str:
     texte = texte.lower()
@@ -31,18 +59,28 @@ def _slug_safe(texte: str) -> str:
     return texte.strip("_")[:80]
 
 
+def _escape_drawtext(texte: str) -> str:
+    """Échappe un texte pour le filtre drawtext FFmpeg."""
+    # Ordre important : backslash d'abord, puis caractères spéciaux
+    texte = texte.replace("\\", "\\\\")
+    texte = texte.replace(":", "\\:")
+    texte = texte.replace("'", "\\'")
+    texte = texte.replace("%", "\\%")
+    return texte
+
+
 def _duree(chemin: str) -> float:
     cmd = [
         "ffprobe",
-        "-v",
-        "error",
-        "-show_entries",
-        "format=duration",
-        "-of",
-        "default=noprint_wrappers=1:nokey=1",
+        "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
         chemin,
     ]
-    res = subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+    except subprocess.TimeoutExpired:
+        return 0.0
     try:
         return float(res.stdout.strip())
     except ValueError:
@@ -50,7 +88,7 @@ def _duree(chemin: str) -> float:
 
 
 def _escape_concat(chemin: str) -> str:
-    """Échappe les apostrophes pour le format concat FFmpeg (Don't → Don'\''t)."""
+    """Échappe les apostrophes pour le format concat FFmpeg (Don't → Don'\\''t)."""
     return chemin.replace("'", "'\\''")
 
 
@@ -109,10 +147,25 @@ def _barre(label: str, stop: threading.Event, duree_estimee: float = None) -> th
     return t
 
 
-def _run_ffmpeg(cmd: list, label: str, duree_estimee: float = None) -> None:
+def _run_ffmpeg(
+    cmd: list,
+    label: str,
+    duree_estimee: float = None,
+    timeout: float = FFMPEG_TIMEOUT_DEFAULT,
+) -> None:
     stop = threading.Event()
     _barre(label, stop, duree_estimee)
-    proc = subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        proc = subprocess.run(
+            cmd, capture_output=True, text=True, timeout=timeout
+        )
+    except subprocess.TimeoutExpired as e:
+        stop.set()
+        time.sleep(0.15)
+        raise RuntimeError(
+            f"Timeout FFmpeg [{label}] après {timeout}s. "
+            f"Relancez ou augmentez le timeout si la vidéo est très longue."
+        ) from e
     stop.set()
     time.sleep(0.15)
     if proc.returncode != 0:
@@ -152,20 +205,11 @@ def _concatener_audio(mp3s: list, duree_cible: float, output_dir: str) -> tuple:
     mins = int(duree_cible // 60)
     _run_ffmpeg(
         [
-            "ffmpeg",
-            "-y",
-            "-f",
-            "concat",
-            "-safe",
-            "0",
-            "-i",
-            liste_path,
-            "-t",
-            str(duree_cible),
-            "-acodec",
-            "libmp3lame",
-            "-q:a",
-            "2",
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0",
+            "-i", liste_path,
+            "-t", str(duree_cible),
+            "-acodec", "libmp3lame", "-q:a", "2",
             audio_out,
         ],
         f"Concat audio ({nb} fichiers → {mins} min)",
@@ -188,30 +232,19 @@ def _concatener_audio(mp3s: list, duree_cible: float, output_dir: str) -> tuple:
 def _ralentir_clip(src: str, dest: str, facteur: int = FACTEUR_RALENTI) -> None:
     _run_ffmpeg(
         [
-            "ffmpeg",
-            "-y",
-            "-i",
-            src,
-            "-vf",
-            f"setpts={facteur}*PTS",
-            "-r",
-            "30",
-            "-c:v",
-            "libx264",
-            "-preset",
-            "fast",
-            "-pix_fmt",
-            "yuv420p",
-            "-an",
-            dest,
+            "ffmpeg", "-y", "-i", src,
+            "-vf", f"setpts={facteur}*PTS",
+            "-r", "30",
+            "-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p",
+            "-an", dest,
         ],
         f"Ralenti ×{facteur} — {os.path.basename(src)}",
         duree_estimee=15,
+        timeout=10 * 60,
     )
 
 
 def _preparer_clips_ralentis(clips: list, output_dir: str, force: bool = False) -> list:
-    """Ralentit les clips dans l'ordre des scènes. Retourne clips_slow[] en ordre."""
     slow_dir = os.path.join(output_dir, "clips_slow")
     os.makedirs(slow_dir, exist_ok=True)
     ralentis = []
@@ -229,7 +262,6 @@ def _preparer_clips_ralentis(clips: list, output_dir: str, force: bool = False) 
 
 
 def _boucler_clips(clips: list, duree_cible: float, output_dir: str) -> str:
-    """Concatène les clips EN ORDRE en boucle jusqu'à duree_cible."""
     durees = [_duree(c) for c in clips]
     total = sum(durees)
     if total == 0:
@@ -260,24 +292,12 @@ def _boucler_clips(clips: list, duree_cible: float, output_dir: str) -> str:
     mins = int(duree_cible // 60)
     _run_ffmpeg(
         [
-            "ffmpeg",
-            "-y",
-            "-f",
-            "concat",
-            "-safe",
-            "0",
-            "-i",
-            liste_path,
-            "-t",
-            str(duree_cible),
-            "-c:v",
-            "libx264",
-            "-preset",
-            "fast",
-            "-pix_fmt",
-            "yuv420p",
-            "-an",
-            video_loop,
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0",
+            "-i", liste_path,
+            "-t", str(duree_cible),
+            "-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p",
+            "-an", video_loop,
         ],
         f"Boucle vidéo ({nb} clips → {mins} min)",
         duree_estimee=duree_cible * 0.02,
@@ -288,29 +308,105 @@ def _boucler_clips(clips: list, duree_cible: float, output_dir: str) -> str:
     return video_loop
 
 
-def _mixer(video: str, audio: str, sortie: str, duree: float) -> None:
+# ─── Title card / End card / Fades ───────────────────────────────────────────
+
+def _build_video_filter(
+    duree: float,
+    intro_fade: float,
+    outro_fade: float,
+    title_card: dict = None,
+    end_card: dict = None,
+) -> str:
+    """
+    Construit la chaîne de filtres vidéo :
+    fade in/out + drawtext title_card + drawtext end_card.
+    Retourne une chaîne FFmpeg -vf utilisable, ou "" si aucun effet.
+    """
+    filtres = []
+    font = _font_path()
+    font_arg = f"fontfile='{font}':" if font else ""
+
+    # Fades
+    if intro_fade > 0:
+        filtres.append(f"fade=t=in:st=0:d={intro_fade}")
+    if outro_fade > 0 and duree > outro_fade:
+        filtres.append(f"fade=t=out:st={duree - outro_fade}:d={outro_fade}")
+
+    # Title card (texte affiché pendant les N premières secondes)
+    if title_card and title_card.get("enabled"):
+        dur = float(title_card.get("duration_sec", 3))
+        text = _escape_drawtext(title_card.get("text", ""))
+        subtitle = _escape_drawtext(title_card.get("subtitle", ""))
+        if text:
+            filtres.append(
+                f"drawtext={font_arg}text='{text}':"
+                f"fontsize=72:fontcolor=white:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2-40:"
+                f"shadowcolor=black:shadowx=2:shadowy=2:"
+                f"enable='lt(t,{dur})'"
+            )
+        if subtitle:
+            filtres.append(
+                f"drawtext={font_arg}text='{subtitle}':"
+                f"fontsize=36:fontcolor=white@0.85:"
+                f"x=(w-text_w)/2:y=(h-text_h)/2+40:"
+                f"shadowcolor=black:shadowx=1:shadowy=1:"
+                f"enable='lt(t,{dur})'"
+            )
+
+    # End card (texte affiché pendant les M dernières secondes)
+    if end_card and end_card.get("enabled"):
+        dur = float(end_card.get("duration_sec", 5))
+        start_t = max(0.0, duree - dur)
+        msg_parts = []
+        if end_card.get("subscribe_cta"):
+            msg_parts.append("👍 SUBSCRIBE for more music")
+        custom = end_card.get("text", "")
+        if custom:
+            msg_parts.append(custom)
+        msg = " — ".join(msg_parts) or "Assirem Music PROD"
+        msg = _escape_drawtext(msg)
+        filtres.append(
+            f"drawtext={font_arg}text='{msg}':"
+            f"fontsize=60:fontcolor=white:"
+            f"x=(w-text_w)/2:y=(h-text_h)/2:"
+            f"box=1:boxcolor=black@0.6:boxborderw=20:"
+            f"enable='gt(t,{start_t})'"
+        )
+
+    return ",".join(filtres)
+
+
+def _mixer(
+    video: str,
+    audio: str,
+    sortie: str,
+    duree: float,
+    intro_fade: float = 0,
+    outro_fade: float = 0,
+    title_card: dict = None,
+    end_card: dict = None,
+) -> None:
+    vf = _build_video_filter(duree, intro_fade, outro_fade, title_card, end_card)
+    # Si on a des filtres vidéo, on doit ré-encoder la vidéo ; sinon copy direct.
+    if vf:
+        video_args = ["-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p", "-vf", vf]
+    else:
+        video_args = ["-c:v", "copy"]
+
     _run_ffmpeg(
         [
-            "ffmpeg",
-            "-y",
-            "-i",
-            video,
-            "-i",
-            audio,
-            "-c:v",
-            "copy",
-            "-c:a",
-            "aac",
-            "-b:a",
-            "192k",
-            "-t",
-            str(duree),
-            "-movflags",
-            "+faststart",
+            "ffmpeg", "-y",
+            "-i", video,
+            "-i", audio,
+            *video_args,
+            "-c:a", "aac", "-b:a", "192k",
+            "-t", str(duree),
+            "-movflags", "+faststart",
             sortie,
         ],
         "Mixage vidéo + audio",
-        duree_estimee=30,
+        duree_estimee=30 if not vf else duree * 0.05,
     )
 
 
@@ -318,28 +414,14 @@ def _assembler_simple(image: str, audio: str, sortie: str) -> None:
     duree = _duree(audio)
     _run_ffmpeg(
         [
-            "ffmpeg",
-            "-y",
-            "-loop",
-            "1",
-            "-i",
-            image,
-            "-i",
-            audio,
-            "-c:v",
-            "libx264",
-            "-preset",
-            "fast",
-            "-c:a",
-            "aac",
-            "-b:a",
-            "192k",
-            "-pix_fmt",
-            "yuv420p",
-            "-t",
-            str(duree),
-            "-movflags",
-            "+faststart",
+            "ffmpeg", "-y",
+            "-loop", "1", "-i", image,
+            "-i", audio,
+            "-c:v", "libx264", "-preset", "fast",
+            "-c:a", "aac", "-b:a", "192k",
+            "-pix_fmt", "yuv420p",
+            "-t", str(duree),
+            "-movflags", "+faststart",
             sortie,
         ],
         "Assemblage vidéo",
@@ -347,10 +429,61 @@ def _assembler_simple(image: str, audio: str, sortie: str) -> None:
     )
 
 
+# ─── Short vertical 9:16 ──────────────────────────────────────────────────────
+
+def generer_short(track: dict, video_source: str, output_dir: str, force: bool = False) -> str:
+    """
+    Génère un short vertical 1080×1920 depuis la vidéo horizontale source.
+    Utilise track['video']['short_clip'] (start_sec, duration_sec).
+    Retourne le chemin du short, ou "" si pas configuré.
+    """
+    short_cfg = (track.get("video") or {}).get("short_clip")
+    if not short_cfg:
+        return ""
+
+    start = float(short_cfg.get("start_sec", 10))
+    duration = float(short_cfg.get("duration_sec", 55))
+
+    shorts_dir = os.path.join(output_dir, "shorts")
+    os.makedirs(shorts_dir, exist_ok=True)
+    slug = track["slug"]
+    sortie = os.path.join(shorts_dir, f"{_slug_safe(slug)}_short.mp4")
+
+    if os.path.exists(sortie) and not force:
+        print(f"  → Short déjà présent : {os.path.basename(sortie)}")
+        return sortie
+
+    # Crop centre 9:16 puis scale à 1080×1920
+    vf = "crop=ih*9/16:ih,scale=1080:1920"
+
+    _run_ffmpeg(
+        [
+            "ffmpeg", "-y",
+            "-ss", str(start),
+            "-i", video_source,
+            "-t", str(duration),
+            "-vf", vf,
+            "-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p",
+            "-c:a", "aac", "-b:a", "192k",
+            "-movflags", "+faststart",
+            sortie,
+        ],
+        f"Short vertical 9:16 ({int(duration)}s)",
+        duree_estimee=duration * 0.5,
+        timeout=20 * 60,
+    )
+
+    taille = os.path.getsize(sortie) / (1024 * 1024)
+    print(f"     📱 {os.path.basename(sortie)} ({taille:.1f} Mo)")
+    return sortie
+
+
+# ─── Entry point ──────────────────────────────────────────────────────────────
+
 def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
     """
     Génère le MP4 final pour un track.
-    Retourne [chemin_mp4].
+    Retourne [chemin_mp4] (+ short si configuré, ajouté en fin de liste).
     """
     slug = track["slug"]
     mode = track.get("mode", "medium")
@@ -362,6 +495,14 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
     mp3s = _lister_mp3(input_dir, slug)
     print(f"  → {len(mp3s)} MP3 trouvé(s)")
 
+    # ─── Extraction des options vidéo ───────────────────────────────────────
+    video_cfg = track.get("video") or {}
+    intro_fade = float(video_cfg.get("intro_fade_sec", 0))
+    outro_fade = float(video_cfg.get("outro_fade_sec", 0))
+    title_card = video_cfg.get("title_card")
+    end_card   = video_cfg.get("end_card")
+
+    # ─── Mode individual : une vidéo par MP3 ────────────────────────────────
     if mode == "individual":
         image = os.path.join(output_dir, "scenes", "scene_001.png")
         if not os.path.exists(image):
@@ -380,6 +521,7 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
             videos.append(sortie)
         return videos
 
+    # ─── Mode short : un seul MP4 avec premier MP3 ──────────────────────────
     if mode == "short":
         image = os.path.join(output_dir, "scenes", "scene_001.png")
         sortie = os.path.join(output_dir, f"{_slug_safe(slug)}.mp4")
@@ -389,7 +531,7 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
         print(f"     📹 {os.path.basename(sortie)} ({os.path.getsize(sortie) / 1024 / 1024:.1f} Mo)")
         return [sortie]
 
-    # Durée cible = durée réelle des MP3 (plus jamais de hardcode 30min)
+    # ─── Mode medium/long : pipeline narratif complet ───────────────────────
     durees_mp3 = [_duree(f) for f in mp3s]
     duree_cible = sum(d for d in durees_mp3 if d > 0)
     if duree_cible == 0:
@@ -402,7 +544,11 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
 
     if os.path.exists(sortie) and not force:
         print(f"  → Déjà existant, ignoré : {os.path.basename(sortie)}")
-        return [sortie]
+        result = [sortie]
+        short = generer_short(track, sortie, output_dir, force=force)
+        if short:
+            result.append(short)
+        return result
 
     print("\n  ── A) Audio")
     audio_concat, duree_reelle = _concatener_audio(mp3s, duree_cible, output_dir)
@@ -416,7 +562,19 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
     video_loop = _boucler_clips(clips_lents, duree_reelle, output_dir)
 
     print(f"\n  ── D) Mixage final → {os.path.basename(sortie)}")
-    _mixer(video_loop, audio_concat, sortie, duree_reelle)
+    if intro_fade or outro_fade:
+        print(f"     ✨ Fade in {intro_fade}s / out {outro_fade}s")
+    if title_card and title_card.get("enabled"):
+        print(f"     🎬 Title card : \"{title_card.get('text','')}\"")
+    if end_card and end_card.get("enabled"):
+        print(f"     📢 End card (CTA subscribe)")
+    _mixer(
+        video_loop, audio_concat, sortie, duree_reelle,
+        intro_fade=intro_fade,
+        outro_fade=outro_fade,
+        title_card=title_card,
+        end_card=end_card,
+    )
 
     for tmp in [audio_concat, video_loop]:
         if os.path.exists(tmp):
@@ -424,5 +582,12 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
 
     taille = os.path.getsize(sortie) / (1024 * 1024)
     print(f"\n     📹 {os.path.basename(sortie)} ({taille:.1f} Mo)")
-    return [sortie]
 
+    result = [sortie]
+
+    # ─── E) Short vertical optionnel ────────────────────────────────────────
+    short = generer_short(track, sortie, output_dir, force=force)
+    if short:
+        result.append(short)
+
+    return result

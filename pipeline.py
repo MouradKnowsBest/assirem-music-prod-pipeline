@@ -31,6 +31,8 @@ sys.path.insert(0, BASE_DIR)
 
 from modules.video   import generer_videos
 from modules.youtube import uploader_videos, UploadLimitExceeded, get_upload_count_today
+from modules.distribution import valider_distribution, distribuer_track
+from modules.distribution import valider_distribution, distribuer_track
 
 # ─── Couleurs ────────────────────────────────────────────────────────────────
 VERT  = "\033[92m"; ROUGE = "\033[91m"; JAUNE = "\033[93m"
@@ -77,11 +79,25 @@ def _normaliser_track_legacy(cfg: dict) -> dict:
     }
 
 
-def charger_tracks() -> tuple:
+def charger_tracks(config_path: str = None) -> tuple:
     """
     Retourne (tracks: list, priority_slug: str, source: str).
-    Lit today/config.json si présent, sinon config.json (legacy).
+    Si config_path est fourni, lit ce fichier directement.
+    Sinon, lit today/config.json si présent, sinon config.json (legacy).
     """
+    if config_path is not None:
+        if not os.path.exists(config_path):
+            raise FileNotFoundError(f"Config introuvable : {config_path}")
+        with open(config_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if "tracks" in data:
+            tracks        = data["tracks"]
+            priority_slug = data.get("priority_slug", tracks[0]["slug"] if tracks else "")
+            return tracks, priority_slug, "config"
+        else:
+            track = _normaliser_track_legacy(data)
+            return [track], "main", "legacy"
+
     today_path  = os.path.join(BASE_DIR, "today", "config.json")
     legacy_path = os.path.join(BASE_DIR, "config.json")
 
@@ -124,6 +140,14 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
     slug    = track["slug"]
     videos  = []
     etape   = etape_offset
+
+    # Validation de la configuration de distribution
+    try:
+        dist_config = valider_distribution(track)
+        print(f"\n  📤 Distribution : {', '.join(dist_config.platforms_enabled())}")
+    except ValueError as e:
+        warning(f"Configuration de distribution : {e}")
+        # On continue quand même si la distribution n'est pas configurée
 
     # Affiche le suno_prompt en reminder si présent
     if track.get("suno_prompt"):
@@ -183,6 +207,18 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
         try:
             uploader_videos(track, videos, BASE_DIR)
             succes(f"Upload terminé en {time.time()-t0:.1f}s")
+            
+            # Distribution multi-plateforme
+            try:
+                dist_config = valider_distribution(track)
+                if dist_config.has_any():
+                    distribuer_track(track, BASE_DIR, skip_upload=False)
+            except ValueError:
+                pass  # Pas de distribution configurée
+            except Exception as e:
+                warning(f"Distribution partielle : {e}")
+                if args.debug: traceback.print_exc()
+                
         except UploadLimitExceeded as e:
             erreur(f"Échec upload [{slug}] : {e}")
             if args.debug: traceback.print_exc()
