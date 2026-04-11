@@ -31,6 +31,8 @@ sys.path.insert(0, BASE_DIR)
 
 from modules.video   import generer_videos
 from modules.youtube import uploader_videos, UploadLimitExceeded, get_upload_count_today
+from modules.distribution import valider_distribution, distribuer_track
+from modules.distribution import valider_distribution, distribuer_track
 
 # ─── Couleurs ────────────────────────────────────────────────────────────────
 VERT  = "\033[92m"; ROUGE = "\033[91m"; JAUNE = "\033[93m"
@@ -77,11 +79,25 @@ def _normaliser_track_legacy(cfg: dict) -> dict:
     }
 
 
-def charger_tracks() -> tuple:
+def charger_tracks(config_path: str = None) -> tuple:
     """
     Retourne (tracks: list, priority_slug: str, source: str).
-    Lit today/config.json si présent, sinon config.json (legacy).
+    Si config_path est fourni, lit ce fichier directement.
+    Sinon, lit today/config.json si présent, sinon config.json (legacy).
     """
+    if config_path is not None:
+        if not os.path.exists(config_path):
+            raise FileNotFoundError(f"Config introuvable : {config_path}")
+        with open(config_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if "tracks" in data:
+            tracks        = data["tracks"]
+            priority_slug = data.get("priority_slug", tracks[0]["slug"] if tracks else "")
+            return tracks, priority_slug, "config"
+        else:
+            track = _normaliser_track_legacy(data)
+            return [track], "main", "legacy"
+
     today_path  = os.path.join(BASE_DIR, "today", "config.json")
     legacy_path = os.path.join(BASE_DIR, "config.json")
 
@@ -125,9 +141,42 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
     videos  = []
     etape   = etape_offset
 
+    # Validation de la configuration de distribution
+    try:
+        dist_config = valider_distribution(track)
+        print(f"\n  📤 Distribution : {', '.join(dist_config.platforms_enabled())}")
+    except ValueError as e:
+        warning(f"Configuration de distribution : {e}")
+        # On continue quand même si la distribution n'est pas configurée
+
     # Affiche le suno_prompt en reminder si présent
     if track.get("suno_prompt"):
         print(f"\n  💡 Suno prompt : {track['suno_prompt'][:100]}...")
+
+    # ── Mode shorts-only : on charge directement le short existant ───────────
+    if getattr(args, "shorts_only", False):
+        output_dir = os.path.join(BASE_DIR, "output", slug)
+        shorts = glob.glob(os.path.join(output_dir, "shorts", "*.mp4"))
+        if not shorts:
+            erreur(f"Aucun short trouvé dans output/{slug}/shorts/ — génère d'abord la vidéo.")
+            return []
+        info(f"Short trouvé : {os.path.basename(shorts[0])}")
+        if not args.skip_upload:
+            etape += 1
+            titre_etape(etape, total_etapes, f"Upload YouTube Short — {slug}")
+            t0 = time.time()
+            try:
+                uploader_videos(track, shorts, BASE_DIR)
+                succes(f"Upload short terminé en {time.time()-t0:.1f}s")
+            except UploadLimitExceeded as e:
+                erreur(f"Échec upload [{slug}] : {e}")
+                raise
+            except Exception as e:
+                erreur(f"Échec upload [{slug}] : {e}")
+                if args.debug: traceback.print_exc()
+        else:
+            warning(f"Upload ignoré (--skip-upload)")
+        return shorts
 
     # ── Étape visuelle ────────────────────────────────────────────────────────
     if not args.skip_visual:
@@ -169,7 +218,9 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
         output_dir = os.path.join(BASE_DIR, "output", slug)
         videos = [f for f in glob.glob(os.path.join(output_dir, "*.mp4"))
                   if not os.path.basename(f).startswith("_")]
-        if videos: info(f"{len(videos)} vidéo(s) existante(s) dans output/{slug}/")
+        shorts = glob.glob(os.path.join(output_dir, "shorts", "*.mp4"))
+        videos = videos + shorts
+        if videos: info(f"{len(videos)} vidéo(s) existante(s) dans output/{slug}/ (dont {len(shorts)} short(s))")
         else: warning(f"Aucune vidéo dans output/{slug}/ — upload impossible.")
 
     # ── Étape upload ──────────────────────────────────────────────────────────
@@ -183,6 +234,18 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
         try:
             uploader_videos(track, videos, BASE_DIR)
             succes(f"Upload terminé en {time.time()-t0:.1f}s")
+            
+            # Distribution multi-plateforme
+            try:
+                dist_config = valider_distribution(track)
+                if dist_config.has_any():
+                    distribuer_track(track, BASE_DIR, skip_upload=False)
+            except ValueError:
+                pass  # Pas de distribution configurée
+            except Exception as e:
+                warning(f"Distribution partielle : {e}")
+                if args.debug: traceback.print_exc()
+                
         except UploadLimitExceeded as e:
             erreur(f"Échec upload [{slug}] : {e}")
             if args.debug: traceback.print_exc()
@@ -210,6 +273,7 @@ def main():
     parser.add_argument("--skip-visual",    action="store_true")
     parser.add_argument("--skip-video",     action="store_true")
     parser.add_argument("--skip-upload",    action="store_true")
+    parser.add_argument("--shorts-only",    action="store_true", help="Upload uniquement le short existant (skip visual + video)")
     parser.add_argument("--debug",          action="store_true")
     parser.add_argument("--visual-engine",  type=str, default="leonardo",
                         choices=["leonardo", "wavespeed"],
@@ -257,11 +321,14 @@ def main():
     if args.force: warning("--force activé : fichiers existants écrasés.")
 
     # ── Calcul du nombre total d'étapes ───────────────────────────────────────
-    etapes_par_track = sum([
-        not args.skip_visual,
-        not args.skip_video,
-        not args.skip_upload,
-    ])
+    if getattr(args, "shorts_only", False):
+        etapes_par_track = 1 if not args.skip_upload else 0
+    else:
+        etapes_par_track = sum([
+            not args.skip_visual,
+            not args.skip_video,
+            not args.skip_upload,
+        ])
     total_etapes = etapes_par_track * len(selection)
 
     print(f"  Tracks sélectionnés : {[t['slug'] for t in selection]}")
