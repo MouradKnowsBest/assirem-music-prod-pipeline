@@ -13,79 +13,34 @@ Sorties :
 """
 
 import os
-import sys
 import time
-import threading
 import requests
+
+from . import _http
 
 LEONARDO_API_BASE = "https://cloud.leonardo.ai/api/rest/v1"
 DEFAULT_MODEL = "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3"
 
 
-def _lire_cle_api(base_dir: str) -> str:
-    path = os.path.join(base_dir, "credentials", "leonardo.key")
-    if not os.path.exists(path):
-        raise FileNotFoundError(
-            f"Clé API Leonardo introuvable : {path}\n"
-            "Créez credentials/leonardo.key avec votre clé API."
-        )
-    cle = open(path).read().strip()
-    if not cle:
-        raise ValueError("credentials/leonardo.key est vide.")
-    return cle
-
-
-def _headers(cle: str) -> dict:
-    return {
-        "accept": "application/json",
-        "content-type": "application/json",
-        "authorization": f"Bearer {cle}",
-    }
-
-
-def _spinner(label: str, stop: threading.Event) -> threading.Thread:
-    def _run():
-        syms = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
-        debut = time.time()
-        i = 0
-        while not stop.is_set():
-            sys.stdout.write(f"\r  {syms[i % len(syms)]} {label} ({int(time.time() - debut)}s)")
-            sys.stdout.flush()
-            i += 1
-            time.sleep(0.1)
-        elapsed = int(time.time() - debut)
-        sys.stdout.write(f"\r  ✅ {label} — {elapsed}s                    \n")
-        sys.stdout.flush()
-
-    t = threading.Thread(target=_run, daemon=True)
-    t.start()
-    return t
-
-
 def _attendre_generation(cle: str, gen_id: str, label: str) -> dict:
     """Poll /generations/{id} jusqu'à COMPLETE. Retourne generations_by_pk."""
-    stop = threading.Event()
-    _spinner(label, stop)
-    for _ in range(60):
-        time.sleep(5)
+    def check_status():
         r = requests.get(
             f"{LEONARDO_API_BASE}/generations/{gen_id}",
-            headers=_headers(cle),
+            headers=_http.headers_json(cle),
             timeout=30,
         )
         if r.status_code != 200:
-            stop.set()
             raise RuntimeError(f"Polling error ({r.status_code}) : {r.text}")
         gen = r.json().get("generations_by_pk", {})
-        if gen.get("status") == "COMPLETE":
-            stop.set()
-            time.sleep(0.15)
-            return gen
-        if gen.get("status") == "FAILED":
-            stop.set()
+        status = gen.get("status")
+        if status == "COMPLETE":
+            return True, gen
+        if status == "FAILED":
             raise RuntimeError(f"Génération échouée (ID: {gen_id})")
-    stop.set()
-    raise TimeoutError(f"Timeout génération Leonardo (ID: {gen_id})")
+        return False, None
+    
+    return _http.poll_until_ready(check_status, label, timeout_sec=300, interval_sec=5)
 
 
 def _generer_image_scene(
@@ -95,7 +50,7 @@ def _generer_image_scene(
     print(f"  → Scène {idx}/{total} — image : \"{prompt[:55]}...\"")
     r = requests.post(
         f"{LEONARDO_API_BASE}/generations",
-        headers=_headers(cle),
+        headers=_http.headers_json(cle),
         json={
             "prompt": prompt,
             "modelId": model_id,
@@ -121,10 +76,7 @@ def _generer_image_scene(
     image_id = images[0]["id"]
     image_url = images[0]["url"]
 
-    resp = requests.get(image_url, timeout=60)
-    resp.raise_for_status()
-    with open(dest, "wb") as f:
-        f.write(resp.content)
+    _http.telecharger_fichier(image_url, dest)
 
     with open(id_cache, "w") as f:
         f.write(image_id)
@@ -141,7 +93,7 @@ def _generer_clip_scene(
     print(f"  → Scène {idx}/{total} — clip Motion (force: {motion_strength})...")
     r = requests.post(
         f"{LEONARDO_API_BASE}/generations-motion-svd",
-        headers=_headers(cle),
+        headers=_http.headers_json(cle),
         json={"imageId": image_id, "motionStrength": motion_strength, "isPublic": False},
         timeout=30,
     )
@@ -161,10 +113,7 @@ def _generer_clip_scene(
     if not video_url:
         raise RuntimeError(f"Scène {idx} : motionMP4URL absent. Réponse: {images[0]}")
 
-    resp = requests.get(video_url, timeout=120)
-    resp.raise_for_status()
-    with open(dest, "wb") as f:
-        f.write(resp.content)
+    _http.telecharger_fichier(video_url, dest)
 
     taille = os.path.getsize(dest) // 1024
     print(f"     → clip_{idx:03d}.mp4 ({taille} Ko)")
@@ -189,7 +138,7 @@ def generer_visuel(track: dict, base_dir: str, force: bool = False) -> list:
     os.makedirs(clips_dir, exist_ok=True)
 
     print(f"  → {len(scenes)} scène(s) cinématiques pour le track '{slug}'")
-    cle = _lire_cle_api(base_dir)
+    cle = _http.lire_cle_api(base_dir, "leonardo")
 
     clips = []
     for i, scene in enumerate(scenes, 1):

@@ -13,7 +13,7 @@ from googleapiclient.discovery import build
 from google.auth.transport.requests import Request
 
 # ── Paths ────────────────────────────────────────────────────────────────────
-BASE_DIR    = Path("/Users/mourad.knowsbest/Coding/assirem-music-prod-pipeline")
+BASE_DIR    = Path(__file__).resolve().parent.parent
 PICKLE_PATH = BASE_DIR / "credentials" / "youtube_oauth.pickle"
 
 # ── Auth ─────────────────────────────────────────────────────────────────────
