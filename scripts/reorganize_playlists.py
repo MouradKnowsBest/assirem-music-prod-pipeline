@@ -23,12 +23,12 @@ Usage:
 import argparse
 import json
 import pickle
+import re
 import time
 from pathlib import Path
 
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from google.auth.transport.requests import Request
+# Google API imports are deferred until --live so that --dry-run works
+# without the google-* packages installed.
 
 
 # ── paths (relative to repo root, no hardcoded user paths) ────────────────────
@@ -47,6 +47,9 @@ def log(msg: str):
 
 
 def build_youtube():
+    from googleapiclient.discovery import build
+    from google.auth.transport.requests import Request
+
     with open(PICKLE_PATH, "rb") as f:
         creds = pickle.load(f)
 
@@ -65,15 +68,31 @@ def load_data():
         return json.load(f)
 
 
+_RE_CACHE: dict[str, re.Pattern] = {}
+
+
 def title_matches(title: str, keywords: list[str]) -> bool:
-    """Return True if ANY keyword appears in the title (case-insensitive for
-    ASCII keywords, case-sensitive for emoji / flag keywords which are passed
-    verbatim)."""
+    """Return True if ANY keyword appears in the title.
+
+    Matching rules:
+      * Keywords containing non-ASCII chars (emoji, flags) → raw substring
+        match against the original title (case-sensitive).
+      * Keywords starting with ``\\b`` → regex word-boundary match on the
+        lower-cased title. Use this for short ambiguous tokens like "rap"
+        that must NOT match "trap".
+      * All other keywords → plain substring match on the lower-cased title.
+    """
     t_low = title.lower()
     for kw in keywords:
-        # emoji / flag keywords contain non-ASCII; match on the raw title.
         if any(ord(c) > 127 for c in kw):
             if kw in title:
+                return True
+        elif kw.startswith("\\b"):
+            pattern = _RE_CACHE.get(kw)
+            if pattern is None:
+                pattern = re.compile(kw)
+                _RE_CACHE[kw] = pattern
+            if pattern.search(t_low):
                 return True
         else:
             if kw in t_low:
@@ -240,10 +259,13 @@ PLAYLISTS = [
             "Rap, Hip-Hop, R&B, Neo Soul, Trap and Drill essentials."
         ),
         "keywords": [
-            "rap", "hip hop", "hip-hop",
+            # Word-boundary matches: "rap" must not match "trap", "drill"
+            # must not match "drilling", etc.
+            r"\brap\b", r"\bdrill\b",
+            "hip hop", "hip-hop",
             "rnb", "r&b",
             "neo soul", "neo-soul",
-            "drill", "latin drill",
+            "latin drill", "reggaeton drill",
             "rue d'alger", "hip hop conscient",
             "euphoria",  # dramatic rap-adjacent score context
         ],
@@ -261,6 +283,11 @@ PLAYLISTS = [
             "score", "scores", "drama score",
             "hymn", "symphonic",
             "dark cinematic",
+            # geopolitical / tension scores
+            "geopolitical", "tension",
+            "final countdown", "countdown 2026",
+            "nuclear", "redline",
+            "strait of", "empire rising",
         ],
     },
     {
@@ -289,11 +316,12 @@ PLAYLISTS = [
             "bedroom pop", "indie",
             "alt-rock", "alt rock", "rock n roll", "rock 'n' roll", "rock",
             "shoegaze", "fading signal", "hall of forever",
-            "desert glow", "spring pop",
+            "desert glow", "spring pop", "spring breeze",
             "spring in my heart",
+            "city pop", "neo city pop",
             "road trip", "travel vibes", "travel music",
             "blooming", "days i don't think",
-            "coffee pop",
+            "coffee pop", "heartland country",
         ],
     },
     {
@@ -371,6 +399,9 @@ def delete_all_playlists(youtube, playlists: list[dict], *, dry_run: bool):
     log(f"{'='*60}")
     deleted = 0
     errors  = 0
+    HttpError = None
+    if not dry_run:
+        from googleapiclient.errors import HttpError  # noqa: F401
     for pl in playlists:
         pid    = pl["id"]
         ptitle = pl["title"]
@@ -397,6 +428,8 @@ def create_playlist(youtube, title: str, description: str, *, dry_run: bool) -> 
         log(f"  [dry-run] ✅  Would create: {title}")
         return "DRYRUN_PLAYLIST_ID"
 
+    from googleapiclient.errors import HttpError
+
     body = {
         "snippet": {
             "title": title,
@@ -420,6 +453,8 @@ def add_video_to_playlist(youtube, playlist_id: str, video_id: str,
     if dry_run:
         log(f"      [dry-run] ➕  Would add: [{video_id}] {video_title}")
         return True
+
+    from googleapiclient.errors import HttpError
 
     body = {
         "snippet": {
