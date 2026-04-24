@@ -1,0 +1,52 @@
+{
+  "_doc": "Schedule de 35 uploads (5/jour × 7 jours) pour Assirem Music PROD. Les slugs renvoient à des tracks définis dans config.json (ou today/config.json). Les slots avec slug=null sont des placeholders à remplir au fur et à mesure que tu crées de nouveaux tracks.",
+  "schedule_start_date": "2026-04-25",
+  "schedule_end_date": "2026-05-01",
+  "timezone": "Europe/Paris",
+  "daily_slots_local": ["08:15", "12:10", "16:13", "20:02", "23:16"],
+  "tracks_per_day": 5,
+  "total_slots": 35,
+  "slots": [
+    {"day": 1, "date": "2026-04-25", "weekday": "Sat", "time_local": "08:15", "publish_at": "2026-04-25T06:15:00Z", "slug": "bedroom-hours-lofi-vocals-2026", "note": "Morning chill — lofi vocals"},
+    {"day": 1, "date": "2026-04-25", "weekday": "Sat", "time_local": "12:10", "publish_at": "2026-04-25T10:10:00Z", "slug": "paris-minuit-french-pop-2026", "note": "Lunch — pop française"},
+    {"day": 1, "date": "2026-04-25", "weekday": "Sat", "time_local": "16:13", "publish_at": "2026-04-25T14:13:00Z", "slug": "neural-drift-synthwave-coding-2026", "note": "Afternoon focus — synthwave coding"},
+    {"day": 1, "date": "2026-04-25", "weekday": "Sat", "time_local": "20:02", "publish_at": "2026-04-25T18:02:00Z", "slug": "midnight-confessions-dark-rnb-2026", "note": "Evening — dark R&B"},
+    {"day": 1, "date": "2026-04-25", "weekday": "Sat", "time_local": "23:16", "publish_at": "2026-04-25T21:16:00Z", "slug": "crystal-waters-ambient-healing-2026", "note": "Sleep — 528Hz ambient"},
+
+    {"day": 2, "date": "2026-04-26", "weekday": "Sun", "time_local": "08:15", "publish_at": "2026-04-26T06:15:00Z", "slug": "kalahari-dawn-africa-world-2026", "note": "Morning — African world music"},
+    {"day": 2, "date": "2026-04-26", "weekday": "Sun", "time_local": "12:10", "publish_at": "2026-04-26T10:10:00Z", "slug": "golden-days-indie-pop-2026", "note": "Lunch — indie pop nostalgia"},
+    {"day": 2, "date": "2026-04-26", "weekday": "Sun", "time_local": "16:13", "publish_at": "2026-04-26T14:13:00Z", "slug": "berserk-mode-gym-phonk-2026", "note": "Afternoon — phonk workout"},
+    {"day": 2, "date": "2026-04-26", "weekday": "Sun", "time_local": "20:02", "publish_at": "2026-04-26T18:02:00Z", "slug": "oriental-night-market-vibes-2026", "note": "Evening — Oriental Marrakech"},
+    {"day": 2, "date": "2026-04-26", "weekday": "Sun", "time_local": "23:16", "publish_at": "2026-04-26T21:16:00Z", "slug": "no-cap-zone-uk-drill-2026", "note": "Night — UK drill"},
+
+    {"day": 3, "date": "2026-04-27", "weekday": "Mon", "time_local": "08:15", "publish_at": "2026-04-27T06:15:00Z", "slug": null, "note": "Morning slot — TODO chill/lofi/coffee"},
+    {"day": 3, "date": "2026-04-27", "weekday": "Mon", "time_local": "12:10", "publish_at": "2026-04-27T10:10:00Z", "slug": null, "note": "Lunch slot — TODO pop/world/cinematic"},
+    {"day": 3, "date": "2026-04-27", "weekday": "Mon", "time_local": "16:13", "publish_at": "2026-04-27T14:13:00Z", "slug": null, "note": "Afternoon focus slot — TODO focus/electronic"},
+    {"day": 3, "date": "2026-04-27", "weekday": "Mon", "time_local": "20:02", "publish_at": "2026-04-27T18:02:00Z", "slug": null, "note": "Evening slot — TODO hip-hop/dark/latin"},
+    {"day": 3, "date": "2026-04-27", "weekday": "Mon", "time_local": "23:16", "publish_at": "2026-04-27T21:16:00Z", "slug": null, "note": "Night slot — TODO meditation/dark/sleep"},
+
+    {"day": 4, "date": "2026-04-28", "weekday": "Tue", "time_local": "08:15", "publish_at": "2026-04-28T06:15:00Z", "slug": null, "note": "Morning slot — TODO"},
+    {"day": 4, "date": "2026-04-28", "weekday": "Tue", "time_local": "12:10", "publish_at": "2026-04-28T10:10:00Z", "slug": null, "note": "Lunch slot — TODO"},
+    {"day": 4, "date": "2026-04-28", "weekday": "Tue", "time_local": "16:13", "publish_at": "2026-04-28T14:13:00Z", "slug": null, "note": "Afternoon slot — TODO"},
+    {"day": 4, "date": "2026-04-28", "weekday": "Tue", "time_local": "20:02", "publish_at": "2026-04-28T18:02:00Z", "slug": null, "note": "Evening slot — TODO"},
+    {"day": 4, "date": "2026-04-28", "weekday": "Tue", "time_local": "23:16", "publish_at": "2026-04-28T21:16:00Z", "slug": null, "note": "Night slot — TODO"},
+
+    {"day": 5, "date": "2026-04-29", "weekday": "Wed", "time_local": "08:15", "publish_at": "2026-04-29T06:15:00Z", "slug": null, "note": "Morning slot — TODO"},
+    {"day": 5, "date": "2026-04-29", "weekday": "Wed", "time_local": "12:10", "publish_at": "2026-04-29T10:10:00Z", "slug": null, "note": "Lunch slot — TODO"},
+    {"day": 5, "date": "2026-04-29", "weekday": "Wed", "time_local": "16:13", "publish_at": "2026-04-29T14:13:00Z", "slug": null, "note": "Afternoon slot — TODO"},
+    {"day": 5, "date": "2026-04-29", "weekday": "Wed", "time_local": "20:02", "publish_at": "2026-04-29T18:02:00Z", "slug": null, "note": "Evening slot — TODO"},
+    {"day": 5, "date": "2026-04-29", "weekday": "Wed", "time_local": "23:16", "publish_at": "2026-04-29T21:16:00Z", "slug": null, "note": "Night slot — TODO"},
+
+    {"day": 6, "date": "2026-04-30", "weekday": "Thu", "time_local": "08:15", "publish_at": "2026-04-30T06:15:00Z", "slug": null, "note": "Morning slot — TODO"},
+    {"day": 6, "date": "2026-04-30", "weekday": "Thu", "time_local": "12:10", "publish_at": "2026-04-30T10:10:00Z", "slug": null, "note": "Lunch slot — TODO"},
+    {"day": 6, "date": "2026-04-30", "weekday": "Thu", "time_local": "16:13", "publish_at": "2026-04-30T14:13:00Z", "slug": null, "note": "Afternoon slot — TODO"},
+    {"day": 6, "date": "2026-04-30", "weekday": "Thu", "time_local": "20:02", "publish_at": "2026-04-30T18:02:00Z", "slug": null, "note": "Evening slot — TODO"},
+    {"day": 6, "date": "2026-04-30", "weekday": "Thu", "time_local": "23:16", "publish_at": "2026-04-30T21:16:00Z", "slug": null, "note": "Night slot — TODO"},
+
+    {"day": 7, "date": "2026-05-01", "weekday": "Fri", "time_local": "08:15", "publish_at": "2026-05-01T06:15:00Z", "slug": null, "note": "Morning slot — TODO"},
+    {"day": 7, "date": "2026-05-01", "weekday": "Fri", "time_local": "12:10", "publish_at": "2026-05-01T10:10:00Z", "slug": null, "note": "Lunch slot — TODO"},
+    {"day": 7, "date": "2026-05-01", "weekday": "Fri", "time_local": "16:13", "publish_at": "2026-05-01T14:13:00Z", "slug": null, "note": "Afternoon slot — TODO"},
+    {"day": 7, "date": "2026-05-01", "weekday": "Fri", "time_local": "20:02", "publish_at": "2026-05-01T18:02:00Z", "slug": null, "note": "Evening slot — TODO"},
+    {"day": 7, "date": "2026-05-01", "weekday": "Fri", "time_local": "23:16", "publish_at": "2026-05-01T21:16:00Z", "slug": null, "note": "Night slot — TODO"}
+  ]
+}

@@ -79,6 +79,29 @@ def _normaliser_track_legacy(cfg: dict) -> dict:
     }
 
 
+def charger_schedule(base_dir: str) -> dict:
+    """
+    Lit today/upload_schedule.json et retourne {slug: publish_at_iso} pour
+    chaque slot dont le slug est non-null.
+    Lève FileNotFoundError si le fichier est absent.
+    """
+    path = os.path.join(base_dir, "today", "upload_schedule.json")
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f"Schedule introuvable : {path}\n"
+            "Crée today/upload_schedule.json avant d'utiliser --respect-schedule."
+        )
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    mapping = {}
+    for slot in data.get("slots", []):
+        slug = slot.get("slug")
+        publish_at = slot.get("publish_at")
+        if slug and publish_at:
+            mapping[slug] = publish_at
+    return mapping
+
+
 def charger_tracks(config_path: str = None) -> tuple:
     """
     Retourne (tracks: list, priority_slug: str, source: str).
@@ -274,6 +297,8 @@ def main():
     parser.add_argument("--skip-video",     action="store_true")
     parser.add_argument("--skip-upload",    action="store_true")
     parser.add_argument("--shorts-only",    action="store_true", help="Upload uniquement le short existant (skip visual + video)")
+    parser.add_argument("--respect-schedule", action="store_true",
+                        help="Lit today/upload_schedule.json et upload chaque track en mode 'scheduled publish' à la date prévue")
     parser.add_argument("--debug",          action="store_true")
     parser.add_argument("--visual-engine",  type=str, default="leonardo",
                         choices=["leonardo", "wavespeed"],
@@ -317,6 +342,29 @@ def main():
         selection = [t for t in tracks if t["slug"] == priority_slug]
         if not selection:
             selection = [tracks[0]]
+
+    # ── --respect-schedule : injecte publish_at par track ──────────────────────
+    if args.respect_schedule:
+        try:
+            schedule_map = charger_schedule(BASE_DIR)
+        except FileNotFoundError as e:
+            erreur(str(e))
+            sys.exit(1)
+        if not schedule_map:
+            erreur("Schedule chargé mais aucun slot avec slug non-null. Rien à uploader.")
+            sys.exit(1)
+        # Filtre les tracks au schedule + injecte publish_at
+        avant = [t["slug"] for t in selection]
+        selection = [t for t in selection if t["slug"] in schedule_map]
+        for t in selection:
+            t["publish_at"] = schedule_map[t["slug"]]
+        ignores = [s for s in avant if s not in schedule_map]
+        info(f"📅 Schedule actif : {len(selection)} track(s) programmé(s)")
+        if ignores:
+            warning(f"Ignorés (pas dans le schedule) : {ignores}")
+        if not selection:
+            erreur("Aucun track sélectionné ne figure dans le schedule.")
+            sys.exit(1)
 
     if args.force: warning("--force activé : fichiers existants écrasés.")
 

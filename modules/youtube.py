@@ -120,10 +120,12 @@ def _uploader_video(
     description: str,
     tags: list,
     is_short: bool = False,
+    publish_at: str = None,
 ) -> str:
     taille_mo = os.path.getsize(chemin) / (1024 * 1024)
     label = "Short" if is_short else "Upload"
-    print(f"  → {label} : {os.path.basename(chemin)} ({taille_mo:.1f} Mo)...")
+    sched_label = f" → publish {publish_at}" if publish_at else ""
+    print(f"  → {label} : {os.path.basename(chemin)} ({taille_mo:.1f} Mo){sched_label}...")
 
     # YouTube détecte automatiquement les Shorts via ratio d'aspect vertical
     # + durée ≤ 60s, mais on ajoute #Shorts au titre/description pour l'algo.
@@ -133,6 +135,14 @@ def _uploader_video(
         if "#Shorts" not in description and "#shorts" not in description:
             description = f"{description}\n\n#Shorts"
 
+    status = {"selfDeclaredMadeForKids": False}
+    if publish_at:
+        # Scheduled publish: must be private at upload, YouTube flips to public at publishAt
+        status["privacyStatus"] = "private"
+        status["publishAt"] = publish_at
+    else:
+        status["privacyStatus"] = "public"
+
     body = {
         "snippet": {
             "title": titre[:100],  # YouTube limite à 100 caractères
@@ -141,10 +151,7 @@ def _uploader_video(
             "categoryId": "10",
             "defaultLanguage": "fr",
         },
-        "status": {
-            "privacyStatus": "public",
-            "selfDeclaredMadeForKids": False,
-        },
+        "status": status,
     }
 
     media = MediaFileUpload(chemin, chunksize=CHUNK_SIZE, resumable=True)
@@ -206,6 +213,7 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     description = config.get("description", "")
     tags = config.get("tags", [])
     playlist_nom = config.get("playlist_name", "Assirem Music")
+    publish_at = config.get("publish_at")  # ISO RFC3339 UTC, ex: "2026-04-25T06:15:00Z"
 
     tracker = _charger_tracker(base_dir)
     if tracker["uploads"] > 0:
@@ -231,7 +239,8 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
 
         print(f"\n  ── {'Short' if is_short else 'Vidéo'} {i}/{len(videos)} : {os.path.basename(chemin_video)}")
         video_id = _uploader_video(
-            youtube, chemin_video, titre_video, description, tags, is_short=is_short
+            youtube, chemin_video, titre_video, description, tags,
+            is_short=is_short, publish_at=publish_at,
         )
 
         if not is_short:
@@ -244,8 +253,12 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
         _sauver_tracker(base_dir, tracker)
 
         url = f"https://www.youtube.com/watch?v={video_id}"
-        label = "Short publié" if is_short else "Vidéo publiée"
-        print(f"  ✅ {label} : {url}")
+        if publish_at:
+            label = "Short programmé" if is_short else "Vidéo programmée"
+            print(f"  ✅ {label} (publish {publish_at}) : {url}")
+        else:
+            label = "Short publié" if is_short else "Vidéo publiée"
+            print(f"  ✅ {label} : {url}")
         print(f"  📊 Total uploads aujourd'hui : {tracker['uploads']}")
 
 
