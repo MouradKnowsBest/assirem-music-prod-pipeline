@@ -68,6 +68,47 @@ def load_data():
         return json.load(f)
 
 
+class QuotaExceeded(Exception):
+    """Raised when we hit the YouTube Data API daily quota."""
+
+
+def _raise_on_quota(exception) -> None:
+    """Re-raise as QuotaExceeded if this HttpError is a quota failure.
+
+    The script can't recover from quota exhaustion mid-run, so we bail
+    out cleanly instead of logging hundreds of identical errors.
+    """
+    msg = str(exception)
+    if "quotaExceeded" in msg or "quota.*exceeded" in msg.lower():
+        raise QuotaExceeded(msg) from exception
+
+
+def list_my_playlists(youtube) -> dict[str, str]:
+    """Return {title: playlist_id} for every playlist on the authenticated channel."""
+    out: dict[str, str] = {}
+    req = youtube.playlists().list(part="snippet", mine=True, maxResults=50)
+    while req is not None:
+        resp = req.execute()
+        for item in resp.get("items", []):
+            out[item["snippet"]["title"]] = item["id"]
+        req = youtube.playlists().list_next(req, resp)
+    return out
+
+
+def list_playlist_video_ids(youtube, playlist_id: str) -> set[str]:
+    """Return the set of video IDs currently in the given playlist."""
+    ids: set[str] = set()
+    req = youtube.playlistItems().list(
+        part="contentDetails", playlistId=playlist_id, maxResults=50,
+    )
+    while req is not None:
+        resp = req.execute()
+        for item in resp.get("items", []):
+            ids.add(item["contentDetails"]["videoId"])
+        req = youtube.playlistItems().list_next(req, resp)
+    return ids
+
+
 _RE_CACHE: dict[str, re.Pattern] = {}
 
 
@@ -427,7 +468,15 @@ def delete_all_playlists(youtube, playlists: list[dict], *, dry_run: bool):
 
 # ── step 2: create playlists and add videos ────────────────────────────────────
 
-def create_playlist(youtube, title: str, description: str, *, dry_run: bool) -> str | None:
+def create_playlist(youtube, title: str, description: str,
+                    existing_playlists: dict[str, str] | None,
+                    *, dry_run: bool) -> str | None:
+    """Create a playlist — or reuse one that already exists with the same title."""
+    if existing_playlists and title in existing_playlists:
+        pid = existing_playlists[title]
+        log(f"  ♻️  Reusing existing playlist: [{pid}] {title}")
+        return pid
+
     if dry_run:
         log(f"  [dry-run] ✅  Would create: {title}")
         return "DRYRUN_PLAYLIST_ID"
@@ -446,14 +495,26 @@ def create_playlist(youtube, title: str, description: str, *, dry_run: bool) -> 
         resp = youtube.playlists().insert(part="snippet,status", body=body).execute()
         pid  = resp["id"]
         log(f"  ✅  Created playlist: [{pid}] {title}")
+        # register in the lookup so any retry in the same run reuses it
+        if existing_playlists is not None:
+            existing_playlists[title] = pid
         return pid
     except HttpError as e:
+        _raise_on_quota(e)
         log(f"  ❌  Error creating playlist '{title}': {e}")
         return None
 
 
 def add_video_to_playlist(youtube, playlist_id: str, video_id: str,
-                          video_title: str, *, dry_run: bool) -> bool:
+                          video_title: str,
+                          existing_video_ids: set[str] | None,
+                          *, dry_run: bool) -> bool:
+    """Add a video to a playlist — skip if already present (idempotent)."""
+    if existing_video_ids is not None and video_id in existing_video_ids:
+        log(f"      ♻️  Already in playlist, skipping: [{video_id}] "
+            f"{video_title[:70]}")
+        return True
+
     if dry_run:
         log(f"      [dry-run] ➕  Would add: [{video_id}] {video_title}")
         return True
@@ -469,8 +530,11 @@ def add_video_to_playlist(youtube, playlist_id: str, video_id: str,
     try:
         youtube.playlistItems().insert(part="snippet", body=body).execute()
         log(f"      ➕  Added: [{video_id}] {video_title}")
+        if existing_video_ids is not None:
+            existing_video_ids.add(video_id)
         return True
     except HttpError as e:
+        _raise_on_quota(e)
         log(f"      ❌  Error adding [{video_id}] {video_title}: {e}")
         return False
 
@@ -486,6 +550,29 @@ def build_all_playlists(youtube, videos: list[dict], *, dry_run: bool):
     per_playlist_counts: dict[str, int] = {}
     unmatched: list[dict] = []
 
+    # ── Pre-fetch current channel state (for idempotent re-runs) ──────────────
+    existing_playlists: dict[str, str] = {}
+    if not dry_run:
+        log("\n  🔍  Fetching current playlists on the channel…")
+        existing_playlists = list_my_playlists(youtube)
+        log(f"      → {len(existing_playlists)} playlist(s) currently on the channel.")
+
+    # Cache of video-IDs already present in each playlist, keyed by playlist_id
+    existing_videos_per_playlist: dict[str, set[str]] = {}
+
+    def _ensure_videos_cache(pid: str) -> set[str]:
+        """Return the set of video IDs currently in a playlist, fetching on first use."""
+        if pid in existing_videos_per_playlist:
+            return existing_videos_per_playlist[pid]
+        if dry_run:
+            existing_videos_per_playlist[pid] = set()
+            return existing_videos_per_playlist[pid]
+        ids = list_playlist_video_ids(youtube, pid)
+        log(f"      🔍  Playlist already contains {len(ids)} video(s) — "
+            "skipping those.")
+        existing_videos_per_playlist[pid] = ids
+        return ids
+
     # ── 0. Generalist playlist: every video goes here ─────────────────────────
     log(f"\n  📂  Playlist: {GENERALIST_PLAYLIST['title']}")
     log(f"      → {len(videos)} video(s) (all channel uploads).")
@@ -493,13 +580,16 @@ def build_all_playlists(youtube, videos: list[dict], *, dry_run: bool):
         youtube,
         GENERALIST_PLAYLIST["title"],
         GENERALIST_PLAYLIST["description"],
+        existing_playlists,
         dry_run=dry_run,
     )
     if gen_id:
         time.sleep(0.3 if not dry_run else 0)
+        existing_in_gen = _ensure_videos_cache(gen_id)
         for v in videos:
             ok = add_video_to_playlist(
-                youtube, gen_id, v["id"], v["title"], dry_run=dry_run,
+                youtube, gen_id, v["id"], v["title"],
+                existing_in_gen, dry_run=dry_run,
             )
             total_added += int(ok)
             total_errors += int(not ok)
@@ -528,16 +618,20 @@ def build_all_playlists(youtube, videos: list[dict], *, dry_run: bool):
             log("      ⚠️  No videos matched — creating empty playlist anyway "
                 "(pipeline will use it for future uploads).")
 
-        playlist_id = create_playlist(youtube, pl_title, pl_desc, dry_run=dry_run)
+        playlist_id = create_playlist(
+            youtube, pl_title, pl_desc, existing_playlists, dry_run=dry_run,
+        )
         if not playlist_id:
             log("      ❌  Could not create playlist — skipping.")
             continue
 
         time.sleep(0.3 if not dry_run else 0)
 
+        existing_in_pl = _ensure_videos_cache(playlist_id)
         for v in matching:
             ok = add_video_to_playlist(
-                youtube, playlist_id, v["id"], v["title"], dry_run=dry_run,
+                youtube, playlist_id, v["id"], v["title"],
+                existing_in_pl, dry_run=dry_run,
             )
             if ok:
                 total_added += 1
@@ -593,15 +687,31 @@ def main():
         log("  (dry-run) Skipping YouTube API client build.\n")
 
     # ── Step 1 ──
-    if args.skip_delete:
-        del_ok, del_err = 0, 0
-    else:
-        del_ok, del_err = delete_all_playlists(youtube, playlists, dry_run=dry_run)
+    quota_hit = False
+    del_ok, del_err = 0, 0
+    try:
+        if args.skip_delete:
+            log("\n  Step 1 skipped (--skip-delete).")
+        else:
+            del_ok, del_err = delete_all_playlists(
+                youtube, playlists, dry_run=dry_run,
+            )
+    except QuotaExceeded as e:
+        quota_hit = True
+        log(f"\n  ⛔  YouTube API quota exceeded during deletion.")
+        log(f"      {e}")
 
     # ── Step 2 ──
-    add_ok, add_err, counts, unmatched = build_all_playlists(
-        youtube, videos, dry_run=dry_run,
-    )
+    add_ok, add_err, counts, unmatched = 0, 0, {}, []
+    if not quota_hit:
+        try:
+            add_ok, add_err, counts, unmatched = build_all_playlists(
+                youtube, videos, dry_run=dry_run,
+            )
+        except QuotaExceeded as e:
+            quota_hit = True
+            log(f"\n  ⛔  YouTube API quota exceeded during playlist build.")
+            log(f"      {e}")
 
     # ── Summary ──
     log(f"\n{'='*60}")
@@ -626,6 +736,13 @@ def main():
 
     if dry_run:
         log("\n  ℹ️   This was a DRY-RUN. Re-run with --live to actually apply changes.")
+    if quota_hit:
+        log("\n  ⚠️  Run interrupted by YouTube API quota.")
+        log("      Quota resets daily at midnight Pacific Time.")
+        log("      To resume tomorrow without re-deleting / re-adding existing:")
+        log("          python scripts/reorganize_playlists.py --live --skip-delete")
+        log("      The script is idempotent: existing playlists are reused,")
+        log("      videos already in a playlist are skipped.")
     log("  Done! ✅")
 
 
