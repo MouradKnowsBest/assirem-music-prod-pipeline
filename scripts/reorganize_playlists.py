@@ -177,7 +177,8 @@ PLAYLISTS = [
         ),
         "keywords": [
             "latin", "reggaeton", "salsa",
-            "corazón", "corazon", "la vida está", "la vida esta",
+            "corazón", "corazon",
+            "la vida está", "la vida esta", "la vida",  # catch Short title too
             "reggae", "roots reggae", "rasta", "jah rising",
             "jamaic", "caribbean", "caribe",
             "venezuela", "venezuela libre",
@@ -247,10 +248,11 @@ PLAYLISTS = [
             "phonk", "dark phonk",
             "pluggnb", "plug",
             "midnight", "midnight drip", "midnight drift",
-            "night drive", "late night", "3 a.m",
+            "night drive", "3 a.m",
             "dark r&b", "dark rnb", "dark neo-soul", "dark neo soul",
             "bedroom pop dark", "bedroom dark",
             "desert prayers", "dark moody", "shoegaze dark",
+            # "late night" removed — caught study / lo-fi tracks.
         ],
     },
     {
@@ -267,7 +269,8 @@ PLAYLISTS = [
             "neo soul", "neo-soul",
             "latin drill", "reggaeton drill",
             "rue d'alger", "hip hop conscient",
-            "euphoria",  # dramatic rap-adjacent score context
+            "euphoria season", "euphoria s3",  # the HBO show, not generic "euphoria"
+            "silently rising",  # Short title lacks genre keyword
         ],
     },
     {
@@ -299,10 +302,11 @@ PLAYLISTS = [
             "française", "français",
             "pop fr", "pop française",
             "nrj", "variété", "variete",
-            "brûle", "brule",
-            "jusqu'au bout", "libre",
+            "brûle la nuit", "brule la nuit",
+            "jusqu'au bout",
             "paris la nuit", "paris pop",
             "danyl", "miki",
+            # "libre" removed — too generic (matched Venezuela Libre, Cheb Libre)
         ],
     },
     {
