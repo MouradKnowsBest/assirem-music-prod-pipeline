@@ -178,11 +178,22 @@ def _uploader_video(
                 print(f"\n  ⚠️  Erreur {e.resp.status}, nouvelle tentative dans {attente}s...")
                 time.sleep(attente)
             else:
-                if "uploadLimitExceeded" in str(e):
+                err_str = str(e)
+                if "uploadLimitExceeded" in err_str:
                     raise UploadLimitExceeded(
                         f"⛔ Limite d'upload YouTube atteinte pour aujourd'hui.\n"
                         f"  YouTube limite le nombre de vidéos uploadées par jour par chaîne.\n"
                         f"  → Réessayez demain, ou vérifiez/authentifiez votre chaîne pour augmenter la limite.\n"
+                        f"  → Détail : {e}"
+                    )
+                if "quotaExceeded" in err_str or "quota.*exceeded" in err_str.lower():
+                    raise UploadLimitExceeded(
+                        f"⛔ Quota YouTube Data API atteint pour aujourd'hui.\n"
+                        f"  Quota par défaut = 10 000 unités/jour, 1 upload ≈ 1 600 unités\n"
+                        f"  → ~6 uploads/jour max au quota standard.\n"
+                        f"  → Reset à minuit Pacific Time (~9h Paris).\n"
+                        f"  → Demande d'augmentation : Google Cloud Console\n"
+                        f"     → APIs & Services → Quotas → YouTube Data API v3 → Edit\n"
                         f"  → Détail : {e}"
                     )
                 raise RuntimeError(f"Erreur YouTube API lors de l'upload : {e}")
@@ -253,8 +264,20 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     if all_tracks_id not in seen_ids:
         playlist_ids.append((ALL_TRACKS_PLAYLIST, all_tracks_id))
 
+    persistent = _charger_persistent(base_dir)
+
     for i, chemin_video in enumerate(videos, 1):
         is_short = os.sep + "shorts" + os.sep in chemin_video or "/shorts/" in chemin_video
+
+        # Skip si déjà uploadé (tracker persistant cross-day)
+        pkey = _persistent_key(slug, chemin_video)
+        existing = persistent.get("videos", {}).get(pkey)
+        if existing:
+            print(f"\n  ── {'Short' if is_short else 'Vidéo'} {i}/{len(videos)} : "
+                  f"{os.path.basename(chemin_video)}")
+            print(f"  ♻️  Déjà uploadé le {existing.get('uploaded_at','?')[:10]}, skip.")
+            print(f"     URL : {existing.get('url','?')}")
+            continue
 
         if len(videos) > 1 and not is_short:
             nom_fichier = os.path.splitext(os.path.basename(chemin_video))[0]
@@ -285,6 +308,17 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
         _sauver_tracker(base_dir, tracker)
 
         url = f"https://www.youtube.com/watch?v={video_id}"
+
+        # Tracker persistant cross-day
+        persistent.setdefault("videos", {})[pkey] = {
+            "video_id":    video_id,
+            "uploaded_at": _dt.now().isoformat(timespec="seconds"),
+            "url":         url,
+            "is_short":    is_short,
+            "publish_at":  publish_at,
+        }
+        _sauver_persistent(base_dir, persistent)
+
         if publish_at:
             label = "Short programmé" if is_short else "Vidéo programmée"
             print(f"  ✅ {label} (publish {publish_at}) : {url}")
@@ -297,9 +331,10 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
 # ── Tracker d'uploads journalier ─────────────────────────────────────────────
 
 import json
-from datetime import date as _date
+from datetime import date as _date, datetime as _dt
 
 _TRACKER_FILE = "youtube_upload_tracker.json"
+_PERSISTENT_FILE = "youtube_uploaded_videos.json"
 
 
 def _charger_tracker(base_dir: str) -> dict:
@@ -325,3 +360,33 @@ def get_upload_count_today(base_dir: str) -> tuple:
     """Retourne (nb_uploads_aujourd'hui, liste_de_slugs)."""
     tracker = _charger_tracker(base_dir)
     return tracker["uploads"], tracker["slugs"]
+
+
+# ── Tracker persistant cross-day (pour reprise après quotaExceeded) ──────────
+
+def _charger_persistent(base_dir: str) -> dict:
+    """
+    Charge le tracker persistant des uploads (jamais réinitialisé).
+    Format : { "videos": { "<slug>/<basename>": {"video_id": "...", "uploaded_at": "ISO", "url": "..."} } }
+    """
+    path = os.path.join(base_dir, _PERSISTENT_FILE)
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"videos": {}}
+
+
+def _sauver_persistent(base_dir: str, data: dict) -> None:
+    path = os.path.join(base_dir, _PERSISTENT_FILE)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def _persistent_key(slug: str, video_path: str) -> str:
+    return f"{slug}/{os.path.basename(video_path)}"
+
+
+def is_already_uploaded(base_dir: str, slug: str, video_path: str) -> dict | None:
+    """Retourne le record persistant si la vidéo a déjà été uploadée, None sinon."""
+    persistent = _charger_persistent(base_dir)
+    return persistent.get("videos", {}).get(_persistent_key(slug, video_path))
