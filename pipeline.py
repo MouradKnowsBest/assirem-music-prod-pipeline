@@ -121,17 +121,24 @@ def charger_tracks(config_path: str = None) -> tuple:
             track = _normaliser_track_legacy(data)
             return [track], "main", "legacy"
 
+    # Priorité de recherche :
+    #   1. today/week_config.json   (config hebdo généré par scripts/generate_week_config.py)
+    #   2. today/config.json        (config quotidien — ex: agent Claude planifié)
+    #   3. config.json              (legacy, racine)
+    week_path   = os.path.join(BASE_DIR, "today", "week_config.json")
     today_path  = os.path.join(BASE_DIR, "today", "config.json")
     legacy_path = os.path.join(BASE_DIR, "config.json")
 
-    if os.path.exists(today_path):
-        with open(today_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        tracks        = data.get("tracks", [])
-        priority_slug = data.get("priority_slug", tracks[0]["slug"] if tracks else "")
-        date          = data.get("date", "?")
-        print(f"  → Config : today/config.json ({date}, {len(tracks)} track(s))")
-        return tracks, priority_slug, "today"
+    for label, path in (("today/week_config.json", week_path),
+                        ("today/config.json",      today_path)):
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            tracks        = data.get("tracks", [])
+            priority_slug = data.get("priority_slug", tracks[0]["slug"] if tracks else "")
+            date          = data.get("date", "?")
+            print(f"  → Config : {label} ({date}, {len(tracks)} track(s))")
+            return tracks, priority_slug, label
 
     if os.path.exists(legacy_path):
         with open(legacy_path, "r", encoding="utf-8") as f:
@@ -289,6 +296,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Pipeline Assirem Music PROD — multi-tracks"
     )
+    parser.add_argument("--config",       type=str,  default=None,
+                        help="Chemin vers un fichier config (défaut : today/week_config.json → today/config.json → config.json)")
     parser.add_argument("--slug",         type=str,  help="Lance un track spécifique par slug")
     parser.add_argument("--all",          action="store_true", help="Lance tous les tracks")
     parser.add_argument("--list",         action="store_true", help="Liste les tracks disponibles")
@@ -311,7 +320,7 @@ def main():
 
     # Chargement config
     try:
-        tracks, priority_slug, source = charger_tracks()
+        tracks, priority_slug, source = charger_tracks(args.config)
     except Exception as e:
         erreur(f"Erreur config : {e}")
         sys.exit(1)

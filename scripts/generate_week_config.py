@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-OUTPUT_PATH = BASE_DIR / "today" / "config.json"
+OUTPUT_PATH = BASE_DIR / "today" / "week_config.json"
 
 DAILY_SLOTS = ["08:15", "12:10", "16:13", "20:02", "23:16"]
 TIMEZONE = "Europe/Paris"

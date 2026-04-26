@@ -15,7 +15,10 @@ Prépare l'arborescence input/ pour un batch de tracks défini dans un config JS
 
 Usage :
   python3 scripts/sync_config.py
-      → lit today/config.json (défaut), crée 35 dossiers
+      → lit today/week_config.json (défaut, 35 tracks de la semaine)
+
+  python3 scripts/sync_config.py --config today/config.json
+      → lit today/config.json (batch quotidien de l'agent planifié)
 
   python3 scripts/sync_config.py --config config.json
       → lit config.json racine (10 tracks legacy)
@@ -36,7 +39,8 @@ from pathlib import Path
 # ── Chemins du repo (relatifs à l'emplacement du script) ─────────────────────
 
 BASE_DIR        = Path(__file__).resolve().parent.parent
-DEFAULT_CONFIG  = BASE_DIR / "today" / "config.json"
+DEFAULT_CONFIG  = BASE_DIR / "today" / "week_config.json"
+DAILY_CONFIG    = BASE_DIR / "today" / "config.json"
 LEGACY_CONFIG   = BASE_DIR / "config.json"
 INPUT_DIR       = BASE_DIR / "input"
 INPUT_ARCHIVE   = BASE_DIR / "input archive"
@@ -144,7 +148,9 @@ def main() -> int:
         epilog=(
             "Exemples :\n"
             "  python3 scripts/sync_config.py\n"
-            "      → today/config.json (défaut, 35 tracks de la semaine)\n\n"
+            "      → today/week_config.json (défaut, 35 tracks de la semaine)\n\n"
+            "  python3 scripts/sync_config.py --config today/config.json\n"
+            "      → today/config.json (batch quotidien de l'agent planifié)\n\n"
             "  python3 scripts/sync_config.py --config config.json\n"
             "      → config.json racine (legacy 10 tracks)\n\n"
             "  python3 scripts/sync_config.py --copy-from /Users/.../pipeline/config.json\n"
