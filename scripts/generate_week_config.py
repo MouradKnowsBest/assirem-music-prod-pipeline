@@ -36,6 +36,37 @@ DISTRIBUTION = {
 
 ALL_TRACKS_PLAYLIST = "🎵 Assirem Music PROD — All Tracks"
 
+# Mapping anciens → nouveaux noms de playlists, suite à la réorganisation
+# (cf. scripts/reorganize_playlists.py qui définit la nouvelle taxonomie 14 playlists).
+# Les 10 tracks legacy de config.json référencent les anciens noms ; on les
+# traduit ici pour qu'ils tapent dans la bonne playlist au moment de l'upload.
+LEGACY_PLAYLIST_MAP = {
+    "☕ Soft morning café vibes — Assirem Music PROD":           "📚 Focus, Lo-Fi & Coffee Work",
+    "🇫🇷 Pop Française — Assirem Music PROD":                    "🇫🇷 Pop Française",
+    "🌍 World Music Series — Assirem Music PROD":               "🌏 World Music",
+    "🌘 Dark Vibes — Assirem Music PROD":                       "🌘 Dark Vibes & Night Drive",
+    "🌙 Oriental Vibes — Assirem Music PROD":                   "🌙 Oriental, Oud & Maghreb",
+    "🌸 Pop & Chill — Assirem Music PROD":                      "🌸 Pop, Chill & Indie Rock",
+    "🎸🌐 MIX 🎼🎵 — Assirem Music PROD":                          ALL_TRACKS_PLAYLIST,
+    "👾 Electronic & House & Techno — Assirem Music PROD":      "🔮 Electronic, House & Techno",
+    "💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD":      "💪 Workout, Gym & Motivation",
+    "📚 Focus & Deep Work — Assirem Music PROD":                "📚 Focus, Lo-Fi & Coffee Work",
+    "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD":     "🎤 Hip-Hop, Rap & R&B",
+    "🧘 Yoga & Meditation — Assirem Music PROD":                "🧘 Meditation, Sleep & Wellness",
+}
+
+
+def _migrate_playlists(names: list[str]) -> list[str]:
+    """Traduit les anciens noms de playlists en nouveaux. Garde l'ordre, dé-duplique."""
+    seen = set()
+    out = []
+    for n in names:
+        new = LEGACY_PLAYLIST_MAP.get(n, n)
+        if new not in seen:
+            seen.add(new)
+            out.append(new)
+    return out
+
 # Ordre curé par mood/slot pour les 10 tracks existants (jours 1-2).
 # 5 slots/jour × 2 jours :
 #   08:15 morning chill | 12:10 midi pop | 16:13 afternoon focus | 20:02 evening | 23:16 night
@@ -179,13 +210,14 @@ def main():
         track = dict(raw)  # shallow copy
         track["priority"] = i + 1
         track["scheduled_at"] = scheduled_at
-        # Forcer playlist_name primaire et inclure All Tracks dans playlists
-        playlists = list(track.get("playlists") or [])
+        # Migration old → new playlist names + ajout de All Tracks
+        playlists = _migrate_playlists(list(track.get("playlists") or []))
         if ALL_TRACKS_PLAYLIST not in playlists:
             playlists.append(ALL_TRACKS_PLAYLIST)
         track["playlists"] = playlists
-        if not track.get("playlist_name"):
-            track["playlist_name"] = playlists[0] if playlists else ALL_TRACKS_PLAYLIST
+        # playlist_name primaire = première playlist non-"All Tracks" si possible
+        primary = next((p for p in playlists if p != ALL_TRACKS_PLAYLIST), ALL_TRACKS_PLAYLIST)
+        track["playlist_name"] = primary
         out_tracks.append(track)
 
     # Jours 3-7 : 25 nouveaux tracks via templates

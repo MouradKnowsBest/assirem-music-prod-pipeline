@@ -71,31 +71,24 @@ def _authentifier(base_dir: str):
     return googleapiclient.discovery.build(API_SERVICE, API_VERSION, credentials=creds)
 
 
-def _trouver_ou_creer_playlist(youtube, nom: str) -> str:
+def _trouver_playlist(youtube, nom: str):
+    """
+    Cherche une playlist existante (match case-insensitive sur le titre, après
+    .strip()). Retourne l'ID si trouvée, None sinon.
+    Ne crée JAMAIS de playlist : la taxonomie est figée par
+    scripts/reorganize_playlists.py et doit pas se refragmenter.
+    """
+    cible = nom.strip().lower()
     req = youtube.playlists().list(part="snippet", mine=True, maxResults=50)
     while req:
         resp = req.execute()
         for item in resp.get("items", []):
-            if item["snippet"]["title"].strip().lower() == nom.strip().lower():
+            if item["snippet"]["title"].strip().lower() == cible:
                 playlist_id = item["id"]
                 print(f"  → Playlist trouvée : \"{nom}\" (ID: {playlist_id})")
                 return playlist_id
         req = youtube.playlists().list_next(req, resp)
-
-    print(f"  → Création de la playlist : \"{nom}\"...")
-    resp = youtube.playlists().insert(
-        part="snippet,status",
-        body={
-            "snippet": {
-                "title": nom,
-                "description": "Playlist gérée automatiquement par Assirem Music PROD Pipeline",
-            },
-            "status": {"privacyStatus": "public"},
-        },
-    ).execute()
-    playlist_id = resp["id"]
-    print(f"  → Playlist créée (ID: {playlist_id})")
-    return playlist_id
+    return None
 
 
 def _ajouter_a_playlist(youtube, video_id: str, playlist_id: str) -> None:
@@ -212,8 +205,15 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     titre = config.get("title", "Assirem Music")
     description = config.get("description", "")
     tags = config.get("tags", [])
-    playlist_nom = config.get("playlist_name", "Assirem Music")
     publish_at = config.get("publish_at")  # ISO RFC3339 UTC, ex: "2026-04-25T06:15:00Z"
+
+    # Liste de playlists cibles (multi). Fallback sur playlist_name si playlists absent.
+    playlist_noms = list(config.get("playlists") or [])
+    primary = config.get("playlist_name")
+    if primary and primary not in playlist_noms:
+        playlist_noms.insert(0, primary)
+    if not playlist_noms:
+        playlist_noms = ["Assirem Music"]
 
     tracker = _charger_tracker(base_dir)
     if tracker["uploads"] > 0:
@@ -222,8 +222,17 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     print("  → Authentification YouTube...")
     youtube = _authentifier(base_dir)
 
-    print("  → Recherche / création de la playlist...")
-    playlist_id = _trouver_ou_creer_playlist(youtube, playlist_nom)
+    # Résolution des playlists cibles → IDs (sans création).
+    print(f"  → Résolution des playlists cibles ({len(playlist_noms)})...")
+    playlist_ids: list[tuple[str, str]] = []  # (nom, id)
+    for nom in playlist_noms:
+        pid = _trouver_playlist(youtube, nom)
+        if pid:
+            playlist_ids.append((nom, pid))
+        else:
+            print(f"  ⚠️  Playlist introuvable (skip) : \"{nom}\"")
+            print(f"     → Crée-la d'abord via reorganize_playlists.py "
+                  f"ou ajuste le titre dans config.")
 
     for i, chemin_video in enumerate(videos, 1):
         is_short = os.sep + "shorts" + os.sep in chemin_video or "/shorts/" in chemin_video
@@ -243,9 +252,13 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
             is_short=is_short, publish_at=publish_at,
         )
 
-        if not is_short:
-            print(f"  → Ajout à la playlist \"{playlist_nom}\"...")
-            _ajouter_a_playlist(youtube, video_id, playlist_id)
+        if not is_short and playlist_ids:
+            for nom, pid in playlist_ids:
+                try:
+                    print(f"  → Ajout à la playlist \"{nom}\"...")
+                    _ajouter_a_playlist(youtube, video_id, pid)
+                except googleapiclient.errors.HttpError as e:
+                    print(f"  ⚠️  Échec ajout playlist \"{nom}\" (continue) : {e}")
 
         tracker["uploads"] += 1
         if slug not in tracker["slugs"]:

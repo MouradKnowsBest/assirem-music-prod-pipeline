@@ -47,9 +47,8 @@
         "2026 music"
       ],
       "playlists": [
-        "📚 Focus & Deep Work — Assirem Music PROD",
-        "☕ Soft morning café vibes — Assirem Music PROD",
-        "🌸 Pop & Chill — Assirem Music PROD",
+        "📚 Focus, Lo-Fi & Coffee Work",
+        "🌸 Pop, Chill & Indie Rock",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -107,7 +106,7 @@
         }
       ],
       "scheduled_at": "2026-04-25T08:15:00+02:00",
-      "playlist_name": "📚 Focus & Deep Work — Assirem Music PROD"
+      "playlist_name": "📚 Focus, Lo-Fi & Coffee Work"
     },
     {
       "slug": "paris-minuit-french-pop-2026",
@@ -137,8 +136,8 @@
         "indie pop"
       ],
       "playlists": [
-        "🇫🇷 Pop Française — Assirem Music PROD",
-        "🌸 Pop & Chill — Assirem Music PROD",
+        "🇫🇷 Pop Française",
+        "🌸 Pop, Chill & Indie Rock",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -196,7 +195,7 @@
         }
       ],
       "scheduled_at": "2026-04-25T12:10:00+02:00",
-      "playlist_name": "🇫🇷 Pop Française — Assirem Music PROD"
+      "playlist_name": "🇫🇷 Pop Française"
     },
     {
       "slug": "neural-drift-synthwave-coding-2026",
@@ -228,8 +227,8 @@
         "no copyright"
       ],
       "playlists": [
-        "📚 Focus & Deep Work — Assirem Music PROD",
-        "👾 Electronic & House & Techno — Assirem Music PROD",
+        "📚 Focus, Lo-Fi & Coffee Work",
+        "🔮 Electronic, House & Techno",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -287,7 +286,7 @@
         }
       ],
       "scheduled_at": "2026-04-25T16:13:00+02:00",
-      "playlist_name": "📚 Focus & Deep Work — Assirem Music PROD"
+      "playlist_name": "📚 Focus, Lo-Fi & Coffee Work"
     },
     {
       "slug": "midnight-confessions-dark-rnb-2026",
@@ -318,8 +317,8 @@
         "2026 music"
       ],
       "playlists": [
-        "🌘 Dark Vibes — Assirem Music PROD",
-        "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD",
+        "🌘 Dark Vibes & Night Drive",
+        "🎤 Hip-Hop, Rap & R&B",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -377,7 +376,7 @@
         }
       ],
       "scheduled_at": "2026-04-25T20:02:00+02:00",
-      "playlist_name": "🌘 Dark Vibes — Assirem Music PROD"
+      "playlist_name": "🌘 Dark Vibes & Night Drive"
     },
     {
       "slug": "crystal-waters-ambient-healing-2026",
@@ -409,7 +408,7 @@
         "no copyright"
       ],
       "playlists": [
-        "🧘 Yoga & Meditation — Assirem Music PROD",
+        "🧘 Meditation, Sleep & Wellness",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -467,7 +466,7 @@
         }
       ],
       "scheduled_at": "2026-04-25T23:16:00+02:00",
-      "playlist_name": "🧘 Yoga & Meditation — Assirem Music PROD"
+      "playlist_name": "🧘 Meditation, Sleep & Wellness"
     },
     {
       "slug": "kalahari-dawn-africa-world-2026",
@@ -500,8 +499,8 @@
         "no copyright"
       ],
       "playlists": [
-        "🌍 World Music Series — Assirem Music PROD",
-        "🧘 Yoga & Meditation — Assirem Music PROD",
+        "🌏 World Music",
+        "🧘 Meditation, Sleep & Wellness",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -559,7 +558,7 @@
         }
       ],
       "scheduled_at": "2026-04-26T08:15:00+02:00",
-      "playlist_name": "🌍 World Music Series — Assirem Music PROD"
+      "playlist_name": "🌏 World Music"
     },
     {
       "slug": "golden-days-indie-pop-2026",
@@ -589,8 +588,7 @@
         "2026 music"
       ],
       "playlists": [
-        "🌸 Pop & Chill — Assirem Music PROD",
-        "🎸🌐 MIX 🎼🎵 — Assirem Music PROD",
+        "🌸 Pop, Chill & Indie Rock",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -648,7 +646,7 @@
         }
       ],
       "scheduled_at": "2026-04-26T12:10:00+02:00",
-      "playlist_name": "🌸 Pop & Chill — Assirem Music PROD"
+      "playlist_name": "🌸 Pop, Chill & Indie Rock"
     },
     {
       "slug": "berserk-mode-gym-phonk-2026",
@@ -680,8 +678,8 @@
         "no copyright"
       ],
       "playlists": [
-        "💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD",
-        "🌘 Dark Vibes — Assirem Music PROD",
+        "💪 Workout, Gym & Motivation",
+        "🌘 Dark Vibes & Night Drive",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -739,7 +737,7 @@
         }
       ],
       "scheduled_at": "2026-04-26T16:13:00+02:00",
-      "playlist_name": "💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD"
+      "playlist_name": "💪 Workout, Gym & Motivation"
     },
     {
       "slug": "oriental-night-market-vibes-2026",
@@ -773,8 +771,8 @@
         "night market"
       ],
       "playlists": [
-        "🌙 Oriental Vibes — Assirem Music PROD",
-        "🌍 World Music Series — Assirem Music PROD",
+        "🌙 Oriental, Oud & Maghreb",
+        "🌏 World Music",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -832,7 +830,7 @@
         }
       ],
       "scheduled_at": "2026-04-26T20:02:00+02:00",
-      "playlist_name": "🌙 Oriental Vibes — Assirem Music PROD"
+      "playlist_name": "🌙 Oriental, Oud & Maghreb"
     },
     {
       "slug": "no-cap-zone-uk-drill-2026",
@@ -863,9 +861,9 @@
         "2026 music"
       ],
       "playlists": [
-        "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD",
-        "🌘 Dark Vibes — Assirem Music PROD",
-        "💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD",
+        "🎤 Hip-Hop, Rap & R&B",
+        "🌘 Dark Vibes & Night Drive",
+        "💪 Workout, Gym & Motivation",
         "🎵 Assirem Music PROD — All Tracks"
       ],
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
@@ -923,7 +921,7 @@
         }
       ],
       "scheduled_at": "2026-04-26T23:16:00+02:00",
-      "playlist_name": "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD"
+      "playlist_name": "🎤 Hip-Hop, Rap & R&B"
     },
     {
       "slug": "tokyo-morning-cafe-lofi-2026",
