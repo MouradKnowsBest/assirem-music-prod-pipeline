@@ -114,6 +114,20 @@ def fetch_youtube_titles(since_iso: str | None = None) -> dict[str, dict]:
             }
         req = yt.playlistItems().list_next(req, resp)
 
+    # 3. Enrichir avec status.publishAt + status.privacyStatus via videos().list
+    #    (1 call par batch de 50 = ~1 unité quota au total).
+    ids = [info["video_id"] for info in titles_to_video.values()]
+    id_to_info = {info["video_id"]: info for info in titles_to_video.values()}
+    for batch_start in range(0, len(ids), 50):
+        batch = ids[batch_start:batch_start + 50]
+        resp = yt.videos().list(part="status", id=",".join(batch)).execute()
+        for v in resp.get("items", []):
+            st = v.get("status", {})
+            info = id_to_info.get(v["id"])
+            if info is not None:
+                info["privacy"]    = st.get("privacyStatus")
+                info["publish_at"] = st.get("publishAt")  # ISO si scheduled, sinon None
+
     return titles_to_video
 
 
@@ -196,8 +210,18 @@ def classify(track: dict, persistent: dict, yt_titles: dict | None) -> dict:
         ids = ", ".join(m["video_id"] for m in yt_matches[:3])
         more = f" +{len(yt_matches)-3}" if len(yt_matches) > 3 else ""
         reasons = ",".join(sorted({m["match_reason"] for m in yt_matches}))
+        # Extra : montre privacy + publishAt si dispo
+        extras = []
+        for m in yt_matches[:3]:
+            priv = m.get("privacy", "?")
+            pa   = m.get("publish_at")
+            if pa:
+                extras.append(f"{priv} sched→{pa[:16]}")
+            else:
+                extras.append(priv)
+        extras_str = f" {{{ ' | '.join(extras) }}}" if extras else ""
         color = G if status == "uploaded" else Y
-        detail_parts.append(f"{color}YT: {len(yt_matches)}/{n_files} [{ids}{more}] ({reasons}){RESET}")
+        detail_parts.append(f"{color}YT: {len(yt_matches)}/{n_files} [{ids}{more}] ({reasons}){extras_str}{RESET}")
     elif n_uploaded_persistent >= n_files:
         status = "uploaded"
         detail_parts.append(f"{G}tracker: {n_uploaded_persistent}/{n_files}{RESET}")
@@ -347,6 +371,42 @@ def main():
         print(f"\n{B}── MP4 à générer ──────────────────────────────────────────────────{RESET}")
         for r in missing:
             print(f"  python3 pipeline.py --slug {r['slug']} --skip-upload")
+
+    # Récap planning : privacy + publishAt par track matché
+    if yt_titles:
+        scheduled = []
+        public_now = []
+        private_no_sched = []
+        for r in rows:
+            for m in r.get("yt_matches", []):
+                priv = m.get("privacy")
+                pa = m.get("publish_at")
+                entry = (r["scheduled_at"][:16] if r["scheduled_at"] != "?" else "?",
+                         m["video_id"], r["slug"], priv, pa)
+                if pa:
+                    scheduled.append(entry)
+                elif priv == "public":
+                    public_now.append(entry)
+                else:
+                    private_no_sched.append(entry)
+
+        print(f"\n{B}── Planning vs réalité ──────────────────────────────────────────{RESET}")
+        print(f"  {G}🟢 Public (déjà visible)        : {len(public_now):>3}{RESET}")
+        print(f"  {Y}🕒 Scheduled (publishAt futur)  : {len(scheduled):>3}{RESET}")
+        if private_no_sched:
+            print(f"  {R}🔒 Private sans scheduling     : {len(private_no_sched):>3}{RESET}")
+
+        if scheduled:
+            print(f"\n  {Y}Programmées :{RESET}")
+            from collections import Counter
+            by_day: Counter = Counter()
+            for slot, vid, slug, priv, pa in sorted(scheduled, key=lambda x: x[4]):
+                day = pa[:10]
+                by_day[day] += 1
+                print(f"    {pa[:16]}  [{vid}]  {slug}  {D}(slot prévu : {slot}){RESET}")
+            print(f"\n  {D}Distribution par jour :{RESET}")
+            for day, n in sorted(by_day.items()):
+                print(f"    {day} : {n} vidéo(s)")
 
     # Vidéos YouTube non rattachées à un track du config — utile pour debug
     if yt_titles:
