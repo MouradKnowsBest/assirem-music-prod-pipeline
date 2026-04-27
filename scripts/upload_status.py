@@ -230,6 +230,9 @@ def main():
                         help="Filtre les vidéos YouTube uploadées AVANT cette date ISO (défaut : 2 jours avant le start_date du config)")
     parser.add_argument("--debug-titles", action="store_true",
                         help="Affiche tous les titres YouTube récents pour diagnostic")
+    parser.add_argument("--save-tracker", action="store_true",
+                        help="Backfill youtube_uploaded_videos.json depuis les matches YouTube. "
+                             "Utile pour ne pas re-uploader des vidéos déjà sur la chaîne.")
     parser.add_argument("--json", action="store_true", help="Sortie JSON brute")
     args = parser.parse_args()
 
@@ -255,6 +258,40 @@ def main():
         print(f"\n  Total : {len(yt_titles)} vidéo(s) sur la période")
 
     rows = [classify(t, persistent, yt_titles) for t in tracks]
+
+    if args.save_tracker and yt_titles is not None:
+        from datetime import datetime as _dt
+        added = 0
+        skipped = 0
+        for r, t in zip(rows, tracks):
+            slug = r["slug"]
+            locals = find_local_videos(slug)
+            local_main = locals["main"][0] if locals["main"] else None
+            local_short = locals["shorts"][0] if locals["shorts"] else None
+
+            for m in r.get("yt_matches", []):
+                yt_title = m["yt_title"]
+                is_short = "#Shorts" in yt_title or "#shorts" in yt_title
+                local_path = local_short if is_short else local_main
+                if not local_path:
+                    skipped += 1
+                    continue
+                pkey = f"{slug}/{Path(local_path).name}"
+                if pkey in persistent.get("videos", {}):
+                    continue  # already in tracker
+                persistent.setdefault("videos", {})[pkey] = {
+                    "video_id":    m["video_id"],
+                    "uploaded_at": m.get("published_at") or _dt.now().isoformat(timespec="seconds"),
+                    "url":         f"https://www.youtube.com/watch?v={m['video_id']}",
+                    "is_short":    is_short,
+                    "publish_at":  None,
+                    "_backfilled": True,
+                    "_match_reason": m["match_reason"],
+                }
+                added += 1
+        PERSISTENT_FILE.write_text(json.dumps(persistent, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\n{G}✓ Tracker mis à jour : +{added} entrées (skip {skipped} sans MP4 local){RESET}")
+        print(f"  → {PERSISTENT_FILE}")
 
     if args.json:
         print(json.dumps(rows, ensure_ascii=False, indent=2))
