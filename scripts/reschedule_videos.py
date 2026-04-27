@@ -83,24 +83,53 @@ def fetch_video_status(yt, video_ids: list[str]) -> dict[str, dict]:
     return out
 
 
-def reschedule_one(yt, video_id: str, publish_at_utc: str, dry_run: bool) -> str:
-    """
-    Met à jour status.privacyStatus = private + status.publishAt.
-    Retourne 'updated' / 'dry-run' / 'error: <msg>'.
-    """
-    body = {
-        "id": video_id,
-        "status": {
-            "privacyStatus":            "private",
-            "publishAt":                publish_at_utc,
-            "selfDeclaredMadeForKids":  False,
-        },
-    }
-    if dry_run:
-        return "dry-run"
+class QuotaExceeded(Exception):
+    """Raised when YouTube API daily quota is exhausted — caller stops cleanly."""
+
+
+def _set_status(yt, video_id: str, body_status: dict) -> None:
+    """Wrapper qui propage QuotaExceeded comme exception dédiée."""
+    body = {"id": video_id, "status": {**body_status, "selfDeclaredMadeForKids": False}}
     try:
         yt.videos().update(part="status", body=body).execute()
+    except Exception as e:
+        msg = str(e)
+        if "quotaExceeded" in msg:
+            raise QuotaExceeded(msg) from e
+        raise
+
+
+def reschedule_one(yt, video_id: str, publish_at_utc: str,
+                   current_status: dict, dry_run: bool) -> str:
+    """
+    Repositionne une vidéo à publish_at_utc. Stratégie :
+      - Si déjà private + publishAt == cible → skip (idempotent)
+      - Si déjà private (avec ou sans publishAt) → 1 call (update publishAt)
+      - Si public  → 2 calls : d'abord private nu, puis private + publishAt
+        (YouTube refuse public → private+publishAt en un seul appel)
+    Retourne 'updated' / 'skipped-already' / 'dry-run' / 'error: <msg>'.
+    Lève QuotaExceeded si le quota saute (pour bail-out propre).
+    """
+    priv = current_status.get("privacyStatus")
+    current_pa = current_status.get("publishAt", "")
+
+    # Idempotence : déjà au bon état
+    if priv == "private" and current_pa[:19] == publish_at_utc[:19]:
+        return "skipped-already"
+
+    if dry_run:
+        return "dry-run"
+
+    try:
+        if priv == "public":
+            # 2-step : public → private nu, puis private + publishAt
+            _set_status(yt, video_id, {"privacyStatus": "private"})
+            _set_status(yt, video_id, {"privacyStatus": "private", "publishAt": publish_at_utc})
+        else:
+            _set_status(yt, video_id, {"privacyStatus": "private", "publishAt": publish_at_utc})
         return "updated"
+    except QuotaExceeded:
+        raise
     except Exception as e:
         return f"error: {e}"
 
@@ -153,27 +182,33 @@ def main():
     status_map = fetch_video_status(yt, list(all_ids)) if all_ids else {}
 
     # 5. Reschedule
-    counts = {"updated": 0, "dry-run": 0, "skipped-public": 0, "skipped-noslot": 0,
-              "skipped-novids": 0, "error": 0}
+    counts = {"updated": 0, "dry-run": 0, "skipped-already": 0, "skipped-public": 0,
+              "skipped-noslot": 0, "skipped-novids": 0, "error": 0, "quota-bail": 0}
 
-    print(f"\n  {'#':>3}  {'Status before':>22}  {'New publishAt (UTC)':<22}  Action  Slug")
-    print(f"  {'-'*3}  {'-'*22}  {'-'*22}  {'-'*8}  {'-'*45}")
+    print(f"\n  {'#':>3}  {'Status before':>22}  {'New publishAt (UTC)':<22}  Action          Slug")
+    print(f"  {'-'*3}  {'-'*22}  {'-'*22}  {'-'*15}  {'-'*45}")
 
+    quota_hit = False
     for i, t in enumerate(tracks, 1):
+        if quota_hit:
+            counts["quota-bail"] += 1
+            continue
         slug = t["slug"]
         scheduled_at = t.get("scheduled_at")
         if not scheduled_at:
             counts["skipped-noslot"] += 1
-            print(f"  {i:>3}  {D}{'(no scheduled_at)':>22}{RESET}  {'-':<22}  {Y}skip-noslot{RESET}  {slug}")
+            print(f"  {i:>3}  {D}{'(no scheduled_at)':>22}{RESET}  {'-':<22}  {Y}skip-noslot{RESET}      {slug}")
             continue
         publish_at_utc = to_rfc3339_utc(scheduled_at)
         ids = track_to_ids.get(slug, [])
         if not ids:
             counts["skipped-novids"] += 1
-            print(f"  {i:>3}  {D}{'(no video found)':>22}{RESET}  {publish_at_utc:<22}  {R}skip-novids{RESET}  {slug}")
+            print(f"  {i:>3}  {D}{'(no video found)':>22}{RESET}  {publish_at_utc:<22}  {R}skip-novids{RESET}      {slug}")
             continue
 
         for vid in ids:
+            if quota_hit:
+                break
             st = status_map.get(vid, {})
             priv = st.get("privacyStatus", "?")
             current_pa = st.get("publishAt", "")
@@ -181,34 +216,53 @@ def main():
 
             if args.skip_public and priv == "public":
                 counts["skipped-public"] += 1
-                print(f"  {i:>3}  {G}{label_before:>22}{RESET}  {publish_at_utc:<22}  {Y}skip-pub{RESET}    {slug} [{vid}]")
+                print(f"  {i:>3}  {G}{label_before:>22}{RESET}  {publish_at_utc:<22}  {Y}skip-pub{RESET}         {slug} [{vid}]")
                 continue
 
-            result = reschedule_one(yt, vid, publish_at_utc, dry_run)
-            color = G if result in ("updated", "dry-run") else R
-            counts[result.split(":")[0]] += 1 if not result.startswith("error") else 0
+            try:
+                result = reschedule_one(yt, vid, publish_at_utc, st, dry_run)
+            except QuotaExceeded as e:
+                quota_hit = True
+                print(f"  {i:>3}  {label_before:>22}  {publish_at_utc:<22}  {R}QUOTA-BAIL{RESET}      {slug} [{vid}]")
+                break
+
+            counts.setdefault(result.split(":")[0], 0)
             if result.startswith("error"):
                 counts["error"] += 1
-            tag = f"{C}DRY{RESET}" if result == "dry-run" else f"{G}OK{RESET}" if result == "updated" else f"{R}ERR{RESET}"
-            print(f"  {i:>3}  {label_before:>22}  {publish_at_utc:<22}  {tag}      {slug} [{vid}]")
+            else:
+                counts[result] = counts.get(result, 0) + 1
+
+            tag = {
+                "dry-run":         f"{C}DRY{RESET}            ",
+                "updated":         f"{G}OK{RESET}             ",
+                "skipped-already": f"{D}♻️  already-OK{RESET}",
+            }.get(result, f"{R}ERR{RESET}            ")
+            print(f"  {i:>3}  {label_before:>22}  {publish_at_utc:<22}  {tag}  {slug} [{vid}]")
             if result.startswith("error"):
                 print(f"       {R}{result}{RESET}")
 
     # 6. Récap
     print(f"\n{B}── Résumé ──────────────────────────────────────────────────────{RESET}")
     if dry_run:
-        print(f"  {C}🔍 Dry-run : {counts['dry-run']} vidéo(s) seraient repogrammées{RESET}")
+        print(f"  {C}🔍 Dry-run : {counts.get('dry-run', 0)} vidéo(s) seraient repogrammées{RESET}")
     else:
-        print(f"  {G}✅ Updated : {counts['updated']}{RESET}")
-    if counts["skipped-public"]:
-        print(f"  {Y}⏭  Skipped public : {counts['skipped-public']}{RESET}")
-    if counts["skipped-noslot"]:
+        print(f"  {G}✅ Updated         : {counts.get('updated', 0)}{RESET}")
+    if counts.get("skipped-already"):
+        print(f"  {D}♻️  Déjà au bon état : {counts['skipped-already']}{RESET}")
+    if counts.get("skipped-public"):
+        print(f"  {Y}⏭  Skipped public  : {counts['skipped-public']}{RESET}")
+    if counts.get("skipped-noslot"):
         print(f"  {Y}⏭  Skipped no slot : {counts['skipped-noslot']}{RESET}")
-    if counts["skipped-novids"]:
-        print(f"  {R}⏭  Skipped no video : {counts['skipped-novids']}{RESET}")
-    if counts["error"]:
-        print(f"  {R}❌ Errors : {counts['error']}{RESET}")
-    if dry_run:
+    if counts.get("skipped-novids"):
+        print(f"  {R}⏭  Skipped no video: {counts['skipped-novids']}{RESET}")
+    if counts.get("error"):
+        print(f"  {R}❌ Errors          : {counts['error']}{RESET}")
+    if quota_hit or counts.get("quota-bail"):
+        print(f"  {R}⛔ Quota bail-out  : {counts.get('quota-bail', 0)} track(s) non traités (quota épuisé){RESET}")
+        print(f"\n  {Y}→ Quota YouTube reset à minuit Pacific (~9h Paris). Relance demain :{RESET}")
+        print(f"     python3 scripts/reschedule_videos.py --live")
+        print(f"     {D}(les vidéos déjà au bon publishAt seront skip automatiquement){RESET}")
+    elif dry_run:
         print(f"\n  {D}# Pour exécuter pour de vrai :{RESET}")
         print(f"  python3 scripts/reschedule_videos.py --live")
     print()
