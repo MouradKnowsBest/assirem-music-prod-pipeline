@@ -61,10 +61,12 @@ def find_local_videos(slug: str) -> dict:
     return {"main": [str(p) for p in main], "shorts": [str(p) for p in shorts]}
 
 
-def fetch_youtube_titles() -> dict[str, dict]:
+def fetch_youtube_titles(since_iso: str | None = None) -> dict[str, dict]:
     """
     Fetch all videos from the user's uploads playlist.
     Returns {title: {video_id, published_at, status}}.
+    Si since_iso est fourni (ex: "2026-04-25"), ne renvoie que les vidéos
+    uploadées après cette date — utile pour ne pas mélanger avec l'historique.
     Coûte ~5-10 unités quota (negligible).
     """
     try:
@@ -102,14 +104,56 @@ def fetch_youtube_titles() -> dict[str, dict]:
         resp = req.execute()
         for item in resp.get("items", []):
             sn = item["snippet"]
+            published = sn.get("publishedAt", "")
+            if since_iso and published and published < since_iso:
+                continue  # trop vieux
             titles_to_video[sn["title"]] = {
                 "video_id":     sn["resourceId"]["videoId"],
-                "published_at": sn.get("publishedAt"),
+                "published_at": published,
                 "privacy":      item.get("status", {}).get("privacyStatus"),
             }
         req = yt.playlistItems().list_next(req, resp)
 
     return titles_to_video
+
+
+def _match_youtube(track: dict, yt_titles: dict) -> list[dict]:
+    """
+    Cherche toutes les vidéos YouTube qui matchent ce track.
+    Stratégies (par ordre de précision) :
+      1. Match exact sur track['title']
+      2. Match "title - <suffix>" (cas multi-vidéos main/shorts)
+      3. Match prefix sur suno_title (court, unique : "Bedroom Hours")
+      4. Match prefix sur la partie avant "—" (titre raccourci des shorts)
+    """
+    full_title = track.get("title", "").strip()
+    suno_title = (track.get("suno_title") or "").strip()
+    short_form = full_title.split("—")[0].strip() if "—" in full_title else None
+
+    matches = []
+    seen_ids = set()
+    for yt_title, info in yt_titles.items():
+        vid = info["video_id"]
+        if vid in seen_ids:
+            continue
+        yt_low = yt_title.strip().lower()
+        match_reason = None
+
+        if full_title and yt_low == full_title.lower():
+            match_reason = "exact"
+        elif full_title and yt_low.startswith(full_title.lower() + " - "):
+            match_reason = "title+suffix"
+        elif suno_title and yt_low.startswith(suno_title.lower()):
+            match_reason = "suno-prefix"
+        elif suno_title and suno_title.lower() in yt_low:
+            match_reason = "suno-substring"
+        elif short_form and yt_low.startswith(short_form.lower()):
+            match_reason = "short-prefix"
+
+        if match_reason:
+            matches.append({**info, "yt_title": yt_title, "match_reason": match_reason})
+            seen_ids.add(vid)
+    return matches
 
 
 def classify(track: dict, persistent: dict, yt_titles: dict | None) -> dict:
@@ -131,10 +175,10 @@ def classify(track: dict, persistent: dict, yt_titles: dict | None) -> dict:
     pkeys = [k for k in persistent.get("videos", {}) if k.startswith(f"{slug}/")]
     n_uploaded_persistent = len(pkeys)
 
-    # YouTube ground truth : ce titre exact existe-t-il sur la chaîne ?
-    yt_match = None
+    # YouTube ground truth : matching tolérant (multi-strategy).
+    yt_matches = []
     if yt_titles is not None:
-        yt_match = yt_titles.get(title)
+        yt_matches = _match_youtube(track, yt_titles)
 
     status = "missing"
     detail_parts = []
@@ -142,9 +186,18 @@ def classify(track: dict, persistent: dict, yt_titles: dict | None) -> dict:
     if n_files == 0:
         status = "missing"
         detail_parts.append(f"{R}aucun MP4{RESET}")
-    elif yt_match is not None:
-        status = "uploaded"
-        detail_parts.append(f"{G}YT: {yt_match['video_id']}{RESET}")
+    elif yt_matches:
+        # Considéré uploadé dès qu'au moins UNE vidéo correspondante existe sur la chaîne.
+        # Si on a moins de vidéos sur YT que de MP4 locaux → partiel.
+        if len(yt_matches) >= n_files:
+            status = "uploaded"
+        elif len(yt_matches) >= 1:
+            status = "partial"
+        ids = ", ".join(m["video_id"] for m in yt_matches[:3])
+        more = f" +{len(yt_matches)-3}" if len(yt_matches) > 3 else ""
+        reasons = ",".join(sorted({m["match_reason"] for m in yt_matches}))
+        color = G if status == "uploaded" else Y
+        detail_parts.append(f"{color}YT: {len(yt_matches)}/{n_files} [{ids}{more}] ({reasons}){RESET}")
     elif n_uploaded_persistent >= n_files:
         status = "uploaded"
         detail_parts.append(f"{G}tracker: {n_uploaded_persistent}/{n_files}{RESET}")
@@ -163,7 +216,7 @@ def classify(track: dict, persistent: dict, yt_titles: dict | None) -> dict:
         "n_main":       n_main,
         "n_shorts":     n_shorts,
         "n_uploaded":   n_uploaded_persistent,
-        "yt_video_id":  yt_match["video_id"] if yt_match else None,
+        "yt_matches":   yt_matches,
         "detail":       " · ".join(detail_parts),
     }
 
@@ -173,12 +226,33 @@ def main():
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--check-youtube", action="store_true",
                         help="Fetch la liste des vidéos uploadées sur YouTube (ground truth, ~10 unités quota)")
+    parser.add_argument("--since", type=str, default=None,
+                        help="Filtre les vidéos YouTube uploadées AVANT cette date ISO (défaut : 2 jours avant le start_date du config)")
+    parser.add_argument("--debug-titles", action="store_true",
+                        help="Affiche tous les titres YouTube récents pour diagnostic")
     parser.add_argument("--json", action="store_true", help="Sortie JSON brute")
     args = parser.parse_args()
 
     tracks = load_tracks(args.config)
     persistent = load_persistent_tracker()
-    yt_titles = fetch_youtube_titles() if args.check_youtube else None
+
+    # Compute since_iso : par défaut, 2 jours avant le start_date du config.
+    since_iso = args.since
+    if args.check_youtube and since_iso is None:
+        cfg = json.loads(args.config.read_text(encoding="utf-8"))
+        start = cfg.get("schedule", {}).get("start_date") or cfg.get("date")
+        if start:
+            from datetime import datetime as _dt, timedelta as _td
+            d = _dt.fromisoformat(start) - _td(days=2)
+            since_iso = d.isoformat() + "Z"
+
+    yt_titles = fetch_youtube_titles(since_iso=since_iso) if args.check_youtube else None
+
+    if args.debug_titles and yt_titles:
+        print(f"\n{B}── Titres YouTube récents (since {since_iso}) ─────────────────{RESET}")
+        for t, info in sorted(yt_titles.items(), key=lambda kv: kv[1].get("published_at", "")):
+            print(f"  {info.get('published_at','?')[:19]}  [{info['video_id']}]  {t}")
+        print(f"\n  Total : {len(yt_titles)} vidéo(s) sur la période")
 
     rows = [classify(t, persistent, yt_titles) for t in tracks]
 
@@ -236,6 +310,16 @@ def main():
         print(f"\n{B}── MP4 à générer ──────────────────────────────────────────────────{RESET}")
         for r in missing:
             print(f"  python3 pipeline.py --slug {r['slug']} --skip-upload")
+
+    # Vidéos YouTube non rattachées à un track du config — utile pour debug
+    if yt_titles:
+        matched_ids = {m["video_id"] for r in rows for m in r.get("yt_matches", [])}
+        unmatched = {t: info for t, info in yt_titles.items() if info["video_id"] not in matched_ids}
+        if unmatched:
+            print(f"\n{B}── Vidéos YouTube récentes non matchées ({len(unmatched)}) ─────────────{RESET}")
+            print(f"  {D}(uploadées sur la période mais ne correspondent à aucun slug du config){RESET}")
+            for t, info in sorted(unmatched.items(), key=lambda kv: kv[1].get("published_at", "")):
+                print(f"  {D}{info.get('published_at','?')[:10]}  [{info['video_id']}]{RESET}  {t[:80]}")
 
     if not yt_titles:
         print(f"\n{D}  💡 Tip : ajoute --check-youtube pour vérifier la chaîne directement{RESET}")
