@@ -227,7 +227,17 @@ def uploader_videos(
     titre = config.get("title", "Assirem Music")
     description = config.get("description", "")
     tags = config.get("tags", [])
-    publish_at = config.get("publish_at")  # ISO RFC3339 UTC, ex: "2026-04-25T06:15:00Z"
+    # publish_at est lu en priorité (set par --respect-schedule depuis upload_schedule.json),
+    # avec fallback sur scheduled_at (présent par défaut sur chaque track de week_config.json,
+    # ex: "2026-04-25T08:15:00+02:00"). Conversion vers RFC3339 UTC si nécessaire.
+    publish_at = config.get("publish_at") or config.get("scheduled_at")
+    if publish_at:
+        try:
+            from datetime import datetime as _dt, timezone as _tz
+            dt = _dt.fromisoformat(publish_at.replace("Z", "+00:00"))
+            publish_at = dt.astimezone(_tz.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except (ValueError, AttributeError):
+            pass  # garde tel quel — YouTube acceptera l'ISO+offset
 
     tracker = _charger_tracker(base_dir)
     if tracker["uploads"] > 0:
