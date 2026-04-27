@@ -196,7 +196,11 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
             titre_etape(etape, total_etapes, f"Upload YouTube Short — {slug}")
             t0 = time.time()
             try:
-                uploader_videos(track, shorts, BASE_DIR)
+                uploader_videos(
+                    track, shorts, BASE_DIR,
+                    skip_playlists=getattr(args, "no_playlists", False),
+                    force_playlist=getattr(args, "default_playlist", None),
+                )
                 succes(f"Upload short terminé en {time.time()-t0:.1f}s")
             except UploadLimitExceeded as e:
                 erreur(f"Échec upload [{slug}] : {e}")
@@ -262,7 +266,11 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
         titre_etape(etape, total_etapes, f"Upload YouTube — {slug}")
         t0 = time.time()
         try:
-            uploader_videos(track, videos, BASE_DIR)
+            uploader_videos(
+                track, videos, BASE_DIR,
+                skip_playlists=getattr(args, "no_playlists", False),
+                force_playlist=getattr(args, "default_playlist", None),
+            )
             succes(f"Upload terminé en {time.time()-t0:.1f}s")
             
             # Distribution multi-plateforme
@@ -305,6 +313,11 @@ def main():
     parser.add_argument("--skip-visual",    action="store_true")
     parser.add_argument("--skip-video",     action="store_true")
     parser.add_argument("--skip-upload",    action="store_true")
+    parser.add_argument("--no-playlists",   action="store_true",
+                        help="Upload sans ajouter à aucune playlist (escape hatch quand les playlists sont KO)")
+    parser.add_argument("--default-playlist", type=str, default=None,
+                        help="Force une playlist unique pour TOUS les tracks (override config). "
+                             "Ex: --default-playlist '🎵 Assirem Music PROD — All Tracks'")
     parser.add_argument("--shorts-only",    action="store_true", help="Upload uniquement le short existant (skip visual + video)")
     parser.add_argument("--respect-schedule", action="store_true",
                         help="Lit today/upload_schedule.json et upload chaque track en mode 'scheduled publish' à la date prévue")

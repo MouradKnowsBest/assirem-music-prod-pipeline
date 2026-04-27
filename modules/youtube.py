@@ -202,7 +202,14 @@ def _uploader_video(
     return response["id"]
 
 
-def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
+def uploader_videos(
+    config: dict,
+    videos: list,
+    base_dir: str,
+    *,
+    skip_playlists: bool = False,
+    force_playlist: str | None = None,
+) -> None:
     """
     Upload chaque MP4 de la liste sur YouTube, crée/trouve la playlist,
     et ajoute chaque vidéo à la playlist.
@@ -222,12 +229,6 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     tags = config.get("tags", [])
     publish_at = config.get("publish_at")  # ISO RFC3339 UTC, ex: "2026-04-25T06:15:00Z"
 
-    # Liste de playlists cibles (multi). Fallback sur playlist_name si playlists absent.
-    playlist_noms = list(config.get("playlists") or [])
-    primary = config.get("playlist_name")
-    if primary and primary not in playlist_noms:
-        playlist_noms.insert(0, primary)
-
     tracker = _charger_tracker(base_dir)
     if tracker["uploads"] > 0:
         print(f"  📊 Uploads aujourd'hui : {tracker['uploads']} vidéo(s) ({', '.join(tracker['slugs'])})")
@@ -235,34 +236,50 @@ def uploader_videos(config: dict, videos: list, base_dir: str) -> None:
     print("  → Authentification YouTube...")
     youtube = _authentifier(base_dir)
 
-    # Résolution de la playlist generaliste (fallback obligatoire — toute vidéo
-    # doit finir au moins dans cette playlist-ci).
-    all_tracks_id = _trouver_playlist(youtube, ALL_TRACKS_PLAYLIST)
-    if all_tracks_id is None:
-        raise RuntimeError(
-            f"Playlist generaliste introuvable : \"{ALL_TRACKS_PLAYLIST}\".\n"
-            "→ Crée-la avec :\n"
-            "    python3 scripts/reorganize_playlists.py --live --skip-delete"
-        )
-
-    # Résolution des playlists cibles → IDs (sans création).
-    # Règle : si une playlist explicite est introuvable → fallback All Tracks.
-    print(f"  → Résolution des playlists cibles ({len(playlist_noms)})...")
+    # ── Résolution des playlists cibles ─────────────────────────────────────
     playlist_ids: list[tuple[str, str]] = []  # (nom_logique, id) sans doublon d'id
-    seen_ids: set[str] = set()
-    for nom in playlist_noms:
-        pid = _trouver_playlist(youtube, nom)
-        if pid is None:
-            print(f"  ⚠️  Playlist introuvable, fallback {ALL_TRACKS_PLAYLIST} : \"{nom}\"")
-            pid = all_tracks_id
-            nom = f"{ALL_TRACKS_PLAYLIST} (fallback ← {nom})"
-        if pid not in seen_ids:
-            seen_ids.add(pid)
-            playlist_ids.append((nom, pid))
 
-    # Garantie absolue : All Tracks toujours dans la liste.
-    if all_tracks_id not in seen_ids:
-        playlist_ids.append((ALL_TRACKS_PLAYLIST, all_tracks_id))
+    if skip_playlists:
+        print(f"  ⏭  Playlists ignorées (--no-playlists). La vidéo sera uploadée nue.")
+    else:
+        # Mode 1 — force_playlist : on n'utilise QUE celle-ci, ignore le config.
+        if force_playlist:
+            pid = _trouver_playlist(youtube, force_playlist)
+            if pid is None:
+                print(f"  ❌ Playlist forcée introuvable : \"{force_playlist}\"")
+                print(f"     → Upload sans playlist (fallback safe).")
+            else:
+                playlist_ids.append((force_playlist, pid))
+        else:
+            # Mode 2 — config-driven : playlists du track + fallback All Tracks
+            playlist_noms = list(config.get("playlists") or [])
+            primary = config.get("playlist_name")
+            if primary and primary not in playlist_noms:
+                playlist_noms.insert(0, primary)
+
+            all_tracks_id = _trouver_playlist(youtube, ALL_TRACKS_PLAYLIST)
+            if all_tracks_id is None:
+                print(f"  ⚠️  Playlist generaliste introuvable : \"{ALL_TRACKS_PLAYLIST}\"")
+                print(f"     → Crée-la via reorganize_playlists.py — pour cette fois, upload nu.")
+
+            print(f"  → Résolution des playlists cibles ({len(playlist_noms)})...")
+            seen_ids: set[str] = set()
+            for nom in playlist_noms:
+                pid = _trouver_playlist(youtube, nom)
+                if pid is None:
+                    if all_tracks_id is None:
+                        print(f"  ⚠️  Playlist introuvable, et pas de fallback dispo : \"{nom}\"")
+                        continue
+                    print(f"  ⚠️  Playlist introuvable, fallback {ALL_TRACKS_PLAYLIST} : \"{nom}\"")
+                    pid = all_tracks_id
+                    nom = f"{ALL_TRACKS_PLAYLIST} (fallback ← {nom})"
+                if pid not in seen_ids:
+                    seen_ids.add(pid)
+                    playlist_ids.append((nom, pid))
+
+            # Garantie : All Tracks toujours dans la liste si dispo.
+            if all_tracks_id is not None and all_tracks_id not in seen_ids:
+                playlist_ids.append((ALL_TRACKS_PLAYLIST, all_tracks_id))
 
     persistent = _charger_persistent(base_dir)
 
