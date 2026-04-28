@@ -49,13 +49,10 @@ def submit_text_to_video(
     anti_slowmo = "Natural cinematic pace, real-time motion, no slow-motion."
     full_prompt = f"{prompt} {anti_slowmo}"[:1500]
 
-    body = {
-        "prompt":       full_prompt,
-        "duration_sec": duration_sec,
-        "resolution":   resolution,
-        "aspect_ratio": aspect_ratio,
-        "frame_rate":   frame_rate,
-    }
+    # Body minimal — Leonardo Motion 2.0 rejette aspect_ratio, negative_prompt,
+    # frame_rate au niveau racine. On part sur prompt seul + on ajoute les
+    # champs qui passent au fur et à mesure (cf. logs des erreurs précédentes).
+    body = {"prompt": full_prompt}
     r = requests.post(API_BASE + SUBMIT_PATH, headers=_headers(), json=body, timeout=60)
     if r.status_code >= 400:
         raise RuntimeError(
