@@ -42,16 +42,19 @@ def submit_text_to_video(
     resolution: str = DEFAULT_RESOLUTION,
     aspect_ratio: str = DEFAULT_ASPECT,
     frame_rate: str = DEFAULT_FRAME_RATE,
-    negative_prompt: str = "slow motion, ralenti, time lapse, freeze frame, blurry, low quality",
 ) -> str:
     """Submit a Motion 2.0 text-to-video job. Returns the generation id."""
+    # Anti-ralenti baked into the prompt (Motion 2.0 ne supporte pas
+    # negative_prompt — l'API rejette ce champ au niveau racine).
+    anti_slowmo = "Natural cinematic pace, real-time motion, no slow-motion."
+    full_prompt = f"{prompt} {anti_slowmo}"[:1500]
+
     body = {
-        "prompt":          prompt[:1500],   # Leonardo prompt cap
-        "negative_prompt": negative_prompt,
-        "duration_sec":    duration_sec,
-        "resolution":      resolution,
-        "aspect_ratio":    aspect_ratio,
-        "frame_rate":      frame_rate,
+        "prompt":       full_prompt,
+        "duration_sec": duration_sec,
+        "resolution":   resolution,
+        "aspect_ratio": aspect_ratio,
+        "frame_rate":   frame_rate,
     }
     r = requests.post(API_BASE + SUBMIT_PATH, headers=_headers(), json=body, timeout=60)
     if r.status_code >= 400:
