@@ -122,8 +122,12 @@ def poll_until_done(
             print(f"     [{gen_id[:8]}] status: {status}")
             last_status = status
         if status in ("COMPLETE", "completed", "Complete"):
+            # Motion 2.0 (WAN21) shape : generated_images[0].motionMP4URL
+            # Anciens motion endpoints : video_url / url / generated_videos[0].url
+            generated_images = gen.get("generated_images") or [{}]
             video_url = (
-                gen.get("video_url")
+                generated_images[0].get("motionMP4URL")
+                or gen.get("video_url")
                 or gen.get("url")
                 or (gen.get("generated_videos") or [{}])[0].get("url")
                 or (gen.get("videos") or [{}])[0].get("url")
