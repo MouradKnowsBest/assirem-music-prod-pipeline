@@ -112,12 +112,16 @@ def cmd_clips(args) -> None:
             done += 1
             continue
 
+        gen_id_cache = clips_dir / f"shot_{i:02d}.gen_id"
         try:
             generate_clip(
                 shot["prompt"],
                 dest,
                 duration_sec=shot.get("duration_sec", 5),
+                gen_id_cache=gen_id_cache,
             )
+            # Clip OK : on peut nettoyer le cache du gen_id
+            gen_id_cache.unlink(missing_ok=True)
             done += 1
         except Exception as e:
             failed += 1

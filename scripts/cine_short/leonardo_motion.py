@@ -17,7 +17,12 @@ LEONARDO_KEY_PATH = BASE_DIR / "credentials" / "leonardo.key"
 
 API_BASE = "https://cloud.leonardo.ai/api/rest/v1"
 SUBMIT_PATH = "/generations-text-to-video"  # Motion 2.0 endpoint
-GENERATION_PATH = "/generations-text-to-video/{id}"
+# Canonical poll path. Si Leonardo renvoie 404 ici, on essaie aussi
+# /generations-text-to-video/{id} en fallback (au cas où l'API change).
+GENERATION_PATHS = [
+    "/generations/{id}",
+    "/generations-text-to-video/{id}",
+]
 
 # Default generation params for cine_short
 DEFAULT_RESOLUTION  = "RESOLUTION_720"
@@ -70,13 +75,36 @@ def submit_text_to_video(
     return gen_id
 
 
+def _resolve_poll_path(gen_id: str) -> str:
+    """
+    Au premier appel, on teste les paths candidats jusqu'à en trouver un qui
+    ne renvoie pas 404. Le premier OK est cached pour les appels suivants.
+    """
+    if hasattr(_resolve_poll_path, "_cached"):
+        return _resolve_poll_path._cached
+    last_err = None
+    for tpl in GENERATION_PATHS:
+        url = API_BASE + tpl.format(id=gen_id)
+        r = requests.get(url, headers=_headers(), timeout=30)
+        if r.status_code != 404:
+            _resolve_poll_path._cached = tpl
+            return tpl
+        last_err = f"{r.status_code}: {r.text[:150]}"
+    raise RuntimeError(
+        f"Aucun poll path Leonardo ne marche pour gen_id={gen_id}. "
+        f"Dernière erreur : {last_err}\n"
+        f"Paths essayés : {GENERATION_PATHS}"
+    )
+
+
 def poll_until_done(
     gen_id: str,
     timeout_sec: int = 900,
     interval_sec: int = 8,
 ) -> str:
     """Poll the generation. Returns the final MP4 URL."""
-    url = API_BASE + GENERATION_PATH.format(id=gen_id)
+    poll_tpl = _resolve_poll_path(gen_id)
+    url = API_BASE + poll_tpl.format(id=gen_id)
     deadline = time.time() + timeout_sec
     last_status = None
     while time.time() < deadline:
@@ -118,10 +146,25 @@ def download_video(url: str, dest: Path) -> None:
                 f.write(chunk)
 
 
-def generate_clip(prompt: str, dest: Path, duration_sec: int = 5) -> None:
-    """End-to-end : submit → poll → download a single shot."""
-    gen_id = submit_text_to_video(prompt, duration_sec=duration_sec)
-    print(f"     Job submitted: {gen_id}")
+def generate_clip(prompt: str, dest: Path, duration_sec: int = 5,
+                  gen_id_cache: Path | None = None) -> None:
+    """
+    End-to-end : submit → poll → download a single shot.
+    Si gen_id_cache est fourni, on stocke le gen_id dedans avant de poll. Si
+    le fichier existe déjà à l'appel, on saute le submit et on poll directement
+    le job existant — utile pour reprendre après un crash sans re-payer.
+    """
+    gen_id = None
+    if gen_id_cache and gen_id_cache.exists():
+        gen_id = gen_id_cache.read_text().strip() or None
+        if gen_id:
+            print(f"     ♻️  Reprise du job existant : {gen_id}")
+    if gen_id is None:
+        gen_id = submit_text_to_video(prompt, duration_sec=duration_sec)
+        print(f"     Job submitted: {gen_id}")
+        if gen_id_cache:
+            gen_id_cache.parent.mkdir(parents=True, exist_ok=True)
+            gen_id_cache.write_text(gen_id)
     video_url = poll_until_done(gen_id)
     print(f"     Downloading...")
     download_video(video_url, dest)
