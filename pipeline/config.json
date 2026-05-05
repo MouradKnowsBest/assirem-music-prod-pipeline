@@ -1,0 +1,610 @@
+{
+  "date": "2026-05-05",
+  "priority_slug": "corridos-tumbados-trap-mexicano-2026",
+  "tracks": [
+    {
+      "slug": "corridos-tumbados-trap-mexicano-2026",
+      "priority": 1,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "corridos tumbados, trap mexicano, requinto guitar, 808 bass, tuba, dark mariachi, aggressive, 140 BPM",
+      "suno_title": "Calle Sin Ley",
+      "suno_exclude_styles": "pop, happy, acoustic folk, country, reggaeton",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 42,
+      "suno_style_influence": 55,
+
+      "mode": "medium",
+      "title": "🔥 Corridos Tumbados Type Beat 2026 | Dark Trap Mexicano — Assirem Music PROD",
+      "description": "Dark corridos tumbados instrumental — trap mexicano vibes inspired by Peso Pluma, Natanael Cano, Junior H. The hottest sound in Latin music 2026.\n\n🎧 Perfect for: edits, driving, gym, content creation\n\n⏱️ Timestamps:\n0:00 — Intro requinto\n0:30 — Drop 808\n1:30 — Bridge dark\n2:30 — Final climax\n\n#CorridosTumbados #TrapMexicano #PesoPluma #AIMusic #AssiremMusicProd #NoCopyright #CorridosBelicos2026",
+      "tags": ["corridos tumbados", "trap mexicano", "peso pluma type beat", "corridos belicos 2026", "dark latin trap", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Corridos Tumbados & Trap Latino — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Calle Sin Ley",
+          "subtitle": "Corridos Tumbados · Dark — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: dark desert highway at midnight, low rider car headlights cutting through dust, neon signs flickering in distance, Mexican border town atmosphere, 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: through dimly lit street market, papel picado banners swaying, smoke from street food grills, golden hour fading to blue twilight, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: hands playing requinto guitar close up, gold rings catching candlelight, dark velvet background, dramatic shadows, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: spinning rims of a black lowrider reflecting city lights, wet asphalt, rain drops, neon reflections on chrome, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: silhouette of figure in cowboy hat standing on rooftop overlooking city lights at night, wind blowing, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: drone ascending over desert valley at blue hour, distant city lights twinkling, mountains silhouette, vast open sky with stars emerging, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+    {
+      "slug": "nu-metal-revival-dark-energy-2026",
+      "priority": 2,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "nu metal, heavy riffs, downtuned guitar, aggressive drums, industrial synth, dark energy, 130 BPM",
+      "suno_title": "Shatterpoint",
+      "suno_exclude_styles": "pop, acoustic, jazz, lo-fi, happy, country",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 52,
+      "suno_style_influence": 58,
+
+      "mode": "medium",
+      "title": "⚡ Nu Metal Revival 2026 | Dark Heavy Riffs Type Beat — Assirem Music PROD",
+      "description": "The rock revival is HERE. Nu metal instrumental with crushing riffs and industrial atmosphere — perfect for the TikTok metal renaissance 2026.\n\n🎧 For: gym, skating, edits, gaming content\n\n⏱️ Timestamps:\n0:00 — Industrial intro\n0:25 — Main riff drop\n1:20 — Breakdown\n2:40 — Final explosion\n\n#NuMetal #RockRevival2026 #HeavyRiffs #MetalTikTok #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["nu metal", "rock revival 2026", "heavy riffs", "industrial metal", "metal tiktok", "gym music heavy", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Rock & Metal Revival — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Shatterpoint",
+          "subtitle": "Nu Metal · Dark Energy — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: abandoned industrial warehouse at night, sparks flying from broken machinery, red emergency lights pulsing, concrete and rust, 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: through dark corridor with flickering fluorescent lights, metal pipes dripping, graffiti-covered walls, smoke drifting, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: electric guitar neck vibrating intensely, strings resonating, amp speaker cone pulsing with bass, dramatic side lighting, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: drum cymbal crash in slow motion, water droplets flying off metal surface, dramatic backlight, freeze frame energy, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: figure headbanging in silhouette against strobe lights, long hair motion blur, concert stage atmosphere, cinematic 4K", "motion_strength": 5 },
+        { "prompt": "Wide final shot: exterior of industrial complex at dawn, smoke stacks against orange sky, birds scattering upward, post-apocalyptic beauty, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+    {
+      "slug": "amapiano-afro-house-global-2026",
+      "priority": 3,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "amapiano, afro house, log drum, deep bassline, shaker, warm pads, euphoric, groovy, 112 BPM",
+      "suno_title": "Jozi Nights",
+      "suno_exclude_styles": "rock, metal, country, classical, sad, dark",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 38,
+      "suno_style_influence": 50,
+
+      "mode": "medium",
+      "title": "🌍 Amapiano x Afro House 2026 | Deep Groovy Beats — Assirem Music PROD",
+      "description": "Amapiano meets Afro House — the sound dominating global clubs in 2026. Deep log drums, warm bassline, euphoric pads straight from Johannesburg to the world.\n\n🎧 For: summer vibes, parties, driving, sunset sessions\n\n⏱️ Timestamps:\n0:00 — Log drum intro\n0:20 — Bassline drops\n1:10 — Euphoric build\n2:20 — Deep groove section\n\n#Amapiano #AfroHouse #Amapiano2026 #DeepHouse #AfricanMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["amapiano 2026", "afro house", "deep house", "log drum", "south african music", "summer vibes", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Amapiano & Afro House — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Jozi Nights",
+          "subtitle": "Amapiano · Euphoric — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: Johannesburg skyline at golden sunset, city lights starting to glow, warm orange and purple sky, urban African landscape, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through vibrant outdoor night market, colorful string lights, people dancing and socializing, warm atmosphere, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: DJ hands on mixer console, colorful LED lights reflecting on turntables, crowd silhouettes in background, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: bare feet dancing on sandy ground, golden dust particles catching sunset light, rhythmic movement, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: group of friends laughing and dancing together on rooftop party, city panorama behind them, warm golden hour light, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Wide final shot: aerial view of coastal African city at blue hour, waves crashing on shore, city lights reflecting on water, peaceful and vast, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+    {
+      "slug": "met-gala-2026-fashion-is-art-epic",
+      "priority": 4,
+      "category": "news_surf",
+      "news_event": "Met Gala 2026 — Fashion is Art theme — Beyoncé returns after 10 years, viral moments — May 4 2026",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "cinematic orchestral, haute couture, elegant strings, dramatic piano, fashion runway, epic build, 95 BPM",
+      "suno_title": "Fashion is Art",
+      "suno_exclude_styles": "rock, trap, aggressive, folk, country, lo-fi",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 48,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "👗 Met Gala 2026 Music | Fashion is Art — Cinematic Orchestral — Assirem Music PROD",
+      "description": "The Met Gala 2026 was ICONIC. Beyoncé's 10-year return in her skeleton gown, Sabrina Carpenter's film reel Dior, the 'Fashion is Art' dress code — this cinematic orchestral piece captures the grandeur of fashion's biggest night.\n\n✨ Co-chairs: Beyoncé, Venus Williams, Nicole Kidman, Anna Wintour\n\n⏱️ Timestamps:\n0:00 — Red carpet arrival\n0:40 — Grand staircase\n1:30 — Runway revelation\n2:30 — Emotional crescendo\n\n#MetGala2026 #FashionIsArt #Beyonce #MetGala #CinematicMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["met gala 2026", "fashion is art", "beyonce met gala", "cinematic orchestral", "runway music", "haute couture", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Cinematic & Epic — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Fashion is Art",
+          "subtitle": "Met Gala 2026 · Cinematic — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: grand museum staircase at night, golden light flooding marble steps, silhouettes ascending in flowing gowns, ethereal fog, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through opulent hallway with golden frames and classical paintings, trailing fabric flowing behind invisible figure, candlelight reflections, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: abstract haute couture dress form floating in dark void, fabric transforming into liquid gold and crystalline structures, artistic metamorphosis, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: jeweled hand reaching for ornate mirror, reflections multiplying infinitely, diamonds catching prismatic light, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: ethereal figure in sculptural white gown standing in rain of golden petals, arms outstretched, pure artistic expression, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: aerial view of grand museum building illuminated at night, searchlights crossing sky, city glittering beyond, celebration of art and beauty, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+    {
+      "slug": "vallenato-colombia-heritage-2026",
+      "priority": 5,
+      "category": "world_music",
+      "country": "Colombia",
+      "country_local": "Colombia",
+      "country_flag": "🇨🇴",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "vallenato, accordion, caja vallenata, guacharaca, cumbia rhythm, warm, nostalgic, Caribbean coast, 120 BPM",
+      "suno_title": "Amanecer Vallenato",
+      "suno_exclude_styles": "electronic, synth, trap, metal, dark, aggressive",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 30,
+      "suno_style_influence": 48,
+
+      "mode": "medium",
+      "title": "🇨🇴 Colombian Vallenato Heritage | Amanecer del Magdalena — Assirem Music PROD",
+      "description": "Un viaje musical al corazón del vallenato colombiano — patrimonio cultural inmaterial de la UNESCO. Acordeón, caja y guacharaca: los sonidos del Gran Magdalena.\n\nA musical journey to the heart of Colombian vallenato — UNESCO Intangible Heritage. Accordion, caja drum and guacharaca: the sounds of Greater Magdalena.\n\n🎧 Para: relajación, viaje, descubrimiento cultural\n\n⏱️ Timestamps:\n0:00 — Amanecer\n0:30 — Acordeón solo\n1:20 — Ritmo completo\n2:30 — Final nostálgico\n\n#Vallenato #Colombia #UNESCO #MusicaColombiana #WorldMusic #Cumbia #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["vallenato", "colombia", "unesco heritage", "musica colombiana", "accordion", "cumbia", "caribbean", "world music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "World Music Heritage — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": false,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Amanecer Vallenato",
+          "subtitle": "Vallenato · Colombia — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: Caribbean coast of Colombia at sunrise, golden light over palm trees and fishing boats, Sierra Nevada mountains in distant background, tropical mist, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through colorful colonial street in Valledupar, painted buildings with open wooden doors, hammocks swaying on porches, warm morning light, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: weathered hands playing accordion close-up, mother of pearl buttons gleaming, fingers dancing on keys, emotional craftsmanship, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: caja vallenata drum being struck by calloused hands, wooden surface vibrating, dust particles in sunbeam, traditional leather and wood instrument, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: elderly musician sitting on plastic chair under mango tree, playing for small gathering of neighbors, genuine smiles, warm community scene, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: panoramic view of Magdalena River valley at golden hour, lush green vegetation, cumulus clouds painted orange and pink, timeless Colombian landscape, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+    {
+      "slug": "coffee-shop-bossa-nova-remote-2026",
+      "priority": 6,
+      "category": "activity",
+      "activity_type": "coffee",
+      "activity_label": "Coffee / Remote Work",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "bossa nova, jazz guitar, soft brushes, upright bass, warm café atmosphere, mellow, 95 BPM",
+      "suno_title": "Café du Matin",
+      "suno_exclude_styles": "electronic, heavy, aggressive, metal, trap, loud drums",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 25,
+      "suno_style_influence": 45,
+
+      "mode": "medium",
+      "title": "☕ Coffee Shop Jazz Bossa Nova 2026 | Remote Work Music — Assirem Music PROD",
+      "description": "Warm bossa nova jazz for your morning coffee and remote work sessions. Soft guitar, brushed drums, and upright bass — the perfect café ambiance for productivity.\n\n🎧 For: coffee time, remote work, morning routine, reading\n\n⏱️ Timestamps:\n0:00 — Morning brew\n0:30 — Bossa rhythm\n1:30 — Jazz interlude\n2:30 — Warm close\n\n#CoffeeShopMusic #BossaNova #RemoteWork #CaféMusic #JazzLofi #WorkMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["coffee shop music", "bossa nova", "remote work music", "café jazz", "work from home", "morning music", "jazz guitar", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Coffee & Remote Work — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Café du Matin",
+          "subtitle": "Bossa Nova · Coffee — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: cozy European café interior at morning golden hour, steam rising from coffee cups, warm wood and brass fixtures, soft natural light through large windows, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: across marble counter with espresso machine, pastries on display, barista pouring latte art, warm tones and bokeh, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: open notebook and pen beside steaming cappuccino on wooden table, rain visible through window, peaceful atmosphere, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: coffee beans being ground in manual grinder, rich brown texture, aromatic steam rising, warm amber lighting, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: person relaxing in leather armchair reading book, soft lamp light, bookshelves in background, rainy day outside window, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: view through café window of quiet cobblestone street in morning mist, bicycle parked outside, golden light beginning to break through clouds, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+    {
+      "slug": "hustle-entrepreneur-motivation-2026",
+      "priority": 7,
+      "category": "activity",
+      "activity_type": "hustle",
+      "activity_label": "Hustle / Entrepreneur",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "trap, motivational, deep 808 bass, hi-hat rolls, orchestral strings, cinematic build, confident, 135 BPM",
+      "suno_title": "CEO Frequency",
+      "suno_exclude_styles": "acoustic, folk, jazz, lo-fi, soft, mellow, sad",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 40,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "💰 Hustle Beats 2026 | Entrepreneur Motivation Music CEO Mindset — Assirem Music PROD",
+      "description": "Trap motivational beats for the grind. Deep 808s meet orchestral strings — the soundtrack to building your empire. CEO morning routine music 2026.\n\n🎧 For: entrepreneur mindset, morning routine, hustle, business, focus\n\n⏱️ Timestamps:\n0:00 — Wake up call\n0:30 — 808 motivation\n1:20 — Orchestral rise\n2:30 — Peak mindset\n\n#HustleBeats #Entrepreneur #CEOMindset #MotivationMusic #MakeMoneyMusic #GrindMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["hustle beats", "entrepreneur music", "ceo mindset", "motivation music 2026", "make money music", "morning routine", "trap motivation", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Hustle & Motivation — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "CEO Frequency",
+          "subtitle": "Trap · Motivation — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: luxury penthouse office at dawn, floor-to-ceiling windows overlooking city skyline, minimalist desk with laptop, first light hitting glass towers, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through modern co-working space, screens showing stock charts and analytics, motivated people working at standing desks, clean aesthetic, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: hands typing rapidly on MacBook keyboard, multiple monitors with code and dashboards, focused energy, dark ambient lighting with screen glow, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: luxury watch on wrist showing 5:00 AM, morning discipline aesthetic, dark polished surface reflection, determination, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: figure in tailored suit walking confidently through modern glass corridor, reflections multiplying, purposeful stride, power atmosphere, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Wide final shot: helicopter aerial view of Manhattan at sunrise, golden light flooding between skyscrapers, rivers of traffic below, limitless ambition visual, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+    {
+      "slug": "gaming-lofi-indie-soundtrack-2026",
+      "priority": 8,
+      "category": "activity",
+      "activity_type": "gaming",
+      "activity_label": "Gaming / Indie Soundtrack",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "chiptune lofi, pixel art vibes, retro synth arpeggios, soft pads, 8-bit nostalgic, dreamy, 100 BPM",
+      "suno_title": "Pixel Dreams",
+      "suno_exclude_styles": "heavy metal, aggressive, dark trap, orchestral epic, vocals, screaming",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 35,
+      "suno_style_influence": 48,
+
+      "mode": "medium",
+      "title": "🎮 Gaming Lofi 2026 | Indie Game Soundtrack Vibes Chill Beats — Assirem Music PROD",
+      "description": "Chill gaming background music with retro chiptune meets lofi vibes. Perfect for streaming, indie game dev sessions, or late night gaming.\n\n🎧 For: gaming, streaming, game dev, background music, chill\n\n⏱️ Timestamps:\n0:00 — Title screen\n0:25 — Pixel journey\n1:15 — Dream sequence\n2:20 — Cozy checkpoint\n\n#GamingMusic #LofiGaming #IndieGameSoundtrack #ChiptuneChill #StreamingMusic #GameDevMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["gaming lofi", "indie game soundtrack", "chiptune chill", "streaming music", "game dev music", "pixel art vibes", "background gaming", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Gaming & Chill — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Pixel Dreams",
+          "subtitle": "Chiptune Lofi · Gaming — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: cozy bedroom gaming setup at night, purple and cyan LED lights, dual monitors glowing, anime posters on wall, rain on window, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through fantasy pixel art landscape brought to life in 3D, floating islands, waterfalls of light, retro aesthetic with modern rendering, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: retro gaming console and CRT TV showing pixel game, warm nostalgic glow, scattered game cartridges, childhood comfort, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: mechanical keyboard with custom keycaps being pressed, RGB backlighting, satisfying detail, gaming peripherals around, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: cat sleeping on desk next to warm monitor glow, cozy night atmosphere, soft ambient lighting, peaceful gaming vibes, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: surreal dreamscape of floating pixel worlds connected by light bridges, stars and aurora above, magical and infinite, imagination visual, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+    {
+      "slug": "sunday-morning-reading-acoustic-2026",
+      "priority": 9,
+      "category": "activity",
+      "activity_type": "reading",
+      "activity_label": "Reading / Slow Morning",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "acoustic guitar, soft fingerpicking, warm cello, gentle piano, morning ambiance, intimate, 78 BPM",
+      "suno_title": "Sunday Pages",
+      "suno_exclude_styles": "electronic, drums heavy, bass drop, trap, EDM, aggressive, fast",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 22,
+      "suno_style_influence": 42,
+
+      "mode": "medium",
+      "title": "📖 Sunday Morning Reading Music 2026 | Slow Acoustic Chill — Assirem Music PROD",
+      "description": "Gentle acoustic music for slow mornings and reading sessions. Fingerpicked guitar, warm cello and soft piano — the perfect companion for your book and a cup of tea.\n\n🎧 For: reading, morning routine, relaxation, journaling, quiet time\n\n⏱️ Timestamps:\n0:00 — First light\n0:30 — Acoustic warmth\n1:30 — Cello embrace\n2:30 — Peaceful close\n\n#ReadingMusic #SundayMorning #AcousticChill #SlowMorning #BookMusic #RelaxingGuitar #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["reading music", "sunday morning", "acoustic chill", "slow morning", "book music", "fingerpicking guitar", "relaxing", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Reading & Slow Mornings — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Sunday Pages",
+          "subtitle": "Acoustic · Slow Morning — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: sunlit reading nook by large bay window, white curtains gently swaying, stack of books on window seat, morning light flooding in, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through quiet library with floor-to-ceiling bookshelves, leather armchairs, dust motes floating in light beams, warm wood tones, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: open book pages turning gently in breeze, cup of tea steaming beside it, fresh flowers in vase, soft focused background, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: hand writing in journal with fountain pen, elegant cursive on cream paper, ink flowing smoothly, morning light on hands, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: person wrapped in knit blanket on porch swing, reading book, autumn leaves drifting past, golden morning atmosphere, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: cottage garden at dawn, dew drops on flowers, winding path through lavender, soft mist rising, birds in silhouette against pastel sky, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+    {
+      "slug": "running-cardio-high-bpm-2026",
+      "priority": 10,
+      "category": "activity",
+      "activity_type": "gym",
+      "activity_label": "Running / Cardio",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "drum and bass, energetic synth, driving bassline, fast hi-hats, euphoric drop, running pace, 145 BPM",
+      "suno_title": "Runner's High",
+      "suno_exclude_styles": "slow, ambient, acoustic, jazz, soft, meditation, lo-fi",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 45,
+      "suno_style_influence": 55,
+
+      "mode": "medium",
+      "title": "🏃 Running Music 145 BPM 2026 | Cardio Drum and Bass Workout — Assirem Music PROD",
+      "description": "High-energy drum and bass for running and cardio sessions. 145 BPM locked to your stride — push through your limits with this driving beat.\n\n🎧 For: running, cardio, HIIT, cycling, treadmill\n\n⏱️ Timestamps:\n0:00 — Warm-up build\n0:20 — BPM lock in\n1:10 — Euphoric push\n2:20 — Sprint section\n\n#RunningMusic #145BPM #DrumAndBass #CardioMusic #WorkoutMusic #HIITMusic #GymMusic2026 #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["running music 145 bpm", "drum and bass", "cardio music", "workout music 2026", "hiit music", "gym music", "running beats", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "Running & Cardio — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Runner's High",
+          "subtitle": "Drum & Bass · 145 BPM — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: runner silhouette on empty coastal road at sunrise, ocean waves crashing beside, long straight path ahead, golden light and mist, 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: alongside runner's feet hitting pavement in rhythm, splash through morning puddle, motion blur speed effect, urban early morning, cinematic 4K", "motion_strength": 5 },
+        { "prompt": "Medium shot: runner ascending steep staircase, muscles engaged, determination on face, city skyline visible above, dramatic morning backlight, ultra detailed 4K", "motion_strength": 4 },
+        { "prompt": "Close-up insert: running shoes hitting ground in slow motion, impact ripple visible, dust and small particles ejecting, athletic power, macro cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium emotional shot: group of runners crossing bridge together at dawn, synchronized stride, team energy, reflections in water below, cinematic 4K", "motion_strength": 5 },
+        { "prompt": "Wide final shot: runner reaching mountain summit viewpoint at golden hour, arms raised in triumph, vast valley and clouds below, achievement and freedom, 4K stunning", "motion_strength": 2 }
+      ]
+    }
+  ]
+}
