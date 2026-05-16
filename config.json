@@ -1,42 +1,37 @@
 {
-  "date": "2026-04-12",
-  "priority_slug": "midnight-confessions-dark-rnb-2026",
-  "_mix": "5 instrumentaux / 5 avec paroles — mix intelligent genres & moods",
+  "date": "2026-05-16",
+  "priority_slug": "baile-funk-summer-heat-2026",
   "tracks": [
     {
-      "slug": "midnight-confessions-dark-rnb-2026",
+      "slug": "baile-funk-summer-heat-2026",
       "priority": 1,
       "category": "trending",
 
-      "suno_lyrics": "[Verse 1]\nNeon lights bleeding through the blinds\n3AM and you're still on my mind\nDripping in your silence, I'm undone\nBaby tell me why you always run\n\n[Pre-Chorus]\nI keep all your secrets close\nThe ones you never said out loud\nDancing on the edge of us\nLost inside this midnight cloud\n\n[Chorus]\nThese midnight confessions\nWon't leave my lips tonight\nI'm drowning in your memory\nBaby hold me tight\nMidnight confessions\nWhat we had was real\nWriting love and dark romance\nIn every beat I feel\n\n[Verse 2]\nYour cologne still on my pillowcase\nPhotographs I never could erase\nPlugg vibes and your diamond eyes\nBaby don't you know I don't tell lies\n\n[Pre-Chorus]\nI keep all your secrets close\nThe ones you never said out loud\nDancing on the edge of us\nLost inside this midnight cloud\n\n[Chorus]\nThese midnight confessions\nWon't leave my lips tonight\nI'm drowning in your memory\nBaby hold me tight\nMidnight confessions\nWhat we had was real\nWriting love and dark romance\nIn every beat I feel\n\n[Bridge]\nYou said forever in the dark\nNow silence echoes in my heart\nBut every night I light the spark\nYou left your mark\n\n[Outro]\nMidnight confessions, midnight confessions\nStill yours, still yours",
-      "suno_style": "pluggnb, dark r&b, melodic trap, 808 bass, atmospheric, 138 BPM, moody, bedroom, cinematic",
-      "suno_title": "Midnight Confessions",
-      "suno_exclude_styles": "country, folk, upbeat pop, happy, bright, acoustic guitar",
-      "suno_vocal_gender": "female",
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "Brazilian funk, baile funk, 150 BPM, heavy 808 bass, tamborzão, atabaque percussion, summer, bouncy, tropical trap, party",
+      "suno_title": "Summer Heat",
+      "suno_exclude_styles": "country, folk, acoustic guitar, classical, jazz, slow ballad",
+      "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 45,
-      "suno_style_influence": 55,
+      "suno_weirdness": 35,
+      "suno_style_influence": 52,
 
       "mode": "medium",
-      "title": "🌙 Midnight Confessions — Dark R&B PluggnB 2026 | Assirem Music PROD",
-      "description": "3AM confessions you never meant to make — dark romance at its most honest.\n\n🎵 PluggnB meets cinematic R&B in the most vulnerable moment of the night.\n\n⏱️ Chapters:\n00:00 — First Confession\n01:20 — The Drop\n02:50 — Bridge\n04:00 — Outro\n\n🎧 Best for: late night drives, dark romance playlists, heartbreak R&B\n\n#PluggnB #DarkRnB #MelodicTrap #AIMusic #AssiremMusicProd #NoCopyright #MoodMusic #2026",
+      "title": "🔥 Brazilian Funk Summer Heat 2026 — Baile Funk Party | Assirem Music PROD",
+      "description": "The #1 fastest-growing genre on Spotify in 2026 (+36%) hits your speakers.\n\nPure Brazilian funk energy — tamborzão drums, heavy 808s, and that unmistakable baile bounce.\n\n⏱️ Chapters:\n00:00 — Intro Heat\n00:45 — Drop\n02:00 — Breakdown\n03:30 — Final Wave\n\n🎧 Best for: summer parties, workout, pre-game, TikTok dances\n\n#BrazilianFunk #BaileFunk #Funk2026 #SummerMusic #AIMusic #AssiremMusicProd #NoCopyright #PartyMusic #TikTokHits",
       "tags": [
-        "pluggnb",
-        "dark rnb",
-        "melodic trap",
-        "heartbreak music",
-        "moody vibes",
-        "808",
-        "bedroom music",
+        "brazilian funk",
+        "baile funk",
+        "funk carioca",
+        "summer music 2026",
+        "party music",
+        "tiktok hits",
+        "workout music",
         "ai music",
         "assirem music prod",
-        "no copyright",
-        "2026 music"
+        "no copyright"
       ],
-      "playlists": [
-        "🌘 Dark Vibes — Assirem Music PROD",
-        "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD"
-      ],
+      "playlist_name": "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD",
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
 
       "distribution": {
@@ -53,8 +48,8 @@
         "title_card": {
           "enabled": true,
           "duration_sec": 3,
-          "text": "Midnight Confessions",
-          "subtitle": "Dark R&B · PluggnB — Assirem Music PROD",
+          "text": "Summer Heat",
+          "subtitle": "Brazilian Funk · Baile — Assirem Music PROD",
           "style": "minimal_dark"
         },
         "end_card": {
@@ -63,74 +58,52 @@
           "subscribe_cta": true
         },
         "short_clip": {
-          "start_sec": 12,
+          "start_sec": 8,
           "duration_sec": 55
         }
       },
 
       "scenes": [
-        {
-          "prompt": "Wide establishing shot: luxury penthouse at 3AM, rain on floor-to-ceiling windows, city glow below, single candle burning on glass table, deep shadows, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Slow camera travelling: dark hallway lit by phone screen glow, purple neon strip light bleeding under bedroom door, moody and intimate, cinematic 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Medium shot: beautiful woman sitting on edge of bed, looking down at phone, soft LED rim light, deep shadow on face, emotional, ultra detailed 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Close-up insert: manicured fingers hovering over unsent message on phone screen, rings glinting, hesitation and longing, macro cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium emotional shot: silhouette of woman by rain-streaked window, city bokeh behind, neon reflections on glass, dark romantic, cinematic 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Wide final shot: rooftop overlooking wet city, woman standing alone in oversized hoodie, fog rising between towers, solitude and beauty, 4K stunning",
-          "motion_strength": 2
-        }
+        { "prompt": "Wide establishing shot: golden hour over Rio de Janeiro favela rooftops, colorful houses cascading down hillside, palm trees swaying, tropical heat haze, cinematic 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: neon-lit street party at night, string lights between buildings, smoke machines, crowd silhouettes dancing, Brazilian carnival colors, cinematic 4K", "motion_strength": 5 },
+        { "prompt": "Medium shot: DJ booth setup on rooftop overlooking ocean, turntables and LED panels, sunset sky purple and orange, bass speakers vibrating, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: hands on drum machine pads, neon light reflections on sweaty skin, rhythmic motion blur, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium energetic shot: crowd jumping in unison at outdoor party, confetti in air, tropical plants framing shot, golden backlight, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: aerial drone view of beach party at sunset, waves crashing, hundreds of people dancing on sand, fireworks beginning, 4K stunning", "motion_strength": 4 }
       ]
     },
 
     {
-      "slug": "neural-drift-synthwave-coding-2026",
+      "slug": "kpop-world-cup-euphoria-2026",
       "priority": 2,
-      "category": "activity",
-      "activity_type": "coding",
-      "activity_label": "Coding / Developer Focus",
+      "category": "trending",
 
       "suno_lyrics": "[Instrumental]",
-      "suno_style": "synthwave, dark chillwave, arpeggiated synth, driving bassline, retro wave, 92 BPM, cyberpunk, neon, focused, atmospheric, electronic",
-      "suno_title": "Neural Drift",
-      "suno_exclude_styles": "acoustic, folk, tropical, country, reggaeton, classical",
+      "suno_style": "k-pop, dance pop, synth pop, euphoric, stadium anthem, 128 BPM, brass hits, layered synths, energetic, triumphant, festival",
+      "suno_title": "World Cup Euphoria",
+      "suno_exclude_styles": "acoustic, folk, country, slow, sad, lo-fi, ambient, minimal",
       "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 40,
+      "suno_weirdness": 32,
       "suno_style_influence": 55,
 
       "mode": "medium",
-      "title": "💻 Neural Drift — Synthwave Coding Focus 2026 | Assirem Music PROD",
-      "description": "Jack in. Build. Ship. 🤖\n\nRetro-futuristic synthwave engineered for deep coding sessions — when you need to disappear into the terminal and emerge victorious.\n\n⏱️ Chapters:\n00:00 — System Boot\n01:00 — Flow State\n03:00 — Async Break\n04:00 — Deploy\n\n🎧 Best for: coding, dev focus, building with AI, hackathons, late-night debugging\n\n#SynthWave #CodingMusic #DeveloperBeats #VibeCoding #AIMusic #AssiremMusicProd #NoCopyright #2026",
+      "title": "⚽ K-Pop World Cup Euphoria 2026 — Stadium Anthem | Assirem Music PROD",
+      "description": "FIFA World Cup 2026 energy meets K-Pop stadium sound.\n\nWith BTS co-headlining the halftime show and K-Pop being the fastest-growing genre in Spotify history, this track captures that euphoric victory feeling.\n\n⏱️ Chapters:\n00:00 — Stadium Intro\n00:50 — First Drop\n02:10 — Build Up\n03:30 — Victory Anthem\n\n🎧 Best for: hype playlists, workout, celebrations, sports montage\n\n#KPop #WorldCup2026 #FIFA2026 #StadiumMusic #AIMusic #AssiremMusicProd #NoCopyright #DancePop #Euphoric",
       "tags": [
-        "synthwave",
-        "coding music",
-        "developer beats",
-        "vibe coding",
-        "focus music",
-        "cyberpunk",
-        "retro wave",
+        "k-pop",
+        "world cup 2026",
+        "fifa 2026",
+        "stadium anthem",
+        "dance pop",
+        "euphoric music",
+        "hype music",
+        "sports music",
         "ai music",
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "📚 Focus & Deep Work — Assirem Music PROD",
-        "👾 Electronic & House & Techno — Assirem Music PROD"
-      ],
+      "playlist_name": "👾 Electronic & House & Techno — Assirem Music PROD",
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
 
       "distribution": {
@@ -147,8 +120,8 @@
         "title_card": {
           "enabled": true,
           "duration_sec": 3,
-          "text": "Neural Drift",
-          "subtitle": "Synthwave · Developer Focus — Assirem Music PROD",
+          "text": "World Cup Euphoria",
+          "subtitle": "K-Pop · Stadium Anthem — Assirem Music PROD",
           "style": "minimal_dark"
         },
         "end_card": {
@@ -163,438 +136,45 @@
       },
 
       "scenes": [
-        {
-          "prompt": "Wide establishing shot: futuristic server room glowing in blue-purple neon, endless rows of blinking servers, holographic data streams floating through air, 4K ultra detailed",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Slow camera travelling: curved ultrawide monitor setup in dark room, code and AI dashboards reflected in glasses, neon city visible through window, cinematic 4K",
-          "motion_strength": 4
-        },
-        {
-          "prompt": "Medium shot: hands typing rapidly on mechanical keyboard, streams of code materializing as glowing particles above screen, ultra detailed 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Close-up insert: circuit board with neon traces glowing like city streets at night, microchips casting sharp shadows, macro cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium emotional shot: developer's face bathed in terminal glow, slight smile as build succeeds, neon rain visible behind, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Wide final shot: holographic neural network expanding across night cityscape, developer silhouette at center, cyberpunk skyline, 4K stunning",
-          "motion_strength": 3
-        }
+        { "prompt": "Wide establishing shot: massive modern stadium at night filled with 80000 fans, sea of LED phone lights, giant screens showing football, epic atmosphere, cinematic 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: tunnel view walking toward pitch, light at the end growing brighter, crowd roar suggested by vibrating air, fog machines, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: confetti explosion over celebrating crowd, national flags waving, faces of pure joy illuminated by stadium floods, ultra detailed 4K", "motion_strength": 5 },
+        { "prompt": "Close-up insert: football spinning in slow motion against night sky, stadium lights creating star-like bokeh behind it, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium energetic shot: synchronized light show across stadium, laser beams and pyrotechnics, crowd hands raised in unison, K-pop concert energy, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: aerial view of illuminated stadium at night, city skyline behind, fireworks erupting from roof, victory celebration, 4K stunning", "motion_strength": 3 }
       ]
     },
 
     {
-      "slug": "paris-minuit-french-pop-2026",
+      "slug": "dusty-highway-americana-country-2026",
       "priority": 3,
       "category": "trending",
 
-      "suno_lyrics": "[Verse 1]\nLes lumières de Paris brillent sous la pluie\nJe marche seule ce soir sans toi dans ma vie\nTon parfum sur ma peau reste encore ce matin\nParis minuit, Paris minuit\n\n[Pre-Chorus]\nJe voulais qu'on reste\nMais tu es parti sans un mot\nLaisse-moi ma tristesse\nEt le souvenir de toi\n\n[Chorus]\nParis minuit, je danse sous les étoiles\nTu es loin mais ton amour est ma boussole\nParis minuit, je chante pour toi\nLe ciel de Paris garde tous nos émois\nParis minuit\n\n[Verse 2]\nLe Marais endormi, les cafés fermés\nJe serre ton manteau que tu as oublié\nLa Seine reflète nos nuits d'été\nParis minuit, Paris minuit\n\n[Chorus]\nParis minuit, je danse sous les étoiles\nTu es loin mais ton amour est ma boussole\nParis minuit, je chante pour toi\nLe ciel de Paris garde tous nos émois\nParis minuit\n\n[Bridge]\nReviens, reviens\nJe t'attends au pont des arts\nReviens, reviens\nParis s'endort sans toi ce soir\n\n[Outro]\nParis minuit, Paris minuit\nJe t'aime encore, je t'aime encore",
-      "suno_style": "french pop, indie pop, piano, soft drums, romantic, nostalgic, 95 BPM, cinematic, emotional, female voice",
-      "suno_title": "Paris Minuit",
-      "suno_exclude_styles": "trap, edm, aggressive, heavy metal, reggaeton, country",
-      "suno_vocal_gender": "female",
-      "suno_lyrics_mode": "manual",
-      "suno_weirdness": 32,
-      "suno_style_influence": 48,
-
-      "mode": "medium",
-      "title": "🇫🇷 Paris Minuit — Pop Française Romantique 2026 | Assirem Music PROD",
-      "description": "Parce que Paris la nuit ne ressemble à rien d'autre — surtout quand on est seule. 🌧️\n\nUne chanson française douce-amère pour tous les cœurs qui attendent sous la pluie.\n\n⏱️ Chapitres:\n00:00 — Intro nocturne\n01:15 — Premier refrain\n02:40 — Bridge émotionnel\n04:00 — Outro\n\n🎧 Idéal pour : playlists romantiques, nuits parisiennes, pop française moderne\n\n#PopFrançaise #Chanson #Paris #AIMusic #AssiremMusicProd #NoCopyright #2026Music",
-      "tags": [
-        "pop française",
-        "chanson française",
-        "pop romantique",
-        "paris",
-        "musique française",
-        "ai music",
-        "assirem music prod",
-        "no copyright",
-        "2026 music",
-        "indie pop"
-      ],
-      "playlists": [
-        "🇫🇷 Pop Française — Assirem Music PROD",
-        "🌸 Pop & Chill — Assirem Music PROD"
-      ],
-      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
-
-      "distribution": {
-        "youtube": true,
-        "youtube_short": true,
-        "distrokid": true,
-        "tiktok": true,
-        "instagram_reels": true
-      },
-
-      "video": {
-        "intro_fade_sec": 3,
-        "outro_fade_sec": 4,
-        "title_card": {
-          "enabled": true,
-          "duration_sec": 3,
-          "text": "Paris Minuit",
-          "subtitle": "Pop Française · Romantique — Assirem Music PROD",
-          "style": "minimal_dark"
-        },
-        "end_card": {
-          "enabled": true,
-          "duration_sec": 5,
-          "subscribe_cta": true
-        },
-        "short_clip": {
-          "start_sec": 15,
-          "duration_sec": 55
-        }
-      },
-
-      "scenes": [
-        {
-          "prompt": "Wide establishing shot: Pont de l'Alma at midnight, rain falling softly on the Seine, Eiffel Tower glowing gold in background, reflections shimmering on wet cobblestones, 4K ultra detailed",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Slow camera travelling: empty Parisian boulevard at night, café lights glowing through rain-streaked windows, a lone figure walking under umbrella, cinematic 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Medium shot: young French woman at café window table, coffee in hand, watching rain, soft amber interior light, melancholy and beautiful, ultra detailed 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Close-up insert: man's forgotten jacket on café chair back, slight impression, rain outside, intimate detail, macro cinematic 4K",
-          "motion_strength": 1
-        },
-        {
-          "prompt": "Medium emotional shot: woman standing on Pont des Arts, hands on railing, city lights reflected in wet eyes, locks and love and loss, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Wide final shot: aerial view of Paris by night, rain-soaked streets glittering like diamonds, Notre-Dame and the Seine, eternal and beautiful, 4K stunning",
-          "motion_strength": 2
-        }
-      ]
-    },
-
-    {
-      "slug": "kalahari-dawn-africa-world-2026",
-      "priority": 4,
-      "category": "world_music",
-      "country": "Botswana",
-      "country_local": "Kalahari",
-      "country_flag": "🇧🇼",
-
       "suno_lyrics": "[Instrumental]",
-      "suno_style": "african world music, mbira thumb piano, kora, talking drum, ngoni, desert wind ambiance, spiritual, 72 BPM, meditative, traditional, earthy textures",
-      "suno_title": "Kalahari Dawn",
-      "suno_exclude_styles": "electronic, trap, edm, western pop, rock, heavy drums",
+      "suno_style": "modern country, americana, pedal steel guitar, acoustic guitar fingerpicking, warm, nostalgic, open road, 95 BPM, heartland, cinematic country",
+      "suno_title": "Dusty Highway",
+      "suno_exclude_styles": "electronic, synth, trap, hip hop, EDM, dubstep, heavy metal",
       "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 28,
-      "suno_style_influence": 42,
-
-      "mode": "medium",
-      "title": "🌅 Kalahari Dawn — African World Music 2026 | Assirem Music PROD",
-      "description": "From the ancient sands of the Kalahari — the sound of Africa waking up. 🌍\n\nMbira, kora, and talking drums in the oldest conversation on Earth.\n\n⏱️ Chapters:\n00:00 — First Light\n02:00 — Desert Wind\n04:00 — Sunrise Ceremony\n\n🎧 Best for: world music discovery, meditation, yoga, cultural immersion\n\n#AfricanMusic #WorldMusic #Kalahari #Mbira #Kora #AIMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "african music",
-        "world music",
-        "kalahari",
-        "mbira",
-        "kora",
-        "talking drum",
-        "spiritual music",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌍 World Music Series — Assirem Music PROD",
-        "🧘 Yoga & Meditation — Assirem Music PROD"
-      ],
-      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
-
-      "distribution": {
-        "youtube": true,
-        "youtube_short": true,
-        "distrokid": true,
-        "tiktok": true,
-        "instagram_reels": true
-      },
-
-      "video": {
-        "intro_fade_sec": 3,
-        "outro_fade_sec": 4,
-        "title_card": {
-          "enabled": true,
-          "duration_sec": 4,
-          "text": "Kalahari Dawn",
-          "subtitle": "African World Music — Assirem Music PROD",
-          "style": "minimal_dark"
-        },
-        "end_card": {
-          "enabled": true,
-          "duration_sec": 5,
-          "subscribe_cta": true
-        },
-        "short_clip": {
-          "start_sec": 30,
-          "duration_sec": 55
-        }
-      },
-
-      "scenes": [
-        {
-          "prompt": "Wide establishing shot: Kalahari desert at pre-dawn, infinite red sand dunes under deep purple sky, first light cresting horizon, total silence and vast scale, 4K ultra detailed",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Slow camera travelling: acacia tree silhouette against orange sunrise, dust motes floating in light beams, lone gemsbok in background, cinematic 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Medium shot: elder San Bushman playing mbira thumb piano under acacia, eyes closed, deeply connected to sound and earth, ultra detailed 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Close-up insert: hands playing mbira, tines vibrating in golden morning light, dry cracked earth below, gourde resonator, macro cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium emotional shot: group of women dancing in traditional dress, red and ochre patterns, sunrise behind them, pure joy and ritual, cinematic 4K",
-          "motion_strength": 4
-        },
-        {
-          "prompt": "Wide final shot: full Kalahari sunrise, enormous orange disc rising over red dunes, silhouettes of the village waking, ancient and timeless, 4K stunning",
-          "motion_strength": 2
-        }
-      ]
-    },
-
-    {
-      "slug": "no-cap-zone-uk-drill-2026",
-      "priority": 5,
-      "category": "trending",
-
-      "suno_lyrics": "[Intro]\nYeah, no cap zone\nAssirem Music, let's go\n\n[Verse 1]\nThey said I wouldn't make it, now I'm on the rise\nDrip heavy on the stage, got the fire in my eyes\nNo handouts, no shortcuts, built this from the ground\nPut the city on my back now they all know my sound\nMidnight moves, silent grind, never sleep for free\nEvery sacrifice I made is what you now see\n\n[Pre-Chorus]\nThey doubted every move I made\nBut pressure made me diamonds babe\nNo cap, no cap\n\n[Chorus]\nNo cap zone, this is real life\nEverything I got I earned through the night\nNo cap zone, hear the crowd scream\nNothing gonna stop me from chasing my dream\nNo cap zone, no cap zone\nBuilt this from the basement, not a stepping stone\n\n[Verse 2]\nStudio sessions 'til the sunrise breaks\nCounting every lesson that a failure makes\nReal ones know the struggle, fake ones fade away\nPut the work in every night to get my flowers one day\nHeavy on the vision, light upon the doubt\nEverything they said I couldn't is exactly what I'm about\n\n[Chorus]\nNo cap zone, this is real life\nEverything I got I earned through the night\nNo cap zone, hear the crowd scream\nNothing gonna stop me from chasing my dream\nNo cap zone, no cap zone\nBuilt this from the basement, not a stepping stone\n\n[Bridge]\nI remember sleeping on the floor\nTold myself I wanted more\nNow the world is knocking at my door\nNo cap, that's for sure\n\n[Outro]\nNo cap zone, no cap zone\nAssirem, we keep going",
-      "suno_style": "uk drill, melodic trap, 808 bass, dark synth, hi-hat rolls, 140 BPM, intense, street, motivational, gritty",
-      "suno_title": "No Cap Zone",
-      "suno_exclude_styles": "lofi, soft, ambient, acoustic, folk, happy pop, country",
-      "suno_vocal_gender": "male",
-      "suno_lyrics_mode": "manual",
-      "suno_weirdness": 50,
-      "suno_style_influence": 58,
-
-      "mode": "medium",
-      "title": "🔥 No Cap Zone — UK Drill Motivation 2026 | Assirem Music PROD",
-      "description": "Built from nothing, no excuses — this is what a real come-up sounds like. 🔥\n\nUK drill meets raw motivational energy. For everyone who's grinding in silence.\n\n⏱️ Chapters:\n00:00 — Intro\n00:45 — First Verse\n02:00 — Chorus Drop\n03:30 — Bridge & Outro\n\n🎧 Best for: workout, motivation, grind playlists, drill fans\n\n#UKDrill #MotivationMusic #TrapBeats #GrindSeason #AIMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "uk drill",
-        "melodic trap",
-        "motivation music",
-        "grind",
-        "street music",
-        "hip hop",
-        "808",
-        "ai music",
-        "assirem music prod",
-        "no copyright",
-        "2026 music"
-      ],
-      "playlists": [
-        "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD",
-        "🌘 Dark Vibes — Assirem Music PROD",
-        "💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD"
-      ],
-      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
-
-      "distribution": {
-        "youtube": true,
-        "youtube_short": true,
-        "distrokid": true,
-        "tiktok": true,
-        "instagram_reels": true
-      },
-
-      "video": {
-        "intro_fade_sec": 1,
-        "outro_fade_sec": 2,
-        "title_card": {
-          "enabled": true,
-          "duration_sec": 3,
-          "text": "No Cap Zone",
-          "subtitle": "UK Drill · Motivation — Assirem Music PROD",
-          "style": "minimal_dark"
-        },
-        "end_card": {
-          "enabled": true,
-          "duration_sec": 5,
-          "subscribe_cta": true
-        },
-        "short_clip": {
-          "start_sec": 5,
-          "duration_sec": 55
-        }
-      },
-
-      "scenes": [
-        {
-          "prompt": "Wide establishing shot: gritty London estate at night, harsh fluorescent lights on concrete blocks, hoodies and trainers, rain on asphalt, raw street energy, cinematic 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Slow camera travelling through underground music studio, exposed brick walls, gold records mixed with street art, late night session energy, cinematic 4K",
-          "motion_strength": 4
-        },
-        {
-          "prompt": "Medium shot: young Black artist in studio booth, eyes closed, mic in hand, pure concentration, sweat and passion visible, ultra detailed 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Close-up insert: hands clutching microphone, rings and bracelet catching studio light, fingers white-knuckled with intensity, macro cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium emotional shot: artist performing on rooftop overlooking London skyline at night, crowd below him, arms raised, defining moment, cinematic 4K",
-          "motion_strength": 4
-        },
-        {
-          "prompt": "Wide final shot: London city skyline at dawn after the session, artist looking out over the city he's about to conquer, determination in silhouette, 4K stunning",
-          "motion_strength": 2
-        }
-      ]
-    },
-
-    {
-      "slug": "crystal-waters-ambient-healing-2026",
-      "priority": 6,
-      "category": "activity",
-      "activity_type": "meditation",
-      "activity_label": "Meditation / Sleep",
-
-      "suno_lyrics": "[Instrumental]",
-      "suno_style": "ambient, water sounds, crystal singing bowls, ethereal pads, gentle rain, 528hz healing frequency, drone, atmospheric, 55 BPM, sleep, meditative, zen",
-      "suno_title": "Crystal Waters",
-      "suno_exclude_styles": "trap, edm, loud, aggressive, hip hop, rock, drums, bass drop",
-      "suno_vocal_gender": null,
-      "suno_lyrics_mode": "manual",
-      "suno_weirdness": 20,
-      "suno_style_influence": 38,
-
-      "mode": "medium",
-      "title": "💎 Crystal Waters — 528Hz Healing Ambient Sleep Music 2026 | Assirem Music PROD",
-      "description": "Let 528Hz carry you into total restoration — the miracle frequency of healing and transformation. 💎\n\nCrystal singing bowls, flowing water, and pure ethereal ambiance for your deepest sleep.\n\n⏱️ Chapters:\n00:00 — Entry (Grounding)\n20:00 — Float State\n45:00 — Deep Sleep\n\n🎧 Best for: sleep music, deep meditation, healing sessions, stress relief, spa\n\n#528Hz #HealingMusic #AmbientSleep #CrystalBowls #MeditationMusic #AIMusic #AssiremMusicProd #NoCopyright",
-      "tags": [
-        "528hz",
-        "healing music",
-        "ambient sleep",
-        "crystal bowls",
-        "meditation music",
-        "sleep music",
-        "stress relief",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": ["🧘 Yoga & Meditation — Assirem Music PROD"],
-      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
-
-      "distribution": {
-        "youtube": true,
-        "youtube_short": true,
-        "distrokid": true,
-        "tiktok": true,
-        "instagram_reels": true
-      },
-
-      "video": {
-        "intro_fade_sec": 5,
-        "outro_fade_sec": 5,
-        "title_card": {
-          "enabled": true,
-          "duration_sec": 4,
-          "text": "Crystal Waters",
-          "subtitle": "528Hz Healing · Ambient Sleep — Assirem Music PROD",
-          "style": "minimal_dark"
-        },
-        "end_card": {
-          "enabled": true,
-          "duration_sec": 5,
-          "subscribe_cta": true
-        },
-        "short_clip": {
-          "start_sec": 40,
-          "duration_sec": 55
-        }
-      },
-
-      "scenes": [
-        {
-          "prompt": "Wide establishing shot: crystal clear mountain spring flowing over smooth white stones, mist rising, ancient forest surrounding, total peace, 4K ultra detailed",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Slow camera travelling along underground crystal cave, formations glowing with inner blue-white light, still water reflecting everything, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium shot: crystal singing bowls arranged in circle, being played with soft mallets, rings of sound visualized as light waves, ultra detailed 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Close-up insert: single water droplet falling in slow motion into perfectly still pool, rings expanding outward, macro cinematic 4K",
-          "motion_strength": 1
-        },
-        {
-          "prompt": "Medium emotional shot: meditator floating on back in shallow turquoise pool, completely relaxed, soft sunlight filtered through tree canopy, cinematic 4K",
-          "motion_strength": 1
-        },
-        {
-          "prompt": "Wide final shot: bioluminescent cave lake, impossible blue glow reflecting off crystal ceiling, complete stillness and wonder, 4K stunning",
-          "motion_strength": 1
-        }
-      ]
-    },
-
-    {
-      "slug": "golden-days-indie-pop-2026",
-      "priority": 7,
-      "category": "trending",
-
-      "suno_lyrics": "[Verse 1]\nRemember chasing lightning bugs at midnight\nYour hand in mine and laughing way too loud\nThe summer felt like it would last forever\nWe were so young and fearlessly proud\n\n[Pre-Chorus]\nNow the leaves are falling\nAnd I'm still recalling\nEverything we promised we would be\n\n[Chorus]\nGolden days, golden days\nI still feel the warmth of your face\nGolden days, golden days\nI'd trade anything to go back to that place\nGolden, golden, golden days\n\n[Verse 2]\nWe drove with windows down on empty highways\nYour playlist playing every song we knew\nSang along to everything and nothing\nGod I miss the simple version of you\n\n[Pre-Chorus]\nNow the leaves are falling\nAnd I'm still recalling\nEverything we promised we would be\n\n[Chorus]\nGolden days, golden days\nI still feel the warmth of your face\nGolden days, golden days\nI'd trade anything to go back to that place\nGolden, golden, golden days\n\n[Bridge]\nMaybe golden days don't last\nMaybe that's what makes them gold\nEvery moment slipping past\nIs a story being told\n\n[Chorus]\nGolden days, golden days\nI still feel the warmth of your face\nGolden days, golden days\nI'd trade anything to go back to that place\nGolden, golden, golden days\n\n[Outro]\nGolden days, golden days\nGolden days",
-      "suno_style": "indie pop, dream pop, shimmery guitar, soft synth, warm percussion, 102 BPM, nostalgic, bittersweet, summer, emotional, female voice",
-      "suno_title": "Golden Days",
-      "suno_exclude_styles": "dark, trap, aggressive, heavy metal, edm, drill",
-      "suno_vocal_gender": "female",
-      "suno_lyrics_mode": "manual",
-      "suno_weirdness": 33,
+      "suno_weirdness": 30,
       "suno_style_influence": 50,
 
       "mode": "medium",
-      "title": "🌟 Golden Days — Indie Pop Nostalgia 2026 | Assirem Music PROD",
-      "description": "For everyone who's ever wished they could go back — just for one more golden day. ☀️\n\nDream pop drenched in summer nostalgia and bittersweet memories.\n\n⏱️ Chapters:\n00:00 — Memory Intro\n01:10 — Chorus\n02:40 — Bridge\n04:00 — Fading Outro\n\n🎧 Best for: nostalgic playlists, summer vibes, indie pop fans, emotional drives\n\n#IndiePop #DreamPop #NostalgiaMusic #SummerVibes #AIMusic #AssiremMusicProd #NoCopyright #2026",
+      "title": "🤠 Dusty Highway — Modern Country Americana 2026 | Assirem Music PROD",
+      "description": "Country is dominating 2026 — Ella Langley spent 9 weeks at #1 on the Hot 100.\n\nThis instrumental captures that open-road Americana feeling — pedal steel, warm acoustics, and endless horizons.\n\n⏱️ Chapters:\n00:00 — Dawn Drive\n01:00 — Open Country\n02:30 — Sunset Plains\n04:00 — Night Highway\n\n🎧 Best for: road trips, relaxing, Americana playlists, sunset drives\n\n#Country #Americana #ModernCountry #RoadTrip #PedalSteel #AIMusic #AssiremMusicProd #NoCopyright #2026",
       "tags": [
-        "indie pop",
-        "dream pop",
-        "nostalgia music",
-        "summer vibes",
-        "bittersweet",
-        "emotional music",
+        "modern country",
+        "americana",
+        "country instrumental",
+        "road trip music",
+        "pedal steel",
+        "sunset drive",
+        "relaxing country",
         "ai music",
         "assirem music prod",
-        "no copyright",
-        "2026 music"
+        "no copyright"
       ],
-      "playlists": [
-        "🌸 Pop & Chill — Assirem Music PROD",
-        "🎸🌐 MIX 🎼🎵 — Assirem Music PROD"
-      ],
+      "playlist_name": "🌅 Chill & Acoustic Vibes — Assirem Music PROD",
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
 
       "distribution": {
@@ -607,12 +187,162 @@
 
       "video": {
         "intro_fade_sec": 2,
-        "outro_fade_sec": 4,
+        "outro_fade_sec": 3,
         "title_card": {
           "enabled": true,
           "duration_sec": 3,
-          "text": "Golden Days",
-          "subtitle": "Indie Pop · Nostalgia — Assirem Music PROD",
+          "text": "Dusty Highway",
+          "subtitle": "Country · Americana — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 6,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: endless straight highway through golden wheat fields at dawn, single pickup truck in distance, dust trail behind it, warm light, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: roadside diner exterior at sunrise, vintage neon sign flickering, American flags on porch, morning mist, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: weathered hands on steering wheel of vintage truck, dashboard sunlit, open road through windshield, leather and dust, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: pedal steel guitar strings vibrating, warm golden light on polished chrome, fingers sliding with precision, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: silhouette of lone cowboy figure standing on mesa overlooking vast canyon at sunset, hat and boots, wind in grass, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial drone view of winding mountain highway at golden hour, river below reflecting sky, forests stretching to horizon, breathtaking americana landscape, 4K stunning", "motion_strength": 4 }
+      ]
+    },
+
+    {
+      "slug": "eurovision-vienna-grand-finale-2026",
+      "priority": 4,
+      "category": "news_surf",
+      "news_event": "Eurovision 2026 Grand Final in Vienna — 70th anniversary celebration — May 16, 2026",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "epic orchestral, eurobeat, synth-pop, dramatic strings, brass fanfare, choir, 130 BPM, triumphant, cinematic, anthemic, europop",
+      "suno_title": "Vienna Grand Finale",
+      "suno_exclude_styles": "lo-fi, trap, mumble rap, country, folk, acoustic only, ambient",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 45,
+      "suno_style_influence": 55,
+
+      "mode": "medium",
+      "title": "🇪🇺 Eurovision 2026 Grand Final Vienna — 70th Anniversary Epic | Assirem Music PROD",
+      "description": "The 70th Eurovision Song Contest Grand Final is TONIGHT in Vienna!\n\n35 countries. One stage. Pure musical celebration — this cinematic instrumental captures the grandeur and emotion of Europe's biggest music event.\n\n⏱️ Chapters:\n00:00 — Vienna Overture\n01:00 — The Stage Lights Up\n02:30 — Twelve Points\n04:00 — Grand Finale\n\n🎧 Best for: celebration playlists, epic moments, European pride\n\n#Eurovision2026 #Vienna #GrandFinal #Eurovision70 #EurovisionSongContest #AIMusic #AssiremMusicProd #NoCopyright #Epic",
+      "tags": [
+        "eurovision 2026",
+        "eurovision grand final",
+        "vienna 2026",
+        "eurovision 70th anniversary",
+        "epic orchestral",
+        "eurobeat",
+        "celebration music",
+        "european music",
+        "ai music",
+        "assirem music prod",
+        "no copyright"
+      ],
+      "playlist_name": "👾 Electronic & House & Techno — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Vienna Grand Finale",
+          "subtitle": "Eurovision 2026 · 70th Anniversary — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: Wiener Stadthalle exterior at night, dramatic spotlights sweeping sky, European flags lining entrance, crowds arriving in formal attire, Vienna architecture, cinematic 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: inside massive arena, elaborate stage with LED walls and moving platforms, pyrotechnic rigs, empty seats before show, anticipation, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: dramatic stage performance moment, single spotlight on performer, fog machine creating ethereal atmosphere, audience phone lights like stars, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: golden Eurovision trophy on pedestal, spotlight reflecting off crystal microphone, velvet background, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium energetic shot: crowd of thousands holding national flags, confetti cannons exploding in rainbow colors, laser show across ceiling, ecstatic faces, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: aerial view of illuminated Vienna at night, Wiener Stadthalle glowing center, Danube river reflecting city lights, celebration fireworks above, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "mongolian-steppe-khoomei-2026",
+      "priority": 5,
+      "category": "world_music",
+      "country": "Mongolia",
+      "country_local": "Монгол Улс",
+      "country_flag": "🇲🇳",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "Mongolian throat singing, khoomei, morin khuur, horsehead fiddle, long song, steppe ambient, overtone singing, nomadic, 70 BPM, meditative, vast, traditional",
+      "suno_title": "Steppe Horizon",
+      "suno_exclude_styles": "electronic, synth, trap, hip hop, pop, rock, bass drop, EDM",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 30,
+      "suno_style_influence": 48,
+
+      "mode": "medium",
+      "title": "🇲🇳 Steppe Horizon | Тал нутгийн тэнгэр — Mongolian Throat Singing | Assirem Music PROD",
+      "description": "Хөөмий — the ancient art of Mongolian throat singing meets the endless steppe.\n\nUNESCO Intangible Cultural Heritage — Khoomei overtone singing and morin khuur (horsehead fiddle) from the nomadic traditions of Mongolia.\n\nМонгол дуу хөгжим — эртний уламжлалт хөгжим.\n\n⏱️ Chapters:\n00:00 — Dawn on the Steppe\n01:30 — Khoomei Rising\n03:00 — Morin Khuur Solo\n04:30 — Eternal Sky\n\n🎧 Best for: meditation, world music discovery, cultural exploration\n\n#Mongolia #ThroatSinging #Khoomei #MorinKhuur #WorldMusic #UNESCO #TraditionalMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": [
+        "mongolian music",
+        "throat singing",
+        "khoomei",
+        "morin khuur",
+        "horsehead fiddle",
+        "world music",
+        "traditional music",
+        "steppe music",
+        "UNESCO heritage",
+        "meditation music",
+        "ai music",
+        "assirem music prod",
+        "no copyright"
+      ],
+      "playlist_name": "🌍 World Music Discovery — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": false,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Steppe Horizon",
+          "subtitle": "Mongolian Khoomei · World Music — Assirem Music PROD",
           "style": "minimal_dark"
         },
         "end_card": {
@@ -627,68 +357,48 @@
       },
 
       "scenes": [
-        {
-          "prompt": "Wide establishing shot: golden hour on country road, tall grass glowing amber, two figures running toward sunset, lens flare and warm haze, 4K ultra detailed",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Slow camera travelling over polaroid photos and summer memorabilia on bedroom floor, fairy lights above, golden afternoon light, nostalgic, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium shot: young woman spinning in golden wheat field, eyes closed, hair flying, pure summer joy, magic hour light, ultra detailed 4K",
-          "motion_strength": 4
-        },
-        {
-          "prompt": "Close-up insert: two pairs of feet dangling from old wooden dock over glassy lake, toes touching water, warm afternoon light, macro cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium emotional shot: girl looking at old photo album, soft smile, single tear, window light on her face, bittersweet beauty, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Wide final shot: couple watching sunset over hills from car hood, silhouettes holding hands, horizon blazing gold and rose, perfect moment, 4K stunning",
-          "motion_strength": 2
-        }
+        { "prompt": "Wide establishing shot: vast Mongolian steppe at sunrise, endless green grassland meeting blue sky at horizon, single ger (yurt) with smoke rising, horses grazing, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: nomadic horseman riding across golden steppe, traditional deel coat flowing in wind, mountains in far distance, dust particles in light, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: Mongolian musician seated cross-legged playing morin khuur (horsehead fiddle), traditional clothing, ger interior with felt walls and painted furniture, warm firelight, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: carved horsehead on top of morin khuur fiddle, intricate woodwork detail, strings vibrating, warm amber light, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium contemplative shot: throat singer on hilltop at golden hour, eyes closed in deep concentration, vast landscape behind, wind moving grass, spiritual atmosphere, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial drone view of Mongolian steppe at sunset, herd of wild horses running free below, river winding through valley, eternal sky above, 4K stunning", "motion_strength": 4 }
       ]
     },
 
     {
-      "slug": "berserk-mode-gym-phonk-2026",
-      "priority": 8,
+      "slug": "deep-focus-lofi-study-beats-2026",
+      "priority": 6,
       "category": "activity",
-      "activity_type": "gym",
-      "activity_label": "Gym / Workout",
+      "activity_type": "focus",
+      "activity_label": "Focus / Deep Study",
 
       "suno_lyrics": "[Instrumental]",
-      "suno_style": "phonk, hard trap, aggressive 808, distorted synth, chopped vocal samples, hi-hat rolls, 148 BPM, intense, adrenaline, dark, gym, beast mode",
-      "suno_title": "Berserk Mode",
-      "suno_exclude_styles": "soft, ambient, acoustic, lofi, chill, meditation, jazz, classical",
+      "suno_style": "lofi hip hop, jazzy chords, vinyl crackle, mellow piano, soft drums, tape saturation, 80 BPM, warm, cozy, study beats, chill",
+      "suno_title": "Deep Focus Study",
+      "suno_exclude_styles": "loud, aggressive, heavy bass, screaming, metal, EDM drop, trap, distorted",
       "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 55,
-      "suno_style_influence": 60,
+      "suno_weirdness": 25,
+      "suno_style_influence": 50,
 
       "mode": "medium",
-      "title": "⚡ Berserk Mode — Hard Phonk Gym Motivation 2026 | Assirem Music PROD",
-      "description": "When warmup is over and it's time to go BERSERK. ⚡\n\n148 BPM of pure phonk aggression — for the sets that break you and make you.\n\n⏱️ Chapters:\n00:00 — Activation\n01:00 — First Set\n02:30 — Peak Aggression\n04:00 — Cooldown Drop\n\n🎧 Best for: heavy lifting, HIIT, sprints, pre-workout, beast mode sessions\n\n#PhonkMusic #GymMotivation #BeastMode #WorkoutMusic #HardTrap #AIMusic #AssiremMusicProd #NoCopyright #2026",
+      "title": "📚 Deep Focus Lofi — Study Beats to Concentrate To 2026 | Assirem Music PROD",
+      "description": "Your brain on lofi. Maximum concentration, zero distraction.\n\nSmooth jazzy chords, vinyl warmth, and gentle rhythms designed for deep study sessions and focused work.\n\n⏱️ Chapters:\n00:00 — Settle In\n01:00 — Flow State\n02:30 — Deep Dive\n04:00 — Closing Notes\n\n🎧 Best for: studying, homework, reading, library sessions, exam prep\n\n#LoFi #StudyBeats #FocusMusic #DeepWork #BeatsToStudyTo #ChillHop #AIMusic #AssiremMusicProd #NoCopyright #2026",
       "tags": [
-        "phonk",
-        "gym music",
-        "beast mode",
-        "workout music",
-        "hard trap",
-        "pre-workout",
-        "148 bpm",
+        "lofi",
+        "study beats",
+        "focus music",
+        "beats to study to",
+        "concentration music",
+        "chill hop",
+        "deep work",
+        "exam music",
         "ai music",
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD",
-        "🌘 Dark Vibes — Assirem Music PROD"
-      ],
+      "playlist_name": "📚 Focus & Deep Work — Assirem Music PROD",
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
 
       "distribution": {
@@ -700,13 +410,13 @@
       },
 
       "video": {
-        "intro_fade_sec": 1,
-        "outro_fade_sec": 2,
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
         "title_card": {
           "enabled": true,
           "duration_sec": 3,
-          "text": "Berserk Mode",
-          "subtitle": "Hard Phonk · Beast Mode — Assirem Music PROD",
+          "text": "Deep Focus Study",
+          "subtitle": "Lofi · Study Beats — Assirem Music PROD",
           "style": "minimal_dark"
         },
         "end_card": {
@@ -715,172 +425,129 @@
           "subscribe_cta": true
         },
         "short_clip": {
-          "start_sec": 5,
+          "start_sec": 8,
           "duration_sec": 55
         }
       },
 
       "scenes": [
-        {
-          "prompt": "Wide establishing shot: underground fight gym at night, bare concrete walls, red lighting, heavy bags swinging, chains and iron everywhere, brutal atmosphere, 4K ultra detailed",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Slow camera travelling low across gym floor, chalk dust rising from dropped barbell, sweat droplets catching harsh light, raw and intense, cinematic 4K",
-          "motion_strength": 4
-        },
-        {
-          "prompt": "Medium shot: athlete mid-clean-and-jerk, maximum weight, muscles locked, face a mask of pure effort, motion blur on weights, ultra detailed 4K",
-          "motion_strength": 7
-        },
-        {
-          "prompt": "Close-up insert: eye close-up, sweat running down brow, pupils dilated with adrenaline and focus, red gym light reflection, macro cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium emotional shot: athlete slamming barbell down after PR lift, primal scream, chalk cloud exploding, absolute release, cinematic 4K",
-          "motion_strength": 6
-        },
-        {
-          "prompt": "Wide final shot: lone athlete silhouette in empty gym after everyone left, weight rack behind, body language of someone who never stops, 4K stunning",
-          "motion_strength": 2
-        }
+        { "prompt": "Wide establishing shot: cozy bedroom study setup at night, desk lamp warm glow, open textbooks, laptop screen light, rain on window, city lights bokeh outside, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: library interior at golden hour, tall bookshelves, sunbeams through arched windows, dust particles floating, quiet atmosphere, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: hands writing notes in notebook, highlighted textbook beside, coffee cup steaming, warm desk lamp light, studious atmosphere, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: vinyl record spinning on turntable, needle in groove, warm amber tone arm light, dust motes, cozy aesthetic, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium cozy shot: cat sleeping on windowsill beside stack of books, rain droplets on glass, soft interior light, peaceful study room, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial view of university campus at blue hour, library windows glowing warm, students visible inside, autumn trees, serene academic atmosphere, 4K stunning", "motion_strength": 3 }
       ]
     },
 
     {
-      "slug": "bedroom-hours-lofi-vocals-2026",
-      "priority": 9,
+      "slug": "beast-mode-gym-trap-motivation-2026",
+      "priority": 7,
       "category": "activity",
-      "activity_type": "focus",
-      "activity_label": "Focus / Chill",
-
-      "suno_lyrics": "[Verse 1]\nSoft rain on the window pane\nYour sweater and a Sunday stain\nCoffee rings on open books\nYour sleepy face, your sleepy looks\n\n[Chorus]\nThese bedroom hours\nJust me and you\nThese bedroom hours\nThe whole world moves but we stay true\nThese bedroom hours\nAre all I need\nThese bedroom hours\nAre poetry\n\n[Verse 2]\nThe record player spinning slow\nAfternoon light its amber glow\nHalf awake and half a dream\nEverything is what it seems\n\n[Chorus]\nThese bedroom hours\nJust me and you\nThese bedroom hours\nThe whole world moves but we stay true\nThese bedroom hours\nAre all I need\nThese bedroom hours\nAre poetry\n\n[Bridge]\nDon't need anywhere to go\nJust this moment, just this glow\nLet the afternoon run slow\nLet it go, let it go\n\n[Outro]\nBedroom hours, bedroom hours\nJust like this, just like this",
-      "suno_style": "lofi hip hop, soft female vocals, acoustic guitar, warm vinyl crackle, gentle piano, 70 BPM, cozy, intimate, nostalgic, bedroom pop",
-      "suno_title": "Bedroom Hours",
-      "suno_exclude_styles": "loud, aggressive, trap, edm, heavy drums, stadium, dark",
-      "suno_vocal_gender": "female",
-      "suno_lyrics_mode": "manual",
-      "suno_weirdness": 25,
-      "suno_style_influence": 44,
-
-      "mode": "medium",
-      "title": "🎧 Bedroom Hours — Lofi Vocal Chill 2026 | Assirem Music PROD",
-      "description": "Sunday mornings and slow afternoons — this is all you need. ☁️\n\nLofi bedroom pop with warm vocals for those moments when the world can wait.\n\n⏱️ Chapters:\n00:00 — Morning Light\n01:30 — Chorus\n03:00 — Afternoon Drift\n04:30 — Fade Out\n\n🎧 Best for: sunday mornings, study breaks, rainy days, cozy playlists\n\n#LofiPop #BedroomPop #ChillVibes #CozyMusic #AIMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "lofi pop",
-        "bedroom pop",
-        "chill vibes",
-        "cozy music",
-        "sunday morning",
-        "soft vocals",
-        "lofi hip hop",
-        "ai music",
-        "assirem music prod",
-        "no copyright",
-        "2026 music"
-      ],
-      "playlists": [
-        "📚 Focus & Deep Work — Assirem Music PROD",
-        "☕ Soft morning café vibes — Assirem Music PROD",
-        "🌸 Pop & Chill — Assirem Music PROD"
-      ],
-      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
-
-      "distribution": {
-        "youtube": true,
-        "youtube_short": true,
-        "distrokid": true,
-        "tiktok": true,
-        "instagram_reels": true
-      },
-
-      "video": {
-        "intro_fade_sec": 3,
-        "outro_fade_sec": 4,
-        "title_card": {
-          "enabled": true,
-          "duration_sec": 3,
-          "text": "Bedroom Hours",
-          "subtitle": "Lofi Vocal · Bedroom Pop — Assirem Music PROD",
-          "style": "minimal_dark"
-        },
-        "end_card": {
-          "enabled": true,
-          "duration_sec": 5,
-          "subscribe_cta": true
-        },
-        "short_clip": {
-          "start_sec": 18,
-          "duration_sec": 55
-        }
-      },
-
-      "scenes": [
-        {
-          "prompt": "Wide establishing shot: cozy bedroom on rainy afternoon, fairy lights above unmade bed, vinyl records on shelf, steam from tea mug, golden haze, 4K ultra detailed",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Slow camera travelling across bedside table, stack of books, worn headphones, a half-finished journal, soft window light, intimate and warm, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium shot: girl lying on bed with headphones, eyes gently closed, slight smile, afternoon light across her face, pure contentment, ultra detailed 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Close-up insert: vinyl record spinning on player, needle in groove, warm amber turntable light, soft focus, nostalgic and beautiful, macro cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Medium emotional shot: couple sharing headphones on bed, reading together, cat curled at their feet, total peace and intimacy, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Wide final shot: bedroom window view, rain still falling, room glowing warm inside, world outside cold and grey, perfect sanctuary, 4K stunning",
-          "motion_strength": 1
-        }
-      ]
-    },
-
-    {
-      "slug": "oriental-night-market-vibes-2026",
-      "priority": 10,
-      "category": "world_music",
-      "country": "Morocco",
-      "country_local": "المغرب",
-      "country_flag": "🇲🇦",
+      "activity_type": "gym",
+      "activity_label": "Gym / Workout Motivation",
 
       "suno_lyrics": "[Instrumental]",
-      "suno_style": "oriental, arabic, moroccan gnawa, oud, darbuka, qanun, dark chill, night market ambiance, smoky, 88 BPM, exotic, atmospheric, mysterious",
-      "suno_title": "Marrakech Nights",
-      "suno_exclude_styles": "western pop, rock, trap, edm, happy bright, country, folk",
+      "suno_style": "dark trap, gym motivation, aggressive 808, phonk, hard-hitting drums, distorted bass, 145 BPM, intense, powerful, adrenaline, workout",
+      "suno_title": "Beast Mode Activated",
+      "suno_exclude_styles": "soft, gentle, acoustic, jazz, classical, ambient, lo-fi, chill, romantic",
       "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 35,
+      "suno_weirdness": 50,
+      "suno_style_influence": 58,
+
+      "mode": "medium",
+      "title": "💪 Beast Mode Activated — Gym Trap Motivation 145BPM 2026 | Assirem Music PROD",
+      "description": "No excuses. Heavy weight. Maximum effort.\n\nAggressive dark trap engineered for your heaviest sets — distorted 808s, phonk energy, and relentless BPM to push past every limit.\n\n⏱️ Chapters:\n00:00 — Warm Up\n00:40 — First Set\n02:00 — PR Attempt\n03:30 — Cool Down\n\n🎧 Best for: gym, powerlifting, HIIT, running, pre-workout, sports training\n\n#GymMusic #WorkoutMusic #TrapMotivation #BeastMode #Phonk #145BPM #AIMusic #AssiremMusicProd #NoCopyright #2026",
+      "tags": [
+        "gym music",
+        "workout music",
+        "trap motivation",
+        "beast mode",
+        "phonk",
+        "145 bpm",
+        "hiit music",
+        "powerlifting",
+        "pre workout",
+        "ai music",
+        "assirem music prod",
+        "no copyright"
+      ],
+      "playlist_name": "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Beast Mode Activated",
+          "subtitle": "Dark Trap · Gym 145BPM — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 6,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: dark industrial gym interior, red emergency lighting, heavy plates on barbell, chalk dust in air, concrete walls, intense atmosphere, cinematic 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: row of heavy dumbbells on rack, reflections in mirror wall, single figure shadow boxing in background, dramatic side lighting, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: athlete chalking hands before deadlift, veins visible, focused expression, red overhead light, weight plates stacked high, determination, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: barbell knurling gripped by chalked hands, metal texture detail, tension visible in forearms, dramatic rim light, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium action shot: explosive power clean movement, weight flying upward, chalk cloud erupting, athlete fully extended, peak effort moment frozen, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: athlete standing victorious over loaded barbell, gym empty, single spotlight from above, steam rising from body, champion silhouette, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+
+    {
+      "slug": "cafe-du-matin-bossa-nova-remote-work-2026",
+      "priority": 8,
+      "category": "activity",
+      "activity_type": "coffee",
+      "activity_label": "Coffee Shop / Remote Work",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "bossa nova, jazz guitar, soft brushes, upright bass, warm, café ambiance, 110 BPM, smooth, morning, relaxed, sophisticated",
+      "suno_title": "Café du Matin",
+      "suno_exclude_styles": "heavy, distorted, aggressive, trap, EDM, screaming, metal, dubstep",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 28,
       "suno_style_influence": 48,
 
       "mode": "medium",
-      "title": "🌙 Marrakech Nights — Oriental Night Market Vibes 2026 | Assirem Music PROD",
-      "description": "Lose yourself in the medina after midnight — spices, smoke, and ancient sounds. 🕌\n\nOud, darbuka, and qanun weaving through the sounds of a Moroccan night market. Pure mystery.\n\n⏱️ Chapters:\n00:00 — Entry into the Medina\n01:30 — The Souk at Night\n03:00 — Gnawa Ritual\n04:30 — Desert Wind Outro\n\n🎧 Best for: oriental vibes, world music, relaxation, travel playlists, exotic moods\n\n#OrientalMusic #MarrakechNights #MoroccanMusic #Oud #ArabicMusic #AIMusic #AssiremMusicProd #NoCopyright #2026",
+      "title": "☕ Café du Matin — Bossa Nova Remote Work Music 2026 | Assirem Music PROD",
+      "description": "Your morning coffee, elevated.\n\nSmooth bossa nova guitar, soft jazz brushes, and upright bass — the perfect soundtrack for remote work, morning emails, or just savoring your espresso.\n\n⏱️ Chapters:\n00:00 — First Sip\n01:00 — Morning Flow\n02:30 — Creative Hour\n04:00 — Last Drop\n\n🎧 Best for: remote work, coffee shop ambiance, morning routine, creative writing\n\n#BossaNova #CoffeeMusic #RemoteWork #MorningMusic #JazzGuitar #CaféAmbiance #AIMusic #AssiremMusicProd #NoCopyright #2026",
       "tags": [
-        "oriental music",
-        "moroccan music",
-        "marrakech",
-        "oud",
-        "darbuka",
-        "arabic music",
-        "world music",
+        "bossa nova",
+        "coffee shop music",
+        "remote work music",
+        "morning music",
+        "jazz guitar",
+        "café ambiance",
+        "work from home",
+        "smooth jazz",
         "ai music",
         "assirem music prod",
-        "no copyright",
-        "night market"
+        "no copyright"
       ],
-      "playlists": [
-        "🌙 Oriental Vibes — Assirem Music PROD",
-        "🌍 World Music Series — Assirem Music PROD"
-      ],
+      "playlist_name": "🌅 Chill & Acoustic Vibes — Assirem Music PROD",
       "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
 
       "distribution": {
@@ -892,13 +559,13 @@
       },
 
       "video": {
-        "intro_fade_sec": 3,
-        "outro_fade_sec": 4,
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
         "title_card": {
           "enabled": true,
-          "duration_sec": 4,
-          "text": "Marrakech Nights",
-          "subtitle": "Oriental · Night Market Vibes — Assirem Music PROD",
+          "duration_sec": 3,
+          "text": "Café du Matin",
+          "subtitle": "Bossa Nova · Remote Work — Assirem Music PROD",
           "style": "minimal_dark"
         },
         "end_card": {
@@ -907,36 +574,166 @@
           "subscribe_cta": true
         },
         "short_clip": {
-          "start_sec": 20,
+          "start_sec": 8,
           "duration_sec": 55
         }
       },
 
       "scenes": [
-        {
-          "prompt": "Wide establishing shot: Djemaa el-Fna square at midnight, hundreds of market stalls glowing in orange lantern light, smoke from food carts rising, minaret silhouette, 4K ultra detailed",
-          "motion_strength": 3
+        { "prompt": "Wide establishing shot: Parisian corner café at morning golden hour, marble tables, espresso cups, croissants, sunlight streaming through large windows, plants and warm wood, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: interior of cozy coffee shop, barista pouring latte art, steam rising, exposed brick walls, vintage pendant lights, morning crowd, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: laptop open on café table, hands typing, latte beside keyboard, notebook with sketches, morning light on face, productive and calm, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: espresso being poured from machine, rich crema forming, ceramic cup on saucer, coffee beans scattered, warm brown tones, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium relaxed shot: person reading book by café window, rain outside, warm interior light, plants on windowsill, peaceful morning solitude, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial view of charming European street at sunrise, café terraces opening, city waking up, warm light on cobblestones, morning mist, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "pixel-quest-indie-game-soundtrack-2026",
+      "priority": 9,
+      "category": "activity",
+      "activity_type": "gaming",
+      "activity_label": "Gaming / Indie Soundtrack",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "chiptune, indie game soundtrack, 8-bit synth, retro pixel, ambient electronic, arpeggiated, 100 BPM, adventurous, nostalgic, dreamy, layered pads",
+      "suno_title": "Pixel Quest",
+      "suno_exclude_styles": "heavy metal, screamo, country, folk, opera, orchestral bombastic",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 38,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "🎮 Pixel Quest — Indie Game Soundtrack Vibes 2026 | Assirem Music PROD",
+      "description": "Press START to feel.\n\nRetro chiptune meets modern ambient — an indie game soundtrack for your gaming sessions, game dev sprints, or nostalgic pixel art vibes.\n\n⏱️ Chapters:\n00:00 — Title Screen\n01:00 — Level 1\n02:30 — Boss Approach\n04:00 — Victory Theme\n\n🎧 Best for: gaming background, game development, pixel art creation, retro vibes\n\n#IndieGame #GameSoundtrack #Chiptune #8Bit #GamingMusic #RetroVibes #PixelArt #AIMusic #AssiremMusicProd #NoCopyright #2026",
+      "tags": [
+        "indie game soundtrack",
+        "chiptune",
+        "8-bit music",
+        "gaming music",
+        "retro game",
+        "pixel art music",
+        "game dev",
+        "background gaming",
+        "ai music",
+        "assirem music prod",
+        "no copyright"
+      ],
+      "playlist_name": "👾 Electronic & House & Techno — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Pixel Quest",
+          "subtitle": "Indie Game · Chiptune — Assirem Music PROD",
+          "style": "minimal_dark"
         },
-        {
-          "prompt": "Slow camera travelling through narrow Marrakech souk alley, hanging lanterns casting geometric shadows, spice sacks and rugs blurring past, cinematic 4K",
-          "motion_strength": 4
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
         },
-        {
-          "prompt": "Medium shot: gnawa musician in blue djellaba playing guembri bass lute, eyes rolling back in trance, firelight flickering, ultra detailed 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Close-up insert: hands playing darbuka drum, complex rhythms in warm lantern light, silver rings catching fire glow, macro cinematic 4K",
-          "motion_strength": 3
-        },
-        {
-          "prompt": "Medium emotional shot: woman in kaftan at riad rooftop, lanterns strung above, Atlas mountains distant in moonlight, mysterious and beautiful, cinematic 4K",
-          "motion_strength": 2
-        },
-        {
-          "prompt": "Wide final shot: Marrakech from above at night, thousand lights of the medina spread below, crescent moon and minaret, ancient and eternal, 4K stunning",
-          "motion_strength": 2
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
         }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: pixel art landscape rendered in 3D, floating islands in pastel sky, waterfalls pouring into clouds below, retro game aesthetic meets cinematic quality, 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: neon arcade interior at night, rows of vintage cabinets glowing, pixel characters on screens, purple and cyan light, reflections on floor, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: game developer at dual-monitor setup, pixel art editor on screen, colorful sprite sheet visible, LED strip ambient lighting, creative workspace, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: retro game controller buttons being pressed, colorful backlit keys, finger movement, pixel reflections in glossy plastic, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium dreamy shot: surreal pixel-art forest rendered cinematically, giant mushrooms glowing, tiny character walking path, fireflies, magical indie game world, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: panoramic view of fantasy pixel game world at sunset, castle in distance, river of light flowing through valleys, stars appearing, nostalgic and epic, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "ceo-morning-routine-hustle-beats-2026",
+      "priority": 10,
+      "category": "activity",
+      "activity_type": "hustle",
+      "activity_label": "Hustle / Entrepreneur Mindset",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "motivational trap, cinematic hip hop, orchestral strings, powerful piano, 130 BPM, inspiring, determined, luxury, success, epic buildup",
+      "suno_title": "CEO Morning",
+      "suno_exclude_styles": "sad, depressing, slow ambient, folk, country, acoustic only, lo-fi quiet",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 42,
+      "suno_style_influence": 55,
+
+      "mode": "medium",
+      "title": "💰 CEO Morning Routine — Hustle Beats Entrepreneur Mindset 2026 | Assirem Music PROD",
+      "description": "5AM. No alarm needed. Built different.\n\nMotivational trap meets cinematic orchestral — the soundtrack for building empires, closing deals, and executing on your vision.\n\n⏱️ Chapters:\n00:00 — 5AM Wake Up\n01:00 — Morning Discipline\n02:30 — Execute\n04:00 — Empire State\n\n🎧 Best for: morning routine, entrepreneurship, productivity, motivation, business mindset\n\n#HustleBeats #Entrepreneur #CEOMorning #Motivation #MakeMoneyMusic #GrindMusic #AIMusic #AssiremMusicProd #NoCopyright #2026",
+      "tags": [
+        "hustle beats",
+        "entrepreneur music",
+        "ceo morning routine",
+        "motivation music",
+        "make money music",
+        "grind music",
+        "success mindset",
+        "productivity music",
+        "ai music",
+        "assirem music prod",
+        "no copyright"
+      ],
+      "playlist_name": "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "CEO Morning",
+          "subtitle": "Hustle Beats · Motivation — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: luxury penthouse at 5AM dawn, floor-to-ceiling windows showing city skyline awakening, minimalist interior, person in silhouette stretching, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: modern home gym at sunrise, high-end equipment, person finishing cold shower visible through glass, determination in routine, golden dawn light, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: hands writing goals in leather journal on marble desk, black coffee beside, luxury watch visible, morning discipline aesthetic, executive focus, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: expensive watch face showing 5:00 AM, metal links catching first light of day, precision craftsmanship, success symbolism, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium power shot: person in tailored suit walking through modern glass office corridor, city panorama through windows, confident stride, golden hour backlighting, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Wide final shot: aerial view of modern business district at golden sunrise, glass towers reflecting light, helicopter landing pad on rooftop, empire built, 4K stunning", "motion_strength": 3 }
       ]
     }
   ]
