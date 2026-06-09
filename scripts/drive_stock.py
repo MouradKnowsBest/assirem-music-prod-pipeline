@@ -4,14 +4,15 @@ drive_stock.py — Gestion du "stock" Google Drive pour le pipeline Assirem
 
 Structure Drive attendue (dossier partagé avec le service account) :
   Assirem Stock/
-    incoming/     ← tu déposes ici : slug.mp3 + slug.jpg (+ slug.json optionnel)
-    processing/   ← créé automatiquement si besoin
-    done/         ← après succès
-    failed/       ← après échec
+    pocket-of-matches/  ← tu déposes ici un dossier par track (slug = nom du dossier)
+      Pocket of Matches.mp3
+      Image générée 1.png
+    done/               ← créé automatiquement après succès
+    failed/             ← créé automatiquement après échec
 
 Convention de nommage :
-  Le "slug" est le nom du fichier sans extension.
-  Exemple : lofi-coffee-shop.mp3 + lofi-coffee-shop.jpg → slug = "lofi-coffee-shop"
+  Le "slug" est le nom du dossier.
+  Exemple : dossier "pocket-of-matches" → slug = "pocket-of-matches"
 
 Usage :
   python scripts/drive_stock.py list
@@ -88,28 +89,28 @@ def _ensure_folder(svc, parent_id: str, name: str) -> str:
 
 def list_tracks(svc, root_id: str) -> list[dict]:
     """
-    Retourne la liste des tracks dans incoming/.
+    Retourne la liste des tracks directement dans le dossier racine (Assirem Stock/).
 
     Structure Drive attendue :
-      incoming/
-        pocket-of-matches/        ← slug = nom du dossier
-          Pocket of Matches.mp3   ← n'importe quel nom
-          Image générée 1.png     ← n'importe quel nom
+      Assirem Stock/
+        pocket-of-matches/    ← slug = nom du dossier
+          Pocket of Matches.mp3
+          Image générée 1.png
+        done/                 ← géré automatiquement
+        failed/               ← géré automatiquement
 
     Chaque élément : {"slug": str, "folder_id": str, "files": {type: filename}, "file_ids": {type: id}}
     """
-    incoming_id = _get_folder_id(svc, root_id, "incoming")
-    if not incoming_id:
-        return []
+    SYSTEM_FOLDERS = {"done", "failed", "incoming", "processing"}
 
-    # Liste les sous-dossiers de incoming/
+    # Liste les sous-dossiers directs de la racine (hors dossiers système)
     q = (
-        f"'{incoming_id}' in parents"
+        f"'{root_id}' in parents"
         f" and mimeType='application/vnd.google-apps.folder'"
         f" and trashed=false"
     )
     res = svc.files().list(q=q, fields="files(id,name)", pageSize=1000).execute()
-    folders = res.get("files", [])
+    folders = [f for f in res.get("files", []) if f["name"].lower() not in SYSTEM_FOLDERS]
 
     tracks = []
     for folder in folders:
@@ -194,19 +195,18 @@ def download_tracks(svc, root_id: str, dest_dir: str, slug: Optional[str] = None
 
 
 def move_to_subfolder(svc, root_id: str, slug: str, target: str):
-    """Déplace le dossier slug depuis incoming/ vers target/."""
-    incoming_id = _ensure_folder(svc, root_id, "incoming")
+    """Déplace le dossier slug depuis la racine vers done/ ou failed/."""
     target_id = _ensure_folder(svc, root_id, target)
 
-    folder_id = _get_folder_id(svc, incoming_id, slug)
+    folder_id = _get_folder_id(svc, root_id, slug)
     if not folder_id:
-        print(f"  ⚠️  Dossier '{slug}' introuvable dans incoming/")
+        print(f"  ⚠️  Dossier '{slug}' introuvable dans la racine")
         return
 
     svc.files().update(
         fileId=folder_id,
         addParents=target_id,
-        removeParents=incoming_id,
+        removeParents=root_id,
         fields="id,parents",
     ).execute()
     print(f"  → {slug}/ → {target}/")
