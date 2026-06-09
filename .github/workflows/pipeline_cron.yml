@@ -79,16 +79,31 @@ jobs:
             python scripts/drive_stock.py download ./stock
           fi
 
+      # ── Vérifier qu'il y a quelque chose à traiter ───────────────────────────
+      - name: Check stock not empty
+        id: check_stock
+        run: |
+          if [ -d ./stock ] && [ "$(ls -A ./stock 2>/dev/null)" ]; then
+            echo "has_tracks=true" >> $GITHUB_OUTPUT
+            echo "  ✅ Stock non vide — on continue"
+          else
+            echo "has_tracks=false" >> $GITHUB_OUTPUT
+            echo "  ℹ️  Stock vide (aucun fichier dans Drive incoming/) — rien à faire"
+          fi
+
       # ── Auto-JSON : générer les JSONs manquants (template, sans IA) ──────────
       - name: Auto-generate missing JSONs
+        if: steps.check_stock.outputs.has_tracks == 'true'
         run: python scripts/auto_json.py --batch ./stock
 
       # ── Préparer la config pipeline depuis le stock ───────────────────────────
       - name: Build pipeline config from stock
+        if: steps.check_stock.outputs.has_tracks == 'true'
         run: python scripts/build_stock_config.py ./stock
 
       # ── Copier les MP3 vers input/ ────────────────────────────────────────────
       - name: Copy MP3s to input/
+        if: steps.check_stock.outputs.has_tracks == 'true'
         run: |
           for slug_dir in stock/*/; do
             slug=$(basename "$slug_dir")
@@ -104,9 +119,8 @@ jobs:
           done
 
       # ── Pipeline ─────────────────────────────────────────────────────────────
-      # --visual-engine template : HTML slideshow (Playwright) avec les images fournies
-      # Pas de Leonardo — tes images sont utilisées directement dans le template
       - name: Run pipeline
+        if: steps.check_stock.outputs.has_tracks == 'true'
         env:
           SLUG: ${{ github.event.inputs.slug }}
           SKIP_UPLOAD: ${{ github.event.inputs.skip_upload }}
@@ -119,7 +133,7 @@ jobs:
 
       # ── Marquer les tracks traités ────────────────────────────────────────────
       - name: Mark successful tracks as done
-        if: success()
+        if: success() && steps.check_stock.outputs.has_tracks == 'true'
         env:
           DRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_DRIVE_SA_JSON }}
         run: |
@@ -130,7 +144,7 @@ jobs:
           done
 
       - name: Mark failed tracks
-        if: failure()
+        if: failure() && steps.check_stock.outputs.has_tracks == 'true'
         env:
           DRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_DRIVE_SA_JSON }}
         run: |
