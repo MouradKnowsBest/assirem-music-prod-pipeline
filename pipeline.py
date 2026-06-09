@@ -405,6 +405,7 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
                     break
             if _scene_thumb:
                 thumb_path = _scene_thumb
+                track["thumbnail_path"] = _scene_thumb
                 info(f"Thumbnail : {os.path.basename(_scene_thumb)}")
             else:
                 warning(f"Thumbnail ignoré (champ 'tier' absent et aucun scene_001.* pour {slug})")
