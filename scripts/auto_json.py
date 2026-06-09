@@ -195,8 +195,8 @@ def process_batch(stock_dir: str, use_claude: bool = False, genre: str = ""):
     """Traite tous les slugs dans stock_dir/ qui n'ont pas encore de JSON."""
     stock = Path(stock_dir)
     if not stock.is_dir():
-        print(f"❌ Dossier introuvable : {stock_dir}", file=sys.stderr)
-        sys.exit(1)
+        print(f"  (stock vide ou absent — rien à traiter)")
+        return
 
     generated = 0
     skipped = 0
