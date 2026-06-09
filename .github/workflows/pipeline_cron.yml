@@ -5,8 +5,8 @@ name: Assirem Pipeline (Drive Stock)
 
 on:
   schedule:
-    # 4x/jour : 6h, 11h, 16h, 21h UTC
-    - cron: '0 6,11,16,21 * * *'
+    # 4x/jour : 10h, 15h, 18h, 22h heure Paris (UTC+2 été) = 8h, 13h, 16h, 20h UTC
+    - cron: '0 8,13,16,20 * * *'
   workflow_dispatch:
     inputs:
       slug:
