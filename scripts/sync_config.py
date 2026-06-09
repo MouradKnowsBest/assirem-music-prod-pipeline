@@ -2,62 +2,89 @@
 """
 sync_config.py
 --------------
-1. Copie le config.json source → destination.
-2. Lit les slugs des tracks dans le config.
-3. Archive le contenu de `input/`  → `input archive/YYYY-MM-DD`
-4. Archive le contenu de `OUTPUT/` → `OUTPUT archive/YYYY-MM-DD`
-   (ajoute _2, _3, … si le dossier-date existe déjà — idempotent)
-5. Crée un dossier numéroté par track dans `input/` : 1-slug, 2-slug, …
-   (OUTPUT/ n'est pas pré-créé : le pipeline le gère lui-même via output/slug)
+Prépare l'arborescence input/ pour un batch de tracks défini dans un config JSON.
+
+Étapes (dans l'ordre) :
+  1. (Optionnel, --copy-from) Copie un config externe → config local.
+  2. Lit la liste des tracks depuis le fichier config (--config).
+  3. Archive le contenu actuel de `input/`  → `input archive/YYYY-MM-DD[_N]`.
+  4. Archive le contenu actuel de `OUTPUT/` → `OUTPUT archive/YYYY-MM-DD[_N]`
+     (idempotent : skip si déjà à jour).
+  5. Crée un dossier numéroté par track dans `input/` : 1-slug, 2-slug, …
+     OUTPUT/ n'est pas pré-créé : le pipeline le gère via output/<slug>.
+
+Usage :
+  python3 scripts/sync_config.py
+      → lit today/week_config.json (défaut, 35 tracks de la semaine)
+
+  python3 scripts/sync_config.py --config today/config.json
+      → lit today/config.json (batch quotidien de l'agent planifié)
+
+  python3 scripts/sync_config.py --config config.json
+      → lit config.json racine (10 tracks legacy)
+
+  python3 scripts/sync_config.py --config /chemin/quelconque.json
+
+  python3 scripts/sync_config.py --copy-from "/Users/.../pipeline/config.json"
+      → copie le fichier externe en local AVANT de l'utiliser comme source
 """
 
+import argparse
 import json
 import shutil
+import sys
 from datetime import date
 from pathlib import Path
 
-# ── Chemins ──────────────────────────────────────────────────────────────────
+# ── Chemins du repo (relatifs à l'emplacement du script) ─────────────────────
 
-SOURCE_CONFIG   = Path("/Users/mourad.knowsbest/Documents/Claude/Scheduled/amp-assirem-music-prod-growth/pipeline/config.json")
-DEST_CONFIG     = Path("/Users/mourad.knowsbest/Coding/assirem-music-prod-pipeline/config.json")
-INPUT_DIR       = Path("/Users/mourad.knowsbest/Coding/assirem-music-prod-pipeline/input")
-INPUT_ARCHIVE   = Path("/Users/mourad.knowsbest/Coding/assirem-music-prod-pipeline/input archive")
-OUTPUT_DIR      = Path("/Users/mourad.knowsbest/Coding/assirem-music-prod-pipeline/OUTPUT")
-OUTPUT_ARCHIVE  = Path("/Users/mourad.knowsbest/Coding/assirem-music-prod-pipeline/OUTPUT archive")
-
-# ── 1. Copie du config ────────────────────────────────────────────────────────
-
-def copier_config() -> dict:
-    if not SOURCE_CONFIG.exists():
-        raise FileNotFoundError(f"Config source introuvable : {SOURCE_CONFIG}")
-
-    with open(SOURCE_CONFIG, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    shutil.copy2(SOURCE_CONFIG, DEST_CONFIG)
-    print(f"✓ Config copié : {SOURCE_CONFIG.name} → {DEST_CONFIG}")
-    return data
+BASE_DIR        = Path(__file__).resolve().parent.parent
+DEFAULT_CONFIG  = BASE_DIR / "today" / "week_config.json"
+DAILY_CONFIG    = BASE_DIR / "today" / "config.json"
+LEGACY_CONFIG   = BASE_DIR / "config.json"
+INPUT_DIR       = BASE_DIR / "input"
+INPUT_ARCHIVE   = BASE_DIR / "input archive"
+OUTPUT_DIR      = BASE_DIR / "OUTPUT"
+OUTPUT_ARCHIVE  = BASE_DIR / "OUTPUT archive"
 
 
-# ── 2. Lecture des slugs ──────────────────────────────────────────────────────
+# ── 1. (Optionnel) Copie d'un config externe vers le repo ────────────────────
 
-def lire_slugs(data: dict) -> list[str]:
+def copier_config(source: Path, dest: Path) -> None:
+    if not source.exists():
+        raise FileNotFoundError(f"Config source introuvable : {source}")
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, dest)
+    print(f"✓ Config copié : {source} → {dest}")
+
+
+# ── 2. Lecture du config local ───────────────────────────────────────────────
+
+def lire_config(path: Path) -> dict:
+    if not path.exists():
+        raise FileNotFoundError(f"Config introuvable : {path}")
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def lire_slugs(data: dict) -> list[tuple[str, int]]:
+    """Retourne une liste de (slug, nb_scenes) pour chaque track."""
     tracks = data.get("tracks", [])
-    slugs = [t["slug"] for t in tracks if "slug" in t]
-    if slugs:
-        print(f"✓ {len(slugs)} track(s) trouvé(s) :")
-        for i, s in enumerate(slugs, 1):
-            print(f"   {i}. {s}")
+    result = [(t["slug"], len(t.get("scenes", [])) or 3) for t in tracks if "slug" in t]
+    if result:
+        print(f"✓ {len(result)} track(s) trouvé(s) :")
+        for i, (s, nb) in enumerate(result, 1):
+            print(f"   {i:>3}. {s}  ({nb} scènes)")
     else:
         print("⚠ Aucun slug de track trouvé dans le config.")
-    return slugs
+    return result
 
 
-# ── Helpers archive ───────────────────────────────────────────────────────────
+# ── Helpers archive ──────────────────────────────────────────────────────────
 
-def _noms_attendus(slugs: list[str]) -> set[str]:
-    """Noms de dossiers attendus : '1-slug', '2-slug', …"""
-    return {f"{i}-{s}" for i, s in enumerate(slugs, 1)}
+def _noms_attendus(slugs: list[tuple[str, int]]) -> set[str]:
+    """Noms de dossiers attendus : '01-slug', '02-slug', …"""
+    return {f"{i:02d}-{s}" for i, (s, _) in enumerate(slugs, 1)}
 
 
 def _dossier_disponible(archive_dir: Path) -> Path:
@@ -73,7 +100,7 @@ def _dossier_disponible(archive_dir: Path) -> Path:
         n += 1
 
 
-def _archiver(source_dir: Path, archive_dir: Path, slugs: list[str], label: str):
+def _archiver(source_dir: Path, archive_dir: Path, slugs: list[str], label: str) -> None:
     if not source_dir.exists():
         print(f"⚠ {label}/ introuvable, rien à archiver.")
         return
@@ -83,7 +110,7 @@ def _archiver(source_dir: Path, archive_dir: Path, slugs: list[str], label: str)
         print(f"⚠ {label}/ vide, rien à archiver.")
         return
 
-    # Idempotence : déjà les bons dossiers numérotés → skip
+    # Idempotence : si les dossiers présents matchent déjà la cible, skip.
     noms_actuels = {item.name for item in contenu}
     if noms_actuels == _noms_attendus(slugs):
         print(f"⏭ {label}/ déjà à jour — aucune archive créée.")
@@ -99,36 +126,101 @@ def _archiver(source_dir: Path, archive_dir: Path, slugs: list[str], label: str)
     print(f"✓ {len(contenu)} élément(s) archivé(s) → {dest.relative_to(archive_dir.parent)}")
 
 
-def _creer_dossiers(target_dir: Path, slugs: list[str], label: str):
+def _creer_dossiers(target_dir: Path, slugs: list[tuple[str, int]], label: str) -> None:
     if not slugs:
         print(f"⚠ Aucun slug, aucun dossier créé dans {label}/.")
         return
 
     target_dir.mkdir(exist_ok=True)
-    for i, slug in enumerate(slugs, 1):
-        dossier = target_dir / f"{i}-{slug}"
+    for i, (slug, _) in enumerate(slugs, 1):
+        dossier = target_dir / f"{i:02d}-{slug}"
         dossier.mkdir(exist_ok=True)
-        print(f"   📁 {i}-{slug}")
+        print(f"   📁 {i:02d}-{slug}")
 
     print(f"✓ {len(slugs)} dossier(s) créé(s) dans {label}/")
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+def _creer_scenes(output_dir: Path, slugs: list[tuple[str, int]]) -> None:
+    """Crée output/<slug>/scenes/ avec les placeholders scene_001.png … scene_NNN.png."""
+    if not slugs:
+        return
 
-if __name__ == "__main__":
+    output_dir.mkdir(exist_ok=True)
+    for i, (slug, nb_scenes) in enumerate(slugs, 1):
+        scenes_dir = output_dir / f"{i:02d}-{slug}" / "scenes"
+        scenes_dir.mkdir(parents=True, exist_ok=True)
+        print(f"   🖼  output/{i:02d}-{slug}/scenes/  (vide — dépose tes {nb_scenes} images ici)")
+
+    print(f"✓ {len(slugs)} dossier(s) scenes créé(s) dans output/")
+
+
+# ── Main ─────────────────────────────────────────────────────────────────────
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="Prépare input/ pour un batch de tracks à partir d'un config JSON.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "Exemples :\n"
+            "  python3 scripts/sync_config.py\n"
+            "      → today/week_config.json (défaut, 35 tracks de la semaine)\n\n"
+            "  python3 scripts/sync_config.py --config today/config.json\n"
+            "      → today/config.json (batch quotidien de l'agent planifié)\n\n"
+            "  python3 scripts/sync_config.py --config config.json\n"
+            "      → config.json racine (legacy 10 tracks)\n\n"
+            "  python3 scripts/sync_config.py --copy-from /Users/.../pipeline/config.json\n"
+            "      → copie d'abord le fichier externe en local\n"
+        ),
+    )
+    parser.add_argument(
+        "--config",
+        type=Path,
+        default=DEFAULT_CONFIG,
+        help=f"Fichier JSON source (défaut : {DEFAULT_CONFIG.relative_to(BASE_DIR)}).",
+    )
+    parser.add_argument(
+        "--copy-from",
+        type=Path,
+        default=None,
+        help="Si fourni, copie ce fichier externe vers --config AVANT lecture.",
+    )
+    parser.add_argument(
+        "--no-archive",
+        action="store_true",
+        help="Saute l'archivage de input/ et OUTPUT/ (utile pour preview).",
+    )
+    args = parser.parse_args()
+
     print("\n── Sync config ─────────────────────────────────────────────────────")
-    data = copier_config()
+    if args.copy_from is not None:
+        copier_config(args.copy_from, args.config)
+    print(f"✓ Source : {args.config}")
 
-    print("\n── Tracks dans le nouveau config ───────────────────────────────────")
+    print("\n── Tracks dans le config ───────────────────────────────────────────")
+    data = lire_config(args.config)
     slugs = lire_slugs(data)
+    if not slugs:
+        print("\n❌ Aucun slug → arrêt.")
+        return 1
 
-    print("\n── Archive input/ ──────────────────────────────────────────────────")
-    _archiver(INPUT_DIR, INPUT_ARCHIVE, slugs, "input")
+    if not args.no_archive:
+        print("\n── Archive input/ ──────────────────────────────────────────────────")
+        _archiver(INPUT_DIR, INPUT_ARCHIVE, slugs, "input")
 
-    print("\n── Archive OUTPUT/ ─────────────────────────────────────────────────")
-    _archiver(OUTPUT_DIR, OUTPUT_ARCHIVE, slugs, "OUTPUT")
+        print("\n── Archive OUTPUT/ ─────────────────────────────────────────────────")
+        _archiver(BASE_DIR / "OUTPUT", OUTPUT_ARCHIVE, slugs, "OUTPUT")
+    else:
+        print("\n── Archive ignorée (--no-archive) ──────────────────────────────────")
 
     print("\n── Création des dossiers input/ ────────────────────────────────────")
     _creer_dossiers(INPUT_DIR, slugs, "input")
 
+    print("\n── Création des dossiers output/<slug>/scenes/ ─────────────────────")
+    _creer_scenes(BASE_DIR / "output", slugs)
+
     print("\n✅ Terminé.\n")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

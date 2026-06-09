@@ -20,10 +20,7 @@
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
+      "playlists": ["🌏 World Music", "🕊️ Cinematic & Orchestral"],
       "suno_title": "Deutschland Mein Herzland",
       "suno_style": "anthemic german folk-rock, brass band, soaring choir, orchestral strings, mid-tempo, 88 BPM, cinematic, patriotic, male lead voice",
       "suno_exclude_styles": "trap, edm, lofi, ambient, country western, drill",
@@ -62,6 +59,7 @@
         ]
       ]
     },
+
     {
       "slug": "poland-polska-my-land-forever-2026",
       "category": "world_music",
@@ -79,10 +77,7 @@
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
+      "playlists": ["🌏 World Music", "🕊️ Cinematic & Orchestral"],
       "suno_title": "Polska My Land Forever",
       "suno_style": "polish folk-anthemic, accordion, soaring choir, orchestral strings, mid-tempo, 92 BPM, cinematic, patriotic, female lead voice",
       "suno_exclude_styles": "trap, edm, lofi, drill, country western, ambient",
@@ -121,6 +116,7 @@
         ]
       ]
     },
+
     {
       "slug": "turkey-anadolu-land-of-my-soul-2026",
       "category": "world_music",
@@ -182,6 +178,7 @@
         ]
       ]
     },
+
     {
       "slug": "japan-nihon-rising-sun-2026",
       "category": "world_music",
@@ -200,10 +197,7 @@
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
+      "playlists": ["🌏 World Music", "🕊️ Cinematic & Orchestral"],
       "suno_title": "Nihon Rising Sun",
       "suno_style": "japanese traditional-anthemic, koto, shakuhachi flute, taiko drums, soaring choir, modern orchestral strings, 80 BPM, cinematic, patriotic, female lead voice",
       "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
@@ -242,6 +236,7 @@
         ]
       ]
     },
+
     {
       "slug": "russia-rodina-mother-russia-calls-2026",
       "category": "world_music",
@@ -260,10 +255,7 @@
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
+      "playlists": ["🌏 World Music", "🕊️ Cinematic & Orchestral"],
       "suno_title": "Rodina Mother Russia Calls",
       "suno_style": "russian folk-anthemic, balalaika, male choir bass profundo, orchestral strings, taiko-like timpani, 80 BPM, cinematic, patriotic, male lead voice",
       "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
@@ -302,6 +294,7 @@
         ]
       ]
     },
+
     {
       "slug": "france-mon-pays-bien-aime-2026",
       "category": "world_music",
@@ -362,6 +355,7 @@
         ]
       ]
     },
+
     {
       "slug": "italy-italia-la-mia-terra-2026",
       "category": "world_music",
@@ -380,10 +374,7 @@
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
+      "playlists": ["🌏 World Music", "🕊️ Cinematic & Orchestral"],
       "suno_title": "Italia La Mia Terra",
       "suno_style": "italian operatic-anthemic, mandolin, soaring tenor choir, orchestral strings, 90 BPM, cinematic, patriotic, male lead voice",
       "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
@@ -422,6 +413,7 @@
         ]
       ]
     },
+
     {
       "slug": "uk-britannia-land-of-hope-2026",
       "category": "world_music",
@@ -440,10 +432,7 @@
         "assirem music prod",
         "no copyright"
       ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
+      "playlists": ["🌏 World Music", "🕊️ Cinematic & Orchestral"],
       "suno_title": "Britannia Land of Hope",
       "suno_style": "british anthemic-orchestral, bagpipes, soaring choir, full symphony, brass section, 92 BPM, cinematic, patriotic, male lead voice, elgar influence",
       "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
@@ -481,89 +470,6 @@
           2
         ]
       ]
-    },
-    {
-      "slug": "sbart-w-tal-3dabi-cheb-hasni-blues-2026",
-      "category": "algerian_classics",
-      "title": "صبرت وطال عذابي — Cheb Hasni (Blues Version) | Assirem Music PROD",
-      "description": "Cheb Hasni classic reimagined in a soulful blues style. 🎸\n\nصبرت وطال عذابي — the timeless raï anthem reborn.\n\n#ChebHasni #AlgerianMusic #Raï #Blues #AssiremMusicProd",
-      "tags": [
-        "cheb hasni",
-        "algerian music",
-        "raï",
-        "blues",
-        "سبرت وطال عذابي",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
-      "mode": "medium",
-      "scenes": []
-    },
-    {
-      "slug": "sbart-w-tal-3dabi-cheb-hasni-guitare-electrique-2026",
-      "category": "algerian_classics",
-      "title": "صبرت وطال عذابي — Cheb Hasni (Guitare Électrique) | Assirem Music PROD",
-      "description": "Cheb Hasni classic reimagined with electric guitar. 🎸\n\nصبرت وطال عذابي — raï meets rock.\n\n#ChebHasni #AlgerianMusic #Raï #ElectricGuitar #AssiremMusicProd",
-      "tags": [
-        "cheb hasni",
-        "algerian music",
-        "raï",
-        "electric guitar",
-        "guitare electrique",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
-      "mode": "medium",
-      "scenes": []
-    },
-    {
-      "slug": "sbart-w-tal-3dabi-cheb-hasni-revisit-2026",
-      "category": "algerian_classics",
-      "title": "صبرت وطال عذابي — Cheb Hasni (Revisited) | Assirem Music PROD",
-      "description": "Cheb Hasni classic revisited with a modern twist. 🎵\n\nصبرت وطال عذابي — a tribute to the raï legend.\n\n#ChebHasni #AlgerianMusic #Raï #Revisited #AssiremMusicProd",
-      "tags": [
-        "cheb hasni",
-        "algerian music",
-        "raï",
-        "revisited",
-        "tribute",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
-      "mode": "medium",
-      "scenes": []
-    },
-    {
-      "slug": "ya-hasrah-alik-ya-denia-kamel-messaoudi-blues-harmonica",
-      "category": "algerian_classics",
-      "title": "يا حسرة عليك يا دنيا — Kamel Messaoudi (Blues Harmonica) | Assirem Music PROD",
-      "description": "يا حسرة عليك يا دنيا — Kamel Messaoudi reimagined with soulful blues harmonica. 🎵\n\nA timeless Algerian classic meets the blues.\n\n#KamelMessaoudi #AlgerianMusic #BluesHarmonica #Chaabi #AssiremMusicProd",
-      "tags": [
-        "kamel messaoudi",
-        "algerian music",
-        "blues harmonica",
-        "chaabi",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
-      "mode": "medium",
-      "scenes": []
     }
   ]
 }

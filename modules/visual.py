@@ -19,7 +19,7 @@ import requests
 from . import _http
 
 LEONARDO_API_BASE = "https://cloud.leonardo.ai/api/rest/v1"
-DEFAULT_MODEL = "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3"
+DEFAULT_MODEL = "05ce0082-2d80-4a2d-8653-4d1c85e2418e"  # Lucid Realism (was: Leonardo Phoenix 1.0)
 
 
 def _attendre_generation(cle: str, gen_id: str, label: str) -> dict:
@@ -119,7 +119,7 @@ def _generer_clip_scene(
     print(f"     → clip_{idx:03d}.mp4 ({taille} Ko)")
 
 
-def generer_visuel(track: dict, base_dir: str, force: bool = False) -> list:
+def generer_visuel(track: dict, base_dir: str, force: bool = False, skip_motion: bool = False) -> list:
     """
     Génère image + clip pour chaque scène d'un track.
     Retourne la liste des clips dans l'ORDRE des scènes (narratif).
@@ -140,10 +140,18 @@ def generer_visuel(track: dict, base_dir: str, force: bool = False) -> list:
     print(f"  → {len(scenes)} scène(s) cinématiques pour le track '{slug}'")
     cle = _http.lire_cle_api(base_dir, "leonardo")
 
+    if skip_motion:
+        print(f"  → Mode Ken Burns : génération images uniquement (clips Motion ignorés)")
+
     clips = []
     for i, scene in enumerate(scenes, 1):
-        prompt = scene.get("prompt", "")
-        motion = scene.get("motion_strength", 5)
+        # Support both dict {"prompt":..., "motion_strength":...} and array [prompt, motion]
+        if isinstance(scene, (list, tuple)):
+            prompt = scene[0] if len(scene) > 0 else ""
+            motion = int(scene[1]) if len(scene) > 1 else 5
+        else:
+            prompt = scene.get("prompt", "")
+            motion = scene.get("motion_strength", 5)
         img_path = os.path.join(scenes_dir, f"scene_{i:03d}.png")
         id_cache = os.path.join(scenes_dir, f".id_{i:03d}")
         clp_path = os.path.join(clips_dir, f"clip_{i:03d}.mp4")
@@ -155,6 +163,10 @@ def generer_visuel(track: dict, base_dir: str, force: bool = False) -> list:
             image_id = _generer_image_scene(
                 cle, model_id, prompt, img_path, id_cache, i, len(scenes)
             )
+
+        if skip_motion:
+            clips.append(img_path)
+            continue
 
         if os.path.exists(clp_path) and not force:
             taille = os.path.getsize(clp_path) // 1024

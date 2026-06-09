@@ -1,0 +1,332 @@
+{
+  "_doc": "Schedule de 35 uploads (5/jour × 7 jours) pour Assirem Music PROD. Les slugs renvoient à des tracks définis dans config.json (ou today/config.json). Les slots avec slug=null sont des placeholders à remplir au fur et à mesure que tu crées de nouveaux tracks.",
+  "schedule_start_date": "2026-04-25",
+  "schedule_end_date": "2026-05-01",
+  "timezone": "Europe/Paris",
+  "daily_slots_local": [
+    "08:15",
+    "12:10",
+    "16:13",
+    "20:02",
+    "23:16"
+  ],
+  "tracks_per_day": 5,
+  "total_slots": 35,
+  "slots": [
+    {
+      "day": 1,
+      "date": "2026-04-25",
+      "weekday": "Sat",
+      "time_local": "08:15",
+      "publish_at": "2026-04-25T06:15:00Z",
+      "slug": "bedroom-hours-lofi-vocals-2026",
+      "note": "Bedroom Hours — 📚 Focus & Deep Work — Assirem Music PROD"
+    },
+    {
+      "day": 1,
+      "date": "2026-04-25",
+      "weekday": "Sat",
+      "time_local": "12:10",
+      "publish_at": "2026-04-25T10:10:00Z",
+      "slug": "paris-minuit-french-pop-2026",
+      "note": "Paris Minuit — 🇫🇷 Pop Française — Assirem Music PROD"
+    },
+    {
+      "day": 1,
+      "date": "2026-04-25",
+      "weekday": "Sat",
+      "time_local": "16:13",
+      "publish_at": "2026-04-25T14:13:00Z",
+      "slug": "neural-drift-synthwave-coding-2026",
+      "note": "Neural Drift — 📚 Focus & Deep Work — Assirem Music PROD"
+    },
+    {
+      "day": 1,
+      "date": "2026-04-25",
+      "weekday": "Sat",
+      "time_local": "20:02",
+      "publish_at": "2026-04-25T18:02:00Z",
+      "slug": "midnight-confessions-dark-rnb-2026",
+      "note": "Midnight Confessions — 🌘 Dark Vibes — Assirem Music PROD"
+    },
+    {
+      "day": 1,
+      "date": "2026-04-25",
+      "weekday": "Sat",
+      "time_local": "23:16",
+      "publish_at": "2026-04-25T21:16:00Z",
+      "slug": "crystal-waters-ambient-healing-2026",
+      "note": "Crystal Waters — 🧘 Yoga & Meditation — Assirem Music PROD"
+    },
+    {
+      "day": 2,
+      "date": "2026-04-26",
+      "weekday": "Sun",
+      "time_local": "08:15",
+      "publish_at": "2026-04-26T06:15:00Z",
+      "slug": "kalahari-dawn-africa-world-2026",
+      "note": "Kalahari Dawn — 🌍 World Music Series — Assirem Music PROD"
+    },
+    {
+      "day": 2,
+      "date": "2026-04-26",
+      "weekday": "Sun",
+      "time_local": "12:10",
+      "publish_at": "2026-04-26T10:10:00Z",
+      "slug": "golden-days-indie-pop-2026",
+      "note": "Golden Days — 🌸 Pop & Chill — Assirem Music PROD"
+    },
+    {
+      "day": 2,
+      "date": "2026-04-26",
+      "weekday": "Sun",
+      "time_local": "16:13",
+      "publish_at": "2026-04-26T14:13:00Z",
+      "slug": "berserk-mode-gym-phonk-2026",
+      "note": "Berserk Mode — 💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD"
+    },
+    {
+      "day": 2,
+      "date": "2026-04-26",
+      "weekday": "Sun",
+      "time_local": "20:02",
+      "publish_at": "2026-04-26T18:02:00Z",
+      "slug": "oriental-night-market-vibes-2026",
+      "note": "Marrakech Nights — 🌙 Oriental Vibes — Assirem Music PROD"
+    },
+    {
+      "day": 2,
+      "date": "2026-04-26",
+      "weekday": "Sun",
+      "time_local": "23:16",
+      "publish_at": "2026-04-26T21:16:00Z",
+      "slug": "no-cap-zone-uk-drill-2026",
+      "note": "No Cap Zone — 🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD"
+    },
+    {
+      "day": 3,
+      "date": "2026-04-27",
+      "weekday": "Mon",
+      "time_local": "08:15",
+      "publish_at": "2026-04-27T06:15:00Z",
+      "slug": "tokyo-morning-cafe-lofi-2026",
+      "note": "Tokyo Morning Café — 📚 Focus, Lo-Fi & Coffee Work"
+    },
+    {
+      "day": 3,
+      "date": "2026-04-27",
+      "weekday": "Mon",
+      "time_local": "12:10",
+      "publish_at": "2026-04-27T10:10:00Z",
+      "slug": "havana-heat-salsa-2026",
+      "note": "Havana Heat — 🌶️ Latin, Caribbean & Reggae"
+    },
+    {
+      "day": 3,
+      "date": "2026-04-27",
+      "weekday": "Mon",
+      "time_local": "16:13",
+      "publish_at": "2026-04-27T14:13:00Z",
+      "slug": "ibiza-deep-house-2026",
+      "note": "Ibiza Deep House — 🔮 Electronic, House & Techno"
+    },
+    {
+      "day": 3,
+      "date": "2026-04-27",
+      "weekday": "Mon",
+      "time_local": "20:02",
+      "publish_at": "2026-04-27T18:02:00Z",
+      "slug": "neon-africa-afrofuturism-2026",
+      "note": "Neon Africa — 🌍 Afrofuturism"
+    },
+    {
+      "day": 3,
+      "date": "2026-04-27",
+      "weekday": "Mon",
+      "time_local": "23:16",
+      "publish_at": "2026-04-27T21:16:00Z",
+      "slug": "eclipse-cinematic-dark-2026",
+      "note": "Eclipse — 🕊️ Cinematic & Orchestral"
+    },
+    {
+      "day": 4,
+      "date": "2026-04-28",
+      "weekday": "Tue",
+      "time_local": "08:15",
+      "publish_at": "2026-04-28T06:15:00Z",
+      "slug": "rainy-bedroom-lofi-2026",
+      "note": "Rainy Bedroom — 📚 Focus, Lo-Fi & Coffee Work"
+    },
+    {
+      "day": 4,
+      "date": "2026-04-28",
+      "weekday": "Tue",
+      "time_local": "12:10",
+      "publish_at": "2026-04-28T10:10:00Z",
+      "slug": "neo-city-pop-tokyo-2026",
+      "note": "Neo City Pop Tokyo — 🌸 Pop, Chill & Indie Rock"
+    },
+    {
+      "day": 4,
+      "date": "2026-04-28",
+      "weekday": "Tue",
+      "time_local": "16:13",
+      "publish_at": "2026-04-28T14:13:00Z",
+      "slug": "iron-mindset-hard-trap-2026",
+      "note": "Iron Mindset — 💪 Workout, Gym & Motivation"
+    },
+    {
+      "day": 4,
+      "date": "2026-04-28",
+      "weekday": "Tue",
+      "time_local": "20:02",
+      "publish_at": "2026-04-28T18:02:00Z",
+      "slug": "kabyle-oud-desert-night-2026",
+      "note": "Kabyle Oud Night — 🌙 Oriental, Oud & Maghreb"
+    },
+    {
+      "day": 4,
+      "date": "2026-04-28",
+      "weekday": "Tue",
+      "time_local": "23:16",
+      "publish_at": "2026-04-28T21:16:00Z",
+      "slug": "night-drive-phonk-2026",
+      "note": "Night Drive Phonk — 🌘 Dark Vibes & Night Drive"
+    },
+    {
+      "day": 5,
+      "date": "2026-04-29",
+      "weekday": "Wed",
+      "time_local": "08:15",
+      "publish_at": "2026-04-29T06:15:00Z",
+      "slug": "bali-gamelan-sunrise-2026",
+      "note": "Bali Gamelan Sunrise — 🌏 World Music"
+    },
+    {
+      "day": 5,
+      "date": "2026-04-29",
+      "weekday": "Wed",
+      "time_local": "12:10",
+      "publish_at": "2026-04-29T10:10:00Z",
+      "slug": "paris-sous-la-pluie-2026",
+      "note": "Paris sous la Pluie — 🇫🇷 Pop Française"
+    },
+    {
+      "day": 5,
+      "date": "2026-04-29",
+      "weekday": "Wed",
+      "time_local": "16:13",
+      "publish_at": "2026-04-29T14:13:00Z",
+      "slug": "cyberpunk-focus-coding-2026",
+      "note": "Cyberpunk Focus — 🔮 Electronic, House & Techno"
+    },
+    {
+      "day": 5,
+      "date": "2026-04-29",
+      "weekday": "Wed",
+      "time_local": "20:02",
+      "publish_at": "2026-04-29T18:02:00Z",
+      "slug": "neo-soul-lounge-2026",
+      "note": "Neo Soul Lounge — 🎤 Hip-Hop, Rap & R&B"
+    },
+    {
+      "day": 5,
+      "date": "2026-04-29",
+      "weekday": "Wed",
+      "time_local": "23:16",
+      "publish_at": "2026-04-29T21:16:00Z",
+      "slug": "delta-sleep-binaural-2026",
+      "note": "Delta Sleep Binaural — 🧘 Meditation, Sleep & Wellness"
+    },
+    {
+      "day": 6,
+      "date": "2026-04-30",
+      "weekday": "Thu",
+      "time_local": "08:15",
+      "publish_at": "2026-04-30T06:15:00Z",
+      "slug": "grand-piano-dawn-2026",
+      "note": "Grand Piano Dawn — 🕊️ Cinematic & Orchestral"
+    },
+    {
+      "day": 6,
+      "date": "2026-04-30",
+      "weekday": "Thu",
+      "time_local": "12:10",
+      "publish_at": "2026-04-30T10:10:00Z",
+      "slug": "kingston-riddim-reggae-2026",
+      "note": "Kingston Riddim — 🌶️ Latin, Caribbean & Reggae"
+    },
+    {
+      "day": 6,
+      "date": "2026-04-30",
+      "weekday": "Thu",
+      "time_local": "16:13",
+      "publish_at": "2026-04-30T14:13:00Z",
+      "slug": "hustle-hard-drill-2026",
+      "note": "Hustle Hard — 🎤 Hip-Hop, Rap & R&B"
+    },
+    {
+      "day": 6,
+      "date": "2026-04-30",
+      "weekday": "Thu",
+      "time_local": "20:02",
+      "publish_at": "2026-04-30T18:02:00Z",
+      "slug": "velvet-night-pluggnb-2026",
+      "note": "Velvet Night — 🌘 Dark Vibes & Night Drive"
+    },
+    {
+      "day": 6,
+      "date": "2026-04-30",
+      "weekday": "Thu",
+      "time_local": "23:16",
+      "publish_at": "2026-04-30T21:16:00Z",
+      "slug": "forest-rain-sleep-2026",
+      "note": "Forest Rain Sleep — 🧘 Meditation, Sleep & Wellness"
+    },
+    {
+      "day": 7,
+      "date": "2026-05-01",
+      "weekday": "Fri",
+      "time_local": "08:15",
+      "publish_at": "2026-05-01T06:15:00Z",
+      "slug": "sunday-morning-lofi-2026",
+      "note": "Sunday Morning — 📚 Focus, Lo-Fi & Coffee Work"
+    },
+    {
+      "day": 7,
+      "date": "2026-05-01",
+      "weekday": "Fri",
+      "time_local": "12:10",
+      "publish_at": "2026-05-01T10:10:00Z",
+      "slug": "hanoi-silk-road-2026",
+      "note": "Hanoi Silk Road — 🌏 World Music"
+    },
+    {
+      "day": 7,
+      "date": "2026-05-01",
+      "weekday": "Fri",
+      "time_local": "16:13",
+      "publish_at": "2026-05-01T14:13:00Z",
+      "slug": "amapiano-summer-2026",
+      "note": "Amapiano Summer — 🌍 Afrofuturism"
+    },
+    {
+      "day": 7,
+      "date": "2026-05-01",
+      "weekday": "Fri",
+      "time_local": "20:02",
+      "publish_at": "2026-05-01T18:02:00Z",
+      "slug": "space-odyssey-epic-2026",
+      "note": "Space Odyssey — 🕊️ Cinematic & Orchestral"
+    },
+    {
+      "day": 7,
+      "date": "2026-05-01",
+      "weekday": "Fri",
+      "time_local": "23:16",
+      "publish_at": "2026-05-01T21:16:00Z",
+      "slug": "theta-dreams-396hz-2026",
+      "note": "Theta Dreams 396Hz — 🧘 Meditation, Sleep & Wellness"
+    }
+  ]
+}

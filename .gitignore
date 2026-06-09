@@ -42,6 +42,10 @@ node_modules/
 *.gif
 *.webp
 
+# Daily config produced by external scheduled agent (never track in git ;
+# canonical weekly file is today/week_config.json)
+today/config.json
+
 # Runtime / generated dirs
 input/
 input archive/
@@ -69,3 +73,5 @@ dossier sans titre/
 # Extra credential variants
 **/credentials*/
 **/credential*/
+OUTPUT archive*/
+.gitignore

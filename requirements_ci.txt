@@ -1,0 +1,20 @@
+# Dépendances CI — pipeline Assirem (Drive stock → FFmpeg → YouTube)
+# Install : pip install -r requirements_ci.txt
+
+# Google APIs : YouTube upload + Drive stock
+google-api-python-client>=2.100.0
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+
+# HTTP
+requests>=2.31.0
+
+# Playwright (rendu HTML template → MP4 via CDP screencast)
+playwright>=1.40.0
+
+# Pillow (thumbnails)
+Pillow>=10.0.0
+
+# Mutagen (lecture métadonnées audio)
+mutagen>=1.47.0

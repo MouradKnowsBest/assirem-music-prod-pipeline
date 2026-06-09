@@ -1,0 +1,2830 @@
+{
+  "_meta": {
+    "week": "2026-W22",
+    "week_dates": "2026-05-25 → 2026-05-31",
+    "generated_at": "2026-05-27T17:00:00+02:00",
+    "strategy_version": "rpm-niche-v4",
+    "primary_niches": [
+      "🌍 World Music 15h — ethnic, rock, blues, hip hop (rotatif)",
+      "🌵 Gnaoua Algérien Desert 17h — trance, lila, cérémonie",
+      "🎺 Raï d'Oran VOCAL darija 19h — primetime Maghreb",
+      "🌿 Reggae 21h — roots, dub, dancehall, lofi, spiritual",
+      "🎛️ House / Techno / Electro Oriental 23h — club late night"
+    ],
+    "distribution": "20% World · 20% Gnaoua · 20% Raï Oran · 20% Reggae · 20% House/Techno",
+    "niche_note": "que des paroles — aucun instrumental",
+    "slots_per_day": 5,
+    "slots": {
+      "slot_1": {
+        "time": "15:00",
+        "type": "world_music"
+      },
+      "slot_2": {
+        "time": "17:00",
+        "type": "gnaoua_algerian"
+      },
+      "slot_3": {
+        "time": "19:00",
+        "type": "rai_oran_vocal"
+      },
+      "slot_4": {
+        "time": "21:00",
+        "type": "reggae"
+      },
+      "slot_5": {
+        "time": "23:00",
+        "type": "house_techno_electro"
+      }
+    },
+    "total_tracks": 35
+  },
+  "tracks": [
+    {
+      "slug": "delta-blues-roots-mississippi-soul-2026",
+      "category": "world_blues",
+      "title": "🎸 Delta Blues Roots — Mississippi Soul 2026 | Raw Electric Blues | Assirem Music PROD",
+      "description": "Raw electric delta blues from the Mississippi delta. Slide guitar, harmonica, stomping rhythm. The roots of all modern music.\n\n#DeltaBlues #ElectricBlues #MississippiBlues #BluesMusic #AssiremMusicProd #2026",
+      "tags": [
+        "delta blues",
+        "electric blues",
+        "slide guitar",
+        "harmonica",
+        "roots music",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Delta Blues Roots — Mississippi Soul 2026",
+      "suno_style": "electric delta blues, slide guitar, blues harmonica, stomping kick drum, walking bass, male raw vocal, 90 BPM, Mississippi delta, Muddy Waters, Robert Johnson spirit",
+      "suno_exclude_styles": "pop, house, trap, reggae, K-pop, country pop",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 30,
+      "suno_style_influence": 52,
+      "suno_lyrics": "[Verse 1]\nWoke up this morning, river rising high\nWoke up this morning, river rising high\nDelta blues on my mind, ain't gonna say goodbye\n\n[Verse 2]\nSlide guitar crying, harmonica moan\nMississippi soul, this is my home\n\n[Chorus]\nDelta blues, rolling through my veins\nDelta blues, washing out the pain\nFrom the levee to the crossroads\nThis old music still remains\n\n[Verse 3]\nTravelled down to the crossroads at midnight\nGot the blues in my hands and the devil in my sight\n\n[Harmonica break]\n\n[Outro]\nMississippi... rolling... always rolling...",
+      "short_start": 48,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Delta Blues — Mississippi Soul",
+          "subtitle": "🎸 Raw Electric Blues 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 48,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Mississippi river at dawn, vast muddy water, cypress trees, Delta morning mist, moody blues atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Old juke joint at night, neon sign, blues guitarist on small stage, crowd dancing, authentic Delta atmosphere",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Crossroads at dusk, dusty road, lone guitar player on a case, dramatic sky, Robert Johnson myth",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 1,
+      "scheduled_at": "2026-06-01T13:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌍 World Music — Ethnic · Rock · Blues · Hip Hop",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌍 World Music — Ethnic · Rock · Blues · Hip Hop"
+    },
+    {
+      "slug": "gnaoua-sahara-spirit-trance-2026",
+      "category": "gnaoua",
+      "title": "🌵 Gnaoua Algérien Desert — Sahara Spirit Trance 2026 | Sacred Ritual | Assirem Music PROD",
+      "description": "Pure Gnaoua desert trance from the Algerian Sahara. Guembri bass, qraqeb castanets, trance chants. Ancient healing ritual reborn in 2026.\n\n#Gnaoua #GnouaAlgeria #SaharaMusic #DesertTrance #AssiremMusicProd",
+      "tags": [
+        "gnaoua",
+        "gnawa algeria",
+        "desert trance",
+        "sahara music",
+        "guembri",
+        "qraqeb",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Gnaoua Algérien Desert — Sahara Spirit Trance 2026",
+      "suno_style": "Algerian Gnaoua desert trance, guembri bass lute, qraqeb iron castanets, hypnotic 6/8 rhythm, male chant call-and-response, trance state, Saharan spirit, ancient Subsaharan Algerian folk",
+      "suno_exclude_styles": "reggae, house, pop, K-pop, country, metal",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 40,
+      "suno_style_influence": 45,
+      "suno_lyrics": "[Chant d'appel — voix guembri]\nAllah... Allah... ya sidi...\n\n[Verse 1 — darija algérienne]\nGuembri ydoq f'qalbi\nWel qraqeb ijawobu\nMin blad es-saf lil bhar\nRouh ta3na tlagouna\n\n[Chorus — trance chant]\nYa sidi ya mloul\nGnaoua f'sahara\nYa sidi ya mloul\nEl roh yetfarraj\n\n[Trance build]\n(guembri solo — qraqeb polyrhythm)\n\n[Verse 2]\nLil lila dyal gnaoua\nFel khima tejma3na\nEl baraka tenzal\nW el alwa t3awedna\n\n[Outro]\nAllah... sahara... ya sidi...",
+      "short_start": 40,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Gnaoua Desert — Sahara Spirit",
+          "subtitle": "🌵 Sacred Trance 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 40,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Algerian Sahara at dusk, vast sand dunes glowing orange-red, ancient desert well, mystical atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Gnaoua ceremony circle at night, men in white gandoura playing guembri and qraqeb around a fire, sparks rising",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Close-up of guembri player's hands in firelight, intricate string patterns, desert stars above",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 2,
+      "scheduled_at": "2026-06-01T15:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌵 Gnaoua Algérien Desert",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌵 Gnaoua Algérien Desert"
+    },
+    {
+      "slug": "rai-oran-winta-ntiya-2026",
+      "category": "rai_algerian",
+      "title": "🇩🇿 Raï Oran — Winta Ntiya 2026 | Vocal Darija | Assirem Music PROD",
+      "description": "Raï authentique d'Oran — voix darija, accordéon, derbouka. L'âme de l'Oranie dans chaque note.\n\n#RaiAlgerien #RaiOran #MusiqueAlgerienne #Darija #AssiremMusicProd",
+      "tags": [
+        "rai algérien",
+        "rai oran",
+        "darija",
+        "accordéon",
+        "derbouka",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Raï Oran — Winta Ntiya 2026",
+      "suno_style": "Algerian Raï from Oran, male vocal darija, accordion lead, derbouka rhythm, electric guitar, emotional love song, Cheb Khaled influence, 110 BPM",
+      "suno_exclude_styles": "reggae, house, trap, metal, K-pop",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 25,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro — accordéon]\n\n[Verse 1 — darija]\nWinta ntiya ya ghzali\nBla ghyabek 3ich machi\nQalbi 3andek ya jamali\nSa3a blik machi rachi\n\n[Chorus]\nWahran ya wahran\nBlad el hamama el bayda\nFi qalbi ya zman\nHobek ma yetzada\n\n[Verse 2]\nLila lila ya lila\nWel khmar yedwi bel bali\nMin Oran lil Maghnia\nNdir fik ya ghali\n\n[Bridge]\n(solo accordéon — derbouka montée)\n\n[Outro]\nYa wahran... ya bab el gharb...",
+      "short_start": 35,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Raï Oran — Winta Ntiya",
+          "subtitle": "🇩🇿 Vocal Darija 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 35,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Oran city at golden hour, the port of Oran, Mediterranean sea, white buildings, emotional atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Algerian raï singer in a cafe maure in Oran, accordion player beside him, warm lights, emotional crowd",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Street of Oran at night, neon cafe signs, couples strolling, accordion music in the air, cinematic",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 3,
+      "scheduled_at": "2026-06-01T17:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎺 Raï d'Oran VOCAL",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎺 Raï d'Oran VOCAL"
+    },
+    {
+      "slug": "roots-reggae-one-drop-jah-light-2026",
+      "category": "reggae",
+      "title": "🇯🇲 Roots Reggae One Drop — Jah Light 2026 | Conscious Vibration | Assirem Music PROD",
+      "description": "Pure roots reggae one-drop rhythm — conscious lyrics from Kingston to Zion. Nyahbinghi drums, heavy bass, organ skank.\n\n#RootsReggae #ConsciousReggae #JahMusic #OneDrop #AssiremMusicProd",
+      "tags": [
+        "roots reggae",
+        "conscious reggae",
+        "one drop",
+        "jah music",
+        "jamaican music",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Roots Reggae One Drop — Jah Light 2026",
+      "suno_style": "roots reggae, conscious one-drop rhythm, heavy bass guitar, reggae organ skank, nyahbinghi drums, 88 BPM, male vocals Jamaican patois and English, spiritual uplift, Bob Marley influence",
+      "suno_exclude_styles": "trap, edm, metal, country, K-pop, drill",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 28,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Verse 1]\nRise up in the morning with Jah light\nTrench Town living ain't an easy fight\nBut the roots reggae carries us along\nFrom the ghetto to Zion through the song\n\n[Pre-Chorus]\nFeel the one-drop rhythm in your chest\nThis music brings the healing, bring the rest\n\n[Chorus]\nRoots reggae, Jah bless the day\nFrom Kingston yard to the USA\nOne drop beats the Babylon away\nRoots reggae is here to stay\n\n[Verse 2]\nRasta man him know the mystic truth\nElder speak the wisdom to the youth\nNyahbinghi drums echo in the hills\nJah music always heals\n\n[Bridge]\nWe chant down Babylon with love\nReceive the blessing from above\n\n[Outro]\nRoots reggae... one love... Jah Rastafari...",
+      "short_start": 45,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Roots Reggae One Drop",
+          "subtitle": "🌿 Conscious Vibration 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 45,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Kingston Jamaica at sunrise, Trench Town rooftops glowing gold, mist over the Blue Mountains, cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Rastafarian elder playing nyahbinghi drums under a giant cotton tree, dreadlocks swaying, golden hour",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Reggae band on a Kingston yard stage, bass player deep in the groove, red-gold-green lights, crowd chanting",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 4,
+      "scheduled_at": "2026-06-01T19:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌿 Reggae & Lo-Fi Reggae",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌿 Reggae & Lo-Fi Reggae"
+    },
+    {
+      "slug": "oriental-house-istanbul-pulse-2026",
+      "category": "house_oriental",
+      "title": "🕌 Oriental House — Istanbul Pulse 2026 | Deep Electronic Bosphorus | Assirem Music PROD",
+      "description": "Deep oriental house with saz, oud, and pounding kicks. Bosphorus at midnight. Close your eyes and feel Istanbul.\n\n#OrientalHouse #DeepHouse #IstanbulMusic #ElectroOriental #AssiremMusicProd",
+      "tags": [
+        "oriental house",
+        "deep house",
+        "istanbul",
+        "electronic oriental",
+        "oud",
+        "saz",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Oriental House — Istanbul Pulse 2026",
+      "suno_style": "deep oriental house, oud melody, saz riff, 4/4 kick drum 124 BPM, dark bassline, Middle Eastern scales, Bosphorus night atmosphere, breathy female vocal hooks",
+      "suno_exclude_styles": "reggae, trap, country, K-pop, metal",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 35,
+      "suno_style_influence": 55,
+      "suno_lyrics": "[Intro — breathy female]\nBosphorus... midnight... ya habibi...\n\n[Verse 1]\nThe oud cries at the water's edge\nMinarets reflected in the dark\nThe city breathes its ancient pledge\nA spark in every broken heart\n\n[Chorus]\nIstanbul pulse, feel the night\nOriental rhythm burning bright\nBosphorus lights on the waves\nLost in the music, lost in caves\n\n[Oud solo break]\n\n[Verse 2]\nDancing shadows on the walls\nSpice market whispers, sacred calls\nBetween two worlds this city stands\nHeld by invisible hands\n\n[Outro]\nYa Istanbul... ya Istanbul...",
+      "short_start": 55,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Oriental House — Istanbul Pulse",
+          "subtitle": "🕌 Deep Electronic Bosphorus 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 55,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Bosphorus bridge at midnight, neon reflections in the water, misty atmosphere, cinematic drone shot",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Dark Istanbul rooftop club, silhouettes dancing, oud player in spotlight, smoke machine, electric blue lights",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Grand Bazaar transformed into underground party, geometric lights, oriental arches, deep bass visualization",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 5,
+      "scheduled_at": "2026-06-01T21:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎛️ House · Techno · Electro Oriental",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎛️ House · Techno · Electro Oriental"
+    },
+    {
+      "slug": "world-andean-fusion-pachamama-quechua-2026",
+      "category": "world_ethnic",
+      "title": "🦙 World Andean Fusion — Pachamama 2026 | Quechua Vocal | Assirem Music PROD",
+      "description": "Andean world fusion with quena flute, charango, and Quechua vocals. The spirit of the Andes — Pachamama calling.\n\n#AndeanMusic #WorldMusic #Quechua #Pachamama #EthnicMusic #AssiremMusicProd #2026",
+      "tags": [
+        "andean music",
+        "world music",
+        "quechua",
+        "pachamama",
+        "quena flute",
+        "charango",
+        "ethnic",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "World Andean Fusion — Pachamama 2026",
+      "suno_style": "Andean world fusion, quena flute lead, charango strings, Quechua female chant, bombo legüero drum, 82 BPM, mountain spirit, Peru Bolivia Andes, soulful and ancient",
+      "suno_exclude_styles": "trap, house, pop, K-pop, metal",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 38,
+      "suno_style_influence": 45,
+      "suno_lyrics": "[Intro — quena flute]\n\n[Verse 1 — Quechua/Spanish]\nPachamama, madre tierra\nNos llamas desde las cumbres\nQuena canta entre las piedras\nEl viento lleva tus nombres\n\n[Chorus — Quechua chant]\nAyau Pachamamay\nSumaq pachamamay\nKaypi kachkani\nKuski kachkani\n\n[Verse 2]\nCharango sings of Titicaca\nBombo drums echo the Andes\nAncient voices of Tiahuanaco\nCall from the sacred highlands\n\n[Bridge — instrumental]\n(quena solo — charango cascade)\n\n[Outro — fade to wind]\nPachamama... Inti... Wiracocha...",
+      "short_start": 50,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "World Andean Fusion — Pachamama",
+          "subtitle": "🦙 Quechua Vocal 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 50,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Andes mountains at dawn, snow-capped peaks, Lake Titicaca, sacred mist, cinematic 4K",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Peruvian woman in traditional dress playing quena flute on mountain ridge, colorful textiles, spiritual",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Andean ceremony, circle of musicians with charango and bombo, offering to Pachamama, sacred fire, mountains",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 1,
+      "scheduled_at": "2026-06-02T13:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌍 World Music — Ethnic · Rock · Blues · Hip Hop",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌍 World Music — Ethnic · Rock · Blues · Hip Hop"
+    },
+    {
+      "slug": "gnaoua-lila-sacred-night-algeria-2026",
+      "category": "gnaoua",
+      "title": "🌙 Gnaoua — Lila Sacred Night Algeria 2026 | Spiritual Healing | Assirem Music PROD",
+      "description": "Gnaoua lila ceremony — the sacred healing night ritual of Algerian tradition. Guembri, qraqeb, healing chants under the stars.\n\n#Gnaoua #LilaCeremony #AlgerianSpiritual #HealingMusic #AssiremMusicProd",
+      "tags": [
+        "gnaoua",
+        "lila ceremony",
+        "algerian spiritual",
+        "healing music",
+        "guembri",
+        "night ritual",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Gnaoua — Lila Sacred Night Algeria 2026",
+      "suno_style": "Algerian Gnaoua lila ceremony, deep guembri bass, iron qraqeb castanets, polyphonic male chanting, night ritual atmosphere, trance healing, West African Subsaharan roots, 6/8 polyrhythm",
+      "suno_exclude_styles": "house, pop, trap, metal, country",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 42,
+      "suno_style_influence": 42,
+      "suno_lyrics": "[Chant d'ouverture]\nBismillah... ya sidi bou medienne...\n\n[Verse 1 — darija/hassaniya]\nLila dyal baraka\nWel mlouk yejiwna\nGuembri ydoq fel leil\nWel qraqeb ihadina\n\n[Chorus — trance]\nYa sidi ya bilal\nGnaoua rah jalna\nYa sidi ya mloul\nEl baraka ma3na\n\n[Trance build]\n(guembri solo — qraqeb — chant intensifies)\n\n[Verse 2]\nSab3a alwan lila\nKol wahed b dawa\nMin sidi musa lil bhar\nHna b zawiya\n\n[Outro — descente]\nAllah... ya sidi... salam...",
+      "short_start": 38,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Gnaoua — Lila Sacred Night",
+          "subtitle": "🌙 Spiritual Healing Algeria 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 38,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Algerian desert night sky, millions of stars, white tent ceremony glowing from within, ancient sacred atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Gnaoua lila ceremony inside a tent, colorful fabrics, circle of musicians, incense smoke, spiritual atmosphere",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Close-up qraqeb iron castanets in motion, firelight reflections, hands of Gnaoua master, hypnotic rhythm",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 2,
+      "scheduled_at": "2026-06-02T15:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌵 Gnaoua Algérien Desert",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌵 Gnaoua Algérien Desert"
+    },
+    {
+      "slug": "rai-oran-galbi-f-dar-2026",
+      "category": "rai_algerian",
+      "title": "🇩🇿 Raï Oran — Galbi F'Dar 2026 | Vocal Darija | Assirem Music PROD",
+      "description": "Raï pur Oran — le son authentique de l'Oranie. Voix darija, accordéon, guitare électrique, derbouka. Émotion brute.\n\n#RaiAlgerien #RaiOran #Darija #AssiremMusicProd",
+      "tags": [
+        "rai algérien",
+        "rai oran",
+        "galbi",
+        "darija",
+        "musique algérienne",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Raï Oran — Galbi F'Dar 2026",
+      "suno_style": "Algerian raï Oran, male vocal darija, accordion, electric guitar, derbouka, melancholic love song, Cheb Mami influence, 108 BPM",
+      "suno_exclude_styles": "house, trap, metal, K-pop, reggae",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 25,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro accordéon]\n\n[Verse 1]\nGalbi f'dar w rohi fi berra\nNhar blik ya ghouli mzyana\nHasra ya zman hasra\nEl hob wella 3adawa\n\n[Chorus]\nYa galbi ya galbi\nEla fin temchi\nWahran bladi\nW nti f'bali\n\n[Verse 2]\nLa tkhelli la tkhelli\nWahd el ghurba 3andi qali\nDar bladi ya 3yuni\nWel hob khdam f'yalli\n\n[Bridge]\n(Guitare électrique — derbouka)\n\n[Outro]\nYa galbi... f'dar...",
+      "short_start": 32,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Raï Oran — Galbi F'Dar",
+          "subtitle": "🇩🇿 Vocal Darija 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 32,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Oran medina at evening, narrow streets lit by warm lanterns, emotional atmosphere, Algerian architecture",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Raï singer in a traditional Oran café, derbouka player beside him, intimate crowd, emotional performance",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Oran port at night, boats rocking gently, city lights on the water, melancholic romantic mood",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 3,
+      "scheduled_at": "2026-06-02T17:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎺 Raï d'Oran VOCAL",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎺 Raï d'Oran VOCAL"
+    },
+    {
+      "slug": "lovers-rock-reggae-sweet-island-love-2026",
+      "category": "reggae_lovers_rock",
+      "title": "💗 Lovers Rock Reggae — Sweet Island Love 2026 | Smooth Romantic | Assirem Music PROD",
+      "description": "Smooth lovers rock reggae — silky vocals, lush guitar, warm bass. The romantic side of reggae for sunset vibes.\n\n#LoversRock #RomanceReggae #SmoothReggae #IslandLove #AssiremMusicProd",
+      "tags": [
+        "lovers rock",
+        "romantic reggae",
+        "smooth reggae",
+        "island vibes",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Lovers Rock Reggae — Sweet Island Love 2026",
+      "suno_style": "lovers rock reggae, silky male vocals, lush reverb guitar, warm upright bass, 85 BPM, smooth romantic, UK reggae influence, saxophone melody",
+      "suno_exclude_styles": "trap, edm, metal, country, K-pop",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 22,
+      "suno_style_influence": 48,
+      "suno_lyrics": "[Verse 1]\nSunset paints the ocean gold\nYour smile is all I need to hold\nLovers rock playing soft and low\nJust us two and the evening glow\n\n[Chorus]\nSweet island love, stay with me\nUnder the coconut tree\nLovers rock, gentle waves\nThese are our sweetest days\n\n[Verse 2]\nYour laughter is the island breeze\nDrifting through the mango trees\nI'd sail a thousand miles or more\nJust to find you on this shore\n\n[Bridge]\nEvery note I play is for you\nEvery word I say is true\n\n[Outro]\nSweet love... island love... stay...",
+      "short_start": 42,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Lovers Rock Reggae — Sweet Island Love",
+          "subtitle": "💗 Smooth Romantic 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 42,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Caribbean beach at sunset, couple walking on white sand, palm trees silhouetted, romantic cinematic",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Open-air reggae band on a beach stage, fairy lights, couples dancing in the sand, tropical night",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Aerial shot of turquoise Caribbean water, small island with palm trees, golden hour, lovers rock mood",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 4,
+      "scheduled_at": "2026-06-02T19:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌿 Reggae & Lo-Fi Reggae",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌿 Reggae & Lo-Fi Reggae"
+    },
+    {
+      "slug": "deep-house-oriental-beirut-nights-2026",
+      "category": "house_oriental",
+      "title": "🌃 Deep House Oriental — Beirut Nights 2026 | Lebanese Electronic | Assirem Music PROD",
+      "description": "Deep house meets Lebanese oriental music. Oud samples, driving 4/4 kicks, Beirut rooftop energy.\n\n#DeepHouse #OrientalHouse #Beirut #LebaneseMusic #AssiremMusicProd",
+      "tags": [
+        "deep house oriental",
+        "beirut music",
+        "lebanese electronic",
+        "oud house",
+        "mediterranean house",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Deep House Oriental — Beirut Nights 2026",
+      "suno_style": "deep house oriental, Lebanese oud samples, 122 BPM, driving 4/4 kick, warm analog bass, Arabic maqam scales, breathy female vocal hook, Beirut rooftop atmosphere",
+      "suno_exclude_styles": "reggae, trap, country, K-pop, folk",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 33,
+      "suno_style_influence": 55,
+      "suno_lyrics": "[Oud loop intro]\n\n[Female hook]\nBeirut, ya Beirut... leil el hob...\n\n[Verse 1]\nUnder the stars of Raouché\nOud strings caught in the bassline\nThe Mediterranean breathes tonight\nAnd every heartbeat is divine\n\n[Chorus]\nBeirut nights, oud and bass\nLost in rhythm, lost in space\nOriental deep, electric soul\nBeirut makes the broken whole\n\n[Oud solo over kick]\n\n[Verse 2]\nFrom Hamra street to Gemmayze\nThe music flows between the ruins\nWe dance because we choose to live\n\n[Outro]\nYa Beirut... ya Beirut...",
+      "short_start": 55,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Deep House Oriental — Beirut Nights",
+          "subtitle": "🌃 Lebanese Electronic 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 55,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Beirut rooftop party at night, Mediterranean sea in background, neon lights, DJ setup, oriental energy",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Pigeon Rocks Raouché at midnight, waves crashing, mysterious light, deep house visualization on water",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Gemmayze street Beirut, colorful murals, underground club entrance, crowd moving",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 5,
+      "scheduled_at": "2026-06-02T21:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎛️ House · Techno · Electro Oriental",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎛️ House · Techno · Electro Oriental"
+    },
+    {
+      "slug": "ethiopia-tizita-soul-addis-groove-2026",
+      "category": "world_ethnic",
+      "title": "🦁 Ethiopian Tizita Soul — Addis Groove 2026 | World Ethnic | Assirem Music PROD",
+      "description": "Ethiopian tizita — the music of longing. Ancient pentatonic scales, krar harp, female vocal, jazz influence. Addis Ababa soul.\n\n#EthiopianMusic #Tizita #EthiopianJazz #AddisGroove #AssiremMusicProd #2026",
+      "tags": [
+        "ethiopian music",
+        "tizita",
+        "ethiopian jazz",
+        "addis groove",
+        "krar",
+        "african soul",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Ethiopian Tizita Soul — Addis Groove 2026",
+      "suno_style": "Ethiopian tizita, krar harp, female vocal Amharic, Ethiopian pentatonic scale, jazz bass, 80 BPM, longing nostalgia, Mulatu Astatke influence, Addis Ababa jazz club",
+      "suno_exclude_styles": "house, trap, metal, K-pop, country",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 38,
+      "suno_style_influence": 46,
+      "suno_lyrics": "[Krar intro — pentatonic]\n\n[Verse 1 — Amharic/English]\nTizita means memory of you\nIn the ancient Ethiopian hue\nKrar cries for what was lost before\nLonging knocking at my door\n\n[Chorus — Amharic]\nYihe tizita new\nAnd bet lij\nYihe tizita new\nMinamnew lijoch\n\n[English chorus]\nTizita soul, memory song\nEthiopian spirit all along\nAddis groove, krar and bass\nLonging written on your face\n\n[Krar jazz break]\n\n[Outro — Amharic fade]\nTizita... Ethiopia... tizita...",
+      "short_start": 48,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Ethiopian Tizita Soul — Addis Groove",
+          "subtitle": "🦁 World Ethnic 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 48,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Addis Ababa jazz club at night, Ethiopian woman singing tizita, krar player beside her, warm intimate light",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Ethiopian highlands at dawn, mist over green mountains, cattle in distance, ancient landscape, tizita mood",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Addis Ababa market at golden hour, spices and coffee, old records being sold, Ethiopian soul atmosphere",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 1,
+      "scheduled_at": "2026-06-03T13:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌍 World Music — Ethnic · Rock · Blues · Hip Hop",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌍 World Music — Ethnic · Rock · Blues · Hip Hop"
+    },
+    {
+      "slug": "gnaoua-desert-trance-ceremony-2026",
+      "category": "gnaoua",
+      "title": "🌵 Gnaoua Desert Trance — Sacred Ceremony 2026 | Algerian Ritual | Assirem Music PROD",
+      "description": "Deep Gnaoua trance ceremony from the Algerian desert. Ancient sub-Saharan healing tradition. Guembri, qraqeb, sacred chant.\n\n#Gnaoua #AlgerianGnaoua #DesertTrance #SacredRitual #AssiremMusicProd",
+      "tags": [
+        "gnaoua",
+        "algerian gnaoua",
+        "desert trance",
+        "sacred ceremony",
+        "guembri",
+        "healing ritual",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Gnaoua Desert Trance — Sacred Ceremony 2026",
+      "suno_style": "Algerian Gnaoua sacred ceremony trance, deep guembri bass lute, iron qraqeb, male call-response chant, steady hypnotic rhythm, spiritual healing, desert night atmosphere",
+      "suno_exclude_styles": "pop, house, trap, metal, country",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 42,
+      "suno_style_influence": 42,
+      "suno_lyrics": "[Invocation guembri]\nYa sidi... ya allah...\n\n[Verse 1 — tamazight/darija]\nEzghiret el mlouk rah jat\nQraqeb w guembri daqat\nLil lila bda el hal\nMa3 el baraka nkhaw el weswas\n\n[Chorus]\nYa mloul ya sidi mloul\nGnaoua rah jab el hal\nYa sidi ya bill\nEl baraka ma3 el lil\n\n[Trance acceleration]\n(qraqeb triple time — guembri steady)\n\n[Verse 2]\nSab3a alwan sabaa layla\nKol lila 3andha 3tiya\nMin jilala lil mira\nWel gnaoua yadawi\n\n[Ritual end]\nSalam... salam... ya sidi...",
+      "short_start": 45,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Gnaoua Desert Trance — Sacred Ceremony",
+          "subtitle": "🌵 Algerian Ritual 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 45,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Algerian desert at night, Milky Way visible, firelit ceremony tent, sacred atmosphere, ancient feeling",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Gnaoua master playing guembri under stars, white robe, intense focus, desert sand, ceremonial candles",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Circle of men with qraqeb in rhythmic motion, hands blurring, firelight, trance ritual energy",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 2,
+      "scheduled_at": "2026-06-03T15:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌵 Gnaoua Algérien Desert",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌵 Gnaoua Algérien Desert"
+    },
+    {
+      "slug": "rai-oran-nta-li-badel-2026",
+      "category": "rai_algerian",
+      "title": "🇩🇿 Raï Oran — Nta Li Badel 2026 | Vocal Darija | Assirem Music PROD",
+      "description": "Raï émotionnel d'Oran — nta li badel, le classique de la trahison et de l'amour perdu. Accordéon douloureux.\n\n#RaiAlgerien #RaiOran #Darija #AssiremMusicProd",
+      "tags": [
+        "rai algérien",
+        "rai oran",
+        "nta li badel",
+        "darija",
+        "trahison",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Raï Oran — Nta Li Badel 2026",
+      "suno_style": "Algerian raï Oran, emotional male vocal darija, accordion melancholic, electric guitar, derbouka, theme of betrayal in love, 105 BPM",
+      "suno_exclude_styles": "house, trap, metal, K-pop, reggae",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 24,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro accordéon mélancolique]\n\n[Verse 1]\nNta li badel ya ghouli\nW ana khsart f'hawali\nGolt el hob ma yensi\nW nti 3ndek ghiri\n\n[Chorus]\nBeddelt beddelt\nYa qalbi beddelt\nWahran galat\nHob w nsit\n\n[Verse 2]\nKhsart fi 3mri w f'wqti\nHasra 3lik ya sahbi\nLeilat el hob welaw\nW nti hadri nsiti\n\n[Bridge]\n(Accordéon solo larme)\n\n[Outro]\nNta li badel... ya galbi...",
+      "short_start": 33,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Raï Oran — Nta Li Badel",
+          "subtitle": "🇩🇿 Vocal Darija 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 33,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Oran rain at night, wet streets reflecting neon signs, man alone under an awning, melancholic raï mood",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Emotional raï singer at microphone in dimly lit Oran venue, accordion player weeping over keys, raw performance",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Oran old town at blue hour, silent alleys, empty bench by the sea wall, abandoned love story",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 3,
+      "scheduled_at": "2026-06-03T17:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎺 Raï d'Oran VOCAL",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎺 Raï d'Oran VOCAL"
+    },
+    {
+      "slug": "dancehall-reggae-riddim-rise-2026",
+      "category": "dancehall",
+      "title": "🔥 Dancehall Reggae — Riddim Rise 2026 | Kingston Energy | Assirem Music PROD",
+      "description": "Hard dancehall riddim from Kingston — digital beats, hypnotic bassline, ragga vocals. Dance floor in a bottle.\n\n#Dancehall #DancehallReggae #KingstonMusic #Riddim #AssiremMusicProd",
+      "tags": [
+        "dancehall",
+        "dancehall reggae",
+        "riddim",
+        "kingston",
+        "ragga",
+        "digital reggae",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Dancehall Reggae — Riddim Rise 2026",
+      "suno_style": "dancehall reggae, digital riddim, hypnotic bass pattern, 100 BPM, male deejay ragga vocal, Kingston Jamaica energy, electronic drum machine, synth stab",
+      "suno_exclude_styles": "trap, country, K-pop, heavy metal, folk",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 32,
+      "suno_style_influence": 52,
+      "suno_lyrics": "[Intro — deejay]\nYo, riddim rise — Kingston stand up!\n\n[Verse 1]\nDancehall vibes inna the air tonight\nDigital riddim burning hot and bright\nFrom Portmore yard to Halfway Tree\nDancehall music wild and free\n\n[Chorus]\nRiddim rise, everybody dance\nKingston energy, take your chance\nDancehall fire burning high\nReach fi the stars, touch the sky\n\n[Verse 2]\nGyal dem whine on the riddim strong\nInna di dance hall all night long\nDeejay pon di mic, crowd a roar\n\n[Bridge]\n(digital riddim breakdown)\n\n[Outro]\nKingston... riddim rise... one time!",
+      "short_start": 30,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Dancehall Reggae — Riddim Rise",
+          "subtitle": "🔥 Kingston Energy 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 30,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Kingston Jamaica dancehall club at night, strobe lights, crowd dancing, deejay on stage, smoke machine",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Jamaican street party, outdoor sound system, colorful flags, dancing crowd, Portmore night vibes",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Digital equalizer visualization over Kingston city aerial, pulsing riddim waves",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 4,
+      "scheduled_at": "2026-06-03T19:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌿 Reggae & Lo-Fi Reggae",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌿 Reggae & Lo-Fi Reggae"
+    },
+    {
+      "slug": "techno-oriental-cairo-nights-2026",
+      "category": "techno_oriental",
+      "title": "⚡ Techno Oriental — Cairo Nights 2026 | Underground Egyptian Techno | Assirem Music PROD",
+      "description": "Underground Cairo techno meets ancient Egyptian scales. Hard kicks, ney flute, Arabic maqam bassline. Pharaoh rave.\n\n#TechnoOriental #CairoTechno #EgyptianTechno #OrientalTechno #AssiremMusicProd",
+      "tags": [
+        "techno oriental",
+        "cairo techno",
+        "egyptian techno",
+        "ney flute",
+        "arabic techno",
+        "underground",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Techno Oriental — Cairo Nights 2026",
+      "suno_style": "oriental techno, 138 BPM, hard industrial kick drum, ney flute riff, Arabic maqam bassline, dark atmosphere, Egyptian underground rave, minimal Arabic chant fragments",
+      "suno_exclude_styles": "reggae, pop, country, K-pop, folk",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 45,
+      "suno_style_influence": 58,
+      "suno_lyrics": "[Ney intro — rising]\n\n[Vocal fragment]\nYa layl... ya layl... Cairo underground...\n\n[Verse 1 — spoken]\nBeneath the pyramids the rave goes on\nThe pharaohs dance to the techno song\nAnubis weighs the beating heart\nTechno oriental is the ancient art\n\n[Chorus]\nCairo techno... ney and kick\nOriental maqam... bass thick\nUnderground pharaoh... ancient floor\nCairo techno... wanting more\n\n[Ney solo over minimal kick]\n\n[Build — ascending Arabic scale]\n\n[Drop]\n(full kick + ney screaming)\n\n[Outro]\nCairo... underground... ya layl...",
+      "short_start": 60,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Techno Oriental — Cairo Nights",
+          "subtitle": "⚡ Egyptian Underground Techno 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 60,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Giza pyramids at night, laser show, underground rave at their base, surreal techno atmosphere",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Cairo underground club, ancient hieroglyphic murals on walls, techno DJ, dancers, laser beams",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Abstract: pharaoh mask in dark techno light, geometric patterns, ney flute as golden wave",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 5,
+      "scheduled_at": "2026-06-03T21:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎛️ House · Techno · Electro Oriental",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎛️ House · Techno · Electro Oriental"
+    },
+    {
+      "slug": "world-hiphop-afrobeats-lagos-soul-2026",
+      "category": "world_hiphop",
+      "title": "🎤 World Hip Hop — African Soul Beats 2026 | Lagos Afrobeat Rap | Assirem Music PROD",
+      "description": "World hip hop with Afrobeat roots — traditional percussion, modern rap flow, African soul. From Lagos to New York.\n\n#WorldHipHop #AfrobeatRap #AfricanSoul #HipHopBeats #AssiremMusicProd #2026",
+      "tags": [
+        "world hip hop",
+        "afrobeat rap",
+        "african soul",
+        "hip hop beats",
+        "lagos",
+        "kora",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "World Hip Hop — African Soul Beats 2026",
+      "suno_style": "world hip hop, Afrobeat drum patterns, talking drum, kora melody sample, 95 BPM, male rap English and Yoruba, Lagos energy, Fela Kuti meets modern trap hi-hats, bass heavy",
+      "suno_exclude_styles": "country, K-pop, house, folk, metal",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 35,
+      "suno_style_influence": 55,
+      "suno_lyrics": "[Intro — kora sample]\n\n[Verse 1 — English/Yoruba]\nFrom Lagos mainland to the world stage\nAfrican soul burning on every page\nTalking drum speaks what words can't say\nAfrobeat hip hop, this is our way\nAwa lo n jo, we are the ones dancing\nAncient rhythm in the music advancing\n\n[Chorus]\nAfrican soul beats, worldwide\nKora strings and hip hop pride\nFrom the continent to your city\nWorld hip hop, no self-pity\n\n[Verse 2]\nFela Kuti in the DNA\nSankofa bird flying far away\nBring the past into the future flow\nWorld hip hop, let the people know\n\n[Talking drum break]\n\n[Outro — Yoruba blessing]\nÀṣà wà... ìlú náà wà...",
+      "short_start": 45,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "World Hip Hop — African Soul Beats",
+          "subtitle": "🎤 Lagos Afrobeat Rap 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 45,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Lagos Nigeria skyline at sunset, colorful market below, energy and movement, world hip hop urban African vibe",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Open-air concert Lagos, hip hop artist with traditional drummers on stage, crowd vibing, cultural fusion",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "African kora player sampled into DJ setup, Lagos studio, mixing traditional and modern, creative",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 1,
+      "scheduled_at": "2026-06-04T13:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌍 World Music — Ethnic · Rock · Blues · Hip Hop",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌍 World Music — Ethnic · Rock · Blues · Hip Hop"
+    },
+    {
+      "slug": "gnaoua-marrakech-street-ritual-2026",
+      "category": "gnaoua",
+      "title": "🌺 Gnaoua Marrakech — Street Ritual 2026 | Djemaa El-Fna Energy | Assirem Music PROD",
+      "description": "Gnaoua street music from Djemaa El-Fna. Raw, public, alive. Guembri, qraqeb, crowd energy.\n\n#Gnaoua #MarrakechGnaoua #DjemaaElFna #StreetMusic #AssiremMusicProd",
+      "tags": [
+        "gnaoua",
+        "marrakech gnaoua",
+        "djemaa el fna",
+        "algerian gnaoua",
+        "street music",
+        "guembri",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Gnaoua Marrakech — Street Ritual 2026",
+      "suno_style": "Gnaoua street performance, fast-paced guembri, rapid qraqeb clicking, crowd chanting responses, outdoor medina atmosphere, energetic 6/8 accelerating, Djemaa El-Fna energy",
+      "suno_exclude_styles": "house, pop, trap, metal, country",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 38,
+      "suno_style_influence": 45,
+      "suno_lyrics": "[Street opening chant]\nAy wa ay wa... bismillah!\n\n[Verse 1 — darija speed]\nFel jemaa el fna w ferja\nWel gnaoua bda yel3ab\nQraqeb w guembri w zerja\nW shaab kolha yel3ab\n\n[Chorus — crowd chant]\nYa sidi sidi sidi!\nGnaoua f'el blaad!\nYa sidi sidi sidi!\nHna w nta m3aad!\n\n[Acceleration]\n(qraqeb triple time — guembri racing)\n\n[Verse 2]\nEl haal nzel w el 3bid raqu\nMin ghraf lil sahara\nGnaoua ma baqu\n\n[Street finale]\nYa sidi!!! Bis!!!",
+      "short_start": 35,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Gnaoua Marrakech — Street Ritual",
+          "subtitle": "🌺 Djemaa El-Fna Energy 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 35,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Djemaa El-Fna square at dusk, Gnaoua musicians in circle, crowd gathering, magical evening light, Marrakech",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Gnaoua performer in black robe with red pompoms, playing guembri energetically, crowd around him, medina",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Aerial Djemaa El-Fna at night, dozens of circles of performers, torches, atmospheric Marrakech night",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 2,
+      "scheduled_at": "2026-06-04T15:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌵 Gnaoua Algérien Desert",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌵 Gnaoua Algérien Desert"
+    },
+    {
+      "slug": "rai-oran-haja-w-nta-2026",
+      "category": "rai_algerian",
+      "title": "🇩🇿 Raï Oran — Haja W'Nta 2026 | Vocal Darija | Assirem Music PROD",
+      "description": "Raï d'Oran — haja w'nta, la complainte de l'absent. Accordéon déchirant, guitare électrique, percussions d'Oran.\n\n#RaiAlgerien #RaiOran #Darija #AssiremMusicProd",
+      "tags": [
+        "rai algérien",
+        "rai oran",
+        "haja w nta",
+        "darija",
+        "l'absent",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Raï Oran — Haja W'Nta 2026",
+      "suno_style": "Algerian raï Oran, male vocal darija, mournful accordion, electric guitar, derbouka, longing for absent loved one, 106 BPM",
+      "suno_exclude_styles": "house, trap, metal, K-pop, reggae",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 24,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro accordéon]\n\n[Verse 1]\nHaja w'nta baad yak\nQalbi kayen m3ak\nBla ghyabek ya ghouli\nEl lil twil 3alayak\n\n[Chorus]\nHaja haja w'nta\nBeaid beaid m3ayak\nRohi fi safar\nW ma lqatch f'hayak\n\n[Verse 2]\nZman msha w raja\nW nti f'ghorbti taja\nBla ghyabek el lil\nW bla hnak 3ayit\n\n[Bridge]\n(Accordéon douloureux — guitare répond)\n\n[Outro]\nHaja w'nta... baad... baad...",
+      "short_start": 30,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Raï Oran — Haja W'Nta",
+          "subtitle": "🇩🇿 Vocal Darija 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 30,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Empty Oran apartment at night, single candle burning, framed photo on wall, longing atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Oran musician alone on rooftop playing accordion, city spread below, melancholic and isolated",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Train station in Oran, couple separated on platform, emotional goodbye, warm nostalgic light",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 3,
+      "scheduled_at": "2026-06-04T17:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎺 Raï d'Oran VOCAL",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎺 Raï d'Oran VOCAL"
+    },
+    {
+      "slug": "conscious-dub-reggae-babylon-fall-2026",
+      "category": "reggae_dub",
+      "title": "🎛️ Conscious Dub Reggae — Babylon Fall 2026 | Heavy Bass | Assirem Music PROD",
+      "description": "Heavy conscious dub reggae — sub bass, echo delay, Babylon critique. King Tubby meets Channel One. Pure roots dub.\n\n#DubReggae #ConsciousDub #BabylonFall #HeavyBass #AssiremMusicProd",
+      "tags": [
+        "dub reggae",
+        "conscious dub",
+        "babylon fall",
+        "heavy bass",
+        "echo dub",
+        "king tubby",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Conscious Dub Reggae — Babylon Fall 2026",
+      "suno_style": "conscious dub reggae, sub bass heavy, echo and reverb chambers, 80 BPM, minimal drums, spacey atmosphere, vocal fragments, King Tubby dub engineering style",
+      "suno_exclude_styles": "trap, house, country, K-pop, metal",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 38,
+      "suno_style_influence": 48,
+      "suno_lyrics": "[Dub echo intro]\nBabylon... fall... fall...\n\n[Verse 1 — echo treated]\nBabylon system gonna fall tonight\nCannot hold back the truth and light\nDub music shaking foundations\nJah people across the nations\n\n[Chorus — dub style]\nBabylon fall... (echo) ...fall\nConscious dub... (reverb) ...call\nSub bass moving earth and sky\nDub music never gonna die\n\n[Dub break]\n(King Tubby style mixing)\n\n[Verse 2]\nEcho chambers of the mind\nLeave Babylon system behind\n\n[Outro]\nDub... conscious... one love...",
+      "short_start": 50,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Conscious Dub Reggae — Babylon Fall",
+          "subtitle": "🎛️ Heavy Bass Roots 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 50,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Abstract dub music visualization, deep sound waves in dark space, echo chambers visualized, sub bass ripples",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Old Jamaican recording studio, mixing board with echo machines, red light, King Tubby era atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Underwater city being swallowed by sea, Babylon fall metaphor, dramatic rays of light, dub atmosphere",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 4,
+      "scheduled_at": "2026-06-04T19:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌿 Reggae & Lo-Fi Reggae",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌿 Reggae & Lo-Fi Reggae"
+    },
+    {
+      "slug": "electro-house-maghreb-pulse-2026",
+      "category": "electro_house",
+      "title": "🔊 Electro House Oriental — Maghreb Pulse 2026 | North African Club | Assirem Music PROD",
+      "description": "Hard electro house meets North African music. Oud stabs, chaabi influences, 128 BPM Maghreb club energy.\n\n#ElectroHouse #MaghrebMusic #OrientalElectro #NorthAfricanClub #AssiremMusicProd",
+      "tags": [
+        "electro house",
+        "maghreb music",
+        "oriental electro",
+        "north african club",
+        "oud stabs",
+        "chaabi electro",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Electro House Oriental — Maghreb Pulse 2026",
+      "suno_style": "electro house oriental, 128 BPM, hard kick with oud stab synth, Chaabi North African melody, Arabic vocal chop, driving bassline, Algerian-Tunisian-Moroccan club culture",
+      "suno_exclude_styles": "reggae, folk, country, trap, metal",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 40,
+      "suno_style_influence": 56,
+      "suno_lyrics": "[Drop vocal]\nMaghreb pulse... yalla yalla...\n\n[Verse 1 — darija/French]\nFel club de Alger on danse le maghreb\nLe oud electro fait vibrer les corps\nDe Tunis à Casablanca même tempo\nMaghreb pulse, on est en feu\n\n[Chorus]\nMaghreb pulse, electro oud\nNord-africain dans le mood\nAlgérie, Tunisie, Maroc\nDance floor maghrébin, no stop\n\n[Oud stab break]\n(Chaabi melody chopped — kick resumes)\n\n[Build — Maghrebi ululation]\n\n[Outro]\nYalla... maghreb... pulse...",
+      "short_start": 58,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Electro House Oriental — Maghreb Pulse",
+          "subtitle": "🔊 North African Club 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 58,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Algiers rooftop nightclub, panoramic view of the Casbah, electro music pulsing, colorful lights, young crowd",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Underground club in Tunis, North African electronic DJ, oud samples on screens, dancers",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Abstract Maghreb electro: arabesque patterns pulsing to 128 BPM, gold and electric blue",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 5,
+      "scheduled_at": "2026-06-04T21:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎛️ House · Techno · Electro Oriental",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎛️ House · Techno · Electro Oriental"
+    },
+    {
+      "slug": "world-rock-desert-storm-tuareg-2026",
+      "category": "world_rock",
+      "title": "🎸 World Rock Fusion — Desert Storm 2026 | Electric Sahara Tuareg | Assirem Music PROD",
+      "description": "World music meets hard rock — electric guitar riffs over desert percussion. Tinariwen meets Hendrix. Sahara electric storm.\n\n#WorldRock #DesertRock #TuaregRock #ElectricDesert #SaharaRock #AssiremMusicProd #2026",
+      "tags": [
+        "world rock",
+        "desert rock",
+        "tuareg rock",
+        "electric desert",
+        "north african rock",
+        "tinariwen",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "World Rock Fusion — Desert Storm 2026",
+      "suno_style": "desert world rock, electric guitar pentatonic riff, North African Tuareg rhythm, 98 BPM, male vocal English and Tamasheq, distorted guitar, bass groove, Tinariwen influence",
+      "suno_exclude_styles": "pop, house, K-pop, country pop, lofi",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 36,
+      "suno_style_influence": 52,
+      "suno_lyrics": "[Intro — desert wind and guitar]\n\n[Verse 1 — English/Tamasheq]\nFrom the Saharan dunes to the electric stage\nTuareg spirit caught in rock and rage\nThe guitar speaks in the desert tongue\nAncient songs by the electric sung\n\n[Chorus]\nDesert storm, electric soul\nSahara fire beyond control\nWorld rock fusion, sand and string\nHear the desert sing\n\n[Verse 2 — Tamasheq fragment]\nTimidran n'ténéré\nGuitar n'tagbarest\nEzziker nak iqqim\nDes étoiles du désert\n\n[Guitar solo — pentatonic desert scale]\n\n[Outro — fade to wind]\nDesert... electric... forever...",
+      "short_start": 52,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "World Rock Fusion — Desert Storm",
+          "subtitle": "🎸 Electric Sahara Tuareg 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 52,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Tuareg guitarist on sand dune at sunset, electric guitar plugged into amplifier in desert, cinematic raw",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Desert rock concert on Saharan sand, stage with fire torches, Tuareg musicians, electric guitars, night sky",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Sand storm in desert, electric guitar visualized as lightning bolt, dramatic sky, world rock fusion",
+          "motion_strength": 4
+        }
+      ],
+      "priority": 1,
+      "scheduled_at": "2026-06-05T13:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌍 World Music — Ethnic · Rock · Blues · Hip Hop",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌍 World Music — Ethnic · Rock · Blues · Hip Hop"
+    },
+    {
+      "slug": "gnaoua-subsaharan-roots-algerian-2026",
+      "category": "gnaoua",
+      "title": "🌍 Gnaoua Subsaharan Roots — Algerian Essence 2026 | Deep Ritual | Assirem Music PROD",
+      "description": "The deep Subsaharan African roots of Algerian Gnaoua. Ancient spirits, guembri, qraqeb — a direct link to ancestral Africa.\n\n#Gnaoua #SubsaharanRoots #AlgerianGnaoua #AncestralAfrica #GuembriBass #AssiremMusicProd",
+      "tags": [
+        "gnaoua",
+        "subsaharan roots",
+        "algerian gnaoua",
+        "ancestral africa",
+        "guembri",
+        "deep ritual",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Gnaoua Subsaharan Roots — Algerian Essence 2026",
+      "suno_style": "Gnaoua deep subsaharan roots, guembri bass drone, slow qraqeb pulse, deep male chant, ancestral African spirit, meditative and ancient, drone feeling, 6/8 very slow, hypnotic",
+      "suno_exclude_styles": "house, trap, metal, pop, country",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 45,
+      "suno_style_influence": 40,
+      "suno_lyrics": "[Deep guembri drone — long]\n\n[Chant ancestral — very slow]\nYa bilal... ya bilal...\nMin blad assoudan\nHna welaw houna\n\n[Verse 1]\nMin gharb ifriqiya\nWel guembri yehdar\nRouh el ajdad\nFi qalbna yekbar\n\n[Chorus — deep chant]\nYa sidi ya bilal\nRouh el ajdad\nYa sidi ya bilal\nHna men blad\n\n[Extended guembri meditation]\n(long drone — single qraqeb pulse)\n\n[Verse 2 — Hausa words embedded]\nKarkata Gnaoua\nDuniya ba ta kare\nGuembri ya yi magana\nAllah shine kare\n\n[Outro — fading drone]\nAjdad... bilal... africa...",
+      "short_start": 50,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Gnaoua Subsaharan Roots — Algerian Essence",
+          "subtitle": "🌍 Deep Ritual 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 50,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Ancient sub-Saharan landscape, baobab trees, sunset, deep roots of African music, spiritual and ancient",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Algerian Gnaoua elder, very old master, playing guembri slowly in a dark room, candle only, ancestral atmosphere",
+          "motion_strength": 1
+        },
+        {
+          "prompt": "Abstract visualization: guembri drone as deep bass wave travelling from sub-Saharan Africa to Algerian desert",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 2,
+      "scheduled_at": "2026-06-05T15:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌵 Gnaoua Algérien Desert",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌵 Gnaoua Algérien Desert"
+    },
+    {
+      "slug": "rai-oran-el-bahdja-2026",
+      "category": "rai_algerian",
+      "title": "🇩🇿 Raï Oran — El Bahdja 2026 | Vocal Darija | Assirem Music PROD",
+      "description": "Raï d'Oran — hommage à El Bahdja, Alger la Blanche. Entre Oran et Alger, le raï unit les cœurs algériens.\n\n#RaiAlgerien #RaiOran #ElBahdja #Darija #AssiremMusicProd",
+      "tags": [
+        "rai algérien",
+        "rai oran",
+        "el bahdja",
+        "alger",
+        "darija",
+        "algérie",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Raï Oran — El Bahdja 2026",
+      "suno_style": "Algerian raï Oran, male vocal darija, accordion, electric guitar festive, derbouka celebratory, tribute to Algiers, 115 BPM, festive emotional",
+      "suno_exclude_styles": "house, trap, metal, K-pop, reggae",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 26,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro festif]\n\n[Verse 1]\nYa el bahdja ya bahdja\nBlad el hana w el raja\nMin wahran njiw nzirek\nBla ghyabek ma nqadru\n\n[Chorus]\nEl bahdja ya el bahdja\nBayda f'qalb el bhar\nMin wahran nwedilek\nHob w wafa w anhar\n\n[Verse 2]\nDjamila f'wardhek\nW el casbah 3ndek\nWahran w el bahdja\nBlad wahda f'qalbak\n\n[Bridge]\n(Accordéon festif — guitare)\n\n[Outro]\nYa el bahdja... ya wahran...",
+      "short_start": 38,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Raï Oran — El Bahdja",
+          "subtitle": "🇩🇿 Vocal Darija 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 38,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Algiers from the sea at sunset, white buildings climbing the hill, Casbah above, beautiful Mediterranean light",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Algerian street celebration, people dancing raï, accordion player, festive atmosphere",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Algiers harbor at dusk, boats, the white city gleaming, emotional arrival after long absence",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 3,
+      "scheduled_at": "2026-06-05T17:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎺 Raï d'Oran VOCAL",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎺 Raï d'Oran VOCAL"
+    },
+    {
+      "slug": "reggae-spiritual-zion-train-2026",
+      "category": "reggae_spiritual",
+      "title": "✝️ Reggae Spiritual — Zion Train 2026 | Gospel Reggae | Assirem Music PROD",
+      "description": "Spiritual gospel reggae — Zion train calling, divine vibrations, roots of faith. Bob Marley's sacred tradition.\n\n#SpiritualReggae #GospelReggae #ZionTrain #ConsciousReggae #AssiremMusicProd",
+      "tags": [
+        "spiritual reggae",
+        "gospel reggae",
+        "zion train",
+        "conscious reggae",
+        "jah worship",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Reggae Spiritual — Zion Train 2026",
+      "suno_style": "spiritual gospel reggae, rich choir harmonies, organ, uplifting bass, 86 BPM, male lead vocal Jamaican patois and English, divine themes, Bob Marley Zion influence",
+      "suno_exclude_styles": "trap, house, metal, K-pop, dancehall aggressive",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 26,
+      "suno_style_influence": 48,
+      "suno_lyrics": "[Intro — choir humming]\n\n[Verse 1]\nZion train is coming to our station\nBring salvation to every nation\nJah spirit moving on the water\nSon and daughter, son and daughter\n\n[Chorus]\nAll aboard the Zion train\nLeave behind your sorrow and pain\nHeaven's gate is open wide\nWith Jah love as your guide\n\n[Verse 2]\nRise up brothers, rise up sisters\nFeel the spirit in your midst-a\nReggae music is the chariot\nFrom the valley to the Zion top\n\n[Gospel bridge]\nHallelujah, praise Jah above\nZion train is powered by love\n\n[Outro — choir fade]\nZion... calling... all aboard...",
+      "short_start": 48,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Reggae Spiritual — Zion Train",
+          "subtitle": "✝️ Gospel Reggae 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 48,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Golden light breaking through storm clouds over the Caribbean, rays of divine light, spiritual atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Jamaican church choir in white robes, gospel reggae performance, joyful congregation, tropical setting",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Zion mountain at dawn, ancient temple on peak, mist below, spiritual journey visual",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 4,
+      "scheduled_at": "2026-06-05T19:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌿 Reggae & Lo-Fi Reggae",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌿 Reggae & Lo-Fi Reggae"
+    },
+    {
+      "slug": "deep-oriental-house-bosphorus-dream-2026",
+      "category": "house_oriental",
+      "title": "🌊 Deep Oriental House — Bosphorus Dream 2026 | Mystic Electronic | Assirem Music PROD",
+      "description": "Deep, mystic oriental house — ney flute over warm analog bass, Turkish maqam scales, Bosphorus dream sequences.\n\n#DeepHouseOriental #BosphorusDream #TurkishHouse #NeyFlute #AssiremMusicProd",
+      "tags": [
+        "deep house oriental",
+        "bosphorus dream",
+        "turkish house",
+        "ney flute",
+        "oriental electronic",
+        "mystic house",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Deep Oriental House — Bosphorus Dream 2026",
+      "suno_style": "deep oriental house, ney flute lead, Turkish maqam rast scale, warm analog bassline, 120 BPM subtle kick, reverb pads, breathy female vocal, Bosphorus mystic atmosphere, introspective",
+      "suno_exclude_styles": "reggae, trap, country, metal, folk",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 36,
+      "suno_style_influence": 54,
+      "suno_lyrics": "[Ney intro — mystic]\n\n[Female whisper]\nBosphorus... sular akar... will you remember...\n\n[Verse 1]\nBetween two continents I float in sound\nThe ney speaks what cannot be found\nMaqam scales like ancient prayer\nDeep house breathing midnight air\n\n[Chorus]\nBosphorus dream, deep and slow\nOriental currents ebb and flow\nNey and bass, water and bridge\nBosphorus dream on the ridge\n\n[Deep instrumental]\n(ney ascending — pads swelling)\n\n[Outro]\nSular... akar... Bosphorus...",
+      "short_start": 55,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Deep Oriental House — Bosphorus Dream",
+          "subtitle": "🌊 Mystic Electronic 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 55,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Bosphorus at dawn, ferry moving through mist, soft light, deep house slow motion aesthetic",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Istanbul skyline from water at blue hour, minarets and bridges, deep oriental house visual",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Ney player on ferry deck crossing Bosphorus, wind in hair, two continents visible, dreamy",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 5,
+      "scheduled_at": "2026-06-05T21:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎛️ House · Techno · Electro Oriental",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎛️ House · Techno · Electro Oriental"
+    },
+    {
+      "slug": "flamenco-fusion-granada-duende-2026",
+      "category": "world_flamenco",
+      "title": "💃 Flamenco Fusion — Granada Duende 2026 | World Ethnic | Assirem Music PROD",
+      "description": "Raw flamenco fusion from Granada — duende, passion, palmas and cajon. The spirit of Andalusia in pure sound.\n\n#Flamenco #FlamencoFusion #Granada #Duende #Andalusia #AssiremMusicProd #2026",
+      "tags": [
+        "flamenco",
+        "flamenco fusion",
+        "granada",
+        "duende",
+        "andalusia",
+        "spanish guitar",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Flamenco Fusion — Granada Duende 2026",
+      "suno_style": "raw flamenco fusion, nylon string Spanish guitar rasgueado, cajon percussion, female cantaora vocal, palmas clapping, 4/4 and 12-beat compas, duende spirit, Granada Sacromonte, Moorish influence",
+      "suno_exclude_styles": "house, trap, K-pop, metal, country",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 35,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro — guitar and palmas]\n\n[Verse 1 — Spanish]\nEn la Alhambra el viento llora\nGranada tiene duende y alma\nLa guitarra llora y ora\nY el flamenco nunca se calma\n\n[Chorus — cantaora cry]\nAy! Duende del sur\nAlma de la tierra\nFlamenco puro\nGranada no cierra\n\n[Verse 2]\nSacromonte en la noche mora\nLas cuevas guardan el secreto\nLa voz flamenca que enamora\nNadie escapa de su efecto\n\n[Cajon and palmas break]\n\n[Final cry — a cappella]\nAy ay ay... Granada... duende...",
+      "short_start": 42,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Flamenco Fusion — Granada Duende",
+          "subtitle": "💃 World Ethnic 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 42,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Granada Alhambra at dusk, Moorish architecture, flamenco dancer silhouette in archway, dramatic lighting",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Sacromonte cave flamenco performance, female cantaora singing with duende, cajon player, candlelight, raw emotion",
+          "motion_strength": 3
+        },
+        {
+          "prompt": "Flamenco guitar close-up, rasgueado hand blurring, nylon strings vibrating, Andalusian tile background",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 1,
+      "scheduled_at": "2026-06-06T13:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌍 World Music — Ethnic · Rock · Blues · Hip Hop",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌍 World Music — Ethnic · Rock · Blues · Hip Hop"
+    },
+    {
+      "slug": "gnaoua-zawiya-night-prayer-2026",
+      "category": "gnaoua",
+      "title": "🕯️ Gnaoua Zawiya — Night Prayer 2026 | Sufi Gnaoua | Assirem Music PROD",
+      "description": "Gnaoua in a Zawiya — the sufi meeting place. Sacred night prayer, guembri as spiritual instrument, qraqeb as heartbeat.\n\n#Gnaoua #Zawiya #SufiGnaoua #NightPrayer #AlgerianSpiritual #AssiremMusicProd",
+      "tags": [
+        "gnaoua",
+        "zawiya",
+        "sufi gnaoua",
+        "night prayer",
+        "algerian spiritual",
+        "guembri",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Gnaoua Zawiya — Night Prayer 2026",
+      "suno_style": "Gnaoua zawiya sufi night prayer, guembri as meditative instrument, soft qraqeb, call to prayer fragments, male voice devotional chant, incense atmosphere, meditative slow 6/8, sacred space",
+      "suno_exclude_styles": "house, pop, trap, metal, country",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 40,
+      "suno_style_influence": 38,
+      "suno_lyrics": "[Azan-influenced intro]\nAllahu akbar... ya sidi...\n\n[Verse 1 — devotional]\nFel zawiya w el 3ibad\nYehdar guembri lel 3ibada\nQraqeb kel tasbih\nKol nota dawa\n\n[Chorus — sufi style]\nYa hu ya hu ya hu\nGnaoua w zawiya\nYa hu ya hu ya hu\nHaqiqa w niya\n\n[Guembri meditation — long]\n\n[Verse 2]\nSidi abd el qader\nW sidi bel abbes\nEl awliya ma3na\nF'leilat el khames\n\n[Outro — whispered prayer]\nAllah... ya sidi... al fatiha...",
+      "short_start": 45,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Gnaoua Zawiya — Night Prayer",
+          "subtitle": "🕯️ Sufi Gnaoua 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 45,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Zawiya at night, old North African sufi prayer hall, soft candlelight, geometric tiles, sacred atmosphere",
+          "motion_strength": 1
+        },
+        {
+          "prompt": "Gnaoua musician in white turban playing guembri in zawiya corner, devotional expression, incense smoke rising",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Close-up guembri strings vibrating in candlelight, sufi zawiya background, qraqeb resting nearby, prayer beads",
+          "motion_strength": 1
+        }
+      ],
+      "priority": 2,
+      "scheduled_at": "2026-06-06T15:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌵 Gnaoua Algérien Desert",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌵 Gnaoua Algérien Desert"
+    },
+    {
+      "slug": "rai-oran-cheb-lamour-2026",
+      "category": "rai_algerian",
+      "title": "🇩🇿 Raï Oran — Cheb L'Amour 2026 | Vocal Darija | Assirem Music PROD",
+      "description": "Raï festif d'Oran — l'amour et la joie de vivre oranais. Accordéon festif, voix puissante, nuit de fête à Wahran.\n\n#RaiAlgerien #RaiOran #Darija #FestifRai #AssiremMusicProd",
+      "tags": [
+        "rai algérien",
+        "rai oran",
+        "cheb l'amour",
+        "darija",
+        "festif",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Raï Oran — Cheb L'Amour 2026",
+      "suno_style": "Algerian raï Oran festive, powerful male vocal darija, upbeat accordion, electric guitar, derbouka, love celebration, 118 BPM, Cheb Hasni influence",
+      "suno_exclude_styles": "house, trap, metal, K-pop, reggae",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 24,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro festif accordéon]\n\n[Verse 1]\nCheb l'amour jab el ferha\nW el lil bda y3ebber\nMin dar l'dar el 3arsa\nWahran colha t3aber\n\n[Chorus]\nYa cheb ya cheb l'amour\nHob w ferha kol youm\nMa3 raï d wahran\nEl lil ma ybeyytsh\n\n[Verse 2]\nGitara w accordéon\nWel chab kol y3iech\nFi 3arsa d wahran\nMa kayen hsan minsha\n\n[Bridge]\n(Accordéon festif solo)\n\n[Outro]\nYa wahran... ya cheb... l'amour!",
+      "short_start": 35,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Raï Oran — Cheb L'Amour",
+          "subtitle": "🇩🇿 Vocal Darija Festif 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 35,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Oran wedding celebration in courtyard, lights strung overhead, people dancing, musicians playing raï, festive joy",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Raï singer on stage in Oran club, arms wide, crowd celebrating, accordion player, electric atmosphere",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Oran street celebration, cars honking, people dancing, city lights, festive raï energy",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 3,
+      "scheduled_at": "2026-06-06T17:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎺 Raï d'Oran VOCAL",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎺 Raï d'Oran VOCAL"
+    },
+    {
+      "slug": "lofi-reggae-island-sunset-chill-2026",
+      "category": "lofi_reggae",
+      "title": "🌅 Lo-Fi Reggae — Island Sunset Chill 2026 | Study & Relax | Assirem Music PROD",
+      "description": "Mellow lo-fi reggae for studying, chilling, and island vibes. Warm vinyl crackle, lazy bass, hazy sunset mood.\n\n#LoFiReggae #IslandChill #StudyMusic #ReggaeChill #AssiremMusicProd",
+      "tags": [
+        "lofi reggae",
+        "island chill",
+        "study music",
+        "reggae chill",
+        "lofi beats",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Lo-Fi Reggae — Island Sunset Chill 2026",
+      "suno_style": "lo-fi reggae, warm vinyl crackle, lazy bass guitar, muted guitar skank, 75 BPM, soft male vocal, hazy beach sunset mood, tape saturation, study music",
+      "suno_exclude_styles": "trap, edm, metal, country, K-pop",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 20,
+      "suno_style_influence": 45,
+      "suno_lyrics": "[Verse 1 — lazy]\nSun going down on the island side\nFeel the lo-fi reggae in the tide\nVinyl crackling on the old turntable\nIsland life, simple and stable\n\n[Chorus]\nIsland sunset, chill and free\nLo-fi reggae by the sea\nLazy bass and hazy skies\nWatch the day slowly dies\n\n[Verse 2]\nBooks and coffee, evening breeze\nLo-fi reggae puts the mind at ease\nNo hurry on this shore\nJust the music and nothing more\n\n[Outro]\nChilling... island... sunset...",
+      "short_start": 40,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Lo-Fi Reggae — Island Sunset Chill",
+          "subtitle": "🌅 Study & Relax 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 40,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Caribbean beach at sunset, lo-fi aesthetic with warm film grain, hammock between palms, record player",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Cozy beach shack interior, reggae vinyl collection, afternoon light through shutters, coffee mug, chill vibe",
+          "motion_strength": 1
+        },
+        {
+          "prompt": "Aerial slow-motion sunset over island, warm orange sky, gentle waves, lo-fi reggae aesthetic",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 4,
+      "scheduled_at": "2026-06-06T19:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌿 Reggae & Lo-Fi Reggae",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌿 Reggae & Lo-Fi Reggae"
+    },
+    {
+      "slug": "afro-house-johannesburg-ubuntu-2026",
+      "category": "afro_house",
+      "title": "🌍 Afro House — Johannesburg Ubuntu 2026 | South African Club | Assirem Music PROD",
+      "description": "Afro house from Johannesburg — log drum, piano loops, deep bass. Ubuntu spirit on the dance floor.\n\n#AfroHouse #Johannesburg #Ubuntu #SouthAfricanHouse #Amapiano #AssiremMusicProd",
+      "tags": [
+        "afro house",
+        "johannesburg",
+        "ubuntu",
+        "south african house",
+        "log drum",
+        "piano loop",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Afro House — Johannesburg Ubuntu 2026",
+      "suno_style": "Afro house South Africa, log drum bass, piano loop, 126 BPM, female vocal Zulu hook, warm organic bass, Johannesburg house culture, ubuntu spirit, amapiano influence",
+      "suno_exclude_styles": "reggae, trap, country, metal, folk",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 32,
+      "suno_style_influence": 52,
+      "suno_lyrics": "[Log drum intro]\n\n[Female vocal hook — Zulu]\nUbuntu... siyabonga... thina...\n\n[Verse 1 — English]\nJohannesburg at night, the house is alive\nAfro piano loops help the people survive\nLog drum speaking from the underground\nUbuntu means we all move to the sound\n\n[Chorus]\nAfro house, Johannesburg floor\nUbuntu dance, always wanting more\nPiano loops, log drum bass\nSouth African house, our sacred space\n\n[Piano and log drum break]\n\n[Verse 2]\nFrom Soweto to Sandton, same floor\nAfro house music opens every door\nZulu, Xhosa, Sotho move as one\nUnder Johannesburg's setting sun\n\n[Outro — Zulu fade]\nUbuntu... thina... siyabonga...",
+      "short_start": 50,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Afro House — Johannesburg Ubuntu",
+          "subtitle": "🌍 South African Club 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 50,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Johannesburg rooftop afro house club at night, skyline behind, diverse crowd dancing, warm vibrant energy",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Soweto street party, outdoor speakers, afro house DJ, log drum player on stage, community gathering",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Abstract afro house visualization: piano loop waves in warm earth tones, log drum pulse, Ubuntu spirit",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 5,
+      "scheduled_at": "2026-06-06T21:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎛️ House · Techno · Electro Oriental",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎛️ House · Techno · Electro Oriental"
+    },
+    {
+      "slug": "indian-raga-fusion-bombay-night-2026",
+      "category": "world_ethnic",
+      "title": "🪔 Indian Raga Fusion — Bombay Night 2026 | Sitar Electronic | Assirem Music PROD",
+      "description": "Indian raga meets modern electronic — sitar, tabla, and contemporary beats. Mumbai at midnight. East meets West.\n\n#IndianRaga #SitarElectronic #IndianFusion #BombayMusic #WorldEthnic #AssiremMusicProd #2026",
+      "tags": [
+        "indian raga",
+        "sitar electronic",
+        "indian fusion",
+        "bombay music",
+        "tabla",
+        "world ethnic",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Indian Raga Fusion — Bombay Night 2026",
+      "suno_style": "Indian raga fusion, sitar melody, tabla rhythm, electronic bass under, 88 BPM, female vocal Sanskrit and Hindi, Ravi Shankar meets electronic, Mumbai atmosphere, spiritual and modern",
+      "suno_exclude_styles": "trap, house hard, country, K-pop, metal",
+      "suno_vocal_gender": "female",
+      "suno_weirdness": 38,
+      "suno_style_influence": 48,
+      "suno_lyrics": "[Sitar alap — free time]\n\n[Verse 1 — Hindi/English]\nBombay raat mein raga bolta\nSitar ka sur dil ko chholta\nTabla ki taal mein jeena\nYeh Bombay mera naseena\n\n[Chorus — Sanskrit mantra fragment]\nOm namah shivaya\nRaga of the night\nBombay maya\nSitar light\n\n[Verse 2 — English]\nFrom Marine Drive to the suburbs\nThe raga floats through midnight curbs\nTabla speaking ancient tongue\nIn electronic Bombay sung\n\n[Sitar-tabla duet break]\n\n[Outro — alap return]\nOm... raga... Bombay...",
+      "short_start": 55,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Indian Raga Fusion — Bombay Night",
+          "subtitle": "🪔 Sitar Electronic 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 55,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Mumbai Marine Drive at night, city lights reflecting on sea, sitar player on rooftop, spiritual fusion atmosphere",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Indian classical musician playing sitar with electronic equipment beside, Mumbai studio, East meets West aesthetic",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Bombay monsoon street at night, colored lights, tabla player under shelter, raga visualization in rain",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 1,
+      "scheduled_at": "2026-06-07T13:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌍 World Music — Ethnic · Rock · Blues · Hip Hop",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌍 World Music — Ethnic · Rock · Blues · Hip Hop"
+    },
+    {
+      "slug": "gnaoua-fire-ritual-desert-night-2026",
+      "category": "gnaoua",
+      "title": "🔥 Gnaoua Fire Ritual — Desert Night 2026 | Trance Ceremony | Assirem Music PROD",
+      "description": "Gnaoua fire ritual at peak — full trance state, accelerating qraqeb, guembri frenzy. The fire ceremony of the Algerian desert at its most powerful.\n\n#Gnaoua #FireRitual #GnouaTrance #DesertCeremony #AlgerianGnaoua #AssiremMusicProd",
+      "tags": [
+        "gnaoua",
+        "fire ritual",
+        "gnaoua trance",
+        "desert ceremony",
+        "algerian gnaoua",
+        "peak trance",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Gnaoua Fire Ritual — Desert Night 2026",
+      "suno_style": "Gnaoua fire ritual peak trance, fast guembri, very rapid qraqeb polyrhythm, multiple male voices in trance chant, fire ceremony energy, 6/8 maximum acceleration, climactic ritual",
+      "suno_exclude_styles": "house, pop, trap, metal, country",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 48,
+      "suno_style_influence": 44,
+      "suno_lyrics": "[Fire crackle intro]\n\n[Verse 1 — rapid chant]\nNar nnar nnar\nEl guembri yehdar\nEl qraqeb tlaht\nEl haal nzel w dhar\n\n[Chorus — peak trance]\nYa mloul ya mloul!\nEl nar tjali!\nYa mloul ya mloul!\nEl haal 3ali!\n\n[Trance peak — instrumental only]\n(qraqeb at maximum speed)\n(guembri bass driving)\n(multiple voices overlapping)\n\n[Verse 2 — post-trance]\nEl baraka nzelat\nW el mrid bra\nGnaoua had el lila\nSana kol 3am\n\n[Fire dying]\nNar... nnar... salam...",
+      "short_start": 30,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Gnaoua Fire Ritual — Desert Night",
+          "subtitle": "🔥 Trance Ceremony 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 30,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Gnaoua fire ritual peak, large bonfire, men in trance state dancing around it, desert night, sparks flying",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Extreme close-up qraqeb moving at maximum speed in firelight, hands blurring, trance state peak energy",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Wide shot desert fire ceremony, dozens of people in white, fire at center, stars above, absolute raw power",
+          "motion_strength": 4
+        }
+      ],
+      "priority": 2,
+      "scheduled_at": "2026-06-07T15:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌵 Gnaoua Algérien Desert",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌵 Gnaoua Algérien Desert"
+    },
+    {
+      "slug": "rai-oran-wahrana-ya-wahrana-2026",
+      "category": "rai_algerian",
+      "title": "🇩🇿 Raï Oran — Wahrana Ya Wahrana 2026 | Vocal Darija | Assirem Music PROD",
+      "description": "Raï final de la semaine — hommage ultime à Wahran. Accordéon, guitare, derbouka — l'âme d'Oran.\n\n#RaiAlgerien #RaiOran #Wahrana #Darija #AssiremMusicProd",
+      "tags": [
+        "rai algérien",
+        "rai oran",
+        "wahrana",
+        "wahran",
+        "darija",
+        "hommage oran",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Raï Oran — Wahrana Ya Wahrana 2026",
+      "suno_style": "Algerian raï Oran, emotional powerful male vocal darija, accordion anthem-style, electric guitar, derbouka, dedicated to Oran city, 112 BPM, Cheb Khaled influence",
+      "suno_exclude_styles": "house, trap, metal, K-pop, reggae",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 22,
+      "suno_style_influence": 50,
+      "suno_lyrics": "[Intro accordéon anthème]\n\n[Verse 1]\nWahrana ya wahrana\nBlad el youm wal ghana\nMin zman w nta f'bali\nWahran ya ghali\n\n[Chorus]\nYa wahrana ya wahrana\nQalbi 3ndek dima\nYa bab el gharb ya wahran\nHob w 3ina\n\n[Verse 2]\nMediterranée 3ndek\nW sahara wrak\nBayna w bayan el blad\nMa kayen andak\n\n[Bridge — accordéon solo]\n\n[Final Chorus]\nYa wahrana ya wahrana\nNroj3lek kol 3aam\nF'qalbi ya wahran\nW toul el ayyam\n\n[Outro]\nWahrana... ya wahrana...",
+      "short_start": 40,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Raï Oran — Wahrana Ya Wahrana",
+          "subtitle": "🇩🇿 Hommage Oran 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 40,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Oran panoramic view from Santa Cruz fort at sunset, entire city visible, Mediterranean sea, cinematic",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Oran beach Ain El Turck at sunset, families, children playing, warm golden light, nostalgic home feeling",
+          "motion_strength": 2
+        },
+        {
+          "prompt": "Raï singer at large Oran concert, thousands of people, city lights behind stage, anthemic moment",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 3,
+      "scheduled_at": "2026-06-07T17:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎺 Raï d'Oran VOCAL",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎺 Raï d'Oran VOCAL"
+    },
+    {
+      "slug": "lofi-reggae-sunday-soul-chill-2026",
+      "category": "lofi_reggae",
+      "title": "☀️ Lo-Fi Reggae — Sunday Soul Chill 2026 | Lazy Morning | Assirem Music PROD",
+      "description": "Sunday morning lo-fi reggae — slow bass, warm chords, lazy vocal. The perfect soundtrack for a do-nothing Sunday.\n\n#LoFiReggae #SundayChill #LazySunday #ChillReggae #AssiremMusicProd",
+      "tags": [
+        "lofi reggae",
+        "sunday chill",
+        "lazy sunday",
+        "morning vibes",
+        "chill reggae",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Lo-Fi Reggae — Sunday Soul Chill 2026",
+      "suno_style": "lo-fi reggae, lazy Sunday morning, slow bass 72 BPM, warm piano chords, muted guitar skank, tape hiss, gentle male vocal, sleepy and soulful, vinyl warmth",
+      "suno_exclude_styles": "trap, edm, metal, country, K-pop",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 18,
+      "suno_style_influence": 44,
+      "suno_lyrics": "[Sleepy intro]\n\n[Verse 1 — barely awake]\nSunday morning, sun is in my eyes\nNo alarm clock, beautiful surprise\nLo-fi reggae playing soft and slow\nNowhere to be, nowhere to go\n\n[Chorus]\nSunday soul chill, take it easy\nLazy morning, breezy and easy\nOne more hour in the soft warm light\nSunday soul, everything's alright\n\n[Verse 2]\nCoffee brewing, music through the wall\nSunday vibes taking care of all\n\n[Outro]\nSunday... soul... zzzz...",
+      "short_start": 38,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Lo-Fi Reggae — Sunday Soul Chill",
+          "subtitle": "☀️ Lazy Morning 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 38,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Sunday morning bedroom, sunlight through curtains, vinyl player, coffee cup, lazy cat, lo-fi warm aesthetic",
+          "motion_strength": 1
+        },
+        {
+          "prompt": "Tropical porch on a Sunday, hammock swaying gently, garden beyond, sleepy morning light, complete peace",
+          "motion_strength": 1
+        },
+        {
+          "prompt": "Island town Sunday morning, empty streets, bakery opening, warm lo-fi reggae atmosphere",
+          "motion_strength": 2
+        }
+      ],
+      "priority": 4,
+      "scheduled_at": "2026-06-07T19:00:00Z",
+      "niche": "primary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🌿 Reggae & Lo-Fi Reggae",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🌿 Reggae & Lo-Fi Reggae"
+    },
+    {
+      "slug": "oriental-techno-marrakech-underground-2026",
+      "category": "techno_oriental",
+      "title": "🌀 Oriental Techno — Marrakech Underground 2026 | Dark Electronic | Assirem Music PROD",
+      "description": "Dark oriental techno from Marrakech underground — gnaoua bass frequencies meet hard techno. Medina walls at 140 BPM.\n\n#OrientalTechno #MarrakechUnderground #DarkTechno #GnouaTechno #AssiremMusicProd",
+      "tags": [
+        "oriental techno",
+        "marrakech underground",
+        "dark techno",
+        "gnaoua techno",
+        "north african techno",
+        "ai music",
+        "assirem music prod"
+      ],
+      "suno_title": "Oriental Techno — Marrakech Underground 2026",
+      "suno_style": "dark oriental techno, 140 BPM, hard industrial kick, guembri bass sample pitched up, qraqeb rhythm chopped, dark Arabic vocal fragment, Marrakech underground energy, industrial atmosphere",
+      "suno_exclude_styles": "reggae, pop, country, K-pop, folk",
+      "suno_vocal_gender": "male",
+      "suno_weirdness": 48,
+      "suno_style_influence": 58,
+      "suno_lyrics": "[Dark intro — guembri sample pitched]\n\n[Vocal chant fragment]\nMarrakech... underground... bismillah...\n\n[Verse 1 — spoken dark]\nIn the medina walls at midnight\nThe riad becomes a rave tonight\nGuembri bass at 140\nQraqeb rhythms reinvented, heavy\n\n[Chorus]\nMarrakech underground, dark and deep\nOriental techno never sleeps\nGuembri bass meets the kick drum raw\nThe medina never heard this before\n\n[Techno breakdown — gnaoua sample loop]\n\n[Build — Arabic scale ascending]\n\n[Drop — full industrial force]\n\n[Outro — fade to muezzin at dawn]\nFajr... fajr... underground...",
+      "short_start": 58,
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 4,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Oriental Techno — Marrakech Underground",
+          "subtitle": "🌀 Dark Electronic 2026 — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 58,
+          "duration_sec": 55
+        }
+      },
+      "scenes": [
+        {
+          "prompt": "Marrakech riad transformed into underground techno club at night, geometric tiled walls, laser beams, dark energy",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Marrakech medina alley at 3am, DJ equipment in traditional doorway, bass vibrating ancient walls, surreal",
+          "motion_strength": 4
+        },
+        {
+          "prompt": "Abstract: guembri bass waveform meeting industrial techno kick, geometric arabesque patterns pulsing, dark gold",
+          "motion_strength": 3
+        }
+      ],
+      "priority": 5,
+      "scheduled_at": "2026-06-07T21:00:00Z",
+      "niche": "secondary",
+      "mode": "medium",
+      "intro_fade_sec": 2,
+      "outro_fade_sec": 4,
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+      "playlists": [
+        "🎛️ House · Techno · Electro Oriental",
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎛️ House · Techno · Electro Oriental"
+    },
+    {
+      "slug": "tasa",
+      "category": "world",
+      "title": "Tasa | Assirem Music PROD",
+      "description": "Tasa — Assirem Music PROD\n\n#AssiremMusicProd #WorldMusic #2026",
+      "tags": [
+        "tasa",
+        "world music",
+        "assirem music prod"
+      ],
+      "suno_title": "Tasa",
+      "playlists": [
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎵 Assirem Music PROD — All Tracks",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": false,
+        "distrokid": false,
+        "tiktok": false,
+        "instagram_reels": false
+      }
+    },
+    {
+      "slug": "bayda-mon-amour",
+      "category": "world",
+      "title": "البيضا مون أمور | Bayda Mon Amour | Assirem Music PROD",
+      "description": "Bayda Mon Amour — Assirem Music PROD\n\n#AssiremMusicProd #WorldMusic #Rai #2026",
+      "tags": [
+        "bayda mon amour",
+        "rai",
+        "world music",
+        "assirem music prod"
+      ],
+      "suno_title": "البيضا مون أمور",
+      "playlists": [
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎵 Assirem Music PROD — All Tracks",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": false,
+        "distrokid": false,
+        "tiktok": false,
+        "instagram_reels": false
+      }
+    },
+    {
+      "slug": "slaavits-ayabahri",
+      "category": "world",
+      "title": "Slaavits A Yabahri | Assirem Music PROD",
+      "description": "Slaavits A Yabahri — Assirem Music PROD\n\n#AssiremMusicProd #WorldMusic #2026",
+      "tags": [
+        "slaavits",
+        "ayabahri",
+        "world music",
+        "assirem music prod"
+      ],
+      "suno_title": "Slaavits A Yabahri",
+      "playlists": [
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎵 Assirem Music PROD — All Tracks",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": false,
+        "distrokid": false,
+        "tiktok": false,
+        "instagram_reels": false
+      }
+    },
+    {
+      "slug": "je-ne-regrette-rien",
+      "category": "world",
+      "title": "Non Je Ne Regrette Rien | Assirem Music PROD",
+      "description": "Non Je Ne Regrette Rien — Assirem Music PROD\n\n#AssiremMusicProd #French #2026",
+      "tags": [
+        "je ne regrette rien",
+        "french music",
+        "assirem music prod"
+      ],
+      "suno_title": "Non Je Ne Regrette Rien",
+      "playlists": [
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎵 Assirem Music PROD — All Tracks",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": false,
+        "distrokid": false,
+        "tiktok": false,
+        "instagram_reels": false
+      }
+    },
+    {
+      "slug": "hier-encore-javais-20-ans",
+      "category": "world",
+      "title": "Hier Encore J'avais 20 Ans | Assirem Music PROD",
+      "description": "Hier Encore J'avais 20 Ans — Assirem Music PROD\n\n#AssiremMusicProd #French #2026",
+      "tags": [
+        "hier encore",
+        "french music",
+        "assirem music prod"
+      ],
+      "suno_title": "Hier Encore J'avais 20 Ans",
+      "playlists": [
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎵 Assirem Music PROD — All Tracks",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": false,
+        "distrokid": false,
+        "tiktok": false,
+        "instagram_reels": false
+      }
+    },
+    {
+      "slug": "papa-ou-tes",
+      "category": "world",
+      "title": "Papa Où Es-Tu | Assirem Music PROD",
+      "description": "Papa Où Es-Tu — Assirem Music PROD\n\n#AssiremMusicProd #French #2026",
+      "tags": [
+        "papa ou es-tu",
+        "french music",
+        "assirem music prod"
+      ],
+      "suno_title": "Papa Où Es-Tu",
+      "playlists": [
+        "🎵 Assirem Music PROD — All Tracks"
+      ],
+      "playlist_name": "🎵 Assirem Music PROD — All Tracks",
+      "distribution": {
+        "youtube": true,
+        "youtube_short": false,
+        "distrokid": false,
+        "tiktok": false,
+        "instagram_reels": false
+      }
+    }
+  ]
+}
