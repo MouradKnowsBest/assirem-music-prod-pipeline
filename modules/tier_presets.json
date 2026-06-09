@@ -1,0 +1,83 @@
+{
+  "_doc": "Presets visuels par tier musical. Chaque entrée définit le prompt Leonardo (fond), la couleur signature de bordure, et le style typographique. Tu peux éditer librement les prompts pour affiner l'esthétique.",
+
+  "reggae": {
+    "leonardo_prompt": "warm sunset reggae lofi atmosphere, tropical balcony at dusk, soft palm tree silhouettes, golden hour light, gentle smoke haze, warm amber and orange tones, cinematic depth of field, no text, no people faces, atmospheric, immersive, dreamy, painterly digital art style",
+    "leonardo_negative_prompt": "text, watermark, logo, words, letters, signs, blurry, low quality, deformed, cluttered, busy",
+    "border_color": [232, 89, 60],
+    "border_alpha": 230,
+    "text_color": [255, 245, 220],
+    "shadow_color": [40, 15, 5],
+    "mood_tag": "warm",
+    "default_usage_modifiers": {
+      "studying": ", desk with open book in soft foreground blur, warm lamp light",
+      "sleeping": ", late night, deep dark warm tones, peaceful",
+      "focus": ", minimal composition, single light source, calm",
+      "relaxing": ", hammock or lounging vibe, golden light"
+    }
+  },
+
+  "world": {
+    "leonardo_prompt": "cinematic mountain landscape at golden hour, silhouette of traditional instrument, soft mist, ethereal atmosphere, deep warm gold and amber tones, painterly digital art, immersive depth, no text, no logos, contemplative meditative mood",
+    "leonardo_negative_prompt": "text, watermark, logo, words, letters, signs, modern buildings, cars, blurry, low quality, deformed",
+    "border_color": [212, 164, 55],
+    "border_alpha": 230,
+    "text_color": [255, 248, 230],
+    "shadow_color": [30, 20, 5],
+    "mood_tag": "ethereal",
+    "default_usage_modifiers": {
+      "meditation": ", solo meditative figure silhouette, dawn light",
+      "studying": ", scholarly atmosphere, ancient scrolls hint, soft warm light",
+      "sleeping": ", twilight transition, deep blue gold gradient sky",
+      "focus": ", minimalist composition, single mountain peak"
+    }
+  },
+
+  "afro": {
+    "leonardo_prompt": "modern African urban nightscape, neon purple and magenta lights, architecture silhouettes, rain reflections on street, cinematic depth, atmospheric haze, deep purple and electric magenta tones, futuristic afro house aesthetic, no text, no logos, no faces, immersive",
+    "leonardo_negative_prompt": "text, watermark, logo, words, letters, signs, faces, crowds, blurry, low quality, deformed, cartoon",
+    "border_color": [127, 119, 221],
+    "border_alpha": 230,
+    "text_color": [240, 235, 255],
+    "shadow_color": [15, 5, 30],
+    "mood_tag": "electric",
+    "default_usage_modifiers": {
+      "focus": ", clean architectural lines, single neon accent, minimalist",
+      "studying": ", late night cafe window scene, neon glow, books hinted",
+      "party": ", deeper neon saturation, more atmospheric haze",
+      "driving": ", street perspective, road lights leading into distance"
+    }
+  },
+
+  "latin": {
+    "leonardo_prompt": "Latin chill terrace at evening, bougainvillea flowers in soft foreground, warm golden light, mediterranean or caribbean atmosphere, painterly cinematic depth, rose and amber and coral tones, immersive romantic atmosphere, no text, no logos, no faces",
+    "leonardo_negative_prompt": "text, watermark, logo, words, letters, signs, faces, blurry, low quality, deformed, cartoon",
+    "border_color": [212, 83, 126],
+    "border_alpha": 230,
+    "text_color": [255, 240, 245],
+    "shadow_color": [50, 15, 30],
+    "mood_tag": "warm",
+    "default_usage_modifiers": {
+      "evening": ", sunset sky gradient, warmer saturation",
+      "dinner": ", candlelight hint, intimate composition",
+      "relaxing": ", hammock or balcony view, soft breeze feel",
+      "studying": ", desk on terrace, open book, warm lamp"
+    }
+  },
+
+  "maghreb": {
+    "leonardo_prompt": "desert at blue hour, oud instrument silhouette, moorish architecture archways in distance, soft mist, sand dunes, deep teal and gold tones, contemplative spiritual atmosphere, painterly cinematic, no text, no logos, no faces, ethereal calm",
+    "leonardo_negative_prompt": "text, watermark, logo, words, letters, signs, arabic calligraphy, faces, blurry, low quality, deformed, cartoon",
+    "border_color": [29, 158, 117],
+    "border_alpha": 230,
+    "text_color": [240, 250, 240],
+    "shadow_color": [5, 25, 20],
+    "mood_tag": "ethereal",
+    "default_usage_modifiers": {
+      "meditation": ", solo silhouette in prayer pose, dawn light",
+      "studying": ", ancient manuscript hint, soft oil lamp",
+      "sleeping": ", deep night sky, stars visible, peaceful",
+      "focus": ", single archway composition, minimalist"
+    }
+  }
+}

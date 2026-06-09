@@ -1,0 +1,2201 @@
+{
+  "videos": {
+    "bedroom-hours-lofi-vocals-2026/bedroom_hours_lofi_vocals_2026.mp4": {
+      "video_id": "RWMMm_gvoNo",
+      "uploaded_at": "2026-04-26T23:13:44Z",
+      "url": "https://www.youtube.com/watch?v=RWMMm_gvoNo",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "paris-minuit-french-pop-2026/paris_minuit_french_pop_2026.mp4": {
+      "video_id": "Dk-i7SSdEMM",
+      "uploaded_at": "2026-04-26T23:18:23Z",
+      "url": "https://www.youtube.com/watch?v=Dk-i7SSdEMM",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "neural-drift-synthwave-coding-2026/neural_drift_synthwave_coding_2026.mp4": {
+      "video_id": "U9cKHv9zBD8",
+      "uploaded_at": "2026-04-26T23:23:12Z",
+      "url": "https://www.youtube.com/watch?v=U9cKHv9zBD8",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "midnight-confessions-dark-rnb-2026/midnight_confessions_dark_rnb_2026.mp4": {
+      "video_id": "AMk_aZumBgk",
+      "uploaded_at": "2026-04-27T07:09:10Z",
+      "url": "https://www.youtube.com/watch?v=AMk_aZumBgk",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "crystal-waters-ambient-healing-2026/crystal_waters_ambient_healing_2026.mp4": {
+      "video_id": "ZGWBh5BNI5k",
+      "uploaded_at": "2026-04-27T07:09:14Z",
+      "url": "https://www.youtube.com/watch?v=ZGWBh5BNI5k",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "kalahari-dawn-africa-world-2026/kalahari_dawn_africa_world_2026.mp4": {
+      "video_id": "cpcnjmzfXu4",
+      "uploaded_at": "2026-04-27T07:09:18Z",
+      "url": "https://www.youtube.com/watch?v=cpcnjmzfXu4",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "golden-days-indie-pop-2026/golden_days_indie_pop_2026.mp4": {
+      "video_id": "m019_AzCyww",
+      "uploaded_at": "2026-04-27T07:09:22Z",
+      "url": "https://www.youtube.com/watch?v=m019_AzCyww",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "berserk-mode-gym-phonk-2026/berserk_mode_gym_phonk_2026.mp4": {
+      "video_id": "E1lSzl-NwXE",
+      "uploaded_at": "2026-04-27T07:09:27Z",
+      "url": "https://www.youtube.com/watch?v=E1lSzl-NwXE",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "oriental-night-market-vibes-2026/oriental_night_market_vibes_2026.mp4": {
+      "video_id": "zwlpyk4KV1s",
+      "uploaded_at": "2026-04-27T07:09:30Z",
+      "url": "https://www.youtube.com/watch?v=zwlpyk4KV1s",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "no-cap-zone-uk-drill-2026/no_cap_zone_uk_drill_2026.mp4": {
+      "video_id": "lflQiSzrzhQ",
+      "uploaded_at": "2026-04-27T07:11:25Z",
+      "url": "https://www.youtube.com/watch?v=lflQiSzrzhQ",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "tokyo-morning-cafe-lofi-2026/tokyo_morning_cafe_lofi_2026.mp4": {
+      "video_id": "YpspFxAwOoM",
+      "uploaded_at": "2026-04-27T07:16:03Z",
+      "url": "https://www.youtube.com/watch?v=YpspFxAwOoM",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "havana-heat-salsa-2026/havana_heat_salsa_2026.mp4": {
+      "video_id": "63LDIQFzzuI",
+      "uploaded_at": "2026-04-27T07:20:52Z",
+      "url": "https://www.youtube.com/watch?v=63LDIQFzzuI",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "ibiza-deep-house-2026/ibiza_deep_house_2026.mp4": {
+      "video_id": "H3_fINUvl8U",
+      "uploaded_at": "2026-04-27T09:00:31Z",
+      "url": "https://www.youtube.com/watch?v=H3_fINUvl8U",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "neon-africa-afrofuturism-2026/neon_africa_afrofuturism_2026.mp4": {
+      "video_id": "RmK9McpCC8k",
+      "uploaded_at": "2026-04-27T07:31:32Z",
+      "url": "https://www.youtube.com/watch?v=RmK9McpCC8k",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "eclipse-cinematic-dark-2026/eclipse_cinematic_dark_2026.mp4": {
+      "video_id": "rag1bqBBw2s",
+      "uploaded_at": "2026-04-27T07:36:20Z",
+      "url": "https://www.youtube.com/watch?v=rag1bqBBw2s",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "rainy-bedroom-lofi-2026/rainy_bedroom_lofi_2026.mp4": {
+      "video_id": "5xTGRgeeACE",
+      "uploaded_at": "2026-04-27T07:40:49Z",
+      "url": "https://www.youtube.com/watch?v=5xTGRgeeACE",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "neo-city-pop-tokyo-2026/neo_city_pop_tokyo_2026.mp4": {
+      "video_id": "zSYi7fTctwU",
+      "uploaded_at": "2026-04-27T07:45:14Z",
+      "url": "https://www.youtube.com/watch?v=zSYi7fTctwU",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "iron-mindset-hard-trap-2026/iron_mindset_hard_trap_2026.mp4": {
+      "video_id": "xBJFq7ElziQ",
+      "uploaded_at": "2026-04-27T07:49:53Z",
+      "url": "https://www.youtube.com/watch?v=xBJFq7ElziQ",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "night-drive-phonk-2026/night_drive_phonk_2026.mp4": {
+      "video_id": "iN9bdUqXHAY",
+      "uploaded_at": "2026-04-27T07:59:07Z",
+      "url": "https://www.youtube.com/watch?v=iN9bdUqXHAY",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "bali-gamelan-sunrise-2026/bali_gamelan_sunrise_2026.mp4": {
+      "video_id": "9LEYnb0IPvA",
+      "uploaded_at": "2026-04-27T08:03:49Z",
+      "url": "https://www.youtube.com/watch?v=9LEYnb0IPvA",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "paris-sous-la-pluie-2026/paris_sous_la_pluie_2026.mp4": {
+      "video_id": "M08XWvj2Kts",
+      "uploaded_at": "2026-04-27T08:10:43Z",
+      "url": "https://www.youtube.com/watch?v=M08XWvj2Kts",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "cyberpunk-focus-coding-2026/cyberpunk_focus_coding_2026.mp4": {
+      "video_id": "xiinJIzNOog",
+      "uploaded_at": "2026-04-27T08:15:15Z",
+      "url": "https://www.youtube.com/watch?v=xiinJIzNOog",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "neo-soul-lounge-2026/neo_soul_lounge_2026.mp4": {
+      "video_id": "6YRUVTCCku4",
+      "uploaded_at": "2026-04-27T08:19:59Z",
+      "url": "https://www.youtube.com/watch?v=6YRUVTCCku4",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "delta-sleep-binaural-2026/delta_sleep_binaural_2026.mp4": {
+      "video_id": "f5mPITAK6fk",
+      "uploaded_at": "2026-04-27T08:26:05Z",
+      "url": "https://www.youtube.com/watch?v=f5mPITAK6fk",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "grand-piano-dawn-2026/grand_piano_dawn_2026.mp4": {
+      "video_id": "t0L7nrqwKc8",
+      "uploaded_at": "2026-04-27T08:29:39Z",
+      "url": "https://www.youtube.com/watch?v=t0L7nrqwKc8",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "kingston-riddim-reggae-2026/kingston_riddim_reggae_2026.mp4": {
+      "video_id": "MDI8J-3A0Fg",
+      "uploaded_at": "2026-04-27T08:33:26Z",
+      "url": "https://www.youtube.com/watch?v=MDI8J-3A0Fg",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "hustle-hard-drill-2026/hustle_hard_drill_2026.mp4": {
+      "video_id": "OrSgB5b66NY",
+      "uploaded_at": "2026-04-27T08:32:56Z",
+      "url": "https://www.youtube.com/watch?v=OrSgB5b66NY",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "velvet-night-pluggnb-2026/velvet_night_pluggnb_2026.mp4": {
+      "video_id": "0oMMwftUlQk",
+      "uploaded_at": "2026-04-27T08:33:48Z",
+      "url": "https://www.youtube.com/watch?v=0oMMwftUlQk",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "forest-rain-sleep-2026/forest_rain_sleep_2026.mp4": {
+      "video_id": "Bj-KnSnTgK4",
+      "uploaded_at": "2026-04-27T08:35:06Z",
+      "url": "https://www.youtube.com/watch?v=Bj-KnSnTgK4",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "sunday-morning-lofi-2026/sunday_morning_lofi_2026.mp4": {
+      "video_id": "tYrmZ0my494",
+      "uploaded_at": "2026-04-27T08:34:38Z",
+      "url": "https://www.youtube.com/watch?v=tYrmZ0my494",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "hanoi-silk-road-2026/hanoi_silk_road_2026.mp4": {
+      "video_id": "xSm5KSI0UnE",
+      "uploaded_at": "2026-04-27T08:37:55Z",
+      "url": "https://www.youtube.com/watch?v=xSm5KSI0UnE",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "amapiano-summer-2026/amapiano_summer_2026.mp4": {
+      "video_id": "byYRMD_ff1U",
+      "uploaded_at": "2026-04-27T08:44:34Z",
+      "url": "https://www.youtube.com/watch?v=byYRMD_ff1U",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "space-odyssey-epic-2026/space_odyssey_epic_2026.mp4": {
+      "video_id": "Oegzr8TZ_PM",
+      "uploaded_at": "2026-04-27T08:48:36Z",
+      "url": "https://www.youtube.com/watch?v=Oegzr8TZ_PM",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "theta-dreams-396hz-2026/theta_dreams_396hz_2026.mp4": {
+      "video_id": "fyIbB7Hic9Y",
+      "uploaded_at": "2026-04-27T08:53:13Z",
+      "url": "https://www.youtube.com/watch?v=fyIbB7Hic9Y",
+      "is_short": false,
+      "publish_at": null,
+      "_backfilled": true,
+      "_match_reason": "title+suffix"
+    },
+    "bedroom-hours-lofi-vocals-2026/bedroom_hours_lofi_vocals_2026_short.mp4": {
+      "video_id": "28cP__ozz44",
+      "uploaded_at": "2026-04-27T14:50:19",
+      "url": "https://www.youtube.com/watch?v=28cP__ozz44",
+      "is_short": true,
+      "publish_at": null
+    },
+    "paris-minuit-french-pop-2026/paris_minuit_french_pop_2026_short.mp4": {
+      "video_id": "_Xjho5Xe8ao",
+      "uploaded_at": "2026-04-27T14:50:22",
+      "url": "https://www.youtube.com/watch?v=_Xjho5Xe8ao",
+      "is_short": true,
+      "publish_at": null
+    },
+    "neural-drift-synthwave-coding-2026/neural_drift_synthwave_coding_2026_short.mp4": {
+      "video_id": "U36SQw042TM",
+      "uploaded_at": "2026-04-27T14:50:24",
+      "url": "https://www.youtube.com/watch?v=U36SQw042TM",
+      "is_short": true,
+      "publish_at": null
+    },
+    "midnight-confessions-dark-rnb-2026/midnight_confessions_dark_rnb_2026_short.mp4": {
+      "video_id": "uV8bAC5sgjk",
+      "uploaded_at": "2026-04-27T14:50:26",
+      "url": "https://www.youtube.com/watch?v=uV8bAC5sgjk",
+      "is_short": true,
+      "publish_at": null
+    },
+    "crystal-waters-ambient-healing-2026/crystal_waters_ambient_healing_2026_short.mp4": {
+      "video_id": "Xz5yl7wEaAQ",
+      "uploaded_at": "2026-04-27T14:50:29",
+      "url": "https://www.youtube.com/watch?v=Xz5yl7wEaAQ",
+      "is_short": true,
+      "publish_at": null
+    },
+    "kalahari-dawn-africa-world-2026/kalahari_dawn_africa_world_2026_short.mp4": {
+      "video_id": "5EpXTUtvn3k",
+      "uploaded_at": "2026-04-27T14:50:31",
+      "url": "https://www.youtube.com/watch?v=5EpXTUtvn3k",
+      "is_short": true,
+      "publish_at": null
+    },
+    "golden-days-indie-pop-2026/golden_days_indie_pop_2026_short.mp4": {
+      "video_id": "-SUmmzboDlI",
+      "uploaded_at": "2026-04-27T14:50:34",
+      "url": "https://www.youtube.com/watch?v=-SUmmzboDlI",
+      "is_short": true,
+      "publish_at": null
+    },
+    "berserk-mode-gym-phonk-2026/berserk_mode_gym_phonk_2026_short.mp4": {
+      "video_id": "2Y0kWuGr690",
+      "uploaded_at": "2026-04-27T14:50:36",
+      "url": "https://www.youtube.com/watch?v=2Y0kWuGr690",
+      "is_short": true,
+      "publish_at": null
+    },
+    "oriental-night-market-vibes-2026/oriental_night_market_vibes_2026_short.mp4": {
+      "video_id": "tl6jnzwq5cY",
+      "uploaded_at": "2026-04-27T14:50:38",
+      "url": "https://www.youtube.com/watch?v=tl6jnzwq5cY",
+      "is_short": true,
+      "publish_at": null
+    },
+    "no-cap-zone-uk-drill-2026/no_cap_zone_uk_drill_2026_short.mp4": {
+      "video_id": "8LB1kMn2Jnc",
+      "uploaded_at": "2026-04-27T14:50:41",
+      "url": "https://www.youtube.com/watch?v=8LB1kMn2Jnc",
+      "is_short": true,
+      "publish_at": null
+    },
+    "tokyo-morning-cafe-lofi-2026/tokyo_morning_cafe_lofi_2026_short.mp4": {
+      "video_id": "4Ml0WT93bNY",
+      "uploaded_at": "2026-04-27T14:50:43",
+      "url": "https://www.youtube.com/watch?v=4Ml0WT93bNY",
+      "is_short": true,
+      "publish_at": null
+    },
+    "havana-heat-salsa-2026/havana_heat_salsa_2026_short.mp4": {
+      "video_id": "mUoBD0dP3mw",
+      "uploaded_at": "2026-04-27T14:50:45",
+      "url": "https://www.youtube.com/watch?v=mUoBD0dP3mw",
+      "is_short": true,
+      "publish_at": null
+    },
+    "ibiza-deep-house-2026/ibiza_deep_house_2026_short.mp4": {
+      "video_id": "fxk65EETRyk",
+      "uploaded_at": "2026-04-27T14:50:47",
+      "url": "https://www.youtube.com/watch?v=fxk65EETRyk",
+      "is_short": true,
+      "publish_at": null
+    },
+    "neon-africa-afrofuturism-2026/neon_africa_afrofuturism_2026_short.mp4": {
+      "video_id": "xD5z8As3jQ8",
+      "uploaded_at": "2026-04-27T14:50:50",
+      "url": "https://www.youtube.com/watch?v=xD5z8As3jQ8",
+      "is_short": true,
+      "publish_at": null
+    },
+    "eclipse-cinematic-dark-2026/eclipse_cinematic_dark_2026_short.mp4": {
+      "video_id": "bX-7ZpPv41k",
+      "uploaded_at": "2026-04-27T14:50:52",
+      "url": "https://www.youtube.com/watch?v=bX-7ZpPv41k",
+      "is_short": true,
+      "publish_at": null
+    },
+    "rainy-bedroom-lofi-2026/rainy_bedroom_lofi_2026_short.mp4": {
+      "video_id": "t2P1S4qOb-M",
+      "uploaded_at": "2026-04-27T14:50:55",
+      "url": "https://www.youtube.com/watch?v=t2P1S4qOb-M",
+      "is_short": true,
+      "publish_at": null
+    },
+    "neo-city-pop-tokyo-2026/neo_city_pop_tokyo_2026_short.mp4": {
+      "video_id": "GplNNlKgz9w",
+      "uploaded_at": "2026-04-27T14:50:57",
+      "url": "https://www.youtube.com/watch?v=GplNNlKgz9w",
+      "is_short": true,
+      "publish_at": null
+    },
+    "iron-mindset-hard-trap-2026/iron_mindset_hard_trap_2026_short.mp4": {
+      "video_id": "5fQpF-V7SME",
+      "uploaded_at": "2026-04-27T14:50:59",
+      "url": "https://www.youtube.com/watch?v=5fQpF-V7SME",
+      "is_short": true,
+      "publish_at": null
+    },
+    "kabyle-oud-desert-night-2026/kabyle_oud_desert_night_2026.mp4": {
+      "video_id": "ixY-IFLQLQk",
+      "uploaded_at": "2026-04-27T14:51:03",
+      "url": "https://www.youtube.com/watch?v=ixY-IFLQLQk",
+      "is_short": false,
+      "publish_at": null
+    },
+    "kabyle-oud-desert-night-2026/kabyle_oud_desert_night_2026_short.mp4": {
+      "video_id": "XBBHqssJIC0",
+      "uploaded_at": "2026-04-27T14:51:05",
+      "url": "https://www.youtube.com/watch?v=XBBHqssJIC0",
+      "is_short": true,
+      "publish_at": null
+    },
+    "night-drive-phonk-2026/night_drive_phonk_2026_short.mp4": {
+      "video_id": "7JNiFu-vdIs",
+      "uploaded_at": "2026-04-27T14:51:07",
+      "url": "https://www.youtube.com/watch?v=7JNiFu-vdIs",
+      "is_short": true,
+      "publish_at": null
+    },
+    "bali-gamelan-sunrise-2026/bali_gamelan_sunrise_2026_short.mp4": {
+      "video_id": "g5Xp1mFoz2E",
+      "uploaded_at": "2026-04-27T14:51:09",
+      "url": "https://www.youtube.com/watch?v=g5Xp1mFoz2E",
+      "is_short": true,
+      "publish_at": null
+    },
+    "paris-sous-la-pluie-2026/paris_sous_la_pluie_2026_short.mp4": {
+      "video_id": "tJ8yvWtUo38",
+      "uploaded_at": "2026-04-27T14:51:12",
+      "url": "https://www.youtube.com/watch?v=tJ8yvWtUo38",
+      "is_short": true,
+      "publish_at": null
+    },
+    "cyberpunk-focus-coding-2026/cyberpunk_focus_coding_2026_short.mp4": {
+      "video_id": "_j_v0CR0_Qk",
+      "uploaded_at": "2026-04-27T14:51:14",
+      "url": "https://www.youtube.com/watch?v=_j_v0CR0_Qk",
+      "is_short": true,
+      "publish_at": null
+    },
+    "neo-soul-lounge-2026/neo_soul_lounge_2026_short.mp4": {
+      "video_id": "mm6jj3ucVDg",
+      "uploaded_at": "2026-04-27T14:51:16",
+      "url": "https://www.youtube.com/watch?v=mm6jj3ucVDg",
+      "is_short": true,
+      "publish_at": null
+    },
+    "delta-sleep-binaural-2026/delta_sleep_binaural_2026_short.mp4": {
+      "video_id": "U2u9W3UY5Lg",
+      "uploaded_at": "2026-04-27T14:51:19",
+      "url": "https://www.youtube.com/watch?v=U2u9W3UY5Lg",
+      "is_short": true,
+      "publish_at": null
+    },
+    "grand-piano-dawn-2026/grand_piano_dawn_2026_short.mp4": {
+      "video_id": "JwsuGi3gkxQ",
+      "uploaded_at": "2026-04-27T14:51:21",
+      "url": "https://www.youtube.com/watch?v=JwsuGi3gkxQ",
+      "is_short": true,
+      "publish_at": null
+    },
+    "kingston-riddim-reggae-2026/kingston_riddim_reggae_2026_short.mp4": {
+      "video_id": "s59uIBBF1Nc",
+      "uploaded_at": "2026-04-27T14:51:23",
+      "url": "https://www.youtube.com/watch?v=s59uIBBF1Nc",
+      "is_short": true,
+      "publish_at": null
+    },
+    "hustle-hard-drill-2026/hustle_hard_drill_2026_short.mp4": {
+      "video_id": "Z7vq4vgC-DI",
+      "uploaded_at": "2026-04-27T14:51:25",
+      "url": "https://www.youtube.com/watch?v=Z7vq4vgC-DI",
+      "is_short": true,
+      "publish_at": null
+    },
+    "velvet-night-pluggnb-2026/velvet_night_pluggnb_2026_short.mp4": {
+      "video_id": "cKtJ0pL29kg",
+      "uploaded_at": "2026-04-27T14:51:28",
+      "url": "https://www.youtube.com/watch?v=cKtJ0pL29kg",
+      "is_short": true,
+      "publish_at": null
+    },
+    "forest-rain-sleep-2026/forest_rain_sleep_2026_short.mp4": {
+      "video_id": "A4t0_xs9oIg",
+      "uploaded_at": "2026-04-27T14:51:31",
+      "url": "https://www.youtube.com/watch?v=A4t0_xs9oIg",
+      "is_short": true,
+      "publish_at": null
+    },
+    "sunday-morning-lofi-2026/sunday_morning_lofi_2026_short.mp4": {
+      "video_id": "n_igTA6_znQ",
+      "uploaded_at": "2026-04-27T14:51:33",
+      "url": "https://www.youtube.com/watch?v=n_igTA6_znQ",
+      "is_short": true,
+      "publish_at": null
+    },
+    "hanoi-silk-road-2026/hanoi_silk_road_2026_short.mp4": {
+      "video_id": "xxpt2ApQ3Hc",
+      "uploaded_at": "2026-04-27T14:51:35",
+      "url": "https://www.youtube.com/watch?v=xxpt2ApQ3Hc",
+      "is_short": true,
+      "publish_at": null
+    },
+    "amapiano-summer-2026/amapiano_summer_2026_short.mp4": {
+      "video_id": "AkNDOaB8hvg",
+      "uploaded_at": "2026-04-27T14:51:38",
+      "url": "https://www.youtube.com/watch?v=AkNDOaB8hvg",
+      "is_short": true,
+      "publish_at": null
+    },
+    "space-odyssey-epic-2026/space_odyssey_epic_2026_short.mp4": {
+      "video_id": "xYKSNipKqaE",
+      "uploaded_at": "2026-04-27T14:51:40",
+      "url": "https://www.youtube.com/watch?v=xYKSNipKqaE",
+      "is_short": true,
+      "publish_at": null
+    },
+    "theta-dreams-396hz-2026/theta_dreams_396hz_2026_short.mp4": {
+      "video_id": "gB-4t51xs5M",
+      "uploaded_at": "2026-04-27T14:51:42",
+      "url": "https://www.youtube.com/watch?v=gB-4t51xs5M",
+      "is_short": true,
+      "publish_at": null
+    },
+    "trump-maga-never-surrender-2026/trump_maga_never_surrender_2026.mp4": {
+      "video_id": "FVGtG174JOE",
+      "uploaded_at": "2026-04-30T00:16:40",
+      "url": "https://www.youtube.com/watch?v=FVGtG174JOE",
+      "is_short": false,
+      "publish_at": null
+    },
+    "trump-maga-never-surrender-2026/trump_maga_never_surrender_2026_short.mp4": {
+      "video_id": "C70pcL_HK1I",
+      "uploaded_at": "2026-04-30T00:16:42",
+      "url": "https://www.youtube.com/watch?v=C70pcL_HK1I",
+      "is_short": true,
+      "publish_at": null
+    },
+    "aberkane-cerveau-no-limit-2026/aberkane_cerveau_no_limit_2026.mp4": {
+      "video_id": "XiONfM4ujkc",
+      "uploaded_at": "2026-04-30T00:16:48",
+      "url": "https://www.youtube.com/watch?v=XiONfM4ujkc",
+      "is_short": false,
+      "publish_at": null
+    },
+    "aberkane-cerveau-no-limit-2026/aberkane_cerveau_no_limit_2026_short.mp4": {
+      "video_id": "NVXMAKqNtcM",
+      "uploaded_at": "2026-04-30T00:16:50",
+      "url": "https://www.youtube.com/watch?v=NVXMAKqNtcM",
+      "is_short": true,
+      "publish_at": null
+    },
+    "macron-en-meme-temps-for-sure-2026/macron_en_meme_temps_for_sure_2026.mp4": {
+      "video_id": "FlrIrZOHKYQ",
+      "uploaded_at": "2026-04-30T00:21:25",
+      "url": "https://www.youtube.com/watch?v=FlrIrZOHKYQ",
+      "is_short": false,
+      "publish_at": null
+    },
+    "macron-en-meme-temps-for-sure-2026/macron_en_meme_temps_for_sure_2026_short.mp4": {
+      "video_id": "z-s8KA1FSic",
+      "uploaded_at": "2026-04-30T00:21:27",
+      "url": "https://www.youtube.com/watch?v=z-s8KA1FSic",
+      "is_short": true,
+      "publish_at": null
+    },
+    "iran-unbreakable-empire-2026/iran_unbreakable_empire_2026.mp4": {
+      "video_id": "QrKq8mQmZ_4",
+      "uploaded_at": "2026-04-30T00:25:00",
+      "url": "https://www.youtube.com/watch?v=QrKq8mQmZ_4",
+      "is_short": false,
+      "publish_at": null
+    },
+    "iran-unbreakable-empire-2026/iran_unbreakable_empire_2026_short.mp4": {
+      "video_id": "rdmcyvEIe0w",
+      "uploaded_at": "2026-04-30T00:25:03",
+      "url": "https://www.youtube.com/watch?v=rdmcyvEIe0w",
+      "is_short": true,
+      "publish_at": null
+    },
+    "psg-champions-europe-ici-paris-2026/psg_champions_europe_ici_paris_2026.mp4": {
+      "video_id": "I83KfErKI-s",
+      "uploaded_at": "2026-04-30T00:30:02",
+      "url": "https://www.youtube.com/watch?v=I83KfErKI-s",
+      "is_short": false,
+      "publish_at": null
+    },
+    "psg-champions-europe-ici-paris-2026/psg_champions_europe_ici_paris_2026_short.mp4": {
+      "video_id": "vHkMjFfoEmY",
+      "uploaded_at": "2026-04-30T00:30:05",
+      "url": "https://www.youtube.com/watch?v=vHkMjFfoEmY",
+      "is_short": true,
+      "publish_at": null
+    },
+    "epstein-files-exposed-2026/epstein_files_exposed_2026.mp4": {
+      "video_id": "9ylMYNLT8OE",
+      "uploaded_at": "2026-04-30T00:57:53",
+      "url": "https://www.youtube.com/watch?v=9ylMYNLT8OE",
+      "is_short": false,
+      "publish_at": null
+    },
+    "epstein-files-exposed-2026/epstein_files_exposed_2026_short.mp4": {
+      "video_id": "QsQOyGTFkyQ",
+      "uploaded_at": "2026-04-30T00:57:55",
+      "url": "https://www.youtube.com/watch?v=QsQOyGTFkyQ",
+      "is_short": true,
+      "publish_at": null
+    },
+    "germany-deutschland-mein-herzland-2026/germany_deutschland_mein_herzland_2026.mp4": {
+      "video_id": "KeKfW7_hfwI",
+      "uploaded_at": "2026-05-02T00:43:04",
+      "url": "https://www.youtube.com/watch?v=KeKfW7_hfwI",
+      "is_short": false,
+      "publish_at": null
+    },
+    "germany-deutschland-mein-herzland-2026/germany_deutschland_mein_herzland_2026_short.mp4": {
+      "video_id": "advebOFtC60",
+      "uploaded_at": "2026-05-02T00:43:06",
+      "url": "https://www.youtube.com/watch?v=advebOFtC60",
+      "is_short": true,
+      "publish_at": null
+    },
+    "poland-polska-my-land-forever-2026/poland_polska_my_land_forever_2026.mp4": {
+      "video_id": "fP762oxrVPw",
+      "uploaded_at": "2026-05-02T00:43:11",
+      "url": "https://www.youtube.com/watch?v=fP762oxrVPw",
+      "is_short": false,
+      "publish_at": null
+    },
+    "poland-polska-my-land-forever-2026/poland_polska_my_land_forever_2026_short.mp4": {
+      "video_id": "Hq9JuQKa9aY",
+      "uploaded_at": "2026-05-02T00:43:13",
+      "url": "https://www.youtube.com/watch?v=Hq9JuQKa9aY",
+      "is_short": true,
+      "publish_at": null
+    },
+    "turkey-anadolu-land-of-my-soul-2026/turkey_anadolu_land_of_my_soul_2026.mp4": {
+      "video_id": "mxjnHAfWJM4",
+      "uploaded_at": "2026-05-02T00:43:18",
+      "url": "https://www.youtube.com/watch?v=mxjnHAfWJM4",
+      "is_short": false,
+      "publish_at": null
+    },
+    "turkey-anadolu-land-of-my-soul-2026/turkey_anadolu_land_of_my_soul_2026_short.mp4": {
+      "video_id": "135Tr8WQZAM",
+      "uploaded_at": "2026-05-02T00:43:20",
+      "url": "https://www.youtube.com/watch?v=135Tr8WQZAM",
+      "is_short": true,
+      "publish_at": null
+    },
+    "japan-nihon-rising-sun-2026/japan_nihon_rising_sun_2026.mp4": {
+      "video_id": "icU0P9cPor8",
+      "uploaded_at": "2026-05-02T00:43:25",
+      "url": "https://www.youtube.com/watch?v=icU0P9cPor8",
+      "is_short": false,
+      "publish_at": null
+    },
+    "japan-nihon-rising-sun-2026/japan_nihon_rising_sun_2026_short.mp4": {
+      "video_id": "xUZ3kjCFanU",
+      "uploaded_at": "2026-05-02T00:43:27",
+      "url": "https://www.youtube.com/watch?v=xUZ3kjCFanU",
+      "is_short": true,
+      "publish_at": null
+    },
+    "france-mon-pays-bien-aime-2026/france_mon_pays_bien_aime_2026.mp4": {
+      "video_id": "sT6jXVN0ZEw",
+      "uploaded_at": "2026-05-02T00:43:38",
+      "url": "https://www.youtube.com/watch?v=sT6jXVN0ZEw",
+      "is_short": false,
+      "publish_at": null
+    },
+    "france-mon-pays-bien-aime-2026/france_mon_pays_bien_aime_2026_short.mp4": {
+      "video_id": "mnRt1-YJU0o",
+      "uploaded_at": "2026-05-02T00:43:40",
+      "url": "https://www.youtube.com/watch?v=mnRt1-YJU0o",
+      "is_short": true,
+      "publish_at": null
+    },
+    "italy-italia-la-mia-terra-2026/italy_italia_la_mia_terra_2026.mp4": {
+      "video_id": "JiUH2X7rwgg",
+      "uploaded_at": "2026-05-02T00:43:45",
+      "url": "https://www.youtube.com/watch?v=JiUH2X7rwgg",
+      "is_short": false,
+      "publish_at": null
+    },
+    "italy-italia-la-mia-terra-2026/italy_italia_la_mia_terra_2026_short.mp4": {
+      "video_id": "iy6r2UZ5dpQ",
+      "uploaded_at": "2026-05-02T00:43:47",
+      "url": "https://www.youtube.com/watch?v=iy6r2UZ5dpQ",
+      "is_short": true,
+      "publish_at": null
+    },
+    "uk-britannia-land-of-hope-2026/uk_britannia_land_of_hope_2026.mp4": {
+      "video_id": "6Nf7KQ-iZ5E",
+      "uploaded_at": "2026-05-02T00:43:52",
+      "url": "https://www.youtube.com/watch?v=6Nf7KQ-iZ5E",
+      "is_short": false,
+      "publish_at": null
+    },
+    "uk-britannia-land-of-hope-2026/uk_britannia_land_of_hope_2026_short.mp4": {
+      "video_id": "v1l-LYjiAaQ",
+      "uploaded_at": "2026-05-02T00:43:54",
+      "url": "https://www.youtube.com/watch?v=v1l-LYjiAaQ",
+      "is_short": true,
+      "publish_at": null
+    },
+    "russia-rodina-mother-russia-calls-2026/russia_rodina_mother_russia_calls_2026.mp4": {
+      "video_id": "jQQb6J6VkBU",
+      "uploaded_at": "2026-05-02T01:13:24",
+      "url": "https://www.youtube.com/watch?v=jQQb6J6VkBU",
+      "is_short": false,
+      "publish_at": null
+    },
+    "russia-rodina-mother-russia-calls-2026/russia_rodina_mother_russia_calls_2026_short.mp4": {
+      "video_id": "oUEYMgjPQps",
+      "uploaded_at": "2026-05-02T01:13:26",
+      "url": "https://www.youtube.com/watch?v=oUEYMgjPQps",
+      "is_short": true,
+      "publish_at": null
+    },
+    "afroswing-summer-wave-2026/afroswing_summer_wave_2026.mp4": {
+      "video_id": "jNpEldRYD-M",
+      "uploaded_at": "2026-05-04T13:59:40",
+      "url": "https://www.youtube.com/watch?v=jNpEldRYD-M",
+      "is_short": false,
+      "publish_at": "2026-05-04T06:15:00Z"
+    },
+    "afroswing-summer-wave-2026/afroswing_summer_wave_2026_short.mp4": {
+      "video_id": "D_uULNUmpDk",
+      "uploaded_at": "2026-05-04T13:59:43",
+      "url": "https://www.youtube.com/watch?v=D_uULNUmpDk",
+      "is_short": true,
+      "publish_at": "2026-05-04T06:15:00Z"
+    },
+    "nigerian-afrobeats-highlife-lagos-2026/nigerian_afrobeats_highlife_lagos_2026.mp4": {
+      "video_id": "4Ddij75w6zQ",
+      "uploaded_at": "2026-05-04T13:59:48",
+      "url": "https://www.youtube.com/watch?v=4Ddij75w6zQ",
+      "is_short": false,
+      "publish_at": "2026-05-04T10:10:00Z"
+    },
+    "nigerian-afrobeats-highlife-lagos-2026/nigerian_afrobeats_highlife_lagos_2026_short.mp4": {
+      "video_id": "Fvl-ZKIUPZY",
+      "uploaded_at": "2026-05-04T13:59:51",
+      "url": "https://www.youtube.com/watch?v=Fvl-ZKIUPZY",
+      "is_short": true,
+      "publish_at": "2026-05-04T10:10:00Z"
+    },
+    "morning-coffee-lofi-study-2026/morning_coffee_lofi_study_2026.mp4": {
+      "video_id": "s8PpComLkOE",
+      "uploaded_at": "2026-05-04T13:59:55",
+      "url": "https://www.youtube.com/watch?v=s8PpComLkOE",
+      "is_short": false,
+      "publish_at": "2026-05-04T14:13:00Z"
+    },
+    "morning-coffee-lofi-study-2026/morning_coffee_lofi_study_2026_short.mp4": {
+      "video_id": "0H4FyqtflOQ",
+      "uploaded_at": "2026-05-04T13:59:58",
+      "url": "https://www.youtube.com/watch?v=0H4FyqtflOQ",
+      "is_short": true,
+      "publish_at": "2026-05-04T14:13:00Z"
+    },
+    "reggae-roots-jah-love-2026/reggae_roots_jah_love_2026.mp4": {
+      "video_id": "eOwtYBbu1So",
+      "uploaded_at": "2026-05-04T14:00:02",
+      "url": "https://www.youtube.com/watch?v=eOwtYBbu1So",
+      "is_short": false,
+      "publish_at": "2026-05-04T18:02:00Z"
+    },
+    "reggae-roots-jah-love-2026/reggae_roots_jah_love_2026_short.mp4": {
+      "video_id": "JpbbUrTzvpQ",
+      "uploaded_at": "2026-05-04T14:00:06",
+      "url": "https://www.youtube.com/watch?v=JpbbUrTzvpQ",
+      "is_short": true,
+      "publish_at": "2026-05-04T18:02:00Z"
+    },
+    "reggaeton-romantico-noche-2026/reggaeton_romantico_noche_2026.mp4": {
+      "video_id": "hXOxYnWyv8E",
+      "uploaded_at": "2026-05-04T14:00:09",
+      "url": "https://www.youtube.com/watch?v=hXOxYnWyv8E",
+      "is_short": false,
+      "publish_at": "2026-05-04T21:16:00Z"
+    },
+    "reggaeton-romantico-noche-2026/reggaeton_romantico_noche_2026_short.mp4": {
+      "video_id": "EfvsjVfZSqY",
+      "uploaded_at": "2026-05-04T14:00:13",
+      "url": "https://www.youtube.com/watch?v=EfvsjVfZSqY",
+      "is_short": true,
+      "publish_at": "2026-05-04T21:16:00Z"
+    },
+    "neo-rnb-midnight-soul-2026/neo_rnb_midnight_soul_2026.mp4": {
+      "video_id": "9G7AnZ9_qhM",
+      "uploaded_at": "2026-05-04T14:00:17",
+      "url": "https://www.youtube.com/watch?v=9G7AnZ9_qhM",
+      "is_short": false,
+      "publish_at": "2026-05-05T06:15:00Z"
+    },
+    "neo-rnb-midnight-soul-2026/neo_rnb_midnight_soul_2026_short.mp4": {
+      "video_id": "OSccXnH_DSc",
+      "uploaded_at": "2026-05-04T14:00:21",
+      "url": "https://www.youtube.com/watch?v=OSccXnH_DSc",
+      "is_short": true,
+      "publish_at": "2026-05-05T06:15:00Z"
+    },
+    "cinco-de-mayo-mariachi-fiesta-2026/cinco_de_mayo_mariachi_fiesta_2026.mp4": {
+      "video_id": "5apNLytgyq4",
+      "uploaded_at": "2026-05-04T14:00:25",
+      "url": "https://www.youtube.com/watch?v=5apNLytgyq4",
+      "is_short": false,
+      "publish_at": "2026-05-05T10:10:00Z"
+    },
+    "cinco-de-mayo-mariachi-fiesta-2026/cinco_de_mayo_mariachi_fiesta_2026_short.mp4": {
+      "video_id": "bGbJId5CVAE",
+      "uploaded_at": "2026-05-04T14:00:28",
+      "url": "https://www.youtube.com/watch?v=bGbJId5CVAE",
+      "is_short": true,
+      "publish_at": "2026-05-05T10:10:00Z"
+    },
+    "spa-ambient-healing-frequencies-2026/spa_ambient_healing_frequencies_2026.mp4": {
+      "video_id": "ALKy4Qpu0E8",
+      "uploaded_at": "2026-05-04T14:00:33",
+      "url": "https://www.youtube.com/watch?v=ALKy4Qpu0E8",
+      "is_short": false,
+      "publish_at": "2026-05-05T14:13:00Z"
+    },
+    "spa-ambient-healing-frequencies-2026/spa_ambient_healing_frequencies_2026_short.mp4": {
+      "video_id": "bqJ1_otFqlQ",
+      "uploaded_at": "2026-05-04T14:00:36",
+      "url": "https://www.youtube.com/watch?v=bqJ1_otFqlQ",
+      "is_short": true,
+      "publish_at": "2026-05-05T14:13:00Z"
+    },
+    "salsa-tropical-cali-style-2026/salsa_tropical_cali_style_2026.mp4": {
+      "video_id": "NIh4DDMEjys",
+      "uploaded_at": "2026-05-04T21:54:02",
+      "url": "https://www.youtube.com/watch?v=NIh4DDMEjys",
+      "is_short": false,
+      "publish_at": "2026-05-05T18:02:00Z"
+    },
+    "salsa-tropical-cali-style-2026/salsa_tropical_cali_style_2026_short.mp4": {
+      "video_id": "zCcZvmJYY4I",
+      "uploaded_at": "2026-05-04T21:54:06",
+      "url": "https://www.youtube.com/watch?v=zCcZvmJYY4I",
+      "is_short": true,
+      "publish_at": "2026-05-05T18:02:00Z"
+    },
+    "latin-trap-reggae-streets-2026/latin_trap_reggae_streets_2026.mp4": {
+      "video_id": "V8c-q9VuzJU",
+      "uploaded_at": "2026-05-04T23:07:22",
+      "url": "https://www.youtube.com/watch?v=V8c-q9VuzJU",
+      "is_short": false,
+      "publish_at": "2026-05-05T21:16:00Z"
+    },
+    "latin-trap-reggae-streets-2026/latin_trap_reggae_streets_2026_short.mp4": {
+      "video_id": "NhPvWeDktLY",
+      "uploaded_at": "2026-05-04T23:07:25",
+      "url": "https://www.youtube.com/watch?v=NhPvWeDktLY",
+      "is_short": true,
+      "publish_at": "2026-05-05T21:16:00Z"
+    },
+    "pluggnb-dark-wave-melodic-2026/pluggnb_dark_wave_melodic_2026.mp4": {
+      "video_id": "4WRmzwCYZkY",
+      "uploaded_at": "2026-05-04T23:07:29",
+      "url": "https://www.youtube.com/watch?v=4WRmzwCYZkY",
+      "is_short": false,
+      "publish_at": "2026-05-06T06:15:00Z"
+    },
+    "pluggnb-dark-wave-melodic-2026/pluggnb_dark_wave_melodic_2026_short.mp4": {
+      "video_id": "Fqom2K7EYg4",
+      "uploaded_at": "2026-05-04T23:07:32",
+      "url": "https://www.youtube.com/watch?v=Fqom2K7EYg4",
+      "is_short": true,
+      "publish_at": "2026-05-06T06:15:00Z"
+    },
+    "kundiman-filipino-harana-soul-2026/kundiman_filipino_harana_soul_2026.mp4": {
+      "video_id": "F-g7qmcKFl4",
+      "uploaded_at": "2026-05-04T23:07:37",
+      "url": "https://www.youtube.com/watch?v=F-g7qmcKFl4",
+      "is_short": false,
+      "publish_at": "2026-05-06T10:10:00Z"
+    },
+    "kundiman-filipino-harana-soul-2026/kundiman_filipino_harana_soul_2026_short.mp4": {
+      "video_id": "mJNzj2htSEQ",
+      "uploaded_at": "2026-05-04T23:07:40",
+      "url": "https://www.youtube.com/watch?v=mJNzj2htSEQ",
+      "is_short": true,
+      "publish_at": "2026-05-06T10:10:00Z"
+    },
+    "deep-study-ambient-flow-2026/deep_study_ambient_flow_2026.mp4": {
+      "video_id": "7-YIlD-Caq8",
+      "uploaded_at": "2026-05-04T23:07:47",
+      "url": "https://www.youtube.com/watch?v=7-YIlD-Caq8",
+      "is_short": false,
+      "publish_at": "2026-05-06T14:13:00Z"
+    },
+    "deep-study-ambient-flow-2026/deep_study_ambient_flow_2026_short.mp4": {
+      "video_id": "okRVX8os2Ok",
+      "uploaded_at": "2026-05-04T23:07:51",
+      "url": "https://www.youtube.com/watch?v=okRVX8os2Ok",
+      "is_short": true,
+      "publish_at": "2026-05-06T14:13:00Z"
+    },
+    "hip-hop-italiano-flow-2026/hip_hop_italiano_flow_2026.mp4": {
+      "video_id": "HAsy-CNfXzE",
+      "uploaded_at": "2026-05-04T23:07:55",
+      "url": "https://www.youtube.com/watch?v=HAsy-CNfXzE",
+      "is_short": false,
+      "publish_at": "2026-05-06T18:02:00Z"
+    },
+    "hip-hop-italiano-flow-2026/hip_hop_italiano_flow_2026_short.mp4": {
+      "video_id": "x38p486Lub8",
+      "uploaded_at": "2026-05-04T23:07:59",
+      "url": "https://www.youtube.com/watch?v=x38p486Lub8",
+      "is_short": true,
+      "publish_at": "2026-05-06T18:02:00Z"
+    },
+    "cumbia-reggae-tropical-fusion-2026/cumbia_reggae_tropical_fusion_2026.mp4": {
+      "video_id": "TOg6BL3UdZQ",
+      "uploaded_at": "2026-05-04T23:08:04",
+      "url": "https://www.youtube.com/watch?v=TOg6BL3UdZQ",
+      "is_short": false,
+      "publish_at": "2026-05-06T21:16:00Z"
+    },
+    "cumbia-reggae-tropical-fusion-2026/cumbia_reggae_tropical_fusion_2026_short.mp4": {
+      "video_id": "uwyaS4fZB1o",
+      "uploaded_at": "2026-05-04T23:08:07",
+      "url": "https://www.youtube.com/watch?v=uwyaS4fZB1o",
+      "is_short": true,
+      "publish_at": "2026-05-06T21:16:00Z"
+    },
+    "dark-jazz-trap-noir-city-2026/dark_jazz_trap_noir_city_2026.mp4": {
+      "video_id": "slVqihKxydk",
+      "uploaded_at": "2026-05-04T23:08:12",
+      "url": "https://www.youtube.com/watch?v=slVqihKxydk",
+      "is_short": false,
+      "publish_at": "2026-05-07T06:15:00Z"
+    },
+    "dark-jazz-trap-noir-city-2026/dark_jazz_trap_noir_city_2026_short.mp4": {
+      "video_id": "qyHgNSn8950",
+      "uploaded_at": "2026-05-04T23:08:16",
+      "url": "https://www.youtube.com/watch?v=qyHgNSn8950",
+      "is_short": true,
+      "publish_at": "2026-05-07T06:15:00Z"
+    },
+    "india-hindustani-raga-soul-2026/india_hindustani_raga_soul_2026.mp4": {
+      "video_id": "K4-ZhiWMwFg",
+      "uploaded_at": "2026-05-04T23:08:20",
+      "url": "https://www.youtube.com/watch?v=K4-ZhiWMwFg",
+      "is_short": false,
+      "publish_at": "2026-05-07T10:10:00Z"
+    },
+    "india-hindustani-raga-soul-2026/india_hindustani_raga_soul_2026_short.mp4": {
+      "video_id": "F15R0YoPsQQ",
+      "uploaded_at": "2026-05-04T23:08:23",
+      "url": "https://www.youtube.com/watch?v=F15R0YoPsQQ",
+      "is_short": true,
+      "publish_at": "2026-05-07T10:10:00Z"
+    },
+    "yoga-flow-mindful-movement-2026/yoga_flow_mindful_movement_2026.mp4": {
+      "video_id": "0JFh72isvYU",
+      "uploaded_at": "2026-05-04T23:08:26",
+      "url": "https://www.youtube.com/watch?v=0JFh72isvYU",
+      "is_short": false,
+      "publish_at": "2026-05-07T14:13:00Z"
+    },
+    "yoga-flow-mindful-movement-2026/yoga_flow_mindful_movement_2026_short.mp4": {
+      "video_id": "t8j_LM_I-gE",
+      "uploaded_at": "2026-05-04T23:08:29",
+      "url": "https://www.youtube.com/watch?v=t8j_LM_I-gE",
+      "is_short": true,
+      "publish_at": "2026-05-07T14:13:00Z"
+    },
+    "house-electro-paris-night-2026/house_electro_paris_night_2026.mp4": {
+      "video_id": "NzG3-4UYSsY",
+      "uploaded_at": "2026-05-04T23:08:33",
+      "url": "https://www.youtube.com/watch?v=NzG3-4UYSsY",
+      "is_short": false,
+      "publish_at": "2026-05-07T18:02:00Z"
+    },
+    "house-electro-paris-night-2026/house_electro_paris_night_2026_short.mp4": {
+      "video_id": "3N3oCzsvRDs",
+      "uploaded_at": "2026-05-04T23:08:35",
+      "url": "https://www.youtube.com/watch?v=3N3oCzsvRDs",
+      "is_short": true,
+      "publish_at": "2026-05-07T18:02:00Z"
+    },
+    "dembow-latino-urbano-2026/dembow_latino_urbano_2026.mp4": {
+      "video_id": "_0Ddg0bF1sM",
+      "uploaded_at": "2026-05-04T23:08:39",
+      "url": "https://www.youtube.com/watch?v=_0Ddg0bF1sM",
+      "is_short": false,
+      "publish_at": "2026-05-07T21:16:00Z"
+    },
+    "dembow-latino-urbano-2026/dembow_latino_urbano_2026_short.mp4": {
+      "video_id": "rcVWFnTiTVI",
+      "uploaded_at": "2026-05-04T23:08:42",
+      "url": "https://www.youtube.com/watch?v=rcVWFnTiTVI",
+      "is_short": true,
+      "publish_at": "2026-05-07T21:16:00Z"
+    },
+    "amapiano-sunrise-south-africa-2026/amapiano_sunrise_south_africa_2026.mp4": {
+      "video_id": "KC6_9AGfS2Y",
+      "uploaded_at": "2026-05-04T23:08:47",
+      "url": "https://www.youtube.com/watch?v=KC6_9AGfS2Y",
+      "is_short": false,
+      "publish_at": "2026-05-08T06:15:00Z"
+    },
+    "amapiano-sunrise-south-africa-2026/amapiano_sunrise_south_africa_2026_short.mp4": {
+      "video_id": "p91vJERWJGA",
+      "uploaded_at": "2026-05-04T23:08:51",
+      "url": "https://www.youtube.com/watch?v=p91vJERWJGA",
+      "is_short": true,
+      "publish_at": "2026-05-08T06:15:00Z"
+    },
+    "ethiopia-tizita-soul-nostalgia-2026/ethiopia_tizita_soul_nostalgia_2026.mp4": {
+      "video_id": "U3LCkoFBY2A",
+      "uploaded_at": "2026-05-04T23:09:00",
+      "url": "https://www.youtube.com/watch?v=U3LCkoFBY2A",
+      "is_short": false,
+      "publish_at": "2026-05-08T10:10:00Z"
+    },
+    "ethiopia-tizita-soul-nostalgia-2026/ethiopia_tizita_soul_nostalgia_2026_short.mp4": {
+      "video_id": "IyBYoMRoBcY",
+      "uploaded_at": "2026-05-04T23:09:04",
+      "url": "https://www.youtube.com/watch?v=IyBYoMRoBcY",
+      "is_short": true,
+      "publish_at": "2026-05-08T10:10:00Z"
+    },
+    "nature-walk-forest-serenity-2026/nature_walk_forest_serenity_2026.mp4": {
+      "video_id": "HQq7FwGXULU",
+      "uploaded_at": "2026-05-04T23:09:11",
+      "url": "https://www.youtube.com/watch?v=HQq7FwGXULU",
+      "is_short": false,
+      "publish_at": "2026-05-08T14:13:00Z"
+    },
+    "nature-walk-forest-serenity-2026/nature_walk_forest_serenity_2026_short.mp4": {
+      "video_id": "JR9gJnOLwFM",
+      "uploaded_at": "2026-05-04T23:09:14",
+      "url": "https://www.youtube.com/watch?v=JR9gJnOLwFM",
+      "is_short": true,
+      "publish_at": "2026-05-08T14:13:00Z"
+    },
+    "algerian-rai-wahran-2026/algerian_rai_wahran_2026.mp4": {
+      "video_id": "TRLEgW7xKUU",
+      "uploaded_at": "2026-05-04T23:09:19",
+      "url": "https://www.youtube.com/watch?v=TRLEgW7xKUU",
+      "is_short": false,
+      "publish_at": "2026-05-08T18:02:00Z"
+    },
+    "algerian-rai-wahran-2026/algerian_rai_wahran_2026_short.mp4": {
+      "video_id": "YxOg_faOPuo",
+      "uploaded_at": "2026-05-04T23:09:23",
+      "url": "https://www.youtube.com/watch?v=YxOg_faOPuo",
+      "is_short": true,
+      "publish_at": "2026-05-08T18:02:00Z"
+    },
+    "reggaeton-old-school-perreo-2026/reggaeton_old_school_perreo_2026.mp4": {
+      "video_id": "yNPJQiQ41Ss",
+      "uploaded_at": "2026-05-04T23:09:35",
+      "url": "https://www.youtube.com/watch?v=yNPJQiQ41Ss",
+      "is_short": false,
+      "publish_at": "2026-05-08T21:16:00Z"
+    },
+    "reggaeton-old-school-perreo-2026/reggaeton_old_school_perreo_2026_short.mp4": {
+      "video_id": "8IKxqxwIflc",
+      "uploaded_at": "2026-05-04T23:09:38",
+      "url": "https://www.youtube.com/watch?v=8IKxqxwIflc",
+      "is_short": true,
+      "publish_at": "2026-05-08T21:16:00Z"
+    },
+    "afro-house-ritual-deep-2026/afro_house_ritual_deep_2026.mp4": {
+      "video_id": "NB-8dnhbkDQ",
+      "uploaded_at": "2026-05-04T23:09:46",
+      "url": "https://www.youtube.com/watch?v=NB-8dnhbkDQ",
+      "is_short": false,
+      "publish_at": "2026-05-09T06:15:00Z"
+    },
+    "afro-house-ritual-deep-2026/afro_house_ritual_deep_2026_short.mp4": {
+      "video_id": "ZJUNo9mVz3s",
+      "uploaded_at": "2026-05-04T23:09:49",
+      "url": "https://www.youtube.com/watch?v=ZJUNo9mVz3s",
+      "is_short": true,
+      "publish_at": "2026-05-09T06:15:00Z"
+    },
+    "europe-day-cinematic-unity-2026/europe_day_cinematic_unity_2026.mp4": {
+      "video_id": "XHA2y_FWdag",
+      "uploaded_at": "2026-05-04T23:09:56",
+      "url": "https://www.youtube.com/watch?v=XHA2y_FWdag",
+      "is_short": false,
+      "publish_at": "2026-05-09T10:10:00Z"
+    },
+    "europe-day-cinematic-unity-2026/europe_day_cinematic_unity_2026_short.mp4": {
+      "video_id": "t8JqHsKrDgU",
+      "uploaded_at": "2026-05-04T23:09:59",
+      "url": "https://www.youtube.com/watch?v=t8JqHsKrDgU",
+      "is_short": true,
+      "publish_at": "2026-05-09T10:10:00Z"
+    },
+    "rainy-day-lofi-cozy-ambient-2026/rainy_day_lofi_cozy_ambient_2026.mp4": {
+      "video_id": "3NULKUrYzrk",
+      "uploaded_at": "2026-05-04T23:10:07",
+      "url": "https://www.youtube.com/watch?v=3NULKUrYzrk",
+      "is_short": false,
+      "publish_at": "2026-05-09T14:13:00Z"
+    },
+    "rainy-day-lofi-cozy-ambient-2026/rainy_day_lofi_cozy_ambient_2026_short.mp4": {
+      "video_id": "h3ybK2LPCLs",
+      "uploaded_at": "2026-05-04T23:10:10",
+      "url": "https://www.youtube.com/watch?v=h3ybK2LPCLs",
+      "is_short": true,
+      "publish_at": "2026-05-09T14:13:00Z"
+    },
+    "gnawa-desert-blues-soul-2026/gnawa_desert_blues_soul_2026.mp4": {
+      "video_id": "ClpDUpXvuJo",
+      "uploaded_at": "2026-05-04T23:10:18",
+      "url": "https://www.youtube.com/watch?v=ClpDUpXvuJo",
+      "is_short": false,
+      "publish_at": "2026-05-09T18:02:00Z"
+    },
+    "gnawa-desert-blues-soul-2026/gnawa_desert_blues_soul_2026_short.mp4": {
+      "video_id": "fRhkaAje1fo",
+      "uploaded_at": "2026-05-04T23:10:22",
+      "url": "https://www.youtube.com/watch?v=fRhkaAje1fo",
+      "is_short": true,
+      "publish_at": "2026-05-09T18:02:00Z"
+    },
+    "latin-lovers-reggae-soul-2026/latin_lovers_reggae_soul_2026.mp4": {
+      "video_id": "iS5DFXy6WZU",
+      "uploaded_at": "2026-05-04T23:10:26",
+      "url": "https://www.youtube.com/watch?v=iS5DFXy6WZU",
+      "is_short": false,
+      "publish_at": "2026-05-09T21:16:00Z"
+    },
+    "latin-lovers-reggae-soul-2026/latin_lovers_reggae_soul_2026_short.mp4": {
+      "video_id": "v-fif32cNeo",
+      "uploaded_at": "2026-05-04T23:10:28",
+      "url": "https://www.youtube.com/watch?v=v-fif32cNeo",
+      "is_short": true,
+      "publish_at": "2026-05-09T21:16:00Z"
+    },
+    "tropical-afropop-paradise-2026/tropical_afropop_paradise_2026.mp4": {
+      "video_id": "6gUVmXm5l1E",
+      "uploaded_at": "2026-05-04T23:10:32",
+      "url": "https://www.youtube.com/watch?v=6gUVmXm5l1E",
+      "is_short": false,
+      "publish_at": "2026-05-10T06:15:00Z"
+    },
+    "tropical-afropop-paradise-2026/tropical_afropop_paradise_2026_short.mp4": {
+      "video_id": "i3A29XH0FXU",
+      "uploaded_at": "2026-05-04T23:10:35",
+      "url": "https://www.youtube.com/watch?v=i3A29XH0FXU",
+      "is_short": true,
+      "publish_at": "2026-05-10T06:15:00Z"
+    },
+    "son-cubano-havana-nights-2026/son_cubano_havana_nights_2026.mp4": {
+      "video_id": "EWe0vQV_-D4",
+      "uploaded_at": "2026-05-04T23:10:38",
+      "url": "https://www.youtube.com/watch?v=EWe0vQV_-D4",
+      "is_short": false,
+      "publish_at": "2026-05-10T10:10:00Z"
+    },
+    "gaming-synthwave-neon-2026/gaming_synthwave_neon_2026.mp4": {
+      "video_id": "YaRIVe4uu_c",
+      "uploaded_at": "2026-05-06T09:56:16",
+      "url": "https://www.youtube.com/watch?v=YaRIVe4uu_c",
+      "is_short": false,
+      "publish_at": null
+    },
+    "gaming-synthwave-neon-2026/gaming_synthwave_neon_2026_short.mp4": {
+      "video_id": "NMukNY47DFQ",
+      "uploaded_at": "2026-05-06T09:56:18",
+      "url": "https://www.youtube.com/watch?v=NMukNY47DFQ",
+      "is_short": true,
+      "publish_at": null
+    },
+    "mississippi-blues-soul-deep-2026/mississippi_blues_soul_deep_2026.mp4": {
+      "video_id": "EJh7omPpAkE",
+      "uploaded_at": "2026-05-06T09:56:26",
+      "url": "https://www.youtube.com/watch?v=EJh7omPpAkE",
+      "is_short": false,
+      "publish_at": null
+    },
+    "mississippi-blues-soul-deep-2026/mississippi_blues_soul_deep_2026_short.mp4": {
+      "video_id": "INq2Yd-Yphc",
+      "uploaded_at": "2026-05-06T09:56:29",
+      "url": "https://www.youtube.com/watch?v=INq2Yd-Yphc",
+      "is_short": true,
+      "publish_at": null
+    },
+    "son-cubano-havana-nights-2026/son_cubano_havana_nights_2026_short.mp4": {
+      "video_id": "RXvp-OMc3S8",
+      "uploaded_at": "2026-05-06T09:56:32",
+      "url": "https://www.youtube.com/watch?v=RXvp-OMc3S8",
+      "is_short": true,
+      "publish_at": null
+    },
+    "tropical-reggae-latino-vibes-2026/tropical_reggae_latino_vibes_2026.mp4": {
+      "video_id": "FOgbx1d44_w",
+      "uploaded_at": "2026-05-06T09:56:37",
+      "url": "https://www.youtube.com/watch?v=FOgbx1d44_w",
+      "is_short": false,
+      "publish_at": null
+    },
+    "tropical-reggae-latino-vibes-2026/tropical_reggae_latino_vibes_2026_short.mp4": {
+      "video_id": "B7lQFJFhDh4",
+      "uploaded_at": "2026-05-06T09:56:40",
+      "url": "https://www.youtube.com/watch?v=B7lQFJFhDh4",
+      "is_short": true,
+      "publish_at": null
+    },
+    "sbart-w-tal-3dabi-cheb-hasni-guitare-electrique-2026/sbart_w_tal_3dabi_cheb_hasni_guitare_electrique_2026.mp4": {
+      "video_id": "SxRVEOarV30",
+      "uploaded_at": "2026-05-09T00:09:24",
+      "url": "https://www.youtube.com/watch?v=SxRVEOarV30",
+      "is_short": false,
+      "publish_at": null
+    },
+    "ya-hasrah-alik-ya-denia-kamel-messaoudi-blues-harmonica/ya_hasrah_alik_ya_denia_kamel_messaoudi_blues_harmonica.mp4": {
+      "video_id": "te-cXbYMPQA",
+      "uploaded_at": "2026-05-09T00:24:26",
+      "url": "https://www.youtube.com/watch?v=te-cXbYMPQA",
+      "is_short": false,
+      "publish_at": null
+    },
+    "afrofuturism-highlife-wave-2026/afrofuturism_highlife_wave_2026.mp4": {
+      "video_id": "RTAviSsw5c8",
+      "uploaded_at": "2026-05-10T22:46:43",
+      "url": "https://www.youtube.com/watch?v=RTAviSsw5c8",
+      "is_short": false,
+      "publish_at": "2026-05-11T06:15:00Z"
+    },
+    "afrofuturism-highlife-wave-2026/afrofuturism_highlife_wave_2026_short.mp4": {
+      "video_id": "AV1mEP5qssw",
+      "uploaded_at": "2026-05-10T22:46:46",
+      "url": "https://www.youtube.com/watch?v=AV1mEP5qssw",
+      "is_short": true,
+      "publish_at": "2026-05-11T06:15:00Z"
+    },
+    "jamaica-roots-reggae-conscious-2026/jamaica_roots_reggae_conscious_2026.mp4": {
+      "video_id": "PWq0q8IJjaY",
+      "uploaded_at": "2026-05-10T22:50:56",
+      "url": "https://www.youtube.com/watch?v=PWq0q8IJjaY",
+      "is_short": false,
+      "publish_at": "2026-05-11T10:10:00Z"
+    },
+    "jamaica-roots-reggae-conscious-2026/jamaica_roots_reggae_conscious_2026_short.mp4": {
+      "video_id": "pwTraiunR2A",
+      "uploaded_at": "2026-05-10T22:50:59",
+      "url": "https://www.youtube.com/watch?v=pwTraiunR2A",
+      "is_short": true,
+      "publish_at": "2026-05-11T10:10:00Z"
+    },
+    "hustle-afrobeats-morning-grind-2026/hustle_afrobeats_morning_grind_2026.mp4": {
+      "video_id": "RN5jWC_jmFQ",
+      "uploaded_at": "2026-05-10T22:54:27",
+      "url": "https://www.youtube.com/watch?v=RN5jWC_jmFQ",
+      "is_short": false,
+      "publish_at": "2026-05-11T14:13:00Z"
+    },
+    "hustle-afrobeats-morning-grind-2026/hustle_afrobeats_morning_grind_2026_short.mp4": {
+      "video_id": "opZYvuHs21E",
+      "uploaded_at": "2026-05-10T22:54:30",
+      "url": "https://www.youtube.com/watch?v=opZYvuHs21E",
+      "is_short": true,
+      "publish_at": "2026-05-11T14:13:00Z"
+    },
+    "gnawa-fusion-sahara-soul-2026/gnawa_fusion_sahara_soul_2026.mp4": {
+      "video_id": "34D-G91bJgU",
+      "uploaded_at": "2026-05-10T23:00:37",
+      "url": "https://www.youtube.com/watch?v=34D-G91bJgU",
+      "is_short": false,
+      "publish_at": "2026-05-11T18:02:00Z"
+    },
+    "gnawa-fusion-sahara-soul-2026/gnawa_fusion_sahara_soul_2026_short.mp4": {
+      "video_id": "FqR1jf4Ir1g",
+      "uploaded_at": "2026-05-10T23:00:40",
+      "url": "https://www.youtube.com/watch?v=FqR1jf4Ir1g",
+      "is_short": true,
+      "publish_at": "2026-05-11T18:02:00Z"
+    },
+    "afrobeats-dancehall-caribbean-wave-2026/afrobeats_dancehall_caribbean_wave_2026.mp4": {
+      "video_id": "lHMuHsYHEuk",
+      "uploaded_at": "2026-05-10T23:01:10",
+      "url": "https://www.youtube.com/watch?v=lHMuHsYHEuk",
+      "is_short": false,
+      "publish_at": "2026-05-13T06:15:00Z"
+    },
+    "afrobeats-dancehall-caribbean-wave-2026/afrobeats_dancehall_caribbean_wave_2026_short.mp4": {
+      "video_id": "1i2x2_kKxAQ",
+      "uploaded_at": "2026-05-10T23:01:14",
+      "url": "https://www.youtube.com/watch?v=1i2x2_kKxAQ",
+      "is_short": true,
+      "publish_at": "2026-05-13T06:15:00Z"
+    },
+    "reggaeton-roots-fusion-lunes-2026/reggaeton_roots_fusion_lunes_2026.mp4": {
+      "video_id": "DzKQ8azqPNo",
+      "uploaded_at": "2026-05-10T23:02:36",
+      "url": "https://www.youtube.com/watch?v=DzKQ8azqPNo",
+      "is_short": false,
+      "publish_at": "2026-05-11T21:16:00Z"
+    },
+    "reggaeton-roots-fusion-lunes-2026/reggaeton_roots_fusion_lunes_2026_short.mp4": {
+      "video_id": "p3MblKQgbhg",
+      "uploaded_at": "2026-05-10T23:02:39",
+      "url": "https://www.youtube.com/watch?v=p3MblKQgbhg",
+      "is_short": true,
+      "publish_at": "2026-05-11T21:16:00Z"
+    },
+    "dominican-bachata-merengue-2026/dominican_bachata_merengue_2026.mp4": {
+      "video_id": "zmkRt3tIy-o",
+      "uploaded_at": "2026-05-10T23:05:35",
+      "url": "https://www.youtube.com/watch?v=zmkRt3tIy-o",
+      "is_short": false,
+      "publish_at": "2026-05-13T10:10:00Z"
+    },
+    "dominican-bachata-merengue-2026/dominican_bachata_merengue_2026_short.mp4": {
+      "video_id": "9P_14ukZDlY",
+      "uploaded_at": "2026-05-10T23:05:39",
+      "url": "https://www.youtube.com/watch?v=9P_14ukZDlY",
+      "is_short": true,
+      "publish_at": "2026-05-13T10:10:00Z"
+    },
+    "reggae-conscious-revival-2026/reggae_conscious_revival_2026.mp4": {
+      "video_id": "EvCwOr0csjI",
+      "uploaded_at": "2026-05-10T23:08:13",
+      "url": "https://www.youtube.com/watch?v=EvCwOr0csjI",
+      "is_short": false,
+      "publish_at": "2026-05-12T06:15:00Z"
+    },
+    "reggae-conscious-revival-2026/reggae_conscious_revival_2026_short.mp4": {
+      "video_id": "3jnjxN3WQs0",
+      "uploaded_at": "2026-05-10T23:08:16",
+      "url": "https://www.youtube.com/watch?v=3jnjxN3WQs0",
+      "is_short": true,
+      "publish_at": "2026-05-12T06:15:00Z"
+    },
+    "caribbean-morning-coffee-vibes-2026/caribbean_morning_coffee_vibes_2026.mp4": {
+      "video_id": "Ke9ZXv0AKNg",
+      "uploaded_at": "2026-05-10T23:08:27",
+      "url": "https://www.youtube.com/watch?v=Ke9ZXv0AKNg",
+      "is_short": false,
+      "publish_at": "2026-05-13T14:13:00Z"
+    },
+    "caribbean-morning-coffee-vibes-2026/caribbean_morning_coffee_vibes_2026_short.mp4": {
+      "video_id": "o_c1sIKsXPo",
+      "uploaded_at": "2026-05-10T23:08:31",
+      "url": "https://www.youtube.com/watch?v=o_c1sIKsXPo",
+      "is_short": true,
+      "publish_at": "2026-05-13T14:13:00Z"
+    },
+    "senegal-mbalax-wolof-dakar-2026/senegal_mbalax_wolof_dakar_2026.mp4": {
+      "video_id": "K1FYab5lbOc",
+      "uploaded_at": "2026-05-10T23:13:21",
+      "url": "https://www.youtube.com/watch?v=K1FYab5lbOc",
+      "is_short": false,
+      "publish_at": "2026-05-12T10:10:00Z"
+    },
+    "senegal-mbalax-wolof-dakar-2026/senegal_mbalax_wolof_dakar_2026_short.mp4": {
+      "video_id": "hstQf4vOerQ",
+      "uploaded_at": "2026-05-10T23:13:24",
+      "url": "https://www.youtube.com/watch?v=hstQf4vOerQ",
+      "is_short": true,
+      "publish_at": "2026-05-12T10:10:00Z"
+    },
+    "afrobeat-fela-style-2026/afrobeat_fela_style_2026.mp4": {
+      "video_id": "2Ob7N30P-AA",
+      "uploaded_at": "2026-05-10T23:13:31",
+      "url": "https://www.youtube.com/watch?v=2Ob7N30P-AA",
+      "is_short": false,
+      "publish_at": "2026-05-13T18:02:00Z"
+    },
+    "afrobeat-fela-style-2026/afrobeat_fela_style_2026_short.mp4": {
+      "video_id": "xAwo5RtJ3ww",
+      "uploaded_at": "2026-05-10T23:13:35",
+      "url": "https://www.youtube.com/watch?v=xAwo5RtJ3ww",
+      "is_short": true,
+      "publish_at": "2026-05-13T18:02:00Z"
+    },
+    "reggae-lofi-reading-chill-2026/reggae_lofi_reading_chill_2026.mp4": {
+      "video_id": "0RE2-QWGwNQ",
+      "uploaded_at": "2026-05-10T23:15:59",
+      "url": "https://www.youtube.com/watch?v=0RE2-QWGwNQ",
+      "is_short": false,
+      "publish_at": "2026-05-12T14:13:00Z"
+    },
+    "reggae-lofi-reading-chill-2026/reggae_lofi_reading_chill_2026_short.mp4": {
+      "video_id": "kdoDrZH521U",
+      "uploaded_at": "2026-05-10T23:16:02",
+      "url": "https://www.youtube.com/watch?v=kdoDrZH521U",
+      "is_short": true,
+      "publish_at": "2026-05-12T14:13:00Z"
+    },
+    "cumbia-reggae-fusion-miercoles-2026/cumbia_reggae_fusion_miercoles_2026.mp4": {
+      "video_id": "wbzUapjhSag",
+      "uploaded_at": "2026-05-10T23:17:38",
+      "url": "https://www.youtube.com/watch?v=wbzUapjhSag",
+      "is_short": false,
+      "publish_at": "2026-05-13T21:16:00Z"
+    },
+    "cumbia-reggae-fusion-miercoles-2026/cumbia_reggae_fusion_miercoles_2026_short.mp4": {
+      "video_id": "aOhiK_Dz_FM",
+      "uploaded_at": "2026-05-10T23:17:41",
+      "url": "https://www.youtube.com/watch?v=aOhiK_Dz_FM",
+      "is_short": true,
+      "publish_at": "2026-05-13T21:16:00Z"
+    },
+    "salsa-dura-nuyorican-flow-2026/salsa_dura_nuyorican_flow_2026.mp4": {
+      "video_id": "r4JbFYpVNdA",
+      "uploaded_at": "2026-05-10T23:22:03",
+      "url": "https://www.youtube.com/watch?v=r4JbFYpVNdA",
+      "is_short": false,
+      "publish_at": "2026-05-12T18:02:00Z"
+    },
+    "salsa-dura-nuyorican-flow-2026/salsa_dura_nuyorican_flow_2026_short.mp4": {
+      "video_id": "oq93gDrBhEY",
+      "uploaded_at": "2026-05-10T23:22:06",
+      "url": "https://www.youtube.com/watch?v=oq93gDrBhEY",
+      "is_short": true,
+      "publish_at": "2026-05-12T18:02:00Z"
+    },
+    "reggaeton-afro-tropical-sunrise-2026/reggaeton_afro_tropical_sunrise_2026.mp4": {
+      "video_id": "fHxF32Cn1ic",
+      "uploaded_at": "2026-05-10T23:26:19",
+      "url": "https://www.youtube.com/watch?v=fHxF32Cn1ic",
+      "is_short": false,
+      "publish_at": "2026-05-14T06:15:00Z"
+    },
+    "reggaeton-afro-tropical-sunrise-2026/reggaeton_afro_tropical_sunrise_2026_short.mp4": {
+      "video_id": "63dQWKQkQPM",
+      "uploaded_at": "2026-05-10T23:26:23",
+      "url": "https://www.youtube.com/watch?v=63dQWKQkQPM",
+      "is_short": true,
+      "publish_at": "2026-05-14T06:15:00Z"
+    },
+    "trinidad-soca-calypso-carnival-2026/trinidad_soca_calypso_carnival_2026.mp4": {
+      "video_id": "fDqB26kry-E",
+      "uploaded_at": "2026-05-10T23:30:13",
+      "url": "https://www.youtube.com/watch?v=fDqB26kry-E",
+      "is_short": false,
+      "publish_at": "2026-05-14T10:10:00Z"
+    },
+    "trinidad-soca-calypso-carnival-2026/trinidad_soca_calypso_carnival_2026_short.mp4": {
+      "video_id": "jJJjkE17fiw",
+      "uploaded_at": "2026-05-10T23:30:17",
+      "url": "https://www.youtube.com/watch?v=jJJjkE17fiw",
+      "is_short": true,
+      "publish_at": "2026-05-14T10:10:00Z"
+    },
+    "afro-soul-gospel-rise-africa-2026/afro_soul_gospel_rise_africa_2026.mp4": {
+      "video_id": "mw9gpTfu2TY",
+      "uploaded_at": "2026-05-10T23:30:55",
+      "url": "https://www.youtube.com/watch?v=mw9gpTfu2TY",
+      "is_short": false,
+      "publish_at": "2026-05-15T06:15:00Z"
+    },
+    "afro-soul-gospel-rise-africa-2026/afro_soul_gospel_rise_africa_2026_short.mp4": {
+      "video_id": "g_I5QVaaquc",
+      "uploaded_at": "2026-05-10T23:30:58",
+      "url": "https://www.youtube.com/watch?v=g_I5QVaaquc",
+      "is_short": true,
+      "publish_at": "2026-05-15T06:15:00Z"
+    },
+    "sports-afrobeats-performance-2026/sports_afrobeats_performance_2026.mp4": {
+      "video_id": "HVBvSh70DxY",
+      "uploaded_at": "2026-05-10T23:33:25",
+      "url": "https://www.youtube.com/watch?v=HVBvSh70DxY",
+      "is_short": false,
+      "publish_at": "2026-05-14T14:13:00Z"
+    },
+    "sports-afrobeats-performance-2026/sports_afrobeats_performance_2026_short.mp4": {
+      "video_id": "mCXWMTgfrHs",
+      "uploaded_at": "2026-05-10T23:33:28",
+      "url": "https://www.youtube.com/watch?v=mCXWMTgfrHs",
+      "is_short": true,
+      "publish_at": "2026-05-14T14:13:00Z"
+    },
+    "congo-soukous-ndombolo-kinshasa-2026/congo_soukous_ndombolo_kinshasa_2026.mp4": {
+      "video_id": "SBIrrrqlmUY",
+      "uploaded_at": "2026-05-10T23:34:33",
+      "url": "https://www.youtube.com/watch?v=SBIrrrqlmUY",
+      "is_short": false,
+      "publish_at": "2026-05-15T10:10:00Z"
+    },
+    "congo-soukous-ndombolo-kinshasa-2026/congo_soukous_ndombolo_kinshasa_2026_short.mp4": {
+      "video_id": "iETb2IZ2qP8",
+      "uploaded_at": "2026-05-10T23:34:35",
+      "url": "https://www.youtube.com/watch?v=iETb2IZ2qP8",
+      "is_short": true,
+      "publish_at": "2026-05-15T10:10:00Z"
+    },
+    "rai-fusion-moderne-maghreb-2026/rai_fusion_moderne_maghreb_2026.mp4": {
+      "video_id": "AcGjhPQ-d8k",
+      "uploaded_at": "2026-05-10T23:36:42",
+      "url": "https://www.youtube.com/watch?v=AcGjhPQ-d8k",
+      "is_short": false,
+      "publish_at": "2026-05-14T18:02:00Z"
+    },
+    "rai-fusion-moderne-maghreb-2026/rai_fusion_moderne_maghreb_2026_short.mp4": {
+      "video_id": "iIPYUNio7ts",
+      "uploaded_at": "2026-05-10T23:36:45",
+      "url": "https://www.youtube.com/watch?v=iIPYUNio7ts",
+      "is_short": true,
+      "publish_at": "2026-05-14T18:02:00Z"
+    },
+    "gaming-afrolofi-chill-2026/gaming_afrolofi_chill_2026.mp4": {
+      "video_id": "iWLymJbdkhc",
+      "uploaded_at": "2026-05-10T23:37:54",
+      "url": "https://www.youtube.com/watch?v=iWLymJbdkhc",
+      "is_short": false,
+      "publish_at": "2026-05-15T14:13:00Z"
+    },
+    "gaming-afrolofi-chill-2026/gaming_afrolofi_chill_2026_short.mp4": {
+      "video_id": "jLb4K6DvkkU",
+      "uploaded_at": "2026-05-10T23:37:57",
+      "url": "https://www.youtube.com/watch?v=jLb4K6DvkkU",
+      "is_short": true,
+      "publish_at": "2026-05-15T14:13:00Z"
+    },
+    "dembow-afro-caribbean-jueves-2026/dembow_afro_caribbean_jueves_2026.mp4": {
+      "video_id": "DH0EaxdJv_E",
+      "uploaded_at": "2026-05-10T23:42:52",
+      "url": "https://www.youtube.com/watch?v=DH0EaxdJv_E",
+      "is_short": false,
+      "publish_at": "2026-05-14T21:16:00Z"
+    },
+    "dembow-afro-caribbean-jueves-2026/dembow_afro_caribbean_jueves_2026_short.mp4": {
+      "video_id": "ILZs5ytV6aQ",
+      "uploaded_at": "2026-05-10T23:42:55",
+      "url": "https://www.youtube.com/watch?v=ILZs5ytV6aQ",
+      "is_short": true,
+      "publish_at": "2026-05-14T21:16:00Z"
+    },
+    "dancehall-latin-viernes-night-2026/dancehall_latin_viernes_night_2026.mp4": {
+      "video_id": "FnEm8KmYe6U",
+      "uploaded_at": "2026-05-10T23:45:18",
+      "url": "https://www.youtube.com/watch?v=FnEm8KmYe6U",
+      "is_short": false,
+      "publish_at": "2026-05-15T21:16:00Z"
+    },
+    "dancehall-latin-viernes-night-2026/dancehall_latin_viernes_night_2026_short.mp4": {
+      "video_id": "7sWVZ6_efPU",
+      "uploaded_at": "2026-05-10T23:45:21",
+      "url": "https://www.youtube.com/watch?v=7sWVZ6_efPU",
+      "is_short": true,
+      "publish_at": "2026-05-15T21:16:00Z"
+    },
+    "salsa-electro-moderna-sabado-2026/salsa_electro_moderna_sabado_2026.mp4": {
+      "video_id": "mjBwFmrDy0o",
+      "uploaded_at": "2026-05-10T23:48:29",
+      "url": "https://www.youtube.com/watch?v=mjBwFmrDy0o",
+      "is_short": false,
+      "publish_at": "2026-05-16T06:15:00Z"
+    },
+    "puerto-rico-bomba-plena-corazon-2026/puerto_rico_bomba_plena_corazon_2026.mp4": {
+      "video_id": "XrBiq_5URFg",
+      "uploaded_at": "2026-05-10T23:51:08",
+      "url": "https://www.youtube.com/watch?v=XrBiq_5URFg",
+      "is_short": false,
+      "publish_at": "2026-05-16T10:10:00Z"
+    },
+    "rai-cafe-spa-detente-2026/rai_cafe_spa_detente_2026.mp4": {
+      "video_id": "IJ8KwZl6yRs",
+      "uploaded_at": "2026-05-10T23:54:11",
+      "url": "https://www.youtube.com/watch?v=IJ8KwZl6yRs",
+      "is_short": false,
+      "publish_at": "2026-05-16T14:13:00Z"
+    },
+    "bachata-urbana-noche-sabado-2026/bachata_urbana_noche_sabado_2026.mp4": {
+      "video_id": "UzOGFKQUymk",
+      "uploaded_at": "2026-05-10T23:56:56",
+      "url": "https://www.youtube.com/watch?v=UzOGFKQUymk",
+      "is_short": false,
+      "publish_at": "2026-05-16T18:02:00Z"
+    },
+    "soca-reggaeton-sabado-carnival-2026/soca_reggaeton_sabado_carnival_2026.mp4": {
+      "video_id": "MDkCoD7SrkY",
+      "uploaded_at": "2026-05-10T23:59:44",
+      "url": "https://www.youtube.com/watch?v=MDkCoD7SrkY",
+      "is_short": false,
+      "publish_at": "2026-05-16T21:16:00Z"
+    },
+    "reggae-lovers-rock-sunday-rise-2026/reggae_lovers_rock_sunday_rise_2026.mp4": {
+      "video_id": "II_Y5BJjmoU",
+      "uploaded_at": "2026-05-11T00:03:16",
+      "url": "https://www.youtube.com/watch?v=II_Y5BJjmoU",
+      "is_short": false,
+      "publish_at": "2026-05-17T06:15:00Z"
+    },
+    "norway-syttende-mai-hardingfele-2026/norway_syttende_mai_hardingfele_2026.mp4": {
+      "video_id": "jthmJNb-TTM",
+      "uploaded_at": "2026-05-11T00:06:13",
+      "url": "https://www.youtube.com/watch?v=jthmJNb-TTM",
+      "is_short": false,
+      "publish_at": "2026-05-17T10:10:00Z"
+    },
+    "reggae-dub-rain-meditation-sunday-2026/reggae_dub_rain_meditation_sunday_2026.mp4": {
+      "video_id": "9tTFpneL93A",
+      "uploaded_at": "2026-05-11T17:17:39",
+      "url": "https://www.youtube.com/watch?v=9tTFpneL93A",
+      "is_short": false,
+      "publish_at": "2026-05-17T14:13:00Z"
+    },
+    "cumbia-tradicional-colombia-rio-2026/cumbia_tradicional_colombia_rio_2026.mp4": {
+      "video_id": "O1MNlxaHlmU",
+      "uploaded_at": "2026-05-11T17:17:46",
+      "url": "https://www.youtube.com/watch?v=O1MNlxaHlmU",
+      "is_short": false,
+      "publish_at": "2026-05-17T18:02:00Z"
+    },
+    "reggaeton-romantico-domingo-noche-2026/reggaeton_romantico_domingo_noche_2026.mp4": {
+      "video_id": "gSksYp-BgU4",
+      "uploaded_at": "2026-05-11T17:17:54",
+      "url": "https://www.youtube.com/watch?v=gSksYp-BgU4",
+      "is_short": false,
+      "publish_at": "2026-05-17T21:16:00Z"
+    },
+    "reggaeton-romantico-domingo-noche-2026/reggaeton_romantico_domingo_noche_2026_WITH_LYRICS.mp4": {
+      "video_id": "dq5wUZBRSeg",
+      "uploaded_at": "2026-05-11T17:18:10",
+      "url": "https://www.youtube.com/watch?v=dq5wUZBRSeg",
+      "is_short": false,
+      "publish_at": "2026-05-17T21:16:00Z"
+    },
+    "roots-reggae-one-drop-jah-light-2026/roots_reggae_one_drop_jah_light_2026_short.mp4": {
+      "video_id": "WFmavcmu-4Y",
+      "uploaded_at": "2026-05-24T01:36:30",
+      "url": "https://www.youtube.com/watch?v=WFmavcmu-4Y",
+      "is_short": true,
+      "publish_at": "2026-05-25T06:15:00Z"
+    },
+    "iran-persia-voice-of-darius-2026/iran_persia_voice_of_darius_2026.mp4": {
+      "video_id": "luXFNr153og",
+      "uploaded_at": "2026-05-24T01:38:28",
+      "url": "https://www.youtube.com/watch?v=luXFNr153og",
+      "is_short": false,
+      "publish_at": "2026-05-25T10:10:00Z"
+    },
+    "iran-persia-voice-of-darius-2026/iran_persia_voice_of_darius_2026_short.mp4": {
+      "video_id": "jSvNzAY8rqk",
+      "uploaded_at": "2026-05-24T01:38:30",
+      "url": "https://www.youtube.com/watch?v=jSvNzAY8rqk",
+      "is_short": true,
+      "publish_at": "2026-05-25T10:10:00Z"
+    },
+    "oran-rai-vocal-winta-ntiya-2026/oran_rai_vocal_winta_ntiya_2026.mp4": {
+      "video_id": "MELA7CoDTUY",
+      "uploaded_at": "2026-05-24T01:40:28",
+      "url": "https://www.youtube.com/watch?v=MELA7CoDTUY",
+      "is_short": false,
+      "publish_at": "2026-05-25T18:02:00Z"
+    },
+    "oran-rai-vocal-winta-ntiya-2026/oran_rai_vocal_winta_ntiya_2026_short.mp4": {
+      "video_id": "8PXPov0ueB0",
+      "uploaded_at": "2026-05-24T01:40:31",
+      "url": "https://www.youtube.com/watch?v=8PXPov0ueB0",
+      "is_short": true,
+      "publish_at": "2026-05-25T18:02:00Z"
+    },
+    "oran-rai-vocal-galbi-f-dar-2026/oran_rai_vocal_galbi_f_dar_2026.mp4": {
+      "video_id": "e2UHQWLSVII",
+      "uploaded_at": "2026-05-24T23:41:46",
+      "url": "https://www.youtube.com/watch?v=e2UHQWLSVII",
+      "is_short": false,
+      "publish_at": null
+    },
+    "shab-el-baroud-cheb-khaled-2026/shab_el_baroud_cheb_khaled_2026.mp4": {
+      "video_id": "M0wmue-N2KY",
+      "uploaded_at": "2026-05-25T04:02:55",
+      "url": "https://www.youtube.com/watch?v=M0wmue-N2KY",
+      "is_short": false,
+      "publish_at": null
+    },
+    "lofi-reggae-island-sunset-chill-2026/lofi_reggae_island_sunset_chill_2026.mp4": {
+      "video_id": "dKGlNm4W9BE",
+      "uploaded_at": "2026-05-25T13:14:41",
+      "url": "https://www.youtube.com/watch?v=dKGlNm4W9BE",
+      "is_short": false,
+      "publish_at": "2026-05-26T06:15:00Z"
+    },
+    "peru-andes-quechua-pacha-mama-2026/peru_andes_quechua_pacha_mama_2026.mp4": {
+      "video_id": "JOuf7rWMjXM",
+      "uploaded_at": "2026-05-25T13:14:53",
+      "url": "https://www.youtube.com/watch?v=JOuf7rWMjXM",
+      "is_short": false,
+      "publish_at": "2026-05-26T10:10:00Z"
+    },
+    "amapiano-south-africa-log-drum-ubuntu-2026/amapiano_south_africa_log_drum_ubuntu_2026.mp4": {
+      "video_id": "lWzVl3xUn5g",
+      "uploaded_at": "2026-05-25T13:15:06",
+      "url": "https://www.youtube.com/watch?v=lWzVl3xUn5g",
+      "is_short": false,
+      "publish_at": "2026-05-26T18:02:00Z"
+    },
+    "lovers-rock-reggae-sweet-island-love-2026/_removed": {},
+    "brisa-de-baleares-2026/brisa_de_baleares_2026.mp4": {
+      "video_id": "cSSqwMlYMK4",
+      "uploaded_at": "2026-05-25T14:52:38",
+      "url": "https://www.youtube.com/watch?v=cSSqwMlYMK4",
+      "is_short": false,
+      "publish_at": null
+    },
+    "mediterraneo-azul-2026/mediterraneo_azul_2026.mp4": {
+      "video_id": "0umThawA3xM",
+      "uploaded_at": "2026-05-25T15:16:49",
+      "url": "https://www.youtube.com/watch?v=0umThawA3xM",
+      "is_short": false,
+      "publish_at": null
+    },
+    "ethiopia-tizita-soul-addis-2026/ethiopia_tizita_soul_addis_2026.mp4": {
+      "video_id": "H3zBul5LN-M",
+      "uploaded_at": "2026-05-25T17:58:35",
+      "url": "https://www.youtube.com/watch?v=H3zBul5LN-M",
+      "is_short": false,
+      "publish_at": "2026-05-27T10:10:00Z"
+    },
+    "latin-chill-noche-tropical-2026/latin_chill_noche_tropical_2026.mp4": {
+      "video_id": "3blkQDbJacg",
+      "uploaded_at": "2026-05-25T18:20:19",
+      "url": "https://www.youtube.com/watch?v=3blkQDbJacg",
+      "is_short": false,
+      "publish_at": "2026-05-27T18:02:00Z"
+    },
+    "iran-shiraz-eshgh-o-sharab-2026/iran_shiraz_eshgh_o_sharab_2026.mp4": {
+      "video_id": "KpnBAuX4crU",
+      "uploaded_at": "2026-05-26T11:10:42",
+      "url": "https://www.youtube.com/watch?v=KpnBAuX4crU",
+      "is_short": false,
+      "publish_at": "2026-05-28T10:10:00Z"
+    },
+    "bolivia-sikuri-andes-wind-2026/bolivia_sikuri_andes_wind_2026.mp4": {
+      "video_id": "TigIg-xU8XQ",
+      "uploaded_at": "2026-05-26T11:11:07",
+      "url": "https://www.youtube.com/watch?v=TigIg-xU8XQ",
+      "is_short": false,
+      "publish_at": "2026-05-29T10:10:00Z"
+    },
+    "amapiano-joburg-ubuntu-groove-2026/amapiano_joburg_ubuntu_groove_2026.mp4": {
+      "video_id": "j375kYig3U4",
+      "uploaded_at": "2026-05-26T11:11:27",
+      "url": "https://www.youtube.com/watch?v=j375kYig3U4",
+      "is_short": false,
+      "publish_at": "2026-05-29T18:02:00Z"
+    },
+    "reggae-spiritual-zion-train-2026/reggae_spiritual_zion_train_2026.mp4": {
+      "video_id": "3H2AqNgcBQ0",
+      "uploaded_at": "2026-05-26T11:11:42",
+      "url": "https://www.youtube.com/watch?v=3H2AqNgcBQ0",
+      "is_short": false,
+      "publish_at": "2026-05-30T06:15:00Z"
+    },
+    "latin-chill-bossa-tarde-2026/latin_chill_bossa_tarde_2026.mp4": {
+      "video_id": "dTyXEvHoWlc",
+      "uploaded_at": "2026-05-26T11:11:57",
+      "url": "https://www.youtube.com/watch?v=dTyXEvHoWlc",
+      "is_short": false,
+      "publish_at": "2026-05-30T10:10:00Z"
+    },
+    "oran-rai-vocal-haja-w-nta-2026/oran_rai_vocal_haja_w_nta_2026.mp4": {
+      "video_id": "xYjgT0N6TNA",
+      "uploaded_at": "2026-05-26T11:12:22",
+      "url": "https://www.youtube.com/watch?v=xYjgT0N6TNA",
+      "is_short": false,
+      "publish_at": "2026-05-30T18:02:00Z"
+    },
+    "lofi-reggae-sunday-soul-2026/lofi_reggae_sunday_soul_2026.mp4": {
+      "video_id": "x702iV_pggE",
+      "uploaded_at": "2026-05-26T11:12:32",
+      "url": "https://www.youtube.com/watch?v=x702iV_pggE",
+      "is_short": false,
+      "publish_at": "2026-05-31T06:15:00Z"
+    },
+    "ecuador-sanjuanito-corazon-andino-2026/ecuador_sanjuanito_corazon_andino_2026.mp4": {
+      "video_id": "tT1ti9bMpIs",
+      "uploaded_at": "2026-05-26T11:12:50",
+      "url": "https://www.youtube.com/watch?v=tT1ti9bMpIs",
+      "is_short": false,
+      "publish_at": "2026-05-31T10:10:00Z"
+    },
+    "saha-aidekoum-oud-2026/saha_aidekoum_oud_2026.mp4": {
+      "video_id": "LkpTD-BgKf4",
+      "uploaded_at": "2026-05-27T17:19:40",
+      "url": "https://www.youtube.com/watch?v=LkpTD-BgKf4",
+      "is_short": false,
+      "publish_at": "2026-06-01T18:00:00Z"
+    },
+    "saha-aidekoum-rai-2026/saha_aidekoum_rai_2026.mp4": {
+      "video_id": "cC4_BcKua04",
+      "uploaded_at": "2026-05-27T17:22:20",
+      "url": "https://www.youtube.com/watch?v=cC4_BcKua04",
+      "is_short": false,
+      "publish_at": "2026-06-02T18:00:00Z"
+    },
+    "saha-aidekoum-rock-2026/saha_aidekoum_rock_2026.mp4": {
+      "video_id": "-A8-I1tsLkc",
+      "uploaded_at": "2026-05-27T17:28:51",
+      "url": "https://www.youtube.com/watch?v=-A8-I1tsLkc",
+      "is_short": false,
+      "publish_at": "2026-06-03T18:00:00Z"
+    },
+    "delta-blues-roots-mississippi-soul-2026/delta_blues_roots_mississippi_soul_2026.mp4": {
+      "video_id": "d9cf3Bxut1I",
+      "uploaded_at": "2026-06-01T18:06:01",
+      "url": "https://www.youtube.com/watch?v=d9cf3Bxut1I",
+      "is_short": false,
+      "publish_at": "2026-05-25T13:00:00Z"
+    },
+    "gnaoua-sahara-spirit-trance-2026/gnaoua_sahara_spirit_trance_2026.mp4": {
+      "video_id": "Ugvj9S4H2oo",
+      "uploaded_at": "2026-06-01T18:06:11",
+      "url": "https://www.youtube.com/watch?v=Ugvj9S4H2oo",
+      "is_short": false,
+      "publish_at": "2026-05-25T15:00:00Z"
+    },
+    "rai-oran-winta-ntiya-2026/rai_oran_winta_ntiya_2026.mp4": {
+      "video_id": "tjqFShEHogs",
+      "uploaded_at": "2026-06-01T18:06:17",
+      "url": "https://www.youtube.com/watch?v=tjqFShEHogs",
+      "is_short": false,
+      "publish_at": "2026-05-25T17:00:00Z"
+    },
+    "oriental-house-istanbul-pulse-2026/oriental_house_istanbul_pulse_2026.mp4": {
+      "video_id": "hVAQ2zB5NwY",
+      "uploaded_at": "2026-06-01T18:06:30",
+      "url": "https://www.youtube.com/watch?v=hVAQ2zB5NwY",
+      "is_short": false,
+      "publish_at": "2026-05-25T21:00:00Z"
+    },
+    "roots-reggae-one-drop-jah-light-2026/_removed": {},
+    "roots-reggae-one-drop-jah-light-2026/roots_reggae_one_drop_jah_light_2026.mp4": {
+      "video_id": "5zJm7NDYVf0",
+      "uploaded_at": "2026-06-01T19:28:22",
+      "url": "https://www.youtube.com/watch?v=5zJm7NDYVf0",
+      "is_short": false,
+      "publish_at": "2026-05-25T19:00:00Z"
+    },
+    "world-andean-fusion-pachamama-quechua-2026/_removed": {},
+    "gnaoua-lila-sacred-night-algeria-2026/_removed": {
+      "_placeholder": true
+    },
+    "deep-house-oriental-beirut-nights-2026/deep_house_oriental_beirut_nights_2026.mp4": {
+      "video_id": "JKmjzxrvx1E",
+      "uploaded_at": "2026-06-01T20:34:47",
+      "url": "https://www.youtube.com/watch?v=JKmjzxrvx1E",
+      "is_short": false,
+      "publish_at": "2026-06-02T21:00:00Z"
+    },
+    "rai-oran-galbi-f-dar-2026/rai_oran_galbi_f_dar_2026.mp4": {
+      "video_id": "rHVuUJoKL4c",
+      "uploaded_at": "2026-06-01T20:40:35",
+      "url": "https://www.youtube.com/watch?v=rHVuUJoKL4c",
+      "is_short": false,
+      "publish_at": "2026-06-02T17:00:00Z"
+    },
+    "lovers-rock-reggae-sweet-island-love-2026/lovers_rock_reggae_sweet_island_love_2026.mp4": {
+      "video_id": "xnoGea92lys",
+      "uploaded_at": "2026-06-01T20:54:12",
+      "url": "https://www.youtube.com/watch?v=xnoGea92lys",
+      "is_short": false,
+      "publish_at": "2026-06-02T19:00:00Z"
+    },
+    "world-andean-fusion-pachamama-quechua-2026/_old": {},
+    "gnaoua-lila-sacred-night-algeria-2026/_old": {},
+    "world-hiphop-afrobeats-lagos-soul-2026/world_hiphop_afrobeats_lagos_soul_2026.mp4": {
+      "video_id": "yqRKxDr2zF0",
+      "uploaded_at": "2026-06-02T18:24:23",
+      "url": "https://www.youtube.com/watch?v=yqRKxDr2zF0",
+      "is_short": false,
+      "publish_at": "2026-06-04T13:00:00Z"
+    },
+    "ethiopia-tizita-soul-addis-groove-2026/ethiopia_tizita_soul_addis_groove_2026.mp4": {
+      "video_id": "tSajz1vRtkE",
+      "uploaded_at": "2026-06-02T18:25:39",
+      "url": "https://www.youtube.com/watch?v=tSajz1vRtkE",
+      "is_short": false,
+      "publish_at": "2026-06-03T13:00:00Z"
+    },
+    "gnaoua-marrakech-street-ritual-2026/gnaoua_marrakech_street_ritual_2026.mp4": {
+      "video_id": "8hEBp-9OAi4",
+      "uploaded_at": "2026-06-02T18:26:49",
+      "url": "https://www.youtube.com/watch?v=8hEBp-9OAi4",
+      "is_short": false,
+      "publish_at": "2026-06-04T15:00:00Z"
+    },
+    "rai-oran-haja-w-nta-2026/rai_oran_haja_w_nta_2026.mp4": {
+      "video_id": "_9tUV6HyBXs",
+      "uploaded_at": "2026-06-02T18:30:28",
+      "url": "https://www.youtube.com/watch?v=_9tUV6HyBXs",
+      "is_short": false,
+      "publish_at": "2026-06-04T17:00:00Z"
+    },
+    "electro-house-maghreb-pulse-2026/electro_house_maghreb_pulse_2026.mp4": {
+      "video_id": "EqIMXd5W54E",
+      "uploaded_at": "2026-06-02T18:41:00",
+      "url": "https://www.youtube.com/watch?v=EqIMXd5W54E",
+      "is_short": false,
+      "publish_at": "2026-06-04T21:00:00Z"
+    },
+    "dancehall-reggae-riddim-rise-2026/dancehall_reggae_riddim_rise_2026.mp4": {
+      "video_id": "uiarwwEO5k4",
+      "uploaded_at": "2026-06-02T18:55:35",
+      "url": "https://www.youtube.com/watch?v=uiarwwEO5k4",
+      "is_short": false,
+      "publish_at": "2026-06-03T19:00:00Z"
+    },
+    "conscious-dub-reggae-babylon-fall-2026/conscious_dub_reggae_babylon_fall_2026.mp4": {
+      "video_id": "bW_LGeCuJgM",
+      "uploaded_at": "2026-06-02T19:00:04",
+      "url": "https://www.youtube.com/watch?v=bW_LGeCuJgM",
+      "is_short": false,
+      "publish_at": "2026-06-04T19:00:00Z"
+    },
+    "flamenco-fusion-granada-duende-2026/flamenco_fusion_granada_duende_2026.mp4": {
+      "video_id": "g8XBlZiy9OY",
+      "uploaded_at": "2026-06-02T19:40:40",
+      "url": "https://www.youtube.com/watch?v=g8XBlZiy9OY",
+      "is_short": false,
+      "publish_at": "2026-06-06T13:00:00Z"
+    },
+    "gnaoua-zawiya-night-prayer-2026/gnaoua_zawiya_night_prayer_2026.mp4": {
+      "video_id": "jIH1lK4wcNk",
+      "uploaded_at": "2026-06-02T19:45:22",
+      "url": "https://www.youtube.com/watch?v=jIH1lK4wcNk",
+      "is_short": false,
+      "publish_at": "2026-06-06T15:00:00Z"
+    },
+    "world-rock-desert-storm-tuareg-2026/world_rock_desert_storm_tuareg_2026.mp4": {
+      "video_id": "Rqx_HCEjH2E",
+      "uploaded_at": "2026-06-02T19:46:06",
+      "url": "https://www.youtube.com/watch?v=Rqx_HCEjH2E",
+      "is_short": false,
+      "publish_at": "2026-06-05T13:00:00Z"
+    },
+    "rai-oran-cheb-lamour-2026/rai_oran_cheb_lamour_2026.mp4": {
+      "video_id": "KL8WTjsrYHU",
+      "uploaded_at": "2026-06-02T19:47:49",
+      "url": "https://www.youtube.com/watch?v=KL8WTjsrYHU",
+      "is_short": false,
+      "publish_at": "2026-06-06T17:00:00Z"
+    },
+    "gnaoua-subsaharan-roots-algerian-2026/gnaoua_subsaharan_roots_algerian_2026.mp4": {
+      "video_id": "xX42wRbvJV4",
+      "uploaded_at": "2026-06-02T19:52:25",
+      "url": "https://www.youtube.com/watch?v=xX42wRbvJV4",
+      "is_short": false,
+      "publish_at": "2026-06-05T15:00:00Z"
+    },
+    "deep-oriental-house-bosphorus-dream-2026/deep_oriental_house_bosphorus_dream_2026.mp4": {
+      "video_id": "9wEfXJuuqWE",
+      "uploaded_at": "2026-06-02T20:05:25",
+      "url": "https://www.youtube.com/watch?v=9wEfXJuuqWE",
+      "is_short": false,
+      "publish_at": "2026-06-05T21:00:00Z"
+    },
+    "indian-raga-fusion-bombay-night-2026/indian_raga_fusion_bombay_night_2026.mp4": {
+      "video_id": "y0EfSWtzoQk",
+      "uploaded_at": "2026-06-02T20:22:45",
+      "url": "https://www.youtube.com/watch?v=y0EfSWtzoQk",
+      "is_short": false,
+      "publish_at": "2026-06-07T13:00:00Z"
+    },
+    "world-andean-fusion-pachamama-quechua-2026/world_andean_fusion_pachamama_quechua_2026.mp4": {
+      "video_id": "T6JjT-PDLIQ",
+      "uploaded_at": "2026-06-02T20:24:44",
+      "url": "https://www.youtube.com/watch?v=T6JjT-PDLIQ",
+      "is_short": false,
+      "publish_at": "2026-06-02T13:00:00Z"
+    },
+    "gnaoua-fire-ritual-desert-night-2026/gnaoua_fire_ritual_desert_night_2026.mp4": {
+      "video_id": "5SYGF1FpV1w",
+      "uploaded_at": "2026-06-02T20:27:37",
+      "url": "https://www.youtube.com/watch?v=5SYGF1FpV1w",
+      "is_short": false,
+      "publish_at": "2026-06-07T15:00:00Z"
+    },
+    "gnaoua-lila-sacred-night-algeria-2026/gnaoua_lila_sacred_night_algeria_2026.mp4": {
+      "video_id": "4Oucp3tjySc",
+      "uploaded_at": "2026-06-02T20:28:44",
+      "url": "https://www.youtube.com/watch?v=4Oucp3tjySc",
+      "is_short": false,
+      "publish_at": "2026-06-02T15:00:00Z"
+    },
+    "rai-oran-wahrana-ya-wahrana-2026/rai_oran_wahrana_ya_wahrana_2026.mp4": {
+      "video_id": "Qct5QXVF6TM",
+      "uploaded_at": "2026-06-02T20:33:22",
+      "url": "https://www.youtube.com/watch?v=Qct5QXVF6TM",
+      "is_short": false,
+      "publish_at": "2026-06-07T17:00:00Z"
+    },
+    "gnaoua-desert-trance-ceremony-2026/gnaoua_desert_trance_ceremony_2026.mp4": {
+      "video_id": "oUgHVPj9ZFo",
+      "uploaded_at": "2026-06-02T20:34:05",
+      "url": "https://www.youtube.com/watch?v=oUgHVPj9ZFo",
+      "is_short": false,
+      "publish_at": "2026-06-03T15:00:00Z"
+    },
+    "lofi-reggae-sunday-soul-chill-2026/lofi_reggae_sunday_soul_chill_2026.mp4": {
+      "video_id": "JFo4h6k-ErE",
+      "uploaded_at": "2026-06-02T20:36:56",
+      "url": "https://www.youtube.com/watch?v=JFo4h6k-ErE",
+      "is_short": false,
+      "publish_at": "2026-06-07T19:00:00Z"
+    },
+    "rai-oran-nta-li-badel-2026/rai_oran_nta_li_badel_2026.mp4": {
+      "video_id": "vpYbMfltvPU",
+      "uploaded_at": "2026-06-02T20:38:12",
+      "url": "https://www.youtube.com/watch?v=vpYbMfltvPU",
+      "is_short": false,
+      "publish_at": "2026-06-03T17:00:00Z"
+    },
+    "techno-oriental-cairo-nights-2026/techno_oriental_cairo_nights_2026.mp4": {
+      "video_id": "yvDpauwkql0",
+      "uploaded_at": "2026-06-02T20:45:51",
+      "url": "https://www.youtube.com/watch?v=yvDpauwkql0",
+      "is_short": false,
+      "publish_at": "2026-06-03T21:00:00Z"
+    },
+    "afro-house-johannesburg-ubuntu-2026/afro_house_johannesburg_ubuntu_2026.mp4": {
+      "video_id": "d6bZUAGUCeQ",
+      "uploaded_at": "2026-06-02T20:52:35",
+      "url": "https://www.youtube.com/watch?v=d6bZUAGUCeQ",
+      "is_short": false,
+      "publish_at": "2026-06-06T21:00:00Z"
+    },
+    "oriental-techno-marrakech-underground-2026/oriental_techno_marrakech_underground_2026.mp4": {
+      "video_id": "eskkOVmvhGQ",
+      "uploaded_at": "2026-06-02T23:42:18",
+      "url": "https://www.youtube.com/watch?v=eskkOVmvhGQ",
+      "is_short": false,
+      "publish_at": "2026-06-07T21:00:00Z"
+    },
+    "tasa/tasa.mp4": {
+      "video_id": "Z2fG4E-5FeE",
+      "uploaded_at": "2026-06-04T23:22:28",
+      "url": "https://www.youtube.com/watch?v=Z2fG4E-5FeE",
+      "is_short": false,
+      "publish_at": null
+    },
+    "bayda-mon-amour/bayda_mon_amour.mp4": {
+      "video_id": "I5Xr1PaAcHE",
+      "uploaded_at": "2026-06-04T23:47:35",
+      "url": "https://www.youtube.com/watch?v=I5Xr1PaAcHE",
+      "is_short": false,
+      "publish_at": null
+    },
+    "slaavits-ayabahri/slaavits_ayabahri.mp4": {
+      "video_id": "N6vIUJUhYU4",
+      "uploaded_at": "2026-06-05T00:02:11",
+      "url": "https://www.youtube.com/watch?v=N6vIUJUhYU4",
+      "is_short": false,
+      "publish_at": null
+    },
+    "je-ne-regrette-rien/je_ne_regrette_rien.mp4": {
+      "video_id": "yxwWuwKfh4A",
+      "uploaded_at": "2026-06-05T19:07:28",
+      "url": "https://www.youtube.com/watch?v=yxwWuwKfh4A",
+      "is_short": false,
+      "publish_at": null
+    },
+    "hier-encore-javais-20-ans/hier_encore_javais_20_ans.mp4": {
+      "video_id": "nhajsfa9QEQ",
+      "uploaded_at": "2026-06-05T19:17:04",
+      "url": "https://www.youtube.com/watch?v=nhajsfa9QEQ",
+      "is_short": false,
+      "publish_at": null
+    },
+    "papa-ou-tes/papa_ou_tes.mp4": {
+      "video_id": "_1SuLIvh7LE",
+      "uploaded_at": "2026-06-05T19:39:47",
+      "url": "https://www.youtube.com/watch?v=_1SuLIvh7LE",
+      "is_short": false,
+      "publish_at": null
+    },
+    "ih-ya-zina/ih_ya_zina.mp4": {
+      "video_id": "lqkV14vYIKI",
+      "uploaded_at": "2026-06-06T14:06:34",
+      "url": "https://www.youtube.com/watch?v=lqkV14vYIKI",
+      "is_short": false,
+      "publish_at": null
+    },
+    "playlist-billard-blues/playlist_billard_blues.mp4": {
+      "video_id": "W3LwdyPWiTM",
+      "uploaded_at": "2026-06-06T16:11:50",
+      "url": "https://www.youtube.com/watch?v=W3LwdyPWiTM",
+      "is_short": false,
+      "publish_at": null
+    },
+    "playlist-billard-blues/playlist_billard_blues_short.mp4": {
+      "video_id": "maBljwzzj5I",
+      "uploaded_at": "2026-06-06T16:11:52",
+      "url": "https://www.youtube.com/watch?v=maBljwzzj5I",
+      "is_short": true,
+      "publish_at": null
+    },
+    "gnaoua-fusion-rai/gnaoua_fusion_rai.mp4": {
+      "video_id": "0x1EtJAfUSs",
+      "uploaded_at": "2026-06-08T22:50:27",
+      "url": "https://www.youtube.com/watch?v=0x1EtJAfUSs",
+      "is_short": false,
+      "publish_at": null
+    },
+    "bladi-hia-ljazayer/bladi_hia_ljazayer.mp4": {
+      "video_id": "K541YjIhRuA",
+      "uploaded_at": "2026-06-08T23:05:35",
+      "url": "https://www.youtube.com/watch?v=K541YjIhRuA",
+      "is_short": false,
+      "publish_at": null
+    },
+    "instrumental-rai-playlist/instrumental_rai_playlist.mp4": {
+      "video_id": "1O3potyycZ0",
+      "uploaded_at": "2026-06-08T23:24:46",
+      "url": "https://www.youtube.com/watch?v=1O3potyycZ0",
+      "is_short": false,
+      "publish_at": null
+    },
+    "instrumental-rai-playlist/instrumental_rai_playlist_short.mp4": {
+      "video_id": "szRIN0GThmM",
+      "uploaded_at": "2026-06-08T23:24:48",
+      "url": "https://www.youtube.com/watch?v=szRIN0GThmM",
+      "is_short": true,
+      "publish_at": null
+    },
+    "taha-hussein-electro-house/taha_hussein_electro_house.mp4": {
+      "video_id": "WCPWUDXR7jU",
+      "uploaded_at": "2026-06-09T00:00:35",
+      "url": "https://www.youtube.com/watch?v=WCPWUDXR7jU",
+      "is_short": false,
+      "publish_at": null
+    },
+    "taha-hussein-electro-house/taha_hussein_electro_house_short.mp4": {
+      "video_id": "shR6SlPffcY",
+      "uploaded_at": "2026-06-09T00:00:37",
+      "url": "https://www.youtube.com/watch?v=shR6SlPffcY",
+      "is_short": true,
+      "publish_at": null
+    },
+    "camus-house/camus_house.mp4": {
+      "video_id": "Ntpum7NDGeY",
+      "uploaded_at": "2026-06-09T00:18:57",
+      "url": "https://www.youtube.com/watch?v=Ntpum7NDGeY",
+      "is_short": false,
+      "publish_at": null
+    },
+    "camus-house/camus_house_short.mp4": {
+      "video_id": "ajKid2R1M-A",
+      "uploaded_at": "2026-06-09T00:18:59",
+      "url": "https://www.youtube.com/watch?v=ajKid2R1M-A",
+      "is_short": true,
+      "publish_at": null
+    },
+    "la-chambre-dostoevski-techno/la_chambre_dostoevski_techno.mp4": {
+      "video_id": "d5OfsLHJdPg",
+      "uploaded_at": "2026-06-09T00:30:53",
+      "url": "https://www.youtube.com/watch?v=d5OfsLHJdPg",
+      "is_short": false,
+      "publish_at": null
+    },
+    "la-chambre-dostoevski-techno/la_chambre_dostoevski_techno_short.mp4": {
+      "video_id": "ffvrY3puNfM",
+      "uploaded_at": "2026-06-09T00:30:56",
+      "url": "https://www.youtube.com/watch?v=ffvrY3puNfM",
+      "is_short": true,
+      "publish_at": null
+    }
+  }
+}

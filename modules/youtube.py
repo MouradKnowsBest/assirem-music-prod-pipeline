@@ -5,6 +5,8 @@ Module youtube.py - Upload des MP4 sur YouTube via YouTube Data API v3
 import os
 import time
 import pickle
+import json
+from datetime import date as _date, datetime as _dt, timezone as _tz
 
 import google.oauth2.credentials
 import google_auth_oauthlib.flow
@@ -75,13 +77,46 @@ def _authentifier(base_dir: str):
     return googleapiclient.discovery.build(API_SERVICE, API_VERSION, credentials=creds)
 
 
-def _trouver_playlist(youtube, nom: str):
+def _resoudre_via_map(nom: str, base_dir: str):
     """
-    Cherche une playlist existante (match case-insensitive sur le titre, après
-    .strip()). Retourne l'ID si trouvée, None sinon.
-    Ne crée JAMAIS de playlist : la taxonomie est figée par
-    scripts/reorganize_playlists.py et doit pas se refragmenter.
+    Résout un nom de playlist via playlists_map.json (sans appel API).
+    Matching 3 niveaux : nom exact → alias exact → default.
+    Retourne (playlist_id, nom_canonique) ou (None, None) si non trouvé.
     """
+    map_path = os.path.join(base_dir, "scripts", "playlists_map.json")
+    if not os.path.exists(map_path):
+        return None, None
+    with open(map_path, encoding="utf-8") as f:
+        data = json.load(f)
+
+    cible = nom.strip().lower()
+
+    for p in data.get("playlists", []):
+        if p["name"].strip().lower() == cible:
+            return p["id"], p["name"]
+        for alias in p.get("aliases", []):
+            if alias.strip().lower() == cible:
+                return p["id"], p["name"]
+
+    # Fallback default
+    default = data.get("default", {})
+    if default.get("id"):
+        return default["id"], default["name"]
+    return None, None
+
+
+def _trouver_playlist(youtube, nom: str, base_dir: str = None):
+    """
+    Résout une playlist : d'abord via playlists_map.json (ID direct),
+    puis par recherche YouTube API (fallback).
+    Retourne l'ID si trouvée, None sinon.
+    """
+    if base_dir:
+        pid, canonical = _resoudre_via_map(nom, base_dir)
+        if pid:
+            print(f"  → Playlist mappée : \"{nom}\" → \"{canonical}\" (ID: {pid})")
+            return pid
+
     cible = nom.strip().lower()
     req = youtube.playlists().list(part="snippet", mine=True, maxResults=50)
     while req:
@@ -89,7 +124,7 @@ def _trouver_playlist(youtube, nom: str):
         for item in resp.get("items", []):
             if item["snippet"]["title"].strip().lower() == cible:
                 playlist_id = item["id"]
-                print(f"  → Playlist trouvée : \"{nom}\" (ID: {playlist_id})")
+                print(f"  → Playlist trouvée (API) : \"{nom}\" (ID: {playlist_id})")
                 return playlist_id
         req = youtube.playlists().list_next(req, resp)
     return None
@@ -108,6 +143,13 @@ def _ajouter_a_playlist(youtube, video_id: str, playlist_id: str) -> None:
             }
         },
     ).execute()
+
+
+def _set_thumbnail(youtube, video_id: str, thumbnail_path: str) -> None:
+    """Applique un thumbnail PNG à une vidéo YouTube déjà uploadée."""
+    media = MediaFileUpload(thumbnail_path, mimetype="image/png", resumable=False)
+    youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
+    print(f"  → Thumbnail appliqué : {os.path.basename(thumbnail_path)}")
 
 
 def _uploader_video(
@@ -209,6 +251,7 @@ def uploader_videos(
     *,
     skip_playlists: bool = False,
     force_playlist: str | None = None,
+    thumbnail_path: str | None = None,
 ) -> None:
     """
     Upload chaque MP4 de la liste sur YouTube, crée/trouve la playlist,
@@ -233,7 +276,6 @@ def uploader_videos(
     publish_at = config.get("publish_at") or config.get("scheduled_at")
     if publish_at:
         try:
-            from datetime import datetime as _dt, timezone as _tz
             dt = _dt.fromisoformat(publish_at.replace("Z", "+00:00"))
             publish_at = dt.astimezone(_tz.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         except (ValueError, AttributeError):
@@ -254,7 +296,7 @@ def uploader_videos(
     else:
         # Mode 1 — force_playlist : on n'utilise QUE celle-ci, ignore le config.
         if force_playlist:
-            pid = _trouver_playlist(youtube, force_playlist)
+            pid = _trouver_playlist(youtube, force_playlist, base_dir)
             if pid is None:
                 print(f"  ❌ Playlist forcée introuvable : \"{force_playlist}\"")
                 print(f"     → Upload sans playlist (fallback safe).")
@@ -267,7 +309,7 @@ def uploader_videos(
             if primary and primary not in playlist_noms:
                 playlist_noms.insert(0, primary)
 
-            all_tracks_id = _trouver_playlist(youtube, ALL_TRACKS_PLAYLIST)
+            all_tracks_id = _trouver_playlist(youtube, ALL_TRACKS_PLAYLIST, base_dir)
             if all_tracks_id is None:
                 print(f"  ⚠️  Playlist generaliste introuvable : \"{ALL_TRACKS_PLAYLIST}\"")
                 print(f"     → Crée-la via reorganize_playlists.py — pour cette fois, upload nu.")
@@ -275,7 +317,7 @@ def uploader_videos(
             print(f"  → Résolution des playlists cibles ({len(playlist_noms)})...")
             seen_ids: set[str] = set()
             for nom in playlist_noms:
-                pid = _trouver_playlist(youtube, nom)
+                pid = _trouver_playlist(youtube, nom, base_dir)
                 if pid is None:
                     if all_tracks_id is None:
                         print(f"  ⚠️  Playlist introuvable, et pas de fallback dispo : \"{nom}\"")
@@ -321,6 +363,12 @@ def uploader_videos(
             is_short=is_short, publish_at=publish_at,
         )
 
+        if not is_short and thumbnail_path and os.path.exists(thumbnail_path):
+            try:
+                _set_thumbnail(youtube, video_id, thumbnail_path)
+            except googleapiclient.errors.HttpError as e:
+                print(f"  ⚠️  Thumbnail non appliqué (continue) : {e}")
+
         if not is_short:
             for nom, pid in playlist_ids:
                 try:
@@ -356,9 +404,6 @@ def uploader_videos(
 
 
 # ── Tracker d'uploads journalier ─────────────────────────────────────────────
-
-import json
-from datetime import date as _date, datetime as _dt
 
 _TRACKER_FILE = "youtube_upload_tracker.json"
 _PERSISTENT_FILE = "youtube_uploaded_videos.json"

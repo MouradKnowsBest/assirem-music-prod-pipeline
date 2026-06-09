@@ -1,0 +1,1413 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Assirem Music — Montage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#d6a76a;
+    --gold-soft:#e8c590;
+    --ink:#0c0a08;
+    --paper:#f3ece1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:#000;color:var(--paper);font-family:'Inter',sans-serif;overflow:hidden}
+  body{display:flex;align-items:center;justify-content:center}
+
+  /* Stage scales 1920x1080 to fit viewport */
+  #stage{
+    position:relative;
+    flex:none;
+    width:1920px;height:1080px;
+    transform-origin:center center;
+    background:#000;
+    overflow:hidden;
+  }
+
+  /* ---------- SLIDESHOW ---------- */
+  .slide{
+    position:absolute;inset:0;
+    background-size:cover;background-position:center;
+    opacity:0;
+    transform:scale(1.05);
+    transition:opacity 1.8s ease;
+    will-change:opacity,transform;
+    filter:saturate(1.05) contrast(1.02);
+  }
+  .slide.active{
+    opacity:1;
+    animation:kenburns 11s linear forwards;
+  }
+  @keyframes kenburns{
+    0%   {transform:scale(1.02) translate(0,0)}
+    100% {transform:scale(1.14) translate(-1.5%,-1%)}
+  }
+  .slide:nth-child(2n).active{animation-name:kenburns2}
+  @keyframes kenburns2{
+    0%   {transform:scale(1.14) translate(1.5%,1%)}
+    100% {transform:scale(1.02) translate(0,0)}
+  }
+  .slide:nth-child(3n).active{animation-name:kenburns3}
+  @keyframes kenburns3{
+    0%   {transform:scale(1.08) translate(-1.2%,1.2%)}
+    100% {transform:scale(1.16) translate(1.2%,-1.2%)}
+  }
+
+  /* Vignette + warm grade */
+  .vignette{
+    position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%),
+      linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 65%, rgba(0,0,0,.75) 100%);
+    mix-blend-mode:multiply;
+  }
+  /* Film grain */
+  .grain{
+    position:absolute;inset:-20%;pointer-events:none;opacity:.07;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    animation:grain 1.2s steps(6) infinite;
+  }
+  @keyframes grain{
+    0%{transform:translate(0,0)}
+    20%{transform:translate(-2%,1%)}
+    40%{transform:translate(1%,-2%)}
+    60%{transform:translate(-1%,2%)}
+    80%{transform:translate(2%,-1%)}
+    100%{transform:translate(0,0)}
+  }
+
+  /* ---------- BRAND TITLE ---------- */
+  .brand{
+    position:absolute;top:64px;left:96px;
+    display:flex;align-items:center;gap:18px;
+    z-index:5;
+    opacity:.92;
+  }
+  .brand-mark{
+    width:74px;height:74px;border-radius:50%;
+    border:2px solid var(--gold-soft);
+    display:grid;place-items:center;
+    color:var(--gold-soft);font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:44px;font-weight:500;
+    letter-spacing:.02em;
+  }
+  .brand-text{line-height:1.1}
+  .brand-text .name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:54px;letter-spacing:.16em;font-weight:600;
+    color:var(--paper);
+    text-shadow:0 2px 26px rgba(0,0,0,.6);
+  }
+  .brand-text .sub{
+    font-size:21px;letter-spacing:.34em;
+    color:var(--gold-soft);text-transform:uppercase;
+    margin-top:4px;
+  }
+
+  /* ---------- NOW PLAYING (top right) ---------- */
+  .nowplaying{
+    position:absolute;top:72px;right:96px;
+    text-align:right;z-index:5;
+    color:var(--paper);
+    font-size:20px;letter-spacing:.28em;text-transform:uppercase;
+    opacity:.7;
+  }
+  .nowplaying .dot{
+    display:inline-block;width:13px;height:13px;border-radius:50%;
+    background:#e94e4e;margin-right:10px;vertical-align:middle;
+    box-shadow:0 0 18px #e94e4e;
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{50%{opacity:.35}}
+  .nowplaying .track{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:38px;letter-spacing:.04em;text-transform:none;
+    margin-top:8px;color:var(--gold-soft);
+  }
+
+  /* ---------- PLAYER (bottom) ---------- */
+  .player{
+    position:absolute;
+    left:50%;bottom:88px;transform:translateX(-50%);
+    width:1540px;
+    z-index:6;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:48px;
+    padding:34px 50px;
+    background:rgba(12,10,8,.58);
+    backdrop-filter:blur(18px) saturate(1.2);
+    -webkit-backdrop-filter:blur(18px) saturate(1.2);
+    border:1.5px solid rgba(232,197,144,.26);
+    border-radius:150px;
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.55),
+      inset 0 1px 0 rgba(255,255,255,.06);
+  }
+
+  /* Vinyl */
+  .vinyl{
+    position:relative;width:158px;height:158px;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 50% 50%, #1a1612 0 18%, transparent 18.5%),
+      repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,.04) 0 2px, transparent 2px 4px),
+      radial-gradient(circle at 50% 50%, #2a211a 0%, #0d0a07 70%, #000 100%);
+    box-shadow:
+      inset 0 0 30px rgba(0,0,0,.7),
+      0 12px 30px rgba(0,0,0,.6);
+    animation:spin 9s linear infinite;
+    animation-play-state:paused;
+    flex-shrink:0;
+  }
+  .vinyl::before{
+    content:"";position:absolute;inset:34%;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),#7a4f1f);
+    box-shadow:inset 0 0 6px rgba(0,0,0,.5);
+  }
+  .vinyl::after{
+    content:"";position:absolute;left:calc(50% - 3px);top:calc(50% - 3px);
+    width:6px;height:6px;border-radius:50%;
+    background:#0c0a08;
+  }
+  .player.playing .vinyl{animation-play-state:running}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Middle: meta + bars + progress */
+  .meta{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .meta-row{display:flex;align-items:baseline;justify-content:space-between;gap:24px}
+  .title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:56px;line-height:1;color:var(--paper);
+    letter-spacing:.01em;font-weight:600;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .artist{
+    font-size:21px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--gold-soft);opacity:.85;
+  }
+  .time{
+    font-family:'Inter',sans-serif;font-variant-numeric:tabular-nums;
+    font-size:21px;letter-spacing:.12em;color:rgba(243,236,225,.7);
+  }
+
+  /* EQ bars */
+  .eq{
+    display:flex;align-items:flex-end;gap:4px;
+    height:50px;
+  }
+  .eq .bar{
+    width:5px;background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    border-radius:2px;
+    height:6px;
+    transform-origin:bottom;
+    transition:height .06s linear;
+  }
+
+  /* Progress */
+  .progress{
+    position:relative;height:5px;background:rgba(243,236,225,.15);
+    border-radius:5px;cursor:pointer;overflow:visible;
+  }
+  .progress .fill{
+    position:absolute;inset:0;width:0%;
+    background:linear-gradient(90deg,var(--gold-soft),var(--gold));
+    border-radius:5px;
+  }
+  .progress .knob{
+    position:absolute;top:50%;left:0%;
+    width:18px;height:18px;border-radius:50%;
+    background:var(--gold-soft);
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 10px rgba(214,167,106,.7);
+  }
+
+  /* Controls */
+  .controls{display:flex;align-items:center;gap:20px}
+  .btn{
+    width:66px;height:66px;border-radius:50%;
+    border:1px solid rgba(232,197,144,.25);
+    background:rgba(255,255,255,.04);
+    color:var(--paper);display:grid;place-items:center;
+    cursor:pointer;transition:.2s;
+  }
+  .btn:hover{background:rgba(232,197,144,.12);border-color:var(--gold-soft)}
+  .btn.primary{
+    width:86px;height:86px;
+    background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    border:none;color:#1a120a;
+    box-shadow:0 8px 24px rgba(214,167,106,.35);
+  }
+  .btn svg{width:26px;height:26px}
+  .btn.primary svg{width:34px;height:34px}
+
+  /* Floating MP3 loader */
+  .loader{
+    position:absolute;top:64px;left:50%;transform:translateX(-50%);
+    z-index:7;
+    display:flex;gap:10px;align-items:center;
+    padding:14px 26px;
+    background:rgba(12,10,8,.55);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(232,197,144,.18);
+    border-radius:999px;
+    font-size:16px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gold-soft);
+    cursor:pointer;
+    transition:.25s;
+  }
+  .loader:hover{background:rgba(214,167,106,.15)}
+  .loader input{display:none}
+  .loader svg{width:20px;height:20px}
+
+  /* Caption per slide */
+  .caption{
+    position:absolute;left:96px;bottom:360px;
+    z-index:5;color:var(--paper);max-width:840px;
+    opacity:0;transform:translateY(12px);
+    transition:opacity .9s ease, transform .9s ease;
+  }
+  .caption.show{opacity:1;transform:translateY(0)}
+  .caption .kicker{
+    font-size:21px;letter-spacing:.38em;text-transform:uppercase;
+    color:var(--gold-soft);margin-bottom:14px;
+  }
+  .caption .line{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:74px;line-height:1.15;
+    color:var(--paper);
+    text-shadow:0 4px 38px rgba(0,0,0,.72);
+  }
+
+  /* Bottom golden rule */
+  .rule{
+    position:absolute;left:96px;right:96px;bottom:62px;
+    height:2px;background:linear-gradient(90deg,transparent,rgba(232,197,144,.25),transparent);
+    z-index:4;
+  }
+  .footer-l{position:absolute;left:96px;bottom:32px;font-size:15px;letter-spacing:.34em;text-transform:uppercase;color:rgba(243,236,225,.5);z-index:4}
+  .footer-r{position:absolute;right:96px;bottom:32px;font-size:15px;letter-spacing:.34em;text-transform:uppercase;color:rgba(243,236,225,.5);z-index:4}
+
+  /* ---------- SETUP OVERLAY ---------- */
+  .setup{
+    position:fixed;inset:0;z-index:1000;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(8,6,4,.92);
+    backdrop-filter:blur(20px);
+    overflow-y:auto;padding:40px 20px;
+  }
+  .setup-card{
+    width:min(880px,100%);
+    background:linear-gradient(180deg,rgba(28,22,16,.85),rgba(14,11,8,.95));
+    border:1px solid rgba(232,197,144,.25);
+    border-radius:24px;
+    padding:48px;
+    color:var(--paper);
+    box-shadow:0 40px 100px rgba(0,0,0,.6);
+  }
+  .setup-head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+  .setup-head .brand-mark{width:44px;height:44px}
+  .setup-title{
+    font-family:'Cormorant Garamond',serif;font-size:42px;line-height:1;
+    letter-spacing:.02em;
+  }
+  .setup-sub{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-soft);margin-top:10px;margin-bottom:36px}
+  .setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field.full{grid-column:1/-1}
+  .field label{
+    font-size:10px;letter-spacing:.4em;text-transform:uppercase;
+    color:var(--gold-soft);opacity:.8;
+  }
+  .field input[type="text"], .field input[type="number"]{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(232,197,144,.2);
+    border-radius:10px;padding:14px 16px;
+    color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;
+    outline:none;transition:.2s;
+  }
+  .field input:focus{border-color:var(--gold-soft);background:rgba(255,255,255,.07)}
+
+  .dropzone{
+    border:1.5px dashed rgba(232,197,144,.3);
+    border-radius:14px;padding:24px;text-align:center;
+    background:rgba(255,255,255,.02);
+    cursor:pointer;transition:.2s;
+    min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  }
+  .dropzone:hover, .dropzone.over{border-color:var(--gold-soft);background:rgba(214,167,106,.08)}
+  .dropzone svg{width:28px;height:28px;color:var(--gold-soft);opacity:.7}
+  .dropzone .hint{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-soft)}
+  .dropzone .meta{font-size:12px;color:rgba(243,236,225,.6)}
+
+  .thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;max-height:200px;overflow:auto}
+  .thumb{
+    position:relative;width:64px;height:64px;border-radius:8px;
+    background-size:cover;background-position:center;
+    border:1px solid rgba(232,197,144,.2);
+    cursor:grab;
+  }
+  .thumb .x{
+    position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;
+    background:#1a120a;color:var(--paper);border:1px solid var(--gold-soft);
+    display:grid;place-items:center;font-size:10px;cursor:pointer;
+    opacity:0;transition:.15s;
+  }
+  .thumb:hover .x{opacity:1}
+
+  .setup-actions{
+    display:flex;gap:14px;justify-content:space-between;align-items:center;
+    margin-top:36px;padding-top:28px;border-top:1px solid rgba(232,197,144,.15);
+  }
+  .cta{
+    background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    color:#1a120a;border:none;border-radius:999px;
+    padding:16px 36px;font-family:'Inter',sans-serif;font-weight:600;
+    font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+    cursor:pointer;transition:.2s;
+    box-shadow:0 10px 30px rgba(214,167,106,.35);
+  }
+  .cta:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(214,167,106,.5)}
+  .cta.ghost{
+    background:transparent;color:var(--gold-soft);
+    border:1px solid rgba(232,197,144,.3);
+    box-shadow:none;
+  }
+  .cta.ghost:hover{background:rgba(214,167,106,.1)}
+
+  /* Gear (reopen setup) */
+  .gear{
+    position:fixed;top:18px;right:18px;z-index:900;
+    width:40px;height:40px;border-radius:50%;
+    background:rgba(12,10,8,.6);backdrop-filter:blur(10px);
+    border:1px solid rgba(232,197,144,.2);
+    display:grid;place-items:center;cursor:pointer;
+    color:var(--gold-soft);transition:.2s;opacity:.5;
+  }
+  .gear:hover{opacity:1;transform:rotate(30deg)}
+  .gear svg{width:18px;height:18px}
+
+  /* REC button */
+  .recbtn{
+    position:fixed;top:18px;right:68px;z-index:900;
+    height:40px;padding:0 16px;border-radius:999px;
+    background:rgba(12,10,8,.6);backdrop-filter:blur(10px);
+    border:1px solid rgba(232,197,144,.2);
+    display:flex;align-items:center;gap:8px;cursor:pointer;
+    color:var(--paper);font-family:'Inter',sans-serif;
+    font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+    transition:.2s;opacity:.65;
+  }
+  .recbtn:hover{opacity:1;border-color:#e94e4e}
+  .recbtn .reddot{
+    width:9px;height:9px;border-radius:50%;background:#e94e4e;
+    box-shadow:0 0 10px #e94e4e;
+  }
+  .recbtn.recording{
+    background:rgba(233,78,78,.18);border-color:#e94e4e;opacity:1;
+    color:#fff;
+  }
+  .recbtn.recording .reddot{animation:pulse 1.2s infinite}
+  .rec-time{font-variant-numeric:tabular-nums;letter-spacing:.15em}
+
+  /* Recording info modal */
+  .rec-modal{
+    position:fixed;inset:0;z-index:1100;
+    display:none;align-items:center;justify-content:center;
+    background:rgba(8,6,4,.85);backdrop-filter:blur(14px);
+    padding:20px;
+  }
+  .rec-modal.show{display:flex}
+  .rec-modal .card{
+    width:min(560px,100%);
+    background:linear-gradient(180deg,rgba(28,22,16,.92),rgba(14,11,8,.98));
+    border:1px solid rgba(232,197,144,.25);
+    border-radius:20px;padding:36px;
+    color:var(--paper);
+  }
+  .rec-modal h3{
+    font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;
+    margin-bottom:6px;
+  }
+  .rec-modal .sub{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:24px}
+  .rec-modal ol{padding-left:22px;line-height:1.7;font-size:14px;color:rgba(243,236,225,.85)}
+  .rec-modal ol li{margin-bottom:6px}
+  .rec-modal ol b{color:var(--gold-soft)}
+  .rec-modal .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:26px}
+
+  body.recording .gear, body.recording .recbtn{display:none}
+
+  /* Recording mode hides chrome */
+  body.recording .gear{display:none}
+  body.recording .recbtn{display:none}
+  body.recording{cursor:none}
+  body.recording #stage{cursor:none}
+
+  /* Audio playlist items */
+  #audioList .audio-item{
+    width:auto;height:auto;background:rgba(255,255,255,.03);
+    border:1px solid rgba(232,197,144,.18);border-radius:8px;
+    padding:8px 12px;display:flex;align-items:center;gap:10px;
+    cursor:default;
+  }
+  #audioList .audio-item .num{
+    font-size:10px;letter-spacing:.2em;color:var(--gold-soft);min-width:24px;
+  }
+  #audioList .audio-item .nm{
+    flex:1;font-size:12px;color:var(--paper);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  #audioList .audio-item .rm{
+    color:var(--gold-soft);opacity:.6;cursor:pointer;font-size:14px;padding:0 6px;
+  }
+  #audioList .audio-item .rm:hover{opacity:1}
+
+  /* Light bokeh particles */
+  .bokeh{position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:screen}
+  .bokeh span{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle,rgba(232,197,144,.35),rgba(232,197,144,0) 70%);
+    animation:float linear infinite;
+  }
+  @keyframes float{
+    0%  {transform:translateY(20px) translateX(0);opacity:0}
+    20% {opacity:.7}
+    100%{transform:translateY(-100vh) translateX(40px);opacity:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SETUP OVERLAY ============ -->
+<div class="setup" id="setup">
+  <div class="setup-card">
+    <div class="setup-head">
+      <div class="brand-mark" style="width:48px;height:48px;border:1.5px solid var(--gold-soft);border-radius:50%;display:grid;place-items:center;color:var(--gold-soft);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px">A</div>
+      <div>
+        <div class="setup-title">Assirem Music — Template</div>
+        <div class="setup-sub">Créez votre vidéo · Déposez · Enregistrez</div>
+      </div>
+    </div>
+
+    <div class="setup-grid">
+      <div class="field full">
+        <label>Vos photos · glissez-déposez ou cliquez (plusieurs acceptées)</label>
+        <div class="dropzone" id="photoDrop">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          <div class="hint">Déposer des images</div>
+          <div class="meta" id="photoMeta">Aucune photo — le modèle par défaut sera utilisé</div>
+          <input type="file" id="photoInput" accept="image/*" multiple style="display:none">
+        </div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+
+      <div class="field full">
+        <label>Votre musique (MP3 / audio)</label>
+        <div class="dropzone" id="audioDrop" style="min-height:80px;padding:18px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19V6l12-2v13M9 19a3 3 0 11-6 0 3 3 0 016 0zM21 17a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div class="hint" id="audioHint">Déposer un ou plusieurs MP3</div>
+          <div class="meta" id="audioMeta">Plusieurs morceaux acceptés — ils s'enchaîneront automatiquement</div>
+          <input type="file" id="audioPick" accept="audio/*" multiple style="display:none">
+        </div>
+        <div class="thumbs" id="audioList" style="flex-direction:column;align-items:stretch;gap:6px"></div>
+      </div>
+
+      <div class="field">
+        <label>Nom de marque</label>
+        <input type="text" id="inBrand" value="ASSIREM">
+      </div>
+      <div class="field">
+        <label>Sous-titre marque</label>
+        <input type="text" id="inBrandSub" value="Music · Prod">
+      </div>
+      <div class="field">
+        <label>Titre du morceau</label>
+        <input type="text" id="inTitle" value="Untitled Track">
+      </div>
+      <div class="field">
+        <label>Artiste</label>
+        <input type="text" id="inArtist" value="Assirem Music · Prod">
+      </div>
+      <div class="field">
+        <label>Durée par photo (secondes)</label>
+        <input type="number" id="inDur" value="7" min="3" max="20" step="1">
+      </div>
+      <div class="field">
+        <label>Sous-titres poétiques</label>
+        <select id="inCaptions" style="background:rgba(255,255,255,.04);border:1px solid rgba(232,197,144,.2);border-radius:10px;padding:14px 16px;color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;outline:none">
+          <option value="default">Garder les sous-titres poétiques</option>
+          <option value="off">Désactiver</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="setup-actions">
+      <div style="font-size:11px;letter-spacing:.2em;color:rgba(243,236,225,.5);max-width:380px;line-height:1.5">
+        Conseil — utilisez F11 (plein écran) puis enregistrez votre écran (OBS, Cmd+Shift+5, Win+G) pendant la lecture pour obtenir votre vidéo YouTube.
+      </div>
+      <button class="cta" id="startBtn">Lancer le montage →</button>
+    </div>
+  </div>
+</div>
+
+<!-- REC button -->
+<div class="recbtn" id="recBtn" title="Enregistrer la vidéo">
+  <div class="reddot"></div>
+  <span id="recLabel">REC</span>
+</div>
+
+<!-- Gear icon to reopen setup -->
+<div class="gear" id="gear" title="Réglages">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+</div>
+
+<!-- Recording instructions modal -->
+<div class="rec-modal" id="recModal">
+  <div class="card">
+    <h3>Enregistrer votre vidéo</h3>
+    <div class="sub">Mode YouTube · Capture l'onglet</div>
+    <div id="recIframeWarn" style="display:none;background:rgba(233,78,78,.12);border:1px solid rgba(233,78,78,.4);border-radius:10px;padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.5;color:#ffd5d5">
+      ⚠️ <b>L'enregistrement ne marche pas dans l'aperçu intégré.</b><br>
+      Ouvrez d'abord cette page dans un vrai onglet Chrome.
+      <button class="cta" id="openTab" style="margin-top:10px;padding:10px 18px;font-size:11px">Ouvrir dans un nouvel onglet ↗</button>
+    </div>
+    <ol>
+      <li>Cliquez sur <b>Démarrer</b> ci-dessous</li>
+      <li>Le navigateur demande quoi partager — choisissez <b>«Onglet Chrome»</b> puis sélectionnez l'onglet actuel</li>
+      <li><b>Cochez «Partager l'audio de l'onglet»</b> en bas de la fenêtre — sinon votre musique ne sera pas enregistrée</li>
+      <li>Cliquez sur <b>Partager</b>. L'enregistrement démarre.</li>
+      <li>Quand vous voulez arrêter, cliquez sur le bouton <b>STOP</b> en haut à droite — le fichier se télécharge tout seul</li>
+    </ol>
+    <div class="actions">
+      <button class="cta ghost" id="recCancel">Annuler</button>
+      <button class="cta" id="recStart">Démarrer</button>
+    </div>
+  </div>
+</div>
+
+<div id="stage">
+
+  <!-- Slides will be injected here -->
+  <div id="slides"></div>
+
+  <div class="bokeh" id="bokeh"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <!-- Brand -->
+  <div class="brand">
+    <div class="brand-mark">A</div>
+    <div class="brand-text">
+      <div class="name">ASSIREM</div>
+      <div class="sub">Music · Prod</div>
+    </div>
+  </div>
+
+  <!-- Now playing top right -->
+  <div class="nowplaying">
+    <div><span class="dot"></span>En direct · On Air</div>
+    <div class="track" id="trackTopTitle">Untitled Track</div>
+  </div>
+
+  <!-- MP3 loader -->
+  <label class="loader" for="audioFile">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+    <span id="loaderText">Charger un MP3</span>
+    <input id="audioFile" type="file" accept="audio/*" multiple>
+  </label>
+
+  <!-- Caption -->
+  <div class="caption" id="caption">
+    <div class="kicker">Track 01</div>
+    <div class="line">Where the silence learns to sing.</div>
+  </div>
+
+  <!-- Player -->
+  <div class="player" id="player">
+    <div class="vinyl"></div>
+
+    <div class="meta">
+      <div class="meta-row">
+        <div>
+          <div class="title" id="trackTitle">Untitled Track</div>
+          <div class="artist" id="trackArtist">Assirem Music · Prod</div>
+        </div>
+        <div class="eq" id="eq"></div>
+      </div>
+
+      <div class="progress" id="progress">
+        <div class="fill" id="fill"></div>
+        <div class="knob" id="knob"></div>
+      </div>
+
+      <div class="meta-row">
+        <div class="time"><span id="cur">0:00</span> / <span id="dur">0:00</span></div>
+        <div class="artist" id="plPos" style="opacity:.6">Original Soundtrack</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" id="prev" title="Précédent">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zM20 6v12L9 12z"/></svg>
+      </button>
+      <button class="btn primary" id="play" title="Lecture">
+        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button class="btn" id="next" title="Suivant">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM4 6v12l11-6z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="footer-l">© Assirem Music — All Rights Reserved</div>
+  <div class="footer-r">Vol. I · MMXXVI</div>
+
+</div>
+
+<script>
+/* ============ Scaling ============ */
+(function(){
+  const stage = document.getElementById('stage');
+  function fit(){
+    const sx = window.innerWidth/1920;
+    const sy = window.innerHeight/1080;
+    const s = Math.min(sx,sy);
+    stage.style.transform = `scale(${s})`;
+  }
+  window.addEventListener('resize', fit); fit();
+})();
+
+/* ============ Slides ============ */
+const DEFAULT_IMAGES = [
+  "uploads/pasted-1779652365133-0.png",
+  "uploads/pasted-1779652372085-0.png",
+  "uploads/pasted-1779652379476-1.png",
+  "uploads/pasted-1779652380625-0.png",
+  "uploads/pasted-1779652385754-0.png",
+  "uploads/pasted-1779652395063-0.png",
+  "uploads/pasted-1779652401788-1.png",
+  "uploads/pasted-1779652403704-0.png",
+  "uploads/pasted-1779652414198-0.png",
+  "uploads/pasted-1779652420110-0.png",
+  "uploads/pasted-1779652424956-0.png",
+  "uploads/pasted-1779652436015-0.png",
+  "uploads/pasted-1779652441150-0.png",
+  "uploads/pasted-1779652446523-0.png",
+  "uploads/pasted-1779652455085-0.png",
+  "uploads/pasted-1779652459935-0.png",
+  "uploads/pasted-1779652465964-0.png",
+  "uploads/pasted-1779652472023-0.png",
+  "uploads/pasted-1779652476614-0.png",
+  "uploads/pasted-1779652483449-0.png",
+  "uploads/pasted-1779652487848-0.png",
+  "uploads/pasted-1779652492309-0.png",
+  "uploads/pasted-1779652496625-0.png",
+  "uploads/pasted-1779652500779-0.png",
+  "uploads/pasted-1779652505333-0.png",
+  "uploads/pasted-1779652509865-0.png",
+  "uploads/pasted-1779652514667-0.png"
+];
+let images = DEFAULT_IMAGES.slice();
+
+const captions = [
+  "Where the silence learns to sing.",
+  "Close your eyes — the song begins.",
+  "Every heartbeat is a tempo.",
+  "Souls woven in melody.",
+  "The needle finds the groove.",
+  "Dust dances in golden light.",
+  "Memory spins at 33 turns.",
+  "Sound is the colour of feeling.",
+  "Time slows where music plays.",
+  "An ocean of warm vinyl.",
+  "Sunset is a slow refrain.",
+  "Sand, salt, and a steady beat.",
+  "The horizon hums softly.",
+  "Lost on a wave of rhythm.",
+  "An island made of sound.",
+  "Floating between two skies.",
+  "Coral reefs of resonance.",
+  "A world held by a single note."
+];
+
+const slidesEl = document.getElementById('slides');
+const captionEl = document.getElementById('caption');
+const captionLine = captionEl.querySelector('.line');
+const captionKicker = captionEl.querySelector('.kicker');
+
+let slideNodes = [];
+let captionsOn = true;
+function buildSlides(){
+  slidesEl.innerHTML = '';
+  images.forEach((src,i)=>{
+    const d = document.createElement('div');
+    d.className = 'slide';
+    d.style.backgroundImage = `url("${src}")`;
+    slidesEl.appendChild(d);
+  });
+  slideNodes = slidesEl.querySelectorAll('.slide');
+}
+buildSlides();
+
+let cur = 0;
+function showSlide(i){
+  slideNodes.forEach(s=>s.classList.remove('active'));
+  // restart animation by reflow
+  const node = slideNodes[i];
+  if(!node) return;
+  void node.offsetWidth;
+  node.classList.add('active');
+
+  // caption
+  captionEl.classList.remove('show');
+  if(!captionsOn) return;
+  const cap = captions[i % captions.length];
+  setTimeout(()=>{
+    captionLine.textContent = cap;
+    captionKicker.textContent = 'Track ' + String((i%captions.length)+1).padStart(2,'0');
+    captionEl.classList.add('show');
+  }, 400);
+}
+
+let slideTimer = null;
+let slideDurMs = 7000;
+function startSlideshow(){
+  cur = 0;
+  showSlide(0);
+  if(slideTimer) clearInterval(slideTimer);
+  slideTimer = setInterval(()=>{
+    cur = (cur+1) % slideNodes.length;
+    showSlide(cur);
+  }, slideDurMs);
+}
+startSlideshow();
+
+/* ============ Bokeh ============ */
+(function(){
+  const wrap = document.getElementById('bokeh');
+  for(let i=0;i<22;i++){
+    const s = document.createElement('span');
+    const size = 6 + Math.random()*22;
+    s.style.width = s.style.height = size+'px';
+    s.style.left = (Math.random()*100)+'%';
+    s.style.bottom = (-10 - Math.random()*30)+'%';
+    s.style.animationDuration = (12 + Math.random()*18)+'s';
+    s.style.animationDelay = (-Math.random()*20)+'s';
+    s.style.opacity = (.3 + Math.random()*.5);
+    wrap.appendChild(s);
+  }
+})();
+
+/* ============ EQ Bars ============ */
+const eq = document.getElementById('eq');
+const BAR_COUNT = 28;
+const bars = [];
+for(let i=0;i<BAR_COUNT;i++){
+  const b = document.createElement('div');
+  b.className = 'bar';
+  eq.appendChild(b);
+  bars.push(b);
+}
+
+/* ============ Audio ============ */
+const audio = new Audio();
+audio.crossOrigin = "anonymous";
+let audioCtx, analyser, srcNode, dataArr;
+
+const playBtn = document.getElementById('play');
+const playIcon = document.getElementById('playIcon');
+const fileInput = document.getElementById('audioFile');
+const loaderText = document.getElementById('loaderText');
+const trackTitle = document.getElementById('trackTitle');
+const trackTopTitle = document.getElementById('trackTopTitle');
+const trackArtist = document.getElementById('trackArtist');
+const playerEl = document.getElementById('player');
+const fill = document.getElementById('fill');
+const knob = document.getElementById('knob');
+const curT = document.getElementById('cur');
+const durT = document.getElementById('dur');
+const progress = document.getElementById('progress');
+
+function fmt(s){
+  if(!isFinite(s)) return '0:00';
+  s = Math.max(0,Math.floor(s));
+  return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+}
+
+function setupAnalyser(){
+  if(audioCtx) return;
+  audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+  analyser = audioCtx.createAnalyser();
+  analyser.fftSize = 128;
+  srcNode = audioCtx.createMediaElementSource(audio);
+  srcNode.connect(analyser);
+  analyser.connect(audioCtx.destination);
+  dataArr = new Uint8Array(analyser.frequencyBinCount);
+}
+
+fileInput.addEventListener('change', e=>{
+  const files = [...e.target.files].filter(f=>f.type.startsWith('audio/'));
+  if(!files.length) return;
+  window.__playlist = files.map(f=>({
+    url: URL.createObjectURL(f),
+    name: f.name.replace(/\.[^.]+$/,'')
+  }));
+  window.__plIdx = 0;
+  loaderText.textContent = files.length > 1 ? files.length+' morceaux' : 'Audio chargé';
+  loadTrack(0, true);
+});
+
+playBtn.addEventListener('click', ()=>{
+  if(!audio.src){ fileInput.click(); return; }
+  if(audio.paused){ audio.play(); setupAnalyser(); }
+  else { audio.pause(); }
+});
+
+audio.addEventListener('play', ()=>{
+  playerEl.classList.add('playing');
+  playIcon.innerHTML = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+});
+audio.addEventListener('pause', ()=>{
+  playerEl.classList.remove('playing');
+  playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+});
+audio.addEventListener('loadedmetadata', ()=>{
+  durT.textContent = fmt(audio.duration);
+});
+audio.addEventListener('timeupdate', ()=>{
+  if(!audio.duration) return;
+  const p = (audio.currentTime/audio.duration)*100;
+  fill.style.width = p+'%';
+  knob.style.left = p+'%';
+  curT.textContent = fmt(audio.currentTime);
+});
+progress.addEventListener('click', e=>{
+  if(!audio.duration) return;
+  const r = progress.getBoundingClientRect();
+  const ratio = (e.clientX - r.left)/r.width;
+  audio.currentTime = ratio * audio.duration;
+});
+
+/* Next / prev = playlist navigation when playlist exists, otherwise slides */
+const plPosEl = document.getElementById('plPos');
+function loadTrack(idx, autoplay){
+  const pl = window.__playlist || [];
+  if(!pl.length) return;
+  const i = ((idx % pl.length) + pl.length) % pl.length;
+  window.__plIdx = i;
+  const tr = pl[i];
+  audio.src = tr.url;
+  trackTitle.textContent = tr.name;
+  trackTopTitle.textContent = tr.name;
+  plPosEl.textContent = pl.length > 1
+    ? `Track ${String(i+1).padStart(2,'0')} / ${String(pl.length).padStart(2,'0')}`
+    : 'Original Soundtrack';
+  if(autoplay){
+    audio.play().then(()=>setupAnalyser()).catch(()=>{});
+  }
+}
+// Make accessible from outer scope
+window.loadTrack = loadTrack;
+
+document.getElementById('next').addEventListener('click', ()=>{
+  const pl = window.__playlist || [];
+  if(pl.length > 1){
+    loadTrack((window.__plIdx||0)+1, !audio.paused || true);
+    return;
+  }
+  clearInterval(slideTimer);
+  cur = (cur+1) % slideNodes.length; showSlide(cur);
+  slideTimer = setInterval(()=>{cur=(cur+1)%slideNodes.length;showSlide(cur)}, slideDurMs);
+});
+document.getElementById('prev').addEventListener('click', ()=>{
+  const pl = window.__playlist || [];
+  if(pl.length > 1){
+    // restart current track if past 3s, else previous
+    if(audio.currentTime > 3){ audio.currentTime = 0; return; }
+    loadTrack((window.__plIdx||0)-1, !audio.paused || true);
+    return;
+  }
+  clearInterval(slideTimer);
+  cur = (cur-1+slideNodes.length) % slideNodes.length; showSlide(cur);
+  slideTimer = setInterval(()=>{cur=(cur+1)%slideNodes.length;showSlide(cur)}, slideDurMs);
+});
+
+// Auto-advance to next track when one finishes
+audio.addEventListener('ended', ()=>{
+  const pl = window.__playlist || [];
+  if(pl.length > 1){
+    loadTrack((window.__plIdx||0)+1, true);
+  }
+});
+
+/* ============ EQ render loop ============ */
+let t = 0;
+function tick(){
+  t += 0.04;
+  if(analyser && !audio.paused){
+    analyser.getByteFrequencyData(dataArr);
+    for(let i=0;i<BAR_COUNT;i++){
+      // map BAR_COUNT bars across low-mid range of spectrum
+      const idx = Math.floor((i / BAR_COUNT) * (dataArr.length*0.75));
+      const v = dataArr[idx] / 255;
+      const h = 6 + v * 40;
+      bars[i].style.height = h+'px';
+    }
+  } else {
+    // idle: soft sine waves
+    for(let i=0;i<BAR_COUNT;i++){
+      const v = (Math.sin(t*1.6 + i*0.45)+Math.sin(t*0.9 + i*0.2))*0.25+0.5;
+      const h = 6 + v * 20;
+      bars[i].style.height = h+'px';
+    }
+  }
+  requestAnimationFrame(tick);
+}
+tick();
+
+/* Spacebar = play/pause */
+window.addEventListener('keydown', e=>{
+  if(e.code === 'Space'){ e.preventDefault(); playBtn.click(); }
+});
+
+/* ============================================================
+   HEADLESS API — window.AssiremMontage
+   Called by render_template.py via page.evaluate()
+   ============================================================ */
+window.__assiremDone = false;
+
+window.AssiremMontage = {
+  configure(cfg){
+    // Photos
+    if(cfg.photos && cfg.photos.length){
+      images = cfg.photos.slice();
+      buildSlides();
+    }
+    // Slide duration
+    if(cfg.slideDurMs) slideDurMs = cfg.slideDurMs;
+    // Brand text
+    const brandNameEl = document.querySelector('.brand .name');
+    const brandSubEl  = document.querySelector('.brand .sub');
+    if(brandNameEl && cfg.brand)    brandNameEl.textContent = cfg.brand;
+    if(brandSubEl  && cfg.brandSub) brandSubEl.textContent  = cfg.brandSub;
+    // Track meta
+    if(cfg.title){
+      trackTitle.textContent    = cfg.title;
+      trackTopTitle.textContent = cfg.title;
+    }
+    if(cfg.artist) trackArtist.textContent = cfg.artist;
+    // Audio playlist
+    if(cfg.audioSrc){
+      window.__playlist = [{ url: cfg.audioSrc, name: cfg.title || '' }];
+      window.__plIdx    = 0;
+      loadTrack(0, false);
+    }
+    // Hide setup overlay immediately
+    const setupEl = document.getElementById('setup');
+    if(setupEl) setupEl.style.display = 'none';
+    // Hide gear / recbtn floating chrome
+    const gearEl   = document.getElementById('gear');
+    const recBtnEl = document.querySelector('.recbtn');
+    if(gearEl)   gearEl.style.display   = 'none';
+    if(recBtnEl) recBtnEl.style.display = 'none';
+  },
+
+  start(){
+    startSlideshow();
+    const pl = window.__playlist || [];
+    if(pl.length && audio.src){
+      audio.play().then(()=> setupAnalyser()).catch(e=> console.warn('autoplay blocked:', e));
+    }
+  },
+
+  stop(){
+    audio.pause();
+    clearInterval(slideTimer);
+  }
+};
+
+// Signal completion when last track ends
+audio.addEventListener('ended', ()=>{
+  const pl = window.__playlist || [];
+  // If single track (or last track), mark done
+  if(!pl.length || (window.__plIdx || 0) >= pl.length - 1){
+    window.__assiremDone = true;
+  }
+});
+
+/* ============================================================
+   SETUP / TEMPLATE WIRING
+   ============================================================ */
+(function(){
+  const setup = document.getElementById('setup');
+  const gear = document.getElementById('gear');
+  const photoDrop = document.getElementById('photoDrop');
+  const photoInput = document.getElementById('photoInput');
+  const photoMeta = document.getElementById('photoMeta');
+  const thumbsEl = document.getElementById('thumbs');
+  const audioDrop = document.getElementById('audioDrop');
+  const audioPick = document.getElementById('audioPick');
+  const audioMeta = document.getElementById('audioMeta');
+  const audioHint = document.getElementById('audioHint');
+  const inBrand = document.getElementById('inBrand');
+  const inBrandSub = document.getElementById('inBrandSub');
+  const inTitle = document.getElementById('inTitle');
+  const inArtist = document.getElementById('inArtist');
+  const inDur = document.getElementById('inDur');
+  const inCaptions = document.getElementById('inCaptions');
+  const startBtn = document.getElementById('startBtn');
+  const brandName = document.querySelector('.brand .name');
+  const brandSub = document.querySelector('.brand .sub');
+
+  // Restore from localStorage
+  try {
+    const s = JSON.parse(localStorage.getItem('assirem-tpl')||'null');
+    if(s){
+      if(s.brand) inBrand.value = s.brand;
+      if(s.brandSub) inBrandSub.value = s.brandSub;
+      if(s.title) inTitle.value = s.title;
+      if(s.artist) inArtist.value = s.artist;
+      if(s.dur) inDur.value = s.dur;
+      if(s.captions) inCaptions.value = s.captions;
+    }
+  } catch(e){}
+
+  let userPhotos = []; // {url, name}
+  let userAudioFiles = []; // [{file, url, name}]
+  const audioListEl = document.getElementById('audioList');
+
+  function renderAudioList(){
+    audioListEl.innerHTML = '';
+    userAudioFiles.forEach((a,idx)=>{
+      const it = document.createElement('div');
+      it.className = 'audio-item';
+      it.innerHTML = `<div class="num">${String(idx+1).padStart(2,'0')}</div>
+                      <div class="nm">${a.name}</div>
+                      <div class="rm" title="Retirer">×</div>`;
+      it.querySelector('.rm').addEventListener('click', ev=>{
+        ev.stopPropagation();
+        URL.revokeObjectURL(a.url);
+        userAudioFiles.splice(idx,1);
+        renderAudioList();
+        updateAudioMeta();
+      });
+      audioListEl.appendChild(it);
+    });
+  }
+  function updateAudioMeta(){
+    if(userAudioFiles.length === 0){
+      audioMeta.textContent = 'Vous pourrez aussi le charger plus tard dans le player';
+      audioHint.textContent = 'Déposer un ou plusieurs MP3';
+    } else if(userAudioFiles.length === 1){
+      audioMeta.textContent = userAudioFiles[0].name;
+      audioHint.textContent = 'Audio prêt';
+    } else {
+      audioMeta.textContent = userAudioFiles.length + ' morceaux · playlist';
+      audioHint.textContent = 'Playlist prête';
+    }
+  }
+  function addAudio(files){
+    [...files].filter(f=>f.type.startsWith('audio/')).forEach(f=>{
+      userAudioFiles.push({
+        file: f,
+        url: URL.createObjectURL(f),
+        name: f.name.replace(/\.[^.]+$/,'')
+      });
+    });
+    renderAudioList();
+    updateAudioMeta();
+  }
+
+  function renderThumbs(){
+    thumbsEl.innerHTML = '';
+    userPhotos.forEach((p,idx)=>{
+      const t = document.createElement('div');
+      t.className = 'thumb';
+      t.style.backgroundImage = `url("${p.url}")`;
+      const x = document.createElement('div');
+      x.className = 'x'; x.textContent = '×';
+      x.addEventListener('click', ev=>{
+        ev.stopPropagation();
+        URL.revokeObjectURL(p.url);
+        userPhotos.splice(idx,1);
+        renderThumbs();
+        updatePhotoMeta();
+      });
+      t.appendChild(x);
+      thumbsEl.appendChild(t);
+    });
+  }
+  function updatePhotoMeta(){
+    photoMeta.textContent = userPhotos.length
+      ? `${userPhotos.length} photo(s) chargée(s)`
+      : 'Aucune photo — le modèle par défaut sera utilisé';
+  }
+
+  function addPhotos(files){
+    [...files].filter(f=>f.type.startsWith('image/')).forEach(f=>{
+      userPhotos.push({url: URL.createObjectURL(f), name: f.name});
+    });
+    renderThumbs();
+    updatePhotoMeta();
+  }
+  photoDrop.addEventListener('click', ()=>photoInput.click());
+  photoInput.addEventListener('change', e=>{ addPhotos(e.target.files); e.target.value=''; });
+  ;['dragover','dragenter'].forEach(ev=>photoDrop.addEventListener(ev, e=>{e.preventDefault();photoDrop.classList.add('over')}));
+  ;['dragleave','drop'].forEach(ev=>photoDrop.addEventListener(ev, e=>{e.preventDefault();photoDrop.classList.remove('over')}));
+  photoDrop.addEventListener('drop', e=>{
+    e.preventDefault();
+    if(e.dataTransfer.files.length) addPhotos(e.dataTransfer.files);
+  });
+
+  // Audio dropzone (multi-file)
+  audioDrop.addEventListener('click', ()=>audioPick.click());
+  audioPick.addEventListener('change', e=>{ addAudio(e.target.files); e.target.value=''; });
+  ;['dragover','dragenter'].forEach(ev=>audioDrop.addEventListener(ev, e=>{e.preventDefault();audioDrop.classList.add('over')}));
+  ;['dragleave','drop'].forEach(ev=>audioDrop.addEventListener(ev, e=>{e.preventDefault();audioDrop.classList.remove('over')}));
+  audioDrop.addEventListener('drop', e=>{
+    e.preventDefault();
+    if(e.dataTransfer.files.length) addAudio(e.dataTransfer.files);
+  });
+
+  // Gear reopens setup
+  gear.addEventListener('click', ()=>{
+    setup.style.display = 'flex';
+    if(!audio.paused) audio.pause();
+    if(slideTimer){ clearInterval(slideTimer); slideTimer=null; }
+  });
+
+  // Start
+  startBtn.addEventListener('click', ()=>{
+    // Persist text fields
+    try {
+      localStorage.setItem('assirem-tpl', JSON.stringify({
+        brand: inBrand.value, brandSub: inBrandSub.value,
+        title: inTitle.value, artist: inArtist.value,
+        dur: inDur.value, captions: inCaptions.value
+      }));
+    } catch(e){}
+
+    // Apply text
+    brandName.textContent = (inBrand.value||'ASSIREM').toUpperCase();
+    brandSub.textContent = inBrandSub.value || '';
+    trackTitle.textContent = inTitle.value || 'Untitled Track';
+    trackTopTitle.textContent = inTitle.value || 'Untitled Track';
+    trackArtist.textContent = inArtist.value || '';
+
+    // Captions
+    captionsOn = (inCaptions.value !== 'off');
+    if(!captionsOn) captionEl.classList.remove('show');
+
+    // Duration
+    const d = Math.max(3, Math.min(20, parseInt(inDur.value,10)||7));
+    slideDurMs = d * 1000;
+
+    // Photos
+    if(userPhotos.length > 0){
+      images = userPhotos.map(p=>p.url);
+    } else {
+      images = DEFAULT_IMAGES.slice();
+    }
+    buildSlides();
+    startSlideshow();
+
+    // Audio
+    if(userAudioFiles.length > 0){
+      window.__playlist = userAudioFiles.map(a=>({url:a.url, name:a.name}));
+      window.__plIdx = 0;
+      loadTrack(0, /*autoplay*/false);
+      loaderText.textContent = userAudioFiles.length > 1
+        ? userAudioFiles.length + ' morceaux'
+        : 'Audio chargé';
+    }
+
+    // Close setup
+    setup.style.display = 'none';
+  });
+
+  /* ========= SCREEN RECORDING (MediaRecorder + getDisplayMedia) ========= */
+  const recBtn = document.getElementById('recBtn');
+  const recLabel = document.getElementById('recLabel');
+  const recModal = document.getElementById('recModal');
+  const recStart = document.getElementById('recStart');
+  const recCancel = document.getElementById('recCancel');
+
+  let mediaRec = null;
+  let mediaStream = null;
+  let recChunks = [];
+  let recStartTime = 0;
+  let recTimerId = null;
+
+  function fmtTime(s){
+    s = Math.max(0,Math.floor(s));
+    return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+  }
+
+  function openRecModal(){
+    recModal.classList.add('show');
+    const warn = document.getElementById('recIframeWarn');
+    if(warn) warn.style.display = inIframe ? 'block' : 'none';
+  }
+  function closeRecModal(){ recModal.classList.remove('show'); }
+
+  const openTabBtn = document.getElementById('openTab');
+  if(openTabBtn) openTabBtn.addEventListener('click', ()=>{
+    try { window.open(window.location.href, '_blank'); } catch(e){}
+  });
+
+  recBtn.addEventListener('click', ()=>{
+    if(mediaRec && mediaRec.state === 'recording'){
+      stopRecording();
+    } else {
+      openRecModal();
+    }
+  });
+  recCancel.addEventListener('click', closeRecModal);
+
+  // Detect if running inside the editor preview iframe (where getDisplayMedia is blocked)
+  const inIframe = (()=>{ try { return window.self !== window.top; } catch(e){ return true; } })();
+
+  recStart.addEventListener('click', async ()=>{
+    // Check support
+    if(!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia){
+      alert("Votre navigateur ne supporte pas l'enregistrement d'écran. Utilisez Chrome ou Edge récent.");
+      return;
+    }
+    if(inIframe){
+      // Browsers block getDisplayMedia in sandboxed iframes — open the file directly
+      const ok = confirm(
+        "⚠️ L'enregistrement ne fonctionne pas dans l'aperçu intégré (sécurité du navigateur).\n\n" +
+        "Pour enregistrer votre vidéo, ouvrez ce fichier dans un VRAI onglet Chrome :\n" +
+        "• Clic droit sur le fichier dans le panneau → \"Ouvrir dans un nouvel onglet\"\n" +
+        "• OU téléchargez le HTML et ouvrez-le sur votre ordinateur\n\n" +
+        "Cliquez OK pour essayer d'ouvrir l'onglet maintenant."
+      );
+      if(ok){
+        try { window.open(window.location.href, '_blank'); } catch(e){}
+      }
+      closeRecModal();
+      return;
+    }
+    closeRecModal();
+    try {
+      mediaStream = await navigator.mediaDevices.getDisplayMedia({
+        video: { frameRate: 30 },
+        audio: true,
+        // Hint to user dialog to prefer current tab
+        preferCurrentTab: true,
+        selfBrowserSurface: 'include',
+        systemAudio: 'include'
+      });
+
+      // Warn if no audio track
+      if(mediaStream.getAudioTracks().length === 0){
+        alert("Aucun audio n'a été partagé. Vous devez cocher « Partager l'audio de l'onglet » dans la fenêtre de partage. Réessayez.");
+        mediaStream.getTracks().forEach(t=>t.stop());
+        return;
+      }
+
+      // If user stops sharing from browser, treat as stop
+      mediaStream.getVideoTracks()[0].addEventListener('ended', ()=>{
+        if(mediaRec && mediaRec.state === 'recording') stopRecording();
+      });
+
+      // Pick best supported mime type
+      let mime = 'video/webm;codecs=vp9,opus';
+      if(!MediaRecorder.isTypeSupported(mime)) mime = 'video/webm;codecs=vp8,opus';
+      if(!MediaRecorder.isTypeSupported(mime)) mime = 'video/webm';
+
+      mediaRec = new MediaRecorder(mediaStream, {
+        mimeType: mime,
+        videoBitsPerSecond: 8_000_000  // 8 Mbps — bonne qualité YouTube 1080p
+      });
+      recChunks = [];
+      mediaRec.ondataavailable = e => { if(e.data && e.data.size > 0) recChunks.push(e.data); };
+      mediaRec.onstop = handleStop;
+      mediaRec.start(1000); // chunk every 1s
+
+      // Start UI
+      recBtn.classList.add('recording');
+      recLabel.innerHTML = 'STOP · <span class="rec-time" id="recT">00:00</span>';
+      recStartTime = Date.now();
+      recTimerId = setInterval(()=>{
+        const t = (Date.now()-recStartTime)/1000;
+        const el = document.getElementById('recT');
+        if(el) el.textContent = fmtTime(t);
+      }, 500);
+
+      // Auto: switch to recording mode (hide cursor / chrome) + start music if loaded
+      document.body.classList.add('recording');
+      if(audio.src && audio.paused){
+        audio.play().then(()=>setupAnalyser()).catch(()=>{});
+      }
+    } catch(err){
+      console.warn('Recording cancelled or failed:', err);
+      if(err && err.name !== 'NotAllowedError' && err.name !== 'AbortError'){
+        alert("Erreur d'enregistrement : " + (err.message || err.name || err));
+      }
+    }
+  });
+
+  function stopRecording(){
+    if(mediaRec && mediaRec.state === 'recording'){
+      mediaRec.stop();
+    }
+    if(mediaStream){
+      mediaStream.getTracks().forEach(t=>t.stop());
+      mediaStream = null;
+    }
+    if(recTimerId){ clearInterval(recTimerId); recTimerId = null; }
+    recBtn.classList.remove('recording');
+    recLabel.innerHTML = '<span style="color:#fff">●</span> REC';
+    setTimeout(()=>{ recLabel.textContent = 'REC'; }, 1800);
+    document.body.classList.remove('recording');
+  }
+
+  function handleStop(){
+    const blob = new Blob(recChunks, { type: 'video/webm' });
+    recChunks = [];
+    const url = URL.createObjectURL(blob);
+    // Build filename from track title
+    const title = (document.getElementById('trackTitle').textContent || 'assirem-music').trim();
+    const safe = title.replace(/[^\w\-]+/g,'_').toLowerCase();
+    const stamp = new Date().toISOString().slice(0,10);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${safe || 'assirem-music'}_${stamp}.webm`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(()=>{
+      a.remove();
+      URL.revokeObjectURL(url);
+    }, 1000);
+
+    // Friendly confirmation
+    const sizeMB = (blob.size/1024/1024).toFixed(1);
+    setTimeout(()=>{
+      const ok = confirm(`✅ Vidéo enregistrée (${sizeMB} Mo, format .webm).\n\nYouTube accepte directement le WebM — vous pouvez l'uploader tel quel.\n\nVoulez-vous voir les conseils d'upload ?`);
+      if(ok){
+        window.open('https://studio.youtube.com', '_blank');
+      }
+    }, 600);
+  }
+
+  // Recording mode: press R to toggle (hides cursor + gear)
+  window.addEventListener('keydown', e=>{
+    if(e.key === 'r' || e.key === 'R'){
+      if(setup.style.display === 'flex') return;
+      document.body.classList.toggle('recording');
+    }
+    if(e.key === 'Escape'){
+      document.body.classList.remove('recording');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

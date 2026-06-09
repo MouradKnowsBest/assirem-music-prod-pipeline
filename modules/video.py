@@ -1,12 +1,18 @@
 """
 Module video.py — Assemblage vidéo cinématique par track
 
-Workflow medium/long :
+Workflow medium/long (SVD) :
   A) Concat MP3 depuis input/<slug>/ (ou input/ en fallback) → audio N min
   B) Ralentit les clips de scène ×6 (~5s → ~30s) → clips_slow/
   C) Boucle les clips ralentis EN ORDRE (narratif) → vidéo loop
   D) Mixe vidéo + audio + fade in/out + title_card + end_card → output/<slug>/<slug>.mp4
   E) (optionnel) Génère un short vertical 9:16 → output/<slug>/shorts/<slug>_short.mp4
+
+Workflow medium/long (Ken Burns — --ken-burns) :
+  A) identique
+  B_KB) Applique zoompan FFmpeg sur chaque image scène → clips_kb/
+  C) identique (boucle)
+  D-E) identiques
 """
 
 import os
@@ -23,6 +29,14 @@ DUREES = {
     "long": 2 * 60 * 60,
 }
 FACTEUR_RALENTI = 6
+
+# ─── Ken Burns ────────────────────────────────────────────────────────────────
+_KB_CLIP_SEC = 30   # durée par clip Ken Burns (secondes)
+_KB_FPS      = 30
+_KB_MOVES      = ["zoom_in", "zoom_out", "pan_lr", "pan_rl", "pan_tb", "pan_diag"]
+_KB_PAIRS      = [("zoom_in", "zoom_out"), ("pan_lr", "pan_rl"), ("pan_tb", "pan_diag")]
+_KB_MOVES_ZOOM = ["zoom_in", "zoom_out"]
+_KB_PAIRS_ZOOM = [("zoom_in", "zoom_out")]
 
 # Timeout par défaut pour les commandes FFmpeg (60 min).
 # Suffisant pour une vidéo de 2h en preset fast.
@@ -59,7 +73,8 @@ def _drawtext_available() -> bool:
             ["ffmpeg", "-filters"],
             capture_output=True, text=True, timeout=10
         )
-        return "drawtext" in result.stdout
+        combined = result.stdout + result.stderr
+        return "drawtext" in combined
     except Exception:
         return False
 
@@ -142,6 +157,25 @@ def _lister_mp3(input_dir: str, slug: str) -> list:
         f"Aucun MP3 trouvé dans input/{slug}/ ni dans input/\n"
         f"Placez vos fichiers .mp3 dans input/{slug}/"
     )
+
+
+def _resolve_output_dir(base_dir: str, slug: str) -> str:
+    """Retourne output/<slug> ou output/<nn>-<slug> si ce dernier existe déjà."""
+    output_root = os.path.join(base_dir, "output")
+    exact = os.path.join(output_root, slug)
+    if os.path.isdir(exact):
+        return exact
+    try:
+        candidats = [
+            os.path.join(output_root, name)
+            for name in os.listdir(output_root)
+            if os.path.isdir(os.path.join(output_root, name)) and name.endswith(f"-{slug}")
+        ]
+        if candidats:
+            return sorted(candidats)[0]
+    except FileNotFoundError:
+        pass
+    return exact
 
 
 def _lister_clips(clips_dir: str) -> list:
@@ -302,16 +336,18 @@ def _boucler_clips(clips: list, duree_cible: float, output_dir: str) -> str:
     if total == 0:
         raise RuntimeError("Impossible de lire la durée des clips ralentis.")
 
+    # Need pool ≥ duree_cible + 10 (buffer for codec alignment + mixer trim)
+    target_pool = duree_cible + 10
     liste = list(clips)
     cumul_total = total
-    while cumul_total < duree_cible:
+    while cumul_total < target_pool:
         liste.extend(clips)
         cumul_total += total
 
     clips_finaux, cumul = [], 0.0
     durees_ext = durees * ((len(liste) // len(clips)) + 2)
     for c, d in zip(liste, durees_ext):
-        if cumul >= duree_cible:
+        if cumul >= target_pool:
             break
         clips_finaux.append(c)
         cumul += d
@@ -325,12 +361,13 @@ def _boucler_clips(clips: list, duree_cible: float, output_dir: str) -> str:
 
     nb = len(clips_finaux)
     mins = int(duree_cible // 60)
+    # +5s buffer so video is always longer than audio; _mixer's -t trims to exact length.
     _run_ffmpeg(
         [
             "ffmpeg", "-y",
             "-f", "concat", "-safe", "0",
             "-i", liste_path,
-            "-t", str(duree_cible),
+            "-t", str(duree_cible + 5),
             "-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p",
             "-an", video_loop,
         ],
@@ -349,12 +386,11 @@ def _build_video_filter(
     duree: float,
     intro_fade: float,
     outro_fade: float,
-    title_card: dict = None,
-    end_card: dict = None,
+    lyrics_lines: list = None,
 ) -> str:
     """
-    Construit la chaîne de filtres vidéo :
-    fade in/out + drawtext title_card + drawtext end_card.
+    Construit la chaîne de filtres vidéo : fade in/out + lyrics overlay.
+    title_card et end_card sont désormais des segments noirs concaténés séparément.
     Retourne une chaîne FFmpeg -vf utilisable, ou "" si aucun effet.
     """
     filtres = []
@@ -367,49 +403,104 @@ def _build_video_filter(
     if outro_fade > 0 and duree > outro_fade:
         filtres.append(f"fade=t=out:st={duree - outro_fade}:d={outro_fade}")
 
-    # Title card (texte affiché pendant les N premières secondes)
-    if title_card and title_card.get("enabled") and _check_drawtext():
-        dur = float(title_card.get("duration_sec", 3))
-        text = _escape_drawtext(title_card.get("text", ""))
-        subtitle = _escape_drawtext(title_card.get("subtitle", ""))
-        if text:
+    # Lyrics overlay — bottom bar semi-transparent
+    if lyrics_lines and _check_drawtext():
+        for line in lyrics_lines:
+            t_start = line["start"]
+            t_end   = line["end"]
+            text = _escape_drawtext(line["text"])
             filtres.append(
                 f"drawtext={font_arg}text='{text}':"
-                f"fontsize=72:fontcolor=white:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2-40:"
-                f"shadowcolor=black:shadowx=2:shadowy=2:"
-                f"enable='lt(t,{dur})'"
+                f"fontsize=44:fontcolor=white:"
+                f"x=(w-text_w)/2:y=h-110:"
+                f"box=1:boxcolor=black@0.55:boxborderw=18:"
+                f"enable='between(t,{t_start},{t_end})'"
             )
-        if subtitle:
-            filtres.append(
-                f"drawtext={font_arg}text='{subtitle}':"
-                f"fontsize=36:fontcolor=white@0.85:"
-                f"x=(w-text_w)/2:y=(h-text_h)/2+40:"
-                f"shadowcolor=black:shadowx=1:shadowy=1:"
-                f"enable='lt(t,{dur})'"
-            )
-
-    # End card (texte affiché pendant les M dernières secondes)
-    if end_card and end_card.get("enabled") and _check_drawtext():
-        dur = float(end_card.get("duration_sec", 5))
-        start_t = max(0.0, duree - dur)
-        msg_parts = []
-        if end_card.get("subscribe_cta"):
-            msg_parts.append("👍 SUBSCRIBE for more music")
-        custom = end_card.get("text", "")
-        if custom:
-            msg_parts.append(custom)
-        msg = " — ".join(msg_parts) or "Assirem Music PROD"
-        msg = _escape_drawtext(msg)
-        filtres.append(
-            f"drawtext={font_arg}text='{msg}':"
-            f"fontsize=60:fontcolor=white:"
-            f"x=(w-text_w)/2:y=(h-text_h)/2:"
-            f"box=1:boxcolor=black@0.6:boxborderw=20:"
-            f"enable='gt(t,{start_t})'"
-        )
 
     return ",".join(filtres)
+
+
+def _generer_carte_noire(
+    dest: str,
+    texte: str,
+    sous_titre: str = "",
+    duree: float = 5.0,
+    w: int = 1536,
+    h: int = 864,
+    force: bool = False,
+) -> str:
+    """
+    Génère un segment vidéo carte noire (silent) avec texte centré.
+    Retourne le chemin du fichier généré.
+    """
+    if os.path.exists(dest) and not force:
+        print(f"  → Carte déjà présente : {os.path.basename(dest)}")
+        return dest
+
+    font = _font_path()
+    font_arg = f"fontfile='{font}':" if font else ""
+    fade = min(0.5, duree / 5)
+
+    filtres = [
+        f"fade=t=in:st=0:d={fade}",
+        f"fade=t=out:st={duree - fade}:d={fade}",
+    ]
+
+    if texte and _check_drawtext():
+        y_titre = "(h-text_h)/2-45" if sous_titre else "(h-text_h)/2"
+        filtres.append(
+            f"drawtext={font_arg}text='{_escape_drawtext(texte)}':"
+            f"fontsize=72:fontcolor=white:"
+            f"x=(w-text_w)/2:y={y_titre}:"
+            f"shadowcolor=black@0.8:shadowx=3:shadowy=3"
+        )
+    if sous_titre and _check_drawtext():
+        filtres.append(
+            f"drawtext={font_arg}text='{_escape_drawtext(sous_titre)}':"
+            f"fontsize=36:fontcolor=white@0.85:"
+            f"x=(w-text_w)/2:y=(h-text_h)/2+45:"
+            f"shadowcolor=black@0.6:shadowx=1:shadowy=1"
+        )
+
+    _run_ffmpeg(
+        [
+            "ffmpeg", "-y",
+            "-f", "lavfi", "-i", f"color=c=black:s={w}x{h}:d={duree}:r=30",
+            "-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo",
+            "-vf", ",".join(filtres),
+            "-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p",
+            "-c:a", "aac", "-b:a", "128k",
+            "-t", str(duree),
+            dest,
+        ],
+        f"Carte noire ({duree:.0f}s) — {os.path.basename(dest)}",
+        duree_estimee=4,
+        timeout=2 * 60,
+    )
+    return dest
+
+
+def _concatener_segments(segments: list, sortie: str, output_dir: str) -> None:
+    """Concatène intro + vidéo principale + outro en un seul MP4."""
+    liste_path = os.path.join(output_dir, "_final_list.txt")
+    with open(liste_path, "w", encoding="utf-8") as f:
+        for seg in segments:
+            f.write(f"file '{_escape_concat(os.path.abspath(seg))}'\n")
+
+    _run_ffmpeg(
+        [
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0", "-i", liste_path,
+            "-c", "copy",
+            "-movflags", "+faststart",
+            sortie,
+        ],
+        f"Assemblage final ({len(segments)} segments)",
+        duree_estimee=8,
+    )
+
+    if os.path.exists(liste_path):
+        os.remove(liste_path)
 
 
 def _mixer(
@@ -419,15 +510,15 @@ def _mixer(
     duree: float,
     intro_fade: float = 0,
     outro_fade: float = 0,
-    title_card: dict = None,
-    end_card: dict = None,
+    lyrics_lines: list = None,
 ) -> None:
-    vf = _build_video_filter(duree, intro_fade, outro_fade, title_card, end_card)
-    # Si on a des filtres vidéo, on doit ré-encoder la vidéo ; sinon copy direct.
+    vf = _build_video_filter(duree, intro_fade, outro_fade, lyrics_lines)
+    # Always re-encode to guarantee clean timestamps for segment concat.
+    # -c:v copy preserves B-frame DTS offsets that break concat demuxer.
     if vf:
         video_args = ["-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p", "-vf", vf]
     else:
-        video_args = ["-c:v", "copy"]
+        video_args = ["-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p"]
 
     _run_ffmpeg(
         [
@@ -441,7 +532,7 @@ def _mixer(
             sortie,
         ],
         "Mixage vidéo + audio",
-        duree_estimee=30 if not vf else duree * 0.05,
+        duree_estimee=duree * 0.05,
     )
 
 
@@ -464,6 +555,143 @@ def _assembler_simple(image: str, audio: str, sortie: str) -> None:
     )
 
 
+# ─── Ken Burns zoompan ───────────────────────────────────────────────────────
+
+def _kb_vf(move: str, duration_sec: float, w: int = 1536, h: int = 864) -> str:
+    """
+    Retourne le filtre FFmpeg Ken Burns compatible FFmpeg 8+.
+    zoom_in/zoom_out : zoompan (scale+t invalide en FFmpeg 8 init eval).
+    pan_* : scale fixe + crop avec expressions t (toujours valides dans crop).
+    """
+    sw  = int(w * 1.15)
+    sh  = int(h * 1.15)
+    dur = float(duration_sec)
+    fps = _KB_FPS
+    n   = int(dur * fps)  # nombre total de frames
+
+    # Supersampling 2× pour éliminer le jitter zoompan (pixels entiers → flou)
+    w2, h2 = w * 2, h * 2
+    # Ease-in-out cosine: range*(1-cos(PI*t))/2 → smooth start & end
+    # zoom range 1.0↔1.15 (was linear 1.0↔1.12)
+    moves = {
+        "zoom_in":  (
+            f"zoompan=z='min(1.15,1+0.075*(1-cos(3.14159*on/{n})))':"
+            f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+            f"d=1:s={w2}x{h2}:fps={fps},"
+            f"scale={w}:{h}:flags=lanczos"
+        ),
+        "zoom_out": (
+            f"zoompan=z='max(1,1.15-0.075*(1-cos(3.14159*on/{n})))':"
+            f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+            f"d=1:s={w2}x{h2}:fps={fps},"
+            f"scale={w}:{h}:flags=lanczos"
+        ),
+        # Pan gauche → droite, zoom fixe 1.15
+        "pan_lr":   f"scale={sw}:{sh},crop={w}:{h}:'(iw-ow)*t/{dur}':'(ih-oh)/2'",
+        # Pan droite → gauche, zoom fixe 1.15
+        "pan_rl":   f"scale={sw}:{sh},crop={w}:{h}:'(iw-ow)*(1-t/{dur})':'(ih-oh)/2'",
+        # Pan haut → bas, zoom fixe 1.15
+        "pan_tb":   f"scale={sw}:{sh},crop={w}:{h}:'(iw-ow)/2':'(ih-oh)*t/{dur}'",
+        # Diagonale haut-gauche → bas-droite, zoom fixe 1.15
+        "pan_diag": f"scale={sw}:{sh},crop={w}:{h}:'(iw-ow)*t/{dur}':'(ih-oh)*t/{dur}'",
+    }
+    return moves[move]
+
+
+def _generer_clip_kb(image_path: str, dest: str, move_idx: int, clip_sec: float = None, static: bool = False) -> None:
+    """Génère un clip depuis une image. static=True → photo fixe sans zoompan."""
+    sec  = float(clip_sec) if clip_sec is not None else float(_KB_CLIP_SEC)
+    fade = min(0.8, sec * 0.07)
+    if static:
+        vf = f"scale=1536:864,fade=t=in:st=0:d={fade},fade=t=out:st={sec - fade}:d={fade}"
+        label = f"Static — {os.path.basename(image_path)}"
+    else:
+        move = _KB_MOVES[move_idx % len(_KB_MOVES)]
+        vf   = _kb_vf(move, sec)
+        vf  += f",fade=t=in:st=0:d={fade},fade=t=out:st={sec - fade}:d={fade}"
+        label = f"Ken Burns [{move}] — {os.path.basename(image_path)}"
+    _run_ffmpeg(
+        [
+            "ffmpeg", "-y",
+            "-loop", "1", "-i", image_path,
+            "-vf", vf,
+            "-t", str(sec),
+            "-r", str(_KB_FPS),
+            "-c:v", "libx264", "-preset", "fast", "-pix_fmt", "yuv420p",
+            "-an", dest,
+        ],
+        label,
+        duree_estimee=sec * 1.5,
+        timeout=20 * 60,
+    )
+
+
+def _preparer_clips_ken_burns(
+    scenes_dir: str,
+    clips_kb_dir: str,
+    force: bool = False,
+    ping_pong: bool = False,
+    clip_sec: float = None,
+    static: bool = False,
+    zoom_only: bool = False,
+) -> list:
+    """Génère les clips Ken Burns depuis les images de scènes. Retourne la liste en ordre.
+    clip_sec : durée par clip (calculée dynamiquement par generer_videos si None).
+    ping_pong : chaque image génère 2 clips (aller + retour).
+    """
+    os.makedirs(clips_kb_dir, exist_ok=True)
+    images = sorted(glob.glob(os.path.join(scenes_dir, "scene_*.png")))
+    if not images:
+        raise FileNotFoundError(
+            f"Aucune image scène dans {scenes_dir}\n"
+            "Lancez d'abord l'étape visuelle (--visual-only --ken-burns)."
+        )
+    sec   = float(clip_sec) if clip_sec is not None else float(_KB_CLIP_SEC)
+    moves = _KB_MOVES_ZOOM if zoom_only else _KB_MOVES
+    pairs = _KB_PAIRS_ZOOM if zoom_only else _KB_PAIRS
+
+    clips = []
+    for i, img in enumerate(images, 1):
+        if ping_pong:
+            fwd, bwd = pairs[(i - 1) % len(pairs)]
+            for suffix, move in (("a", fwd), ("b", bwd)):
+                dest = os.path.join(clips_kb_dir, f"clip_{i:03d}{suffix}_kb.mp4")
+                move_idx = moves.index(move)
+                if os.path.exists(dest) and not force:
+                    dur = _duree(dest)
+                    # Invalidate cached clip if duration differs by more than 2s
+                    if abs(dur - sec) > 2:
+                        print(f"  → KB {i}{suffix} durée incompatible ({dur:.0f}s vs {sec:.0f}s requis) → regénération")
+                        os.remove(dest)
+                    else:
+                        print(f"  → KB ping-pong {i}{suffix}/{len(images)} déjà présent ({dur:.1f}s) [{move}]")
+                        clips.append(dest)
+                        continue
+                print(f"  → Ken Burns scène {i}{suffix}/{len(images)} [{move}] ({sec:.0f}s)...")
+                _generer_clip_kb(img, dest, move_idx, clip_sec=sec, static=static)
+                print(f"     → {os.path.basename(dest)} ({_duree(dest):.1f}s)")
+                clips.append(dest)
+        else:
+            move = moves[(i - 1) % len(moves)]
+            dest = os.path.join(clips_kb_dir, f"clip_{i:03d}_kb.mp4")
+            if os.path.exists(dest) and not force:
+                dur = _duree(dest)
+                if abs(dur - sec) > 2:
+                    print(f"  → KB {i} durée incompatible ({dur:.0f}s vs {sec:.0f}s requis) → regénération")
+                    os.remove(dest)
+                else:
+                    label = "static" if static else move
+                    print(f"  → clip {i}/{len(images)} déjà présent ({dur:.1f}s) [{label}]")
+                    clips.append(dest)
+                    continue
+            mode_label = "Static" if static else f"Ken Burns [{move}]"
+            print(f"  → {mode_label} scène {i}/{len(images)} ({sec:.0f}s)...")
+            _generer_clip_kb(img, dest, i - 1, clip_sec=sec, static=static)
+            print(f"     → {os.path.basename(dest)} ({_duree(dest):.1f}s)")
+            clips.append(dest)
+    return clips
+
+
 # ─── Short vertical 9:16 ──────────────────────────────────────────────────────
 
 def generer_short(track: dict, video_source: str, output_dir: str, force: bool = False) -> str:
@@ -473,6 +701,9 @@ def generer_short(track: dict, video_source: str, output_dir: str, force: bool =
     Retourne le chemin du short, ou "" si pas configuré.
     """
     short_cfg = (track.get("video") or {}).get("short_clip")
+    # Also support flat short_start field (new config format)
+    if not short_cfg and track.get("short_start") is not None:
+        short_cfg = {"start_sec": track["short_start"], "duration_sec": 55}
     if not short_cfg:
         return ""
 
@@ -515,7 +746,7 @@ def generer_short(track: dict, video_source: str, output_dir: str, force: bool =
 
 # ─── Entry point ──────────────────────────────────────────────────────────────
 
-def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
+def generer_videos(track: dict, base_dir: str, force: bool = False, ken_burns: bool = False, **kwargs) -> list:
     """
     Génère le MP4 final pour un track.
     Retourne [chemin_mp4] (+ short si configuré, ajouté en fin de liste).
@@ -523,7 +754,7 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
     slug = track["slug"]
     mode = track.get("mode", "medium")
     input_dir = os.path.join(base_dir, track.get("input_folder", "input"))
-    output_dir = os.path.join(base_dir, "output", slug)
+    output_dir = _resolve_output_dir(base_dir, slug)
     clips_dir = os.path.join(output_dir, "clips")
     os.makedirs(output_dir, exist_ok=True)
 
@@ -532,8 +763,9 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
 
     # ─── Extraction des options vidéo ───────────────────────────────────────
     video_cfg = track.get("video") or {}
-    intro_fade = float(video_cfg.get("intro_fade_sec", 0))
-    outro_fade = float(video_cfg.get("outro_fade_sec", 0))
+    # KB mode defaults: 2s intro + 3s outro if not explicitly set (re-encode ensures clean timestamps)
+    intro_fade = float(video_cfg.get("intro_fade_sec", track.get("intro_fade_sec", 2.0 if ken_burns else 0)))
+    outro_fade = float(video_cfg.get("outro_fade_sec", track.get("outro_fade_sec", 3.0 if ken_burns else 0)))
     title_card = video_cfg.get("title_card")
     end_card   = video_cfg.get("end_card")
 
@@ -588,30 +820,124 @@ def generer_videos(track: dict, base_dir: str, force: bool = False) -> list:
     print("\n  ── A) Audio")
     audio_concat, duree_reelle = _concatener_audio(mp3s, duree_cible, output_dir)
 
-    print("\n  ── B) Ralentissement clips ×6")
-    clips = _lister_clips(clips_dir)
-    print(f"  → {len(clips)} clip(s) cinématiques trouvés (scènes en ordre)")
-    clips_lents = _preparer_clips_ralentis(clips, output_dir, force=force)
+    if ken_burns:
+        static_mode  = kwargs.get("static", False)
+        mode_label   = "Photos statiques" if static_mode else "Ken Burns (zoompan FFmpeg)"
+        print(f"\n  ── B) Clips {mode_label}")
+        scenes_dir   = os.path.join(output_dir, "scenes")
+        clips_kb_dir = os.path.join(output_dir, "clips_kb")
+        ping_pong    = kwargs.get("ping_pong", False) and not static_mode
+
+        # Dynamic clip duration: all scenes visible at least once within the track duration.
+        # min 8s/clip (fast transitions) → max 30s/clip (slow cinematic).
+        n_images = len(glob.glob(os.path.join(scenes_dir, "scene_*.png")))
+        n_clips_expected = n_images * (2 if ping_pong else 1)
+        if n_clips_expected > 0:
+            clip_sec = max(8, min(_KB_CLIP_SEC, round(duree_reelle / n_clips_expected)))
+        else:
+            clip_sec = _KB_CLIP_SEC
+        print(f"  → Durée clip KB : {clip_sec}s ({n_images} images × {'2 (ping-pong)' if ping_pong else '1'} = {n_clips_expected} clips pour {duree_reelle:.0f}s)")
+
+        zoom_only = kwargs.get("zoom_only", False)
+        clips_a_boucler = _preparer_clips_ken_burns(
+            scenes_dir, clips_kb_dir, force=force, ping_pong=ping_pong, clip_sec=clip_sec, static=static_mode, zoom_only=zoom_only
+        )
+    else:
+        print("\n  ── B) Ralentissement clips ×6")
+        clips = _lister_clips(clips_dir)
+        print(f"  → {len(clips)} clip(s) cinématiques trouvés (scènes en ordre)")
+        clips_a_boucler = _preparer_clips_ralentis(clips, output_dir, force=force)
 
     print("\n  ── C) Boucle vidéo narrative")
-    video_loop = _boucler_clips(clips_lents, duree_reelle, output_dir)
+    video_loop = _boucler_clips(clips_a_boucler, duree_reelle, output_dir)
 
-    print(f"\n  ── D) Mixage final → {os.path.basename(sortie)}")
+    # ─── D) Lyrics Whisper (si activé) ─────────────────────────────────────
+    lyrics_lines = None
+    if track.get("lyrics"):
+        from modules.lyrics import (
+            transcrire_audio, sauver_timing, charger_timing, etendre_pour_boucle
+        )
+        timing_path = os.path.join(output_dir, "lyrics_timing.json")
+        model_size  = track.get("lyrics_model", "base")
+
+        if os.path.exists(timing_path) and not force:
+            print(f"\n  ── D) Lyrics — cache trouvé ({timing_path})")
+            raw_lines = charger_timing(timing_path)
+        else:
+            print(f"\n  ── D) Lyrics — transcription Whisper")
+            raw_lines = transcrire_audio(mp3s[0], model_size=model_size)
+            sauver_timing(raw_lines, timing_path)
+
+        duree_mp3 = _duree(mp3s[0])
+        lyrics_lines = etendre_pour_boucle(raw_lines, duree_mp3, duree_reelle)
+        print(f"  → {len(raw_lines)} lignes × boucles → {len(lyrics_lines)} entrées overlay")
+
+    step = "D"
+
+    # ─── Cartes noires intro / outro ────────────────────────────────────────
+    has_intro = title_card and title_card.get("enabled")
+    has_outro = end_card   and end_card.get("enabled")
+    w, h = 1536, 864
+
+    intro_path = os.path.join(output_dir, "_intro_card.mp4")
+    outro_path = os.path.join(output_dir, "_outro_card.mp4")
+    main_path  = os.path.join(output_dir, "_main_video.mp4")
+
+    if has_intro:
+        print(f"\n  ── {step}) Intro card")
+        step = chr(ord(step) + 1)
+        _generer_carte_noire(
+            dest=intro_path,
+            texte=title_card.get("text", ""),
+            sous_titre=title_card.get("subtitle", ""),
+            duree=float(title_card.get("duration_sec", 5)),
+            w=w, h=h, force=force,
+        )
+
+    if has_outro:
+        print(f"\n  ── {step}) Outro card (CTA)")
+        step = chr(ord(step) + 1)
+        cta_parts = []
+        if end_card.get("subscribe_cta"):
+            cta_parts.append("Like & Subscribe  🔔")
+        if end_card.get("text"):
+            cta_parts.append(end_card["text"])
+        cta_text    = "  ".join(cta_parts) or "Assirem Music PROD"
+        cta_subtitle = "Assirem Music PROD • New music every week"
+        _generer_carte_noire(
+            dest=outro_path,
+            texte=cta_text,
+            sous_titre=cta_subtitle,
+            duree=float(end_card.get("duration_sec", 8)),
+            w=w, h=h, force=force,
+        )
+
+    # ─── Mixage principal (vidéo + audio + fades + lyrics) ──────────────────
+    print(f"\n  ── {step}) Mixage final → {os.path.basename(main_path if (has_intro or has_outro) else sortie)}")
+    step = chr(ord(step) + 1)
     if intro_fade or outro_fade:
         print(f"     ✨ Fade in {intro_fade}s / out {outro_fade}s")
-    if title_card and title_card.get("enabled"):
-        print(f"     🎬 Title card : \"{title_card.get('text','')}\"")
-    if end_card and end_card.get("enabled"):
-        print(f"     📢 End card (CTA subscribe)")
+    if lyrics_lines is not None:
+        print(f"     🎤 Lyrics overlay : {len(lyrics_lines)} lignes")
+
+    mix_dest = main_path if (has_intro or has_outro) else sortie
     _mixer(
-        video_loop, audio_concat, sortie, duree_reelle,
+        video_loop, audio_concat, mix_dest, duree_reelle,
         intro_fade=intro_fade,
         outro_fade=outro_fade,
-        title_card=title_card,
-        end_card=end_card,
+        lyrics_lines=lyrics_lines,
     )
 
-    for tmp in [audio_concat, video_loop]:
+    # ─── Assemblage final : intro + main + outro ────────────────────────────
+    if has_intro or has_outro:
+        print(f"\n  ── {step}) Assemblage final (concat segments)")
+        segments = []
+        if has_intro:  segments.append(intro_path)
+        segments.append(main_path)
+        if has_outro:  segments.append(outro_path)
+        _concatener_segments(segments, sortie, output_dir)
+
+    for tmp in [audio_concat, video_loop, main_path]:
         if os.path.exists(tmp):
             os.remove(tmp)
 

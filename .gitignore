@@ -73,3 +73,5 @@ dossier sans titre/
 # Extra credential variants
 **/credentials*/
 **/credential*/
+OUTPUT archive*/
+.gitignore

@@ -1,0 +1,361 @@
+{
+  "_note": "Source unique de vérité pour les playlists YouTube. Ne JAMAIS créer de nouvelles playlists — tout contenu non mappé va dans 'default'. Mettre à jour les IDs si une playlist est supprimée/recréée.",
+  "_last_synced": "2026-05-04",
+  "default": {
+    "name": "🌸 Pop & Chill — Assirem Music PROD",
+    "id": "PL0n-5iuPfhY6Lwgd9wOz1pMyK0meU9Ms-",
+    "_note": "Catch-all pour tout contenu qui ne matche aucune playlist définie"
+  },
+  "playlists": [
+    {
+      "name": "🌏 World Music Series — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY5E_VaGr4vNFy4YfVWhJ1tm",
+      "aliases": [
+        "🌏 world music",
+        "world music",
+        "world",
+        "folk",
+        "traditional",
+        "tuareg",
+        "gnawa",
+        "reggae",
+        "jamaican",
+        "salsa",
+        "latino",
+        "vietnamese",
+        "moroccan",
+        "italian",
+        "algerian",
+        "desert blues",
+        "african folk",
+        "ethnic",
+        "national holiday",
+        "fête nationale",
+        "independence",
+        "cumbia",
+        "colombian",
+        "patriotic",
+        "anthem",
+        "🌏 World Music"
+      ]
+    },
+    {
+      "name": "🌍 Afrofuturism — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY5SaBHmoLQCrZxCy6vZB4SQ",
+      "aliases": [
+        "🌍 afrofuturism & afrobeats",
+        "afrobeats",
+        "afropop",
+        "afro",
+        "afrofuturism",
+        "lagos",
+        "west african",
+        "east african",
+        "afro house",
+        "amapiano",
+        "afroswing",
+        "highlife",
+        "nigerian",
+        "dancehall",
+        "🌍 Afrofuturism & Afrobeats"
+      ]
+    },
+    {
+      "name": "💪 Going Hard Gym Motivation 🔥 — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY4xQOkECvbl-KDKEsFCjtFs",
+      "aliases": [
+        "💪 workout, gym & motivation",
+        "gym",
+        "workout",
+        "fitness",
+        "hiit",
+        "morning run",
+        "iron",
+        "motivation",
+        "trap gym",
+        "gym trap",
+        "running",
+        "sport",
+        "sports",
+        "hustle",
+        "ceo",
+        "grind",
+        "entrepreneur"
+      ]
+    },
+    {
+      "name": "🧘‍♂️ Yoga & Meditation — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY5_1lLAta_oWwFTLSt_UcEl",
+      "aliases": [
+        "🧘 meditation, sleep & wellness",
+        "meditation",
+        "zen",
+        "yoga",
+        "healing",
+        "432hz",
+        "tibetan",
+        "ambient healing",
+        "spiritual",
+        "mindfulness",
+        "nature ambient",
+        "earth day",
+        "nature",
+        "breathwork",
+        "sleep",
+        "wellness",
+        "spa"
+      ]
+    },
+    {
+      "name": "📚 Focus & Deep Work — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY4vh2VxrLTSUMb1cm0Ch8JR",
+      "aliases": [
+        "📚 focus, lo-fi & coffee work",
+        "focus",
+        "deep work",
+        "study",
+        "lofi",
+        "lo-fi",
+        "coding",
+        "developer",
+        "vibe coding",
+        "beats to study",
+        "concentration",
+        "productivity",
+        "chill beats",
+        "lofi hip hop",
+        "evening lofi",
+        "coffee",
+        "cafe",
+        "reading",
+        "jazz",
+        "bossa nova",
+        "morning",
+        "📚 Focus & Study"
+      ]
+    },
+    {
+      "name": "🔥 Hip Hop Rap & RnB essentials — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY7NeE4e3i63zWB5mPqLbP4j",
+      "aliases": [
+        "🎤 hip-hop, rap & r&b",
+        "rnb",
+        "r&b",
+        "hip hop",
+        "rap",
+        "melodic rnb",
+        "alternative rnb",
+        "trap rap",
+        "uk drill",
+        "drill",
+        "sad indie pop",
+        "indie pop",
+        "bedroom pop",
+        "alternative",
+        "sad girl",
+        "emo trap",
+        "neo rnb",
+        "soul",
+        "heartbreak"
+      ]
+    },
+    {
+      "name": "🌙 Oriental Vibes — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY422A7EM84WDlFhShyx5PYz",
+      "aliases": [
+        "🌙 oriental, oud & maghreb",
+        "oriental",
+        "oud",
+        "arabic",
+        "middle east",
+        "maqam",
+        "trap oriental",
+        "oud trap",
+        "spiritual oriental",
+        "east meets west",
+        "fusion oriental",
+        "fusion",
+        "ya ruh",
+        "spiritual fusion",
+        "maghreb",
+        "raï",
+        "rai",
+        "gnawa",
+        "tuareg",
+        "desert",
+        "algerian",
+        "moroccan",
+        "persian",
+        "iran"
+      ]
+    },
+    {
+      "name": "🌙 Dark Vibes — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY7qlJ9bmV9hd2rhKNfkuSa3",
+      "aliases": [
+        "🌘 dark vibes & night drive",
+        "dark",
+        "phonk",
+        "drift phonk",
+        "dark phonk",
+        "dark trap",
+        "night drive",
+        "dark vibes",
+        "midnight",
+        "underground",
+        "memphis",
+        "ghost",
+        "3am",
+        "night"
+      ]
+    },
+    {
+      "name": "🔮 Electronic & House & Techno — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY4rS2zmSo7WW3TwT6g3f5Jg",
+      "aliases": [
+        "🔮 electronic, house & techno",
+        "electronic",
+        "house",
+        "techno",
+        "edm",
+        "melodic techno",
+        "progressive house",
+        "deep house",
+        "synthwave",
+        "electro",
+        "gaming",
+        "neon",
+        "cyberpunk"
+      ]
+    },
+    {
+      "name": "🕊️ Cinematic & Epic — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY4JWkclpFslbiEdlmTKy-E5",
+      "aliases": [
+        "🕊️ cinematic & epic",
+        "cinematic",
+        "epic",
+        "orchestral",
+        "film score",
+        "news surf",
+        "rock hall",
+        "viral news",
+        "trending news",
+        "anthem",
+        "stadium rock",
+        "inspirational",
+        "motivational cinematic",
+        "f1",
+        "racing",
+        "sports anthem",
+        "victory",
+        "champion"
+      ]
+    },
+    {
+      "name": "🤘 Rock n Roll Vibes — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY5pZK0oKSyBcsHM-fupClcf",
+      "aliases": [
+        "🤘 rock & alternative",
+        "rock",
+        "rock and roll",
+        "punk",
+        "metal",
+        "guitar",
+        "hard rock",
+        "classic rock",
+        "indie rock",
+        "alternative rock",
+        "blues",
+        "mississippi",
+        "soul rock"
+      ]
+    },
+    {
+      "name": "🇫🇷 Pop Française — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY7TtwttBhlMrjHPdUqDXijL",
+      "aliases": [
+        "🇫🇷 pop française",
+        "pop française",
+        "french pop",
+        "variété française",
+        "chanson française",
+        "français",
+        "france"
+      ]
+    },
+    {
+      "name": "☕ Soft morning café vibes — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY5MEba32St-CizlGdhO_Gh7",
+      "aliases": [
+        "café",
+        "cafe",
+        "soft morning",
+        "acoustic morning",
+        "breakfast",
+        "jazz morning",
+        "gentle wake up"
+      ]
+    },
+    {
+      "name": "🌸 Pop & Chill — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY6Lwgd9wOz1pMyK0meU9Ms-",
+      "aliases": [
+        "🌸 pop, chill & indie rock",
+        "pop",
+        "chill",
+        "pop chill",
+        "summer pop",
+        "feel good",
+        "reggaeton",
+        "latin pop",
+        "latin",
+        "salsa",
+        "dance pop",
+        "upbeat",
+        "tropical",
+        "summer",
+        "caribbean",
+        "noche"
+      ]
+    },
+    {
+      "name": "🎶 Algerian Classics Revisited — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY5spzbNsywvmHZTiYhTjbIt",
+      "aliases": []
+    },
+    {
+      "name": "💡 Concepts — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY4Quay32EMjuYd2llZKdCar",
+      "aliases": []
+    },
+    {
+      "name": "🎵 Assirem Music PROD — All Tracks",
+      "id": "PL0n-5iuPfhY5tz47vZzKhkn86_DXHDRXX",
+      "aliases": [
+        "All Tracks"
+      ]
+    },
+    {
+      "name": "🌿 Reggae & Dub — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY6jnqc9GZOCOWPuviu9eX9t",
+      "aliases": [
+        "🌿 Reggae & Dub"
+      ]
+    },
+    {
+      "name": "💃 Latin, Reggae & Caribbean — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY76VdcqyR0ILWos6WApVI1w",
+      "aliases": [
+        "💃 Latin, Reggae & Caribbean"
+      ]
+    },
+    {
+      "name": "💼 Hustle & CEO Mindset — Assirem Music PROD",
+      "id": "PL0n-5iuPfhY63ZfqS5J83roraUGc2i4Ye",
+      "aliases": [
+        "💼 Hustle & CEO Mindset"
+      ]
+    }
+  ]
+}

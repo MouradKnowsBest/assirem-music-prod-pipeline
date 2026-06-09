@@ -67,23 +67,24 @@ def lire_config(path: Path) -> dict:
         return json.load(f)
 
 
-def lire_slugs(data: dict) -> list[str]:
+def lire_slugs(data: dict) -> list[tuple[str, int]]:
+    """Retourne une liste de (slug, nb_scenes) pour chaque track."""
     tracks = data.get("tracks", [])
-    slugs = [t["slug"] for t in tracks if "slug" in t]
-    if slugs:
-        print(f"✓ {len(slugs)} track(s) trouvé(s) :")
-        for i, s in enumerate(slugs, 1):
-            print(f"   {i:>3}. {s}")
+    result = [(t["slug"], len(t.get("scenes", [])) or 3) for t in tracks if "slug" in t]
+    if result:
+        print(f"✓ {len(result)} track(s) trouvé(s) :")
+        for i, (s, nb) in enumerate(result, 1):
+            print(f"   {i:>3}. {s}  ({nb} scènes)")
     else:
         print("⚠ Aucun slug de track trouvé dans le config.")
-    return slugs
+    return result
 
 
 # ── Helpers archive ──────────────────────────────────────────────────────────
 
-def _noms_attendus(slugs: list[str]) -> set[str]:
-    """Noms de dossiers attendus : '1-slug', '2-slug', …"""
-    return {f"{i}-{s}" for i, s in enumerate(slugs, 1)}
+def _noms_attendus(slugs: list[tuple[str, int]]) -> set[str]:
+    """Noms de dossiers attendus : '01-slug', '02-slug', …"""
+    return {f"{i:02d}-{s}" for i, (s, _) in enumerate(slugs, 1)}
 
 
 def _dossier_disponible(archive_dir: Path) -> Path:
@@ -125,18 +126,32 @@ def _archiver(source_dir: Path, archive_dir: Path, slugs: list[str], label: str)
     print(f"✓ {len(contenu)} élément(s) archivé(s) → {dest.relative_to(archive_dir.parent)}")
 
 
-def _creer_dossiers(target_dir: Path, slugs: list[str], label: str) -> None:
+def _creer_dossiers(target_dir: Path, slugs: list[tuple[str, int]], label: str) -> None:
     if not slugs:
         print(f"⚠ Aucun slug, aucun dossier créé dans {label}/.")
         return
 
     target_dir.mkdir(exist_ok=True)
-    for i, slug in enumerate(slugs, 1):
-        dossier = target_dir / f"{i}-{slug}"
+    for i, (slug, _) in enumerate(slugs, 1):
+        dossier = target_dir / f"{i:02d}-{slug}"
         dossier.mkdir(exist_ok=True)
-        print(f"   📁 {i}-{slug}")
+        print(f"   📁 {i:02d}-{slug}")
 
     print(f"✓ {len(slugs)} dossier(s) créé(s) dans {label}/")
+
+
+def _creer_scenes(output_dir: Path, slugs: list[tuple[str, int]]) -> None:
+    """Crée output/<slug>/scenes/ avec les placeholders scene_001.png … scene_NNN.png."""
+    if not slugs:
+        return
+
+    output_dir.mkdir(exist_ok=True)
+    for i, (slug, nb_scenes) in enumerate(slugs, 1):
+        scenes_dir = output_dir / f"{i:02d}-{slug}" / "scenes"
+        scenes_dir.mkdir(parents=True, exist_ok=True)
+        print(f"   🖼  output/{i:02d}-{slug}/scenes/  (vide — dépose tes {nb_scenes} images ici)")
+
+    print(f"✓ {len(slugs)} dossier(s) scenes créé(s) dans output/")
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -193,12 +208,15 @@ def main() -> int:
         _archiver(INPUT_DIR, INPUT_ARCHIVE, slugs, "input")
 
         print("\n── Archive OUTPUT/ ─────────────────────────────────────────────────")
-        _archiver(OUTPUT_DIR, OUTPUT_ARCHIVE, slugs, "OUTPUT")
+        _archiver(BASE_DIR / "OUTPUT", OUTPUT_ARCHIVE, slugs, "OUTPUT")
     else:
         print("\n── Archive ignorée (--no-archive) ──────────────────────────────────")
 
     print("\n── Création des dossiers input/ ────────────────────────────────────")
     _creer_dossiers(INPUT_DIR, slugs, "input")
+
+    print("\n── Création des dossiers output/<slug>/scenes/ ─────────────────────")
+    _creer_scenes(BASE_DIR / "output", slugs)
 
     print("\n✅ Terminé.\n")
     return 0
