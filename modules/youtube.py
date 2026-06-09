@@ -145,9 +145,49 @@ def _ajouter_a_playlist(youtube, video_id: str, playlist_id: str) -> None:
     ).execute()
 
 
+def _prepare_thumbnail(thumbnail_path: str) -> tuple[str, str]:
+    """
+    Retourne (chemin, mimetype) prêt pour l'API YouTube.
+    Si l'image dépasse 2 Mo (limite YouTube), la recompresse en JPEG ≤ 2 Mo.
+    """
+    MAX_BYTES = 2 * 1024 * 1024
+    if os.path.getsize(thumbnail_path) <= MAX_BYTES:
+        ext = os.path.splitext(thumbnail_path)[1].lower()
+        mime = "image/jpeg" if ext in (".jpg", ".jpeg") else "image/png"
+        return thumbnail_path, mime
+
+    try:
+        from PIL import Image
+        import io, tempfile
+        img = Image.open(thumbnail_path).convert("RGB")
+        orig_mb = os.path.getsize(thumbnail_path) / 1e6
+        for quality in (85, 70, 55, 40):
+            buf = io.BytesIO()
+            img.save(buf, format="JPEG", quality=quality, optimize=True)
+            if buf.tell() <= MAX_BYTES:
+                tmp = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
+                tmp.write(buf.getvalue())
+                tmp.flush()
+                print(f"  → Thumbnail compressé : {orig_mb:.1f} Mo → {buf.tell()/1e6:.1f} Mo (q={quality})")
+                return tmp.name, "image/jpeg"
+        # Dernier recours : réduire la résolution à 1280×720
+        img.thumbnail((1280, 720), Image.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, format="JPEG", quality=40, optimize=True)
+        tmp = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False)
+        tmp.write(buf.getvalue())
+        tmp.flush()
+        print(f"  → Thumbnail redimensionné : {buf.tell()/1e6:.1f} Mo")
+        return tmp.name, "image/jpeg"
+    except ImportError:
+        print("  ⚠️  Pillow absent — thumbnail envoyé tel quel (risque de refus YouTube)")
+        return thumbnail_path, "image/png"
+
+
 def _set_thumbnail(youtube, video_id: str, thumbnail_path: str) -> None:
-    """Applique un thumbnail PNG à une vidéo YouTube déjà uploadée."""
-    media = MediaFileUpload(thumbnail_path, mimetype="image/png", resumable=False)
+    """Applique un thumbnail à une vidéo YouTube (compresse si > 2 Mo)."""
+    path, mime = _prepare_thumbnail(thumbnail_path)
+    media = MediaFileUpload(path, mimetype=mime, resumable=False)
     youtube.thumbnails().set(videoId=video_id, media_body=media).execute()
     print(f"  → Thumbnail appliqué : {os.path.basename(thumbnail_path)}")
 
