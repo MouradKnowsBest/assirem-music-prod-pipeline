@@ -47,6 +47,7 @@ node_modules/
 today/config.json
 
 # Runtime / generated dirs
+stock/
 input/
 input archive/
 output/
