@@ -108,13 +108,15 @@ jobs:
           for slug_dir in stock/*/; do
             slug=$(basename "$slug_dir")
             mkdir -p "input/$slug"
-            # MP3
+            # Audio
             for f in "$slug_dir"*.mp3 "$slug_dir"*.wav "$slug_dir"*.m4a; do
-              [ -f "$f" ] && cp "$f" "input/$slug/" && echo "  ✅ $f → input/$slug/"
+              [ -f "$f" ] || continue
+              cp "$f" "input/$slug/" && echo "  ✅ $f → input/$slug/"
             done
             # Images (thumbnail/cover)
             for f in "$slug_dir"*.jpg "$slug_dir"*.jpeg "$slug_dir"*.png "$slug_dir"*.webp; do
-              [ -f "$f" ] && cp "$f" "input/$slug/" && echo "  🖼  $f → input/$slug/"
+              [ -f "$f" ] || continue
+              cp "$f" "input/$slug/" && echo "  🖼  $f → input/$slug/"
             done
           done
 
