@@ -88,39 +88,58 @@ def _ensure_folder(svc, parent_id: str, name: str) -> str:
 
 def list_tracks(svc, root_id: str) -> list[dict]:
     """
-    Retourne la liste des tracks dans incoming/ groupés par slug.
-    Chaque élément : {"slug": str, "files": {type: filename}, "file_ids": {type: id}}
+    Retourne la liste des tracks dans incoming/.
+
+    Structure Drive attendue :
+      incoming/
+        pocket-of-matches/        ← slug = nom du dossier
+          Pocket of Matches.mp3   ← n'importe quel nom
+          Image générée 1.png     ← n'importe quel nom
+
+    Chaque élément : {"slug": str, "folder_id": str, "files": {type: filename}, "file_ids": {type: id}}
     """
     incoming_id = _get_folder_id(svc, root_id, "incoming")
     if not incoming_id:
         return []
 
-    q = f"'{incoming_id}' in parents and trashed=false"
-    res = svc.files().list(q=q, fields="files(id,name,size)", pageSize=1000).execute()
+    # Liste les sous-dossiers de incoming/
+    q = (
+        f"'{incoming_id}' in parents"
+        f" and mimeType='application/vnd.google-apps.folder'"
+        f" and trashed=false"
+    )
+    res = svc.files().list(q=q, fields="files(id,name)", pageSize=1000).execute()
+    folders = res.get("files", [])
 
-    by_slug: dict[str, dict] = {}
-    for f in res.get("files", []):
-        name = f["name"]
-        stem, ext = os.path.splitext(name)
-        ext = ext.lower().lstrip(".")
-        if ext not in DOWNLOAD_EXTS:
-            continue
+    tracks = []
+    for folder in folders:
+        slug = folder["name"]
+        folder_id = folder["id"]
 
-        if stem not in by_slug:
-            by_slug[stem] = {"slug": stem, "files": {}, "file_ids": {}}
+        # Liste les fichiers dans ce dossier
+        q2 = f"'{folder_id}' in parents and trashed=false"
+        res2 = svc.files().list(q=q2, fields="files(id,name,size)", pageSize=100).execute()
 
-        # Normalise les types
-        if ext == "json":
-            key = "json"
-        elif ext in AUDIO_EXTS:
-            key = "audio"
-        else:
-            key = "img"
+        track = {"slug": slug, "folder_id": folder_id, "files": {}, "file_ids": {}}
+        for f in res2.get("files", []):
+            name = f["name"]
+            ext = os.path.splitext(name)[1].lower().lstrip(".")
+            if ext not in DOWNLOAD_EXTS:
+                continue
+            if ext == "json":
+                key = "json"
+            elif ext in AUDIO_EXTS:
+                key = "audio"
+            else:
+                key = "img"
+            # Garde le premier trouvé pour chaque type
+            if key not in track["files"]:
+                track["files"][key] = name
+                track["file_ids"][key] = f["id"]
 
-        by_slug[stem]["files"][key] = name
-        by_slug[stem]["file_ids"][key] = f["id"]
+        tracks.append(track)
 
-    return list(by_slug.values())
+    return tracks
 
 
 def _download_file(svc, file_id: str, dest: Path, filename: str):
@@ -175,29 +194,22 @@ def download_tracks(svc, root_id: str, dest_dir: str, slug: Optional[str] = None
 
 
 def move_to_subfolder(svc, root_id: str, slug: str, target: str):
-    """Déplace tous les fichiers d'un slug depuis incoming/ vers target/."""
+    """Déplace le dossier slug depuis incoming/ vers target/."""
     incoming_id = _ensure_folder(svc, root_id, "incoming")
     target_id = _ensure_folder(svc, root_id, target)
 
-    q = f"'{incoming_id}' in parents and trashed=false"
-    res = svc.files().list(q=q, fields="files(id,name)", pageSize=1000).execute()
+    folder_id = _get_folder_id(svc, incoming_id, slug)
+    if not folder_id:
+        print(f"  ⚠️  Dossier '{slug}' introuvable dans incoming/")
+        return
 
-    moved = 0
-    for f in res.get("files", []):
-        stem = os.path.splitext(f["name"])[0]
-        if stem != slug:
-            continue
-        svc.files().update(
-            fileId=f["id"],
-            addParents=target_id,
-            removeParents=incoming_id,
-            fields="id,parents",
-        ).execute()
-        print(f"  → {f['name']} → {target}/")
-        moved += 1
-
-    if moved == 0:
-        print(f"  ⚠️  Aucun fichier trouvé pour slug '{slug}' dans incoming/")
+    svc.files().update(
+        fileId=folder_id,
+        addParents=target_id,
+        removeParents=incoming_id,
+        fields="id,parents",
+    ).execute()
+    print(f"  → {slug}/ → {target}/")
 
 
 def main():
