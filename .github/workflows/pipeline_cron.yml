@@ -127,7 +127,7 @@ jobs:
           SLUG: ${{ github.event.inputs.slug }}
           SKIP_UPLOAD: ${{ github.event.inputs.skip_upload }}
         run: |
-          ARGS="--visual-engine template"
+          ARGS="--visual-engine template --config today/config.json"
           [ -n "$SLUG" ] && ARGS="$ARGS --slug $SLUG" || ARGS="$ARGS --all"
           [ "$SKIP_UPLOAD" = "true" ] && ARGS="$ARGS --skip-upload"
           echo "Running: python pipeline.py $ARGS"
