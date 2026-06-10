@@ -121,7 +121,7 @@ def list_tracks(svc, root_id: str) -> list[dict]:
         q2 = f"'{folder_id}' in parents and trashed=false"
         res2 = svc.files().list(q=q2, fields="files(id,name,size)", pageSize=100).execute()
 
-        track = {"slug": slug, "folder_id": folder_id, "files": {}, "file_ids": {}}
+        track = {"slug": slug, "folder_id": folder_id, "files": {}, "file_ids": {}, "_audio_all": []}
         for f in res2.get("files", []):
             name = f["name"]
             ext = os.path.splitext(name)[1].lower().lstrip(".")
@@ -133,10 +133,18 @@ def list_tracks(svc, root_id: str) -> list[dict]:
                 key = "audio"
             else:
                 key = "img"
-            # Garde le premier trouvé pour chaque type
-            if key not in track["files"]:
-                track["files"][key] = name
-                track["file_ids"][key] = f["id"]
+
+            if ext in AUDIO_EXTS:
+                # Collecte TOUS les fichiers audio (pour concaténation)
+                track["_audio_all"].append((f["id"], name))
+                if "audio" not in track["files"]:
+                    track["files"]["audio"] = name
+                    track["file_ids"]["audio"] = f["id"]
+            else:
+                # img et json : garde le premier seulement
+                if key not in track["files"]:
+                    track["files"][key] = name
+                    track["file_ids"][key] = f["id"]
 
         tracks.append(track)
 
@@ -182,13 +190,23 @@ def download_tracks(svc, root_id: str, dest_dir: str, slug: Optional[str] = None
         slug_dir = Path(dest_dir) / track["slug"]
         paths = {"slug": track["slug"]}
 
-        for key, file_id in track["file_ids"].items():
-            filename = track["files"][key]
+        # Télécharge TOUS les fichiers audio
+        audio_list = track.get("_audio_all") or [(track["file_ids"]["audio"], track["files"]["audio"])]
+        for file_id, filename in audio_list:
             dest = slug_dir / filename
             _download_file(svc, file_id, dest, filename)
-            paths[key] = str(dest)
+        paths["audio"] = str(slug_dir)
 
-        print(f"  ✅ {track['slug']} → {slug_dir}/")
+        # Télécharge img et json (premier seulement)
+        for key in ("img", "json"):
+            if key in track["file_ids"]:
+                filename = track["files"][key]
+                dest = slug_dir / filename
+                _download_file(svc, track["file_ids"][key], dest, filename)
+                paths[key] = str(dest)
+
+        n_audio = len(audio_list)
+        print(f"  ✅ {track['slug']} → {slug_dir}/  ({n_audio} audio{'s' if n_audio > 1 else ''})")
         downloaded.append(paths)
 
     return downloaded
