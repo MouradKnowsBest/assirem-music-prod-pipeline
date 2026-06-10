@@ -32,28 +32,14 @@
     position:absolute;inset:0;
     background-size:cover;background-position:center;
     opacity:0;
-    transform:scale(1.05);
+    transform:scale(1.0);
     transition:opacity 1.8s ease;
     will-change:opacity,transform;
     filter:saturate(1.05) contrast(1.02);
   }
   .slide.active{
     opacity:1;
-    animation:kenburns 11s linear forwards;
-  }
-  @keyframes kenburns{
-    0%   {transform:scale(1.02) translate(0,0)}
-    100% {transform:scale(1.14) translate(-1.5%,-1%)}
-  }
-  .slide:nth-child(2n).active{animation-name:kenburns2}
-  @keyframes kenburns2{
-    0%   {transform:scale(1.14) translate(1.5%,1%)}
-    100% {transform:scale(1.02) translate(0,0)}
-  }
-  .slide:nth-child(3n).active{animation-name:kenburns3}
-  @keyframes kenburns3{
-    0%   {transform:scale(1.08) translate(-1.2%,1.2%)}
-    100% {transform:scale(1.16) translate(1.2%,-1.2%)}
+    transform:scale(1.0);
   }
 
   /* Vignette + warm grade */
@@ -196,7 +182,7 @@
     font-size:21px;letter-spacing:.12em;color:rgba(243,236,225,.7);
   }
 
-  /* EQ bars */
+  /* EQ bars (inside player — compact) */
   .eq{
     display:flex;align-items:flex-end;gap:4px;
     height:50px;
@@ -207,6 +193,28 @@
     height:6px;
     transform-origin:bottom;
     transition:height .06s linear;
+  }
+
+  /* EQ stage overlay — centered, large, semi-transparent */
+  .eq-stage{
+    position:absolute;
+    left:50%;bottom:265px;
+    transform:translateX(-50%);
+    display:flex;align-items:flex-end;gap:6px;
+    height:130px;
+    z-index:4;
+    pointer-events:none;
+    opacity:0.65;
+    mix-blend-mode:screen;
+  }
+  .eq-stage .bar{
+    width:12px;
+    background:linear-gradient(180deg,rgba(232,197,144,0.92),rgba(214,167,106,0.18));
+    border-radius:3px 3px 1px 1px;
+    height:10px;
+    transform-origin:bottom;
+    transition:height .06s linear;
+    box-shadow:0 0 10px rgba(232,197,144,0.25);
   }
 
   /* Progress */
@@ -265,12 +273,13 @@
   .loader input{display:none}
   .loader svg{width:20px;height:20px}
 
-  /* Caption per slide */
+  /* Caption per slide — hidden by default */
   .caption{
     position:absolute;left:96px;bottom:360px;
     z-index:5;color:var(--paper);max-width:840px;
     opacity:0;transform:translateY(12px);
     transition:opacity .9s ease, transform .9s ease;
+    display:none;
   }
   .caption.show{opacity:1;transform:translateY(0)}
   .caption .kicker{
@@ -539,8 +548,8 @@
       <div class="field">
         <label>Sous-titres poétiques</label>
         <select id="inCaptions" style="background:rgba(255,255,255,.04);border:1px solid rgba(232,197,144,.2);border-radius:10px;padding:14px 16px;color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;outline:none">
-          <option value="default">Garder les sous-titres poétiques</option>
-          <option value="off">Désactiver</option>
+          <option value="off">Désactiver (recommandé)</option>
+          <option value="default">Activer les sous-titres poétiques</option>
         </select>
       </div>
     </div>
@@ -595,6 +604,7 @@
   <div id="slides"></div>
 
   <div class="bokeh" id="bokeh"></div>
+  <div class="eq-stage" id="eq-stage"></div>
   <div class="vignette"></div>
   <div class="grain"></div>
 
@@ -741,7 +751,7 @@ const captionLine = captionEl.querySelector('.line');
 const captionKicker = captionEl.querySelector('.kicker');
 
 let slideNodes = [];
-let captionsOn = true;
+let captionsOn = false;
 function buildSlides(){
   slidesEl.innerHTML = '';
   images.forEach((src,i)=>{
@@ -757,7 +767,6 @@ buildSlides();
 let cur = 0;
 function showSlide(i){
   slideNodes.forEach(s=>s.classList.remove('active'));
-  // restart animation by reflow
   const node = slideNodes[i];
   if(!node) return;
   void node.offsetWidth;
@@ -803,6 +812,11 @@ startSlideshow();
   }
 })();
 
+/* ============ Title cleanup ============ */
+function cleanTitle(name){
+  return (name||'').replace(/\.(json|mp3|wav|m4a|ogg|flac|aac|mp4|webm)$/i,'').trim();
+}
+
 /* ============ EQ Bars ============ */
 const eq = document.getElementById('eq');
 const BAR_COUNT = 28;
@@ -812,6 +826,17 @@ for(let i=0;i<BAR_COUNT;i++){
   b.className = 'bar';
   eq.appendChild(b);
   bars.push(b);
+}
+
+/* ============ Stage EQ bars (large overlay) ============ */
+const eqStageEl = document.getElementById('eq-stage');
+const STAGE_BAR_COUNT = 48;
+const stageBars = [];
+for(let i=0;i<STAGE_BAR_COUNT;i++){
+  const b = document.createElement('div');
+  b.className = 'bar';
+  eqStageEl.appendChild(b);
+  stageBars.push(b);
 }
 
 /* ============ Audio ============ */
@@ -902,8 +927,8 @@ function loadTrack(idx, autoplay){
   window.__plIdx = i;
   const tr = pl[i];
   audio.src = tr.url;
-  trackTitle.textContent = tr.name;
-  trackTopTitle.textContent = tr.name;
+  trackTitle.textContent = cleanTitle(tr.name);
+  trackTopTitle.textContent = cleanTitle(tr.name);
   plPosEl.textContent = pl.length > 1
     ? `Track ${String(i+1).padStart(2,'0')} / ${String(pl.length).padStart(2,'0')}`
     : 'Original Soundtrack';
@@ -952,18 +977,24 @@ function tick(){
   if(analyser && !audio.paused){
     analyser.getByteFrequencyData(dataArr);
     for(let i=0;i<BAR_COUNT;i++){
-      // map BAR_COUNT bars across low-mid range of spectrum
       const idx = Math.floor((i / BAR_COUNT) * (dataArr.length*0.75));
       const v = dataArr[idx] / 255;
-      const h = 6 + v * 40;
-      bars[i].style.height = h+'px';
+      bars[i].style.height = (6 + v * 40)+'px';
+    }
+    for(let i=0;i<STAGE_BAR_COUNT;i++){
+      const idx = Math.floor((i / STAGE_BAR_COUNT) * (dataArr.length*0.85));
+      const v = dataArr[idx] / 255;
+      stageBars[i].style.height = (10 + v * 115)+'px';
     }
   } else {
-    // idle: soft sine waves
+    // idle: soft layered sine waves
     for(let i=0;i<BAR_COUNT;i++){
       const v = (Math.sin(t*1.6 + i*0.45)+Math.sin(t*0.9 + i*0.2))*0.25+0.5;
-      const h = 6 + v * 20;
-      bars[i].style.height = h+'px';
+      bars[i].style.height = (6 + v * 20)+'px';
+    }
+    for(let i=0;i<STAGE_BAR_COUNT;i++){
+      const v = (Math.sin(t*2.1 + i*0.34)*0.5 + Math.sin(t*1.05 + i*0.19)*0.3 + Math.sin(t*0.58 + i*0.52)*0.2)*0.78 + 0.22;
+      stageBars[i].style.height = (10 + v * 95)+'px';
     }
   }
   requestAnimationFrame(tick);
@@ -997,8 +1028,9 @@ window.AssiremMontage = {
     if(brandSubEl  && cfg.brandSub) brandSubEl.textContent  = cfg.brandSub;
     // Track meta
     if(cfg.title){
-      trackTitle.textContent    = cfg.title;
-      trackTopTitle.textContent = cfg.title;
+      const t = cleanTitle(cfg.title);
+      trackTitle.textContent    = t;
+      trackTopTitle.textContent = t;
     }
     if(cfg.artist) trackArtist.textContent = cfg.artist;
     // Audio playlist

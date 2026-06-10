@@ -141,7 +141,8 @@ def render(slug: str, config: Path, out_path: Path | None = None, headless: bool
     scenes = find_scenes(slug)
     meta = load_track_meta(slug, config)
 
-    suno_title = meta.get("suno_title", slug.replace("-", " ").title())
+    clean_slug = slug.removesuffix(".json")
+    suno_title = meta.get("suno_title", clean_slug.replace("-", " ").title())
     short_title = suno_title.split(" — ")[0].strip() if " — " in suno_title else suno_title
     slide_dur_ms = max(3000, int(duration * 1000 / len(scenes)))
 
