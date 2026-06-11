@@ -25,7 +25,8 @@ except ImportError:
 REPO = Path(__file__).resolve().parent.parent
 INPUT_DIR = REPO / "input"
 OUTPUT_DIR = REPO / "output"
-TEMPLATE = REPO / "assets" / "template.html"
+TEMPLATE       = REPO / "assets" / "template.html"
+TEMPLATE_SHORT = REPO / "assets" / "template_short.html"
 
 CAPTURE_FPS   = 30   # target fps sent to CDP (browser may deliver fewer)
 EVERY_N_FRAME = 1    # everyNthFrame=1 → all frames; 2 → half
@@ -122,12 +123,22 @@ def load_track_meta(slug: str, config: Path) -> dict:
 
 # ── main render ──────────────────────────────────────────────────────────────
 
-def render(slug: str, config: Path, out_path: Path | None = None, headless: bool = True) -> Path:
+def render(slug: str, config: Path, out_path: Path | None = None, headless: bool = True, short: bool = False) -> Path:
     input_folder = find_input_folder(slug)
 
+    template = TEMPLATE_SHORT if short else TEMPLATE
+    if not template.exists():
+        raise FileNotFoundError(f"Template not found: {template}")
+
     if out_path is None:
-        out_path = find_output_folder(slug) / f"{slug.replace('-', '_')}.mp4"
+        base = find_output_folder(slug)
+        if short:
+            out_path = base / "shorts" / f"{slug.replace('-', '_')}_short.mp4"
+        else:
+            out_path = base / f"{slug.replace('-', '_')}.mp4"
     out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    viewport_w, viewport_h = (1080, 1920) if short else (1920, 1080)
 
     tmp = out_path.parent / ".tmp_render"
     if tmp.exists():
@@ -146,10 +157,11 @@ def render(slug: str, config: Path, out_path: Path | None = None, headless: bool
     short_title = suno_title.split(" — ")[0].strip() if " — " in suno_title else suno_title
     slide_dur_ms = max(3000, int(duration * 1000 / len(scenes)))
 
-    print(f"\n[render_template] {slug}")
+    print(f"\n[render_template] {slug}{'  [SHORT 9:16]' if short else ''}")
     print(f"  Duration : {duration:.1f}s")
     print(f"  Scenes   : {len(scenes)} × {slide_dur_ms}ms")
     print(f"  Output   : {out_path}")
+    print(f"  Viewport : {viewport_w}×{viewport_h}")
     print(f"  Mode     : {'headless' if headless else 'headed'}")
     print(f"  Capture  : CDP screencast JPEG {JPEG_QUALITY}q @ up to {CAPTURE_FPS}fps")
 
@@ -182,7 +194,7 @@ def render(slug: str, config: Path, out_path: Path | None = None, headless: bool
             ],
         )
         ctx = browser.new_context(
-            viewport={"width": 1920, "height": 1080},
+            viewport={"width": viewport_w, "height": viewport_h},
             device_scale_factor=1,
         )
         page = ctx.new_page()
@@ -192,7 +204,7 @@ def render(slug: str, config: Path, out_path: Path | None = None, headless: bool
         cdp_client["ref"] = client
         client.on("Page.screencastFrame", on_frame)
 
-        page.goto(f"file://{TEMPLATE.resolve()}", wait_until="domcontentloaded")
+        page.goto(f"file://{template.resolve()}", wait_until="domcontentloaded")
         page.wait_for_timeout(1500)
 
         page.evaluate(
@@ -214,8 +226,8 @@ def render(slug: str, config: Path, out_path: Path | None = None, headless: bool
         client.send("Page.startScreencast", {
             "format":       "jpeg",
             "quality":      JPEG_QUALITY,
-            "maxWidth":     1920,
-            "maxHeight":    1080,
+            "maxWidth":     viewport_w,
+            "maxHeight":    viewport_h,
             "everyNthFrame": EVERY_N_FRAME,
         })
 
@@ -296,8 +308,10 @@ def render(slug: str, config: Path, out_path: Path | None = None, headless: bool
 def main():
     ap = argparse.ArgumentParser(description="Render HTML template to MP4 (CDP screencast)")
     ap.add_argument("--slug",     required=True,                            help="Track slug")
-    ap.add_argument("--config",   default="today/week_2026-W22.json",       help="Week config JSON")
+    ap.add_argument("--config",   default=None,                             help="Week config JSON (auto-detected if omitted)")
     ap.add_argument("--output",   default=None,                             help="Override output MP4 path")
+    ap.add_argument("--short",    action="store_true",
+                    help="Render YouTube Short (portrait 1080×1920, template_short.html)")
     ap.add_argument("--no-headless", action="store_true", dest="no_headless",
                     help="Run Chromium headed (debug only — default is headless)")
     args = ap.parse_args()
@@ -307,6 +321,7 @@ def main():
         Path(args.config) if args.config else None,
         Path(args.output) if args.output else None,
         headless=not args.no_headless,
+        short=args.short,
     )
 
 
