@@ -18,3 +18,6 @@ Pillow>=10.0.0
 
 # Mutagen (lecture métadonnées audio)
 mutagen>=1.47.0
+
+# Claude API (auto_json.py --use-claude)
+anthropic>=0.25.0

@@ -57,10 +57,11 @@ jobs:
           SKIP_VISUAL: ${{ github.event.inputs.skip_visual }}
           SKIP_UPLOAD: ${{ github.event.inputs.skip_upload }}
         run: |
-          ARGS=""
+          ARGS="--visual-engine template"
           [ -n "$SLUG" ] && ARGS="$ARGS --slug $SLUG" || ARGS="$ARGS --all"
           [ "$SKIP_VISUAL" = "true" ] && ARGS="$ARGS --skip-visual"
           [ "$SKIP_UPLOAD" = "true" ] && ARGS="$ARGS --skip-upload"
+          echo "Running: python pipeline.py $ARGS"
           python pipeline.py $ARGS
 
       - name: Upload logs
