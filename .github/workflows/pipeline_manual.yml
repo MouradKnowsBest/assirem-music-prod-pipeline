@@ -19,6 +19,10 @@ on:
         description: 'Dry-run (pas d upload YouTube)'
         type: boolean
         default: false
+      auto_shorts:
+        description: 'Générer 4 Shorts automatiquement pour chaque track'
+        type: boolean
+        default: true
 
 jobs:
   run-pipeline:
@@ -56,11 +60,13 @@ jobs:
           SLUG: ${{ github.event.inputs.slug }}
           SKIP_VISUAL: ${{ github.event.inputs.skip_visual }}
           SKIP_UPLOAD: ${{ github.event.inputs.skip_upload }}
+          AUTO_SHORTS: ${{ github.event.inputs.auto_shorts != 'false' && 'true' || 'false' }}
         run: |
           ARGS="--visual-engine template"
           [ -n "$SLUG" ] && ARGS="$ARGS --slug $SLUG" || ARGS="$ARGS --all"
           [ "$SKIP_VISUAL" = "true" ] && ARGS="$ARGS --skip-visual"
           [ "$SKIP_UPLOAD" = "true" ] && ARGS="$ARGS --skip-upload"
+          [ "$AUTO_SHORTS" = "true" ] && ARGS="$ARGS --auto-shorts"
           echo "Running: python pipeline.py $ARGS"
           python pipeline.py $ARGS
 

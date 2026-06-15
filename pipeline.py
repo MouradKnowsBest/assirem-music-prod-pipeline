@@ -26,6 +26,7 @@ import time
 import shutil
 import argparse
 import traceback
+import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -119,6 +120,206 @@ def _sync_input_images(slug: str, track: dict) -> int:
         info(f"  🖼  Image input → scenes : {os.path.basename(src)} → scene_{i:03d}{ext}")
         copied += 1
     return copied
+
+
+# ─── Auto-shorts helpers ─────────────────────────────────────────────────────
+
+def _find_input_dir(slug: str) -> str:
+    """Return the input directory for slug, handling nn-slug prefixes."""
+    input_root = os.path.join(BASE_DIR, "input")
+    direct = os.path.join(input_root, slug)
+    if os.path.isdir(direct):
+        return direct
+    try:
+        for name in os.listdir(input_root):
+            if name.endswith(f"-{slug}") and os.path.isdir(os.path.join(input_root, name)):
+                return os.path.join(input_root, name)
+    except FileNotFoundError:
+        pass
+    return direct  # caller checks existence
+
+
+def _find_audio(slug: str) -> str | None:
+    """Return first audio file found in input/<slug>/."""
+    input_dir = _find_input_dir(slug)
+    for ext in ("*.mp3", "*.wav", "*.m4a"):
+        hits = glob.glob(os.path.join(input_dir, ext))
+        if hits:
+            return hits[0]
+    return None
+
+
+def _find_video(slug: str) -> str | None:
+    """Return first video file found in input/<slug>/ (MP4/MOV/MKV)."""
+    input_dir = _find_input_dir(slug)
+    for ext in ("*.mp4", "*.mov", "*.mkv"):
+        hits = glob.glob(os.path.join(input_dir, ext))
+        if hits:
+            return hits[0]
+    return None
+
+
+def _probe_duration(audio: str) -> float:
+    out = subprocess.check_output(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", audio],
+        text=True,
+    )
+    return float(out.strip())
+
+
+def _run_auto_shorts(track: dict, args) -> None:
+    """
+    Clip main track into N shorts (default 4) and upload them.
+
+    Two modes (auto-detected):
+      • VIDEO source  — MP4/MOV/MKV in input/<slug>/: clips with -c copy (instant, no re-render)
+      • AUDIO source  — MP3/WAV/M4A in input/<slug>/: renders each short via template
+
+    Config fields (all optional):
+      auto_shorts: true            — enable (also enabled by --auto-shorts / --video-shorts-only)
+      short_timestamps:            — list of {start, end} in seconds; omit for equal split
+        - {start: 10, end: 53}
+        - {start: 98, end: 141}
+    """
+    slug = track["slug"]
+    info(f"\n  🎬 Auto-shorts for [{slug}]")
+
+    # ── Detect source ─────────────────────────────────────────────────────────
+    video_src = _find_video(slug)
+    audio_src = None if video_src else _find_audio(slug)
+
+    if not video_src and not audio_src:
+        warning(f"Auto-shorts [{slug}]: no video or audio found in input/{slug}/")
+        return
+
+    source = video_src or audio_src
+    mode   = "video" if video_src else "audio"
+    info(f"  📂 Source ({mode}): {os.path.basename(source)}")
+
+    try:
+        duration = _probe_duration(source)
+    except Exception as e:
+        warning(f"Auto-shorts [{slug}]: cannot probe duration — {e}")
+        return
+
+    # ── Build segment list ────────────────────────────────────────────────────
+    timestamps_cfg = track.get("short_timestamps")
+    if timestamps_cfg:
+        segments = [(int(ts["start"]), int(ts["end"])) for ts in timestamps_cfg]
+        info(f"  ⏱  {len(segments)} segment(s) from config")
+    else:
+        n = 4
+        seg = duration / n
+        segments = [(int(i * seg), int((i + 1) * seg)) for i in range(n)]
+        info(f"  ⏱  Auto-split: {n} × {seg:.0f}s  (total {duration:.0f}s)")
+
+    src_scenes = os.path.join(_resolve_output_dir(slug), "scenes")
+    rendered   = []
+
+    for i, (start, end) in enumerate(segments, 1):
+        dur        = end - start
+        short_slug = f"{slug}-v{i}"
+        m_s, s_s   = divmod(start, 60)
+        m_e, s_e   = divmod(end,   60)
+        info(f"  [{i}/{len(segments)}] {short_slug}  {m_s}:{s_s:02d}→{m_e}:{s_e:02d}  ({dur}s)")
+
+        # Output path (same structure for both modes so upload logic is unchanged)
+        out_shorts_dir = os.path.join(BASE_DIR, "output", short_slug, "shorts")
+        os.makedirs(out_shorts_dir, exist_ok=True)
+        dest_mp4 = os.path.join(out_shorts_dir, f"{short_slug}.mp4")
+
+        if mode == "video":
+            # ── VIDEO MODE: clip directly, no re-render ───────────────────
+            if not os.path.exists(dest_mp4) or args.force:
+                try:
+                    subprocess.run([
+                        "ffmpeg", "-y",
+                        "-ss", str(start), "-i", source, "-t", str(dur),
+                        "-c", "copy",
+                        dest_mp4,
+                    ], check=True, capture_output=True)
+                except subprocess.CalledProcessError as e:
+                    erreur(f"Clip video [{short_slug}]: {e.stderr.decode(errors='replace')[-300:]}")
+                    continue
+            rendered.append((short_slug, i))
+
+        else:
+            # ── AUDIO MODE: clip MP3, copy scenes, render template ────────
+            s_inp    = os.path.join(BASE_DIR, "input", short_slug)
+            os.makedirs(s_inp, exist_ok=True)
+            dest_mp3 = os.path.join(s_inp, f"{short_slug}.mp3")
+            if not os.path.exists(dest_mp3) or args.force:
+                try:
+                    subprocess.run([
+                        "ffmpeg", "-y", "-ss", str(start), "-i", audio_src,
+                        "-t", str(dur), "-acodec", "libmp3lame", "-q:a", "2", dest_mp3,
+                    ], check=True, capture_output=True)
+                except subprocess.CalledProcessError as e:
+                    erreur(f"Clip audio [{short_slug}]: {e}")
+                    continue
+
+            s_scenes = os.path.join(BASE_DIR, "output", short_slug, "scenes")
+            os.makedirs(s_scenes, exist_ok=True)
+            if os.path.isdir(src_scenes):
+                for img in os.listdir(src_scenes):
+                    if img.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+                        src = os.path.join(src_scenes, img)
+                        dst = os.path.join(s_scenes, img)
+                        if not os.path.exists(dst) or args.force:
+                            shutil.copy2(src, dst)
+
+            try:
+                subprocess.run([
+                    sys.executable,
+                    os.path.join(BASE_DIR, "scripts", "render_template.py"),
+                    "--slug", short_slug, "--short",
+                ], check=True)
+            except subprocess.CalledProcessError as e:
+                erreur(f"Render short [{short_slug}]: {e}")
+                continue
+
+            rendered.append((short_slug, i))
+
+    if not rendered:
+        warning(f"No shorts produced for [{slug}]")
+        return
+
+    succes(f"{len(rendered)} short(s) ready ({mode} mode)")
+
+    # 4. Upload
+    if args.skip_upload:
+        warning("Auto-shorts: upload skipped (--skip-upload)")
+        return
+
+    base_title = track.get("title", slug)
+    for short_slug, n in rendered:
+        out_dir = _resolve_output_dir(short_slug)
+        mp4s    = glob.glob(os.path.join(out_dir, "shorts", "*.mp4"))
+        if not mp4s:
+            warning(f"Short MP4 not found [{short_slug}] — skipping upload")
+            continue
+
+        short_track = {
+            **track,
+            "slug":             short_slug,
+            "title":            f"{base_title} — Part {n} #Shorts",
+            "auto_shorts":      False,   # no recursion
+        }
+        short_track.pop("short_timestamps", None)
+
+        try:
+            uploader_videos(
+                short_track, mp4s, BASE_DIR,
+                skip_playlists=getattr(args, "no_playlists", False),
+                force_playlist=getattr(args, "default_playlist", None),
+            )
+            succes(f"Short {n} uploaded: {short_slug}")
+        except UploadLimitExceeded:
+            warning(f"YouTube quota reached — short {n} skipped")
+            break
+        except Exception as e:
+            erreur(f"Upload short [{short_slug}]: {e}")
 
 
 # ─── Chargement config ────────────────────────────────────────────────────────
@@ -454,6 +655,10 @@ def run_track(track: dict, args, etape_offset: int, total_etapes: int) -> list:
     else:
         warning(f"Upload ignoré (--skip-upload)")
 
+    # ── Auto-shorts ──────────────────────────────────────────────────────────
+    if getattr(args, "auto_shorts", False) or track.get("auto_shorts"):
+        _run_auto_shorts(track, args)
+
     return videos
 
 
@@ -482,6 +687,10 @@ def main():
                         help="Force une playlist unique pour TOUS les tracks (override config). "
                              "Ex: --default-playlist '🎵 Assirem Music PROD — All Tracks'")
     parser.add_argument("--shorts-only",    action="store_true", help="Upload uniquement le short existant (skip visual + video)")
+    parser.add_argument("--auto-shorts",    action="store_true", dest="auto_shorts",
+                        help="Génère 4 Shorts automatiquement après la vidéo principale (timestamps dans config ou split égal)")
+    parser.add_argument("--video-shorts-only", action="store_true", dest="video_shorts_only",
+                        help="Découpe une vidéo existante (input/<slug>/*.mp4) en shorts et upload — sans rendu template")
     parser.add_argument("--respect-schedule", action="store_true",
                         help="Lit today/upload_schedule.json et upload chaque track en mode 'scheduled publish' à la date prévue")
     parser.add_argument("--debug",          action="store_true")
@@ -529,6 +738,26 @@ def main():
             print(f"      Mode     : {t.get('mode','?')} | Scènes : {nb_scenes}")
             print(f"      Suno     : {t.get('suno_prompt','—')[:70]}...")
             print()
+        sys.exit(0)
+
+    # ── --video-shorts-only : découpe MP4 → shorts sans rendu template ───────
+    if getattr(args, "video_shorts_only", False):
+        if not args.slug:
+            erreur("--video-shorts-only requiert --slug <slug> (nom du dossier input/<slug>/)")
+            sys.exit(1)
+        slug_list = args.slug if isinstance(args.slug, list) else [args.slug]
+        for slug in slug_list:
+            # Use config metadata if available, else build minimal track
+            matched = [t for t in tracks if t["slug"] == slug]
+            track = matched[0] if matched else {
+                "slug":        slug,
+                "title":       slug.replace("-", " ").title() + " #Shorts",
+                "description": f"#{slug.replace('-', '')} #AssiremMusicProd #Shorts",
+                "tags":        ["assirem music prod", "shorts"],
+                "playlists":   ["🎵 Assirem Music PROD — All Tracks"],
+                "auto_shorts": False,
+            }
+            _run_auto_shorts(track, args)
         sys.exit(0)
 
     # ── Sélection des tracks à traiter ────────────────────────────────────────

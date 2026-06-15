@@ -17,6 +17,10 @@ on:
         description: 'Dry-run (pas d upload YouTube)'
         type: boolean
         default: false
+      auto_shorts:
+        description: 'Générer 4 Shorts automatiquement pour chaque track'
+        type: boolean
+        default: true
 
 env:
   DRIVE_ROOT_FOLDER_ID: "1EwZA_ktS5_in8G3WrFgHm9a4yvqkPxx1"
@@ -118,6 +122,11 @@ jobs:
               [ -f "$f" ] || continue
               cp "$f" "input/$slug/" && echo "  🖼  $f → input/$slug/"
             done
+            # Video (for --video-shorts-only)
+            for f in "$slug_dir"*.mp4 "$slug_dir"*.mov "$slug_dir"*.mkv; do
+              [ -f "$f" ] || continue
+              cp "$f" "input/$slug/" && echo "  🎬 $f → input/$slug/"
+            done
           done
 
       # ── Pipeline ─────────────────────────────────────────────────────────────
@@ -126,10 +135,12 @@ jobs:
         env:
           SLUG: ${{ github.event.inputs.slug }}
           SKIP_UPLOAD: ${{ github.event.inputs.skip_upload }}
+          AUTO_SHORTS: ${{ github.event.inputs.auto_shorts != 'false' && 'true' || 'false' }}
         run: |
           ARGS="--visual-engine template --config today/config.json"
           [ -n "$SLUG" ] && ARGS="$ARGS --slug $SLUG" || ARGS="$ARGS --all"
           [ "$SKIP_UPLOAD" = "true" ] && ARGS="$ARGS --skip-upload"
+          [ "$AUTO_SHORTS" = "true" ] && ARGS="$ARGS --auto-shorts"
           echo "Running: python pipeline.py $ARGS"
           python pipeline.py $ARGS
 

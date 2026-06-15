@@ -92,6 +92,7 @@ def _make_template_track(slug: str, genre: str) -> dict:
             "2026",
         ],
         "playlists": ["🎵 Assirem Music PROD — All Tracks"],
+        "auto_shorts": True,
         "scenes": [],
         "_note": "scenes vide = utilise l'image fournie dans input/<slug>/",
     }
