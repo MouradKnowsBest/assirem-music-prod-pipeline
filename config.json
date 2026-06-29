@@ -1,569 +1,619 @@
 {
-  "title": "🌍 Patriotic Anthems Series — Assirem Music PROD",
-  "description": "8 cinematic patriotic anthems, native-language verses + English chorus.",
-  "_format": "Compatible avec scripts/generate_week_config.py — chaque track suit le schema week_tracks_data.py.",
+  "date": "2026-06-29",
+  "priority_slug": "afrobeats-amapiano-summer-heat-2026",
   "tracks": [
     {
-      "slug": "germany-deutschland-mein-herzland-2026",
-      "category": "world_music",
-      "country": "Germany",
-      "country_flag": "🇩🇪",
-      "title": "🇩🇪 Deutschland, Mein Herzland — German Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "From the Black Forest to the Baltic Sea — a song for the soul of Deutschland. 🇩🇪\n\nGerman verses, English chorus — modern anthemic folk-rock with brass band and choir.\n\n⏱️ Chapters:\n00:00 — Sunrise over the Rhine\n01:30 — English chorus drop\n03:00 — Choir bridge\n\n🎧 Best for: world music, patriotic playlists, German listeners, cinematic moods\n\n#GermanMusic #Deutschland #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "german music",
-        "deutschland",
-        "patriotic anthem",
-        "world music",
-        "cinematic",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "Deutschland Mein Herzland",
-      "suno_style": "anthemic german folk-rock, brass band, soaring choir, orchestral strings, mid-tempo, 88 BPM, cinematic, patriotic, male lead voice",
-      "suno_exclude_styles": "trap, edm, lofi, ambient, country western, drill",
-      "suno_vocal_gender": "male",
-      "suno_lyrics": "[Strophe 1]\nVom Schwarzwald bis zum Meer so weit\nVon Bayerns Berg zur Norddeutschland\nIn Stein und Eichen lebt die Zeit\nDie Wurzeln tief im Heimatland\n\n[Pre-Chorus]\nMein Herz schlägt für dich, mein Land\nFür jede Träne, jede Hand\n\n[Chorus — English]\nDeutschland, my heartland calling\nThrough the storms forever standing\nMountains, rivers, hands held high\nUnder one eternal sky\nDeutschland, my heartland\n\n[Strophe 2]\nDie alten Burgen hoch im Wind\nDie Lieder, die wir früher sangen\nVon Vater zu Sohn vereint\nIn Hoffnung sind wir aufgegangen\n\n[Chorus — English]\nDeutschland, my heartland calling\nThrough the storms forever standing\nMountains, rivers, hands held high\nUnder one eternal sky\nDeutschland, my heartland\n\n[Outro]\nDeutschland, Deutschland, mein Herzland",
+      "slug": "afrobeats-amapiano-summer-heat-2026",
+      "priority": 1,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "afrobeats, amapiano, log drum, shaker, sunny synth pads, afro house, 112 BPM, euphoric, tropical, summer anthem",
+      "suno_title": "Summer Heat Amapiano",
+      "suno_exclude_styles": "metal, country, classical, drill, emo, screamo",
+      "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 32,
-      "suno_style_influence": 50,
-      "intro_fade_sec": 3,
-      "outro_fade_sec": 4,
-      "short_start": 60,
+      "suno_weirdness": 38,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "☀️ Afrobeats Summer Heat 2026 — Amapiano Vibes | Assirem Music PROD",
+      "description": "Pure summer energy — Afrobeats meets Amapiano for the hottest instrumental of 2026.\n\nLog drums, shakers, and euphoric synth pads that hit different under the sun.\n\n⏱️ Chapters:\n00:00 — Golden hour intro\n00:45 — Amapiano drop\n02:00 — Afro house breakdown\n03:15 — Final drop\n\n🎧 Best for: summer playlists, pool party, beach vibes, road trip, good mood\n\n#Afrobeats #Amapiano #SummerMusic2026 #AIMusic #AssiremMusicProd #NoCopyright #TropicalVibes #SummerHeat",
+      "tags": ["afrobeats", "amapiano", "summer music 2026", "tropical vibes", "afro house", "pool party music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "☀️ Summer Vibes 2026 — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Summer Heat Amapiano",
+          "subtitle": "Afrobeats · Euphoric — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
       "scenes": [
-        [
-          "Wide establishing shot: Black Forest at sunrise, mist rolling between dark pines, golden light breaking through, German village steeple in distance, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel along the Rhine river at golden hour, vineyards on hills, medieval castle silhouette, gentle current, cinematic 4K",
-          3
-        ],
-        [
-          "Medium shot: weathered German farmer in dirndl shirt at oak farmhouse table, hands folded, late afternoon light through window, ultra detailed 4K",
-          2
-        ],
-        [
-          "Close-up: hands placing a freshly baked Brot loaf on a wooden board next to a glass of beer, warm kitchen light, macro cinematic 4K",
-          2
-        ],
-        [
-          "Medium shot: family gathering at outdoor biergarten under chestnut trees, Bavarian flag overhead, raised glasses, joyful, cinematic 4K",
-          3
-        ],
-        [
-          "Wide final: aerial of Berlin Brandenburg Gate at sunset, glowing gold, eagles flying overhead, eternal city, 4K stunning",
-          2
-        ]
+        { "prompt": "Wide establishing shot: tropical beach at golden hour, turquoise water, palm trees swaying, warm light reflections on sand, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: beachside open-air lounge at sunset, soft lanterns, silhouettes dancing to music, warm amber tones, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: DJ mixing deck at outdoor party, colorful LED lights, crowd hands raised, tropical night, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: hands drumming on djembe, golden hour light through fingers, dust particles floating, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: group of friends laughing on rooftop terrace overlooking ocean at sunset, summer clothing, joyful energy, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: aerial view of tropical coastline at magic hour, bonfires on beach, waves gently crashing, 4K stunning", "motion_strength": 2 }
       ]
     },
+
     {
-      "slug": "poland-polska-my-land-forever-2026",
-      "category": "world_music",
-      "country": "Poland",
-      "country_flag": "🇵🇱",
-      "title": "🇵🇱 Polska — My Land Forever | Polish Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "From the Tatras to the Baltic — Poland in every note. 🇵🇱\n\nPolish verses, English chorus — folk melodies with cinematic strings and accordion.\n\n⏱️ Chapters:\n00:00 — Tatra dawn\n01:20 — English chorus\n02:50 — Folk bridge\n\n🎧 Best for: world music, Polish heritage, cinematic playlists\n\n#PolishMusic #Polska #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "polish music",
-        "polska",
-        "patriotic anthem",
-        "world music",
-        "folk",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "Polska My Land Forever",
-      "suno_style": "polish folk-anthemic, accordion, soaring choir, orchestral strings, mid-tempo, 92 BPM, cinematic, patriotic, female lead voice",
-      "suno_exclude_styles": "trap, edm, lofi, drill, country western, ambient",
-      "suno_vocal_gender": "female",
-      "suno_lyrics": "[Zwrotka 1]\nOd Tatr po Bałtyk, kraj mój święty\nGdzie wiatr opowiada o przeszłości\nW każdym kamieniu, w każdej lipie\nŻyje pamięć naszej miłości\n\n[Pre-Chorus]\nSerce moje bije dla ciebie\nW każdej burzy, w każdym niebie\n\n[Chorus — English]\nPolska, my land forever\nThrough the centuries, our hearts together\nMountains, rivers, white and red\nIn the soil our roots are spread\nPolska, my land forever\n\n[Zwrotka 2]\nKraków stoi pod Wawelem dumny\nWarszawa wstała znów ze swych ruin\nMatki, ojcowie, dzieci niezłomne\nZ orłem białym zawsze złączeni\n\n[Chorus — English]\nPolska, my land forever\nThrough the centuries, our hearts together\nMountains, rivers, white and red\nIn the soil our roots are spread\nPolska, my land forever\n\n[Outro]\nPolska, Polska, na zawsze moja",
-      "suno_lyrics_mode": "manual",
-      "suno_weirdness": 32,
-      "suno_style_influence": 50,
-      "intro_fade_sec": 3,
-      "outro_fade_sec": 4,
-      "short_start": 50,
-      "scenes": [
-        [
-          "Wide establishing shot: Tatra mountains at sunrise, mist over alpine meadows, wildflowers swaying, distant church spire, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel through Kraków old town square at dawn, cobblestones glistening, St. Mary's Basilica towers, golden light, cinematic 4K",
-          3
-        ],
-        [
-          "Medium shot: Polish woman in traditional embroidered blouse at open window, white curtains catching breeze, ultra detailed 4K",
-          2
-        ],
-        [
-          "Close-up: hand placing fresh loaf of żurek bread on linen-covered table, candle flickering, macro cinematic 4K",
-          2
-        ],
-        [
-          "Medium shot: family dancing polonaise in courtyard at sunset, white and red flowers everywhere, joyful, cinematic 4K",
-          3
-        ],
-        [
-          "Wide final: aerial of Warsaw Old Town at sunset, river Vistula glowing, white eagle silhouette flying, 4K stunning",
-          2
-        ]
-      ]
-    },
-    {
-      "slug": "turkey-anadolu-land-of-my-soul-2026",
-      "category": "world_music",
-      "country": "Türkiye",
-      "country_flag": "🇹🇷",
-      "title": "🇹🇷 Anadolu — Land of My Soul | Turkish Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "From the Bosphorus to Cappadocia — the soul of Türkiye in song. 🇹🇷\n\nTurkish verses, English chorus — saz and ney with cinematic strings.\n\n⏱️ Chapters:\n00:00 — Anatolian dawn\n01:25 — English chorus\n03:10 — Ney solo bridge\n\n🎧 Best for: world music, Turkish heritage, cinematic anthems\n\n#TurkishMusic #Anadolu #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "turkish music",
-        "anadolu",
-        "patriotic anthem",
-        "world music",
-        "saz",
-        "ney",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🌙 Oriental, Oud & Maghreb",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "Anadolu Land of My Soul",
-      "suno_style": "turkish folk-anthemic, saz, ney flute, frame drum, soaring choir, orchestral strings, 88 BPM, cinematic, patriotic, male lead voice",
-      "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
-      "suno_vocal_gender": "male",
-      "suno_lyrics": "[Birinci Kıta]\nBoğaz'dan Kapadokya'ya kadar\nDağlar, ovalar, denizler bekler\nBu toprakta dedelerimin sesi\nHer rüzgârda anılar yankılanır\n\n[Pre-Chorus]\nKalbim seninle, ey Anadolu\nHer yolun, her taşın benim oldu\n\n[Chorus — English]\nAnadolu, land of my soul\nWhere the ancient rivers roll\nMinarets and mountains high\nUnder one eternal sky\nAnadolu, land of my soul\n\n[İkinci Kıta]\nİstanbul'un yedi tepesi\nİzmir'in mavi sahili\nVan Gölü'nün sessiz derinliği\nHepsi benim canımda saklı\n\n[Chorus — English]\nAnadolu, land of my soul\nWhere the ancient rivers roll\nMinarets and mountains high\nUnder one eternal sky\nAnadolu, land of my soul\n\n[Outro]\nAnadolu, sonsuza kadar benim",
+      "slug": "latin-reggaeton-fuego-summer-2026",
+      "priority": 2,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "reggaeton, dembow rhythm, latin trap, perreo, 808 bass, hi-hats, 95 BPM, sensual, fiery, summer latin club",
+      "suno_title": "Fuego Reggaeton Summer",
+      "suno_exclude_styles": "country, folk, classical, ambient, lofi, metal",
+      "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
       "suno_weirdness": 35,
       "suno_style_influence": 52,
-      "intro_fade_sec": 4,
-      "outro_fade_sec": 4,
-      "short_start": 45,
+
+      "mode": "medium",
+      "title": "🔥 Reggaeton Fuego 2026 — Latin Summer Beats | Assirem Music PROD",
+      "description": "Dembow + 808s = pure fuego 🔥 The Latin summer instrumental that hits at every party.\n\nReggaeton meets Latin trap with heavy bass and tropical percussion.\n\n⏱️ Chapters:\n00:00 — Slow burn intro\n00:40 — Dembow drop\n01:50 — Latin trap bridge\n03:00 — Final perreo drop\n\n🎧 Best for: summer party, latin club, workout, pre-game, driving\n\n#Reggaeton #LatinMusic #Dembow #SummerBeats2026 #AIMusic #AssiremMusicProd #NoCopyright #Perreo #LatinTrap",
+      "tags": ["reggaeton", "latin music", "dembow", "summer beats 2026", "latin trap", "perreo", "club music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🔥 Latin Heat 2026 — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Fuego Reggaeton Summer",
+          "subtitle": "Reggaeton · Sensual — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
       "scenes": [
-        [
-          "Wide establishing shot: Cappadocia at sunrise, hot air balloons over fairy chimneys, golden hour light, ancient cave villages, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel over the Bosphorus at sunset, Istanbul minarets silhouetted, ferries crossing, golden water, cinematic 4K",
-          3
-        ],
-        [
-          "Medium shot: Turkish elder in traditional vest playing saz on a stone terrace, weathered hands, ultra detailed 4K",
-          2
-        ],
-        [
-          "Close-up: çay glass on copper tray, sugar cube dissolving, steam rising, warm light, macro cinematic 4K",
-          2
-        ],
-        [
-          "Medium shot: family circle dance in Anatolian village square at dusk, traditional dress, lanterns, joyful, cinematic 4K",
-          3
-        ],
-        [
-          "Wide final: aerial of Hagia Sophia at golden hour, surrounding city glowing, eagles flying overhead, eternal, 4K stunning",
-          2
-        ]
+        { "prompt": "Wide establishing shot: neon-lit Latin nightclub exterior at night, palm trees, warm humid air, colorful lights reflecting on wet street, 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: inside packed Latin club, purple and red neon lights, silhouettes dancing, bass vibrations visible, cinematic 4K", "motion_strength": 5 },
+        { "prompt": "Medium shot: DJ booth with Latin flags, massive speakers, crowd energy, strobe lights, ultra detailed 4K", "motion_strength": 4 },
+        { "prompt": "Close-up insert: gold chain swinging in slow motion, neon reflections, dark background, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: couple dancing reggaeton under string lights on Havana-style rooftop at night, warm romantic mood, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: aerial view of Miami beach boulevard at night, neon lights, palm trees, ocean reflecting city glow, 4K stunning", "motion_strength": 3 }
       ]
     },
+
     {
-      "slug": "japan-nihon-rising-sun-2026",
-      "category": "world_music",
-      "country": "Japan",
-      "country_flag": "🇯🇵",
-      "title": "🇯🇵 Nihon — Land of the Rising Sun | Japanese Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "From Mount Fuji to the cherry blossoms — the soul of Nihon. 🇯🇵\n\nJapanese verses, English chorus — koto and shakuhachi with modern orchestral strings.\n\n⏱️ Chapters:\n00:00 — Sunrise over Fuji\n01:30 — English chorus\n03:00 — Shakuhachi bridge\n\n🎧 Best for: world music, Japanese heritage, cinematic anthems\n\n#JapaneseMusic #Nihon #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "japanese music",
-        "nihon",
-        "patriotic anthem",
-        "world music",
-        "koto",
-        "shakuhachi",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "Nihon Rising Sun",
-      "suno_style": "japanese traditional-anthemic, koto, shakuhachi flute, taiko drums, soaring choir, modern orchestral strings, 80 BPM, cinematic, patriotic, female lead voice",
-      "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
-      "suno_vocal_gender": "female",
-      "suno_lyrics": "[Verse 1 — Japanese]\nFuji-san no asa ni hikari sasu\nSakura no hana ga shizuka ni mau\nSenzo no koe wa kaze ni nokoru\nKono kuni no naka ni eien ni\n\n[Pre-Chorus — Japanese]\nKokoro ga sakebu, watashi no kuni\nIkutsu no jidai mo, koko ni iru\n\n[Chorus — English]\nNihon, land of the rising sun\nFrom the dawn till the day is done\nMountains, blossoms, ancient soul\nIn your light I am made whole\nNihon, land of the rising sun\n\n[Verse 2 — Japanese]\nKyōto no tera, Tōkyō no hi\nUmi no kanata ni inori sasageru\nHaha no koe to chichi no chikara\nKoko ni umarete, koko ni kaeru\n\n[Chorus — English]\nNihon, land of the rising sun\nFrom the dawn till the day is done\nMountains, blossoms, ancient soul\nIn your light I am made whole\nNihon, land of the rising sun\n\n[Outro]\nNihon, eien ni watashi no kuni",
+      "slug": "dark-phonk-drift-night-2026",
+      "priority": 3,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "dark phonk, drift phonk, memphis rap samples, cowbell, distorted 808, dark synth, 140 BPM, aggressive, menacing, underground",
+      "suno_title": "Midnight Drift Phonk",
+      "suno_exclude_styles": "pop, country, acoustic, jazz, bossa nova, happy, cheerful",
+      "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 30,
-      "suno_style_influence": 50,
-      "intro_fade_sec": 4,
-      "outro_fade_sec": 4,
-      "short_start": 50,
+      "suno_weirdness": 55,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "🌑 Dark Phonk Drift 2026 — Midnight Underground Beats | Assirem Music PROD",
+      "description": "Distorted 808s and Memphis samples — the dark phonk drift anthem for night riders.\n\nAggressive, menacing, underground. Not for the faint-hearted.\n\n⏱️ Chapters:\n00:00 — Engine start intro\n00:35 — 808 drop\n01:45 — Memphis breakdown\n03:00 — Final drift\n\n🎧 Best for: night drive, gym, drift edits, dark aesthetic, TikTok edits\n\n#DarkPhonk #DriftPhonk #Memphis #Underground #NightDrive #AIMusic #AssiremMusicProd #NoCopyright #Phonk2026",
+      "tags": ["dark phonk", "drift phonk", "memphis", "underground beats", "night drive", "gym music", "drift edit", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🌑 Dark Phonk & Drift — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Midnight Drift Phonk",
+          "subtitle": "Dark Phonk · Aggressive — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
       "scenes": [
-        [
-          "Wide establishing shot: Mount Fuji at sunrise, snow-capped peak above the clouds, cherry blossoms in foreground, golden light, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel through Kyoto torii gate path at dawn, red gates receding into mist, soft light, cinematic 4K",
-          2
-        ],
-        [
-          "Medium shot: Japanese woman in white kimono playing koto under cherry tree, petals falling, ultra detailed 4K",
-          2
-        ],
-        [
-          "Close-up: hand pouring matcha tea into ceramic bowl, steam rising, bamboo whisk beside, macro cinematic 4K",
-          1
-        ],
-        [
-          "Medium shot: taiko drummers on Tokyo rooftop at sunset, traditional dress, neon city behind, intense rhythm, cinematic 4K",
-          4
-        ],
-        [
-          "Wide final: aerial of Tokyo skyline at golden hour, Mount Fuji visible in distance, koi swimming below, 4K stunning",
-          2
-        ]
+        { "prompt": "Wide establishing shot: empty city street at midnight, neon signs reflecting on wet asphalt, fog rolling, lone sports car silhouette, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: car drifting through underground parking garage, tire smoke, red tail lights streaking, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Medium shot: masked figure standing next to modified JDM car at night, neon underglow, industrial warehouse, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: speedometer needle climbing rapidly, dashboard lights glowing red, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: rear view of sports car drifting on empty mountain road at night, moonlit, tire smoke trails, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: aerial view of city highway interchange at night, light trails from cars, dark moody atmosphere, 4K stunning", "motion_strength": 3 }
       ]
     },
+
     {
-      "slug": "russia-rodina-mother-russia-calls-2026",
+      "slug": "fifa-world-cup-2026-anthem-the-beautiful-game",
+      "priority": 4,
+      "category": "news_surf",
+      "news_event": "FIFA World Cup 2026 USA/Mexico/Canada — knockout rounds begin, biggest sporting event on Earth uniting billions",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "cinematic orchestral, epic anthem, stadium drums, brass fanfare, choir, world percussion, 120 BPM, triumphant, uplifting, grand",
+      "suno_title": "The Beautiful Game World Cup 2026",
+      "suno_exclude_styles": "lofi, trap, drill, ambient, country, emo, metal",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 45,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "⚽ The Beautiful Game — FIFA World Cup 2026 Anthem | Epic Cinematic Music | Assirem Music PROD",
+      "description": "The world unites — an epic cinematic anthem for the FIFA World Cup 2026.\n\nAs knockout rounds begin across the USA, Mexico, and Canada, billions watch the beautiful game. This orchestral anthem captures the triumph, tension, and glory of football's greatest stage.\n\n⏱️ Chapters:\n00:00 — Stadium dawn, anticipation\n00:50 — Brass fanfare, kickoff\n02:00 — Emotional choir bridge\n03:20 — Triumphant finale\n\n🎧 Best for: World Cup highlights, football edits, sports motivation, cinematic compilations\n\n#WorldCup2026 #FIFA #TheBeautifulGame #Football #Soccer #CinematicMusic #EpicAnthem #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["world cup 2026", "fifa", "football anthem", "soccer music", "cinematic epic", "sports motivation", "stadium anthem", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "⚽ Sports & Epic Anthems — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "The Beautiful Game",
+          "subtitle": "World Cup 2026 · Epic — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 12,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: massive football stadium at golden hour, empty seats filling with fans, flags of all nations waving, anticipation, 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: tunnel view from inside player tunnel looking out onto sunlit pitch, green grass glowing, crowd roaring, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: football on center circle of pristine pitch, stadium lights blazing, confetti floating, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: football boots striking ball in slow motion, grass particles flying, stadium lights in background bokeh, macro cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium emotional shot: diverse crowd of fans embracing and cheering in stadium stands, painted faces, scarves raised, tears of joy, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: aerial view of illuminated stadium at night surrounded by celebrating city, fireworks bursting overhead, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "senegal-teranga-mbalax-beats-2026",
+      "priority": 5,
       "category": "world_music",
-      "country": "Russia",
-      "country_flag": "🇷🇺",
-      "title": "🇷🇺 Rodina — Mother Russia Calls | Russian Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "From the Volga to the Pacific — the soul of Россия. 🇷🇺\n\nRussian verses, English chorus — balalaika and male choir with cinematic orchestral.\n\n⏱️ Chapters:\n00:00 — Steppe sunrise\n01:30 — English chorus\n03:00 — Choir bridge\n\n🎧 Best for: world music, Russian heritage, cinematic anthems\n\n#RussianMusic #Rodina #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "russian music",
-        "rodina",
-        "patriotic anthem",
-        "world music",
-        "balalaika",
-        "choir",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "Rodina Mother Russia Calls",
-      "suno_style": "russian folk-anthemic, balalaika, male choir bass profundo, orchestral strings, taiko-like timpani, 80 BPM, cinematic, patriotic, male lead voice",
-      "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
-      "suno_vocal_gender": "male",
-      "suno_lyrics": "[Куплет 1]\nОт Волги до Тихого океана\nЛеса, поля, и снег без конца\nГолоса дедов в каждом ветре\nЗемля родная зовёт меня\n\n[Pre-Chorus]\nСердце моё бьётся за тебя\nРоссия, моя ты навсегда\n\n[Chorus — English]\nRodina, Mother Russia calls\nThrough the snow and ancient halls\nRivers wide and forests deep\nIn your soil our fathers sleep\nRodina, Mother Russia calls\n\n[Куплет 2]\nКремль стоит над Москвою-рекой\nСанкт-Петербург в белые ночи\nСибирь широкая, Кавказ суровый\nВсё это моя Россия\n\n[Chorus — English]\nRodina, Mother Russia calls\nThrough the snow and ancient halls\nRivers wide and forests deep\nIn your soil our fathers sleep\nRodina, Mother Russia calls\n\n[Outro]\nРодина, Россия, навсегда",
+      "country": "Senegal",
+      "country_local": "Sénégal",
+      "country_flag": "🇸🇳",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "mbalax, west african percussion, kora, sabar drums, tama talking drum, balafon, 115 BPM, joyful, rhythmic, authentic senegalese groove",
+      "suno_title": "Teranga Mbalax Beats",
+      "suno_exclude_styles": "edm, metal, country, drill, trap, ambient, lofi",
+      "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
       "suno_weirdness": 32,
       "suno_style_influence": 52,
-      "intro_fade_sec": 4,
-      "outro_fade_sec": 5,
-      "short_start": 60,
+
+      "mode": "medium",
+      "title": "🇸🇳 Teranga Beats | Rythmes du Sénégal — Mbalax Kora & Sabar | Assirem Music PROD",
+      "description": "Teranga — l'hospitalité légendaire du Sénégal en musique.\n\nLes rythmes mbalax rencontrent la kora et les sabars dans un voyage sonore à travers Dakar, Saint-Louis et la Casamance.\n\nDi-naa am ngelaw ci biir mbalax yi — Ay rythme yu rafet ñu joge ci Sénégal.\n\n⏱️ Chapters:\n00:00 — Kora sunrise meditation\n00:45 — Sabar rhythm entrance\n02:00 — Full mbalax groove\n03:20 — Kora outro\n\n🎧 Best for: world music, African rhythms, cultural discovery, dance\n\n#Senegal #Mbalax #Kora #AfricanMusic #Sabar #WorldMusic #Teranga #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["senegal", "mbalax", "kora", "sabar drums", "african music", "world music", "west africa", "teranga", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🌍 World Music — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": false,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Teranga Mbalax Beats",
+          "subtitle": "Sénégal · West Africa — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
       "scenes": [
-        [
-          "Wide establishing shot: Russian steppe at sunrise, endless golden grasslands, distant onion-domed church, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel along Volga river at dawn, mist rising, wooden village houses, fishing boats, cinematic 4K",
-          3
-        ],
-        [
-          "Medium shot: Russian elder in fur ushanka playing balalaika by birch fire, snowy landscape, ultra detailed 4K",
-          2
-        ],
-        [
-          "Close-up: hand pouring chai from samovar into glass cup, steam rising, lace tablecloth, macro cinematic 4K",
-          2
-        ],
-        [
-          "Medium shot: Cossack circle dance at village square in winter, fur coats, joyful, snow falling, cinematic 4K",
-          4
-        ],
-        [
-          "Wide final: aerial of St. Basil's Cathedral at sunset, Red Square glowing, eagles flying, eternal, 4K stunning",
-          2
-        ]
+        { "prompt": "Wide establishing shot: Dakar coastline at sunrise, colorful pirogues on golden sand, Atlantic ocean waves, pink and orange sky, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through Gorée Island narrow streets, pastel colonial buildings, bougainvillea, warm golden light, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: Senegalese griot playing kora under a massive baobab tree, traditional boubou, golden light filtering through leaves, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: hands playing sabar drum with incredible speed, dust particles in sunlight, carved wooden drum detail, macro cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium emotional shot: circle of women in colorful wax print dresses dancing sabar at village celebration, dust rising, joyful energy, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Wide final shot: aerial view of African Renaissance Monument in Dakar at golden hour, Atlantic ocean stretching to horizon, 4K stunning", "motion_strength": 2 }
       ]
     },
+
     {
-      "slug": "france-mon-pays-bien-aime-2026",
-      "category": "world_music",
-      "country": "France",
-      "country_flag": "🇫🇷",
-      "title": "🇫🇷 France — Mon Pays Bien Aimé | French Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "Des Pyrénées à la Manche — l'âme de la France en chanson. 🇫🇷\n\nCouplets en français, refrain en anglais — accordéon, cordes cinématographiques et chœur.\n\n⏱️ Chapitres:\n00:00 — Aube sur la Loire\n01:25 — Chorus anglais\n03:00 — Pont accordéon\n\n🎧 Idéal pour : world music, héritage français, anthems cinématographiques\n\n#FrenchMusic #France #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "french music",
-        "france",
-        "patriotic anthem",
-        "world music",
-        "chanson française",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🇫🇷 Pop Française",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "France Mon Pays Bien Aimé",
-      "suno_style": "french chanson-anthemic, accordion, soaring choir, orchestral strings, soft piano, 88 BPM, cinematic, patriotic, female lead voice",
-      "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi hip hop",
-      "suno_vocal_gender": "female",
-      "suno_lyrics": "[Couplet 1]\nDes Pyrénées jusqu'à la Manche\nDes vignes au sable des Landes\nLes voix de nos aïeux résonnent\nDans chaque pierre, chaque dimanche\n\n[Pré-Refrain]\nMon cœur bat pour toi, ma patrie\nÀ jamais, ma douce mélodie\n\n[Chorus — English]\nFrance, my beloved homeland\nWhere the rivers meet the sand\nFields of gold and skies of blue\nEverything I am, I owe to you\nFrance, my beloved homeland\n\n[Couplet 2]\nParis brille sur les pavés\nMarseille chante sous le mistral\nLa Loire coule en majesté\nEt la Bretagne tient sa flamme éternelle\n\n[Chorus — English]\nFrance, my beloved homeland\nWhere the rivers meet the sand\nFields of gold and skies of blue\nEverything I am, I owe to you\nFrance, my beloved homeland\n\n[Outro]\nFrance, mon pays bien aimé, toujours",
+      "slug": "deep-focus-lofi-study-beats-2026",
+      "priority": 6,
+      "category": "activity",
+      "activity_type": "focus",
+      "activity_label": "Focus / Deep Work",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "lofi hip hop, jazzy chords, vinyl crackle, mellow piano, soft Rhodes, tape hiss, 75 BPM, chill, relaxing, warm, study beats",
+      "suno_title": "Deep Focus Study Lofi",
+      "suno_exclude_styles": "metal, edm, trap, aggressive, drill, phonk, screamo",
+      "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 30,
-      "suno_style_influence": 50,
-      "intro_fade_sec": 3,
-      "outro_fade_sec": 4,
-      "short_start": 45,
-      "scenes": [
-        [
-          "Wide establishing shot: Loire valley at sunrise, golden vineyards, distant château, mist over river, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel through Provence lavender fields at golden hour, rows of purple, cypress silhouettes, cinematic 4K",
-          3
-        ],
-        [
-          "Medium shot: French baker placing baguettes on counter at dawn, white apron, warm bakery light, ultra detailed 4K",
-          2
-        ],
-        [
-          "Close-up: hand pouring red wine into crystal glass, sun through vineyard window, oak table, macro cinematic 4K",
-          2
-        ],
-        [
-          "Medium shot: village dance under fairy lights in southern France, accordion player, joyful crowd, cinematic 4K",
-          3
-        ],
-        [
-          "Wide final: aerial of Mont Saint-Michel at sunset, tide rising, golden light on stone abbey, eternal, 4K stunning",
-          2
-        ]
-      ]
-    },
-    {
-      "slug": "italy-italia-la-mia-terra-2026",
-      "category": "world_music",
-      "country": "Italia",
-      "country_flag": "🇮🇹",
-      "title": "🇮🇹 Italia — La Mia Terra | Italian Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "Dalle Alpi alla Sicilia — l'anima d'Italia in canzone. 🇮🇹\n\nVersi italiani, ritornello inglese — opera, mandolino e archi cinematografici.\n\n⏱️ Capitoli:\n00:00 — Alba sulla Toscana\n01:25 — Chorus inglese\n03:00 — Mandolino bridge\n\n🎧 Ideale per: world music, eredità italiana, anthem cinematografici\n\n#ItalianMusic #Italia #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "italian music",
-        "italia",
-        "patriotic anthem",
-        "world music",
-        "opera",
-        "mandolin",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "Italia La Mia Terra",
-      "suno_style": "italian operatic-anthemic, mandolin, soaring tenor choir, orchestral strings, 90 BPM, cinematic, patriotic, male lead voice",
-      "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
-      "suno_vocal_gender": "male",
-      "suno_lyrics": "[Strofa 1]\nDalle Alpi al cuore di Sicilia\nVigneti d'oro sotto il sole\nLe voci dei nonni risuonano ancora\nIn ogni pietra, in ogni cuore\n\n[Pre-Chorus]\nIl mio cuore batte per te, patria mia\nPer sempre la mia melodia\n\n[Chorus — English]\nItalia, my homeland forever\nVineyards, mountains, rivers river\nCathedrals rising to the sky\nIn your soil my fathers lie\nItalia, my homeland forever\n\n[Strofa 2]\nRoma eterna sotto le stelle\nVenezia danza sull'acqua chiara\nLa Toscana dorme nel sole\nE il Vesuvio veglia ancora\n\n[Chorus — English]\nItalia, my homeland forever\nVineyards, mountains, rivers river\nCathedrals rising to the sky\nIn your soil my fathers lie\nItalia, my homeland forever\n\n[Outro]\nItalia, la mia terra per sempre",
-      "suno_lyrics_mode": "manual",
-      "suno_weirdness": 32,
+      "suno_weirdness": 25,
       "suno_style_influence": 52,
-      "intro_fade_sec": 3,
-      "outro_fade_sec": 4,
-      "short_start": 50,
+
+      "mode": "medium",
+      "title": "🎯 Deep Focus Lofi 2026 — Study Beats to Concentrate To | Assirem Music PROD",
+      "description": "Lock in and focus — mellow lofi beats designed for deep work and study sessions.\n\nJazzy chords, vinyl warmth, and soft piano to help you enter the flow state.\n\n⏱️ Chapters:\n00:00 — Settle in\n00:40 — Lofi groove\n02:00 — Piano interlude\n03:20 — Fade out\n\n🎧 Best for: studying, deep work, reading, writing, homework, library vibes\n\n#LofiBeats #StudyMusic #DeepFocus #ConcentrationMusic #BeatsToStudyTo #AIMusic #AssiremMusicProd #NoCopyright #Lofi2026",
+      "tags": ["lofi beats", "study music", "deep focus", "concentration music", "beats to study to", "chill lofi", "homework music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🎯 Focus & Study Beats — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Deep Focus Study Lofi",
+          "subtitle": "Lofi · Chill — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
       "scenes": [
-        [
-          "Wide establishing shot: Tuscany rolling hills at sunrise, cypress trees in lines, golden vineyards, distant villa, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel along Amalfi coast at golden hour, terraced lemon groves, blue sea, white villages, cinematic 4K",
-          3
-        ],
-        [
-          "Medium shot: Italian nonna in apron rolling fresh pasta on wooden table, flour dust in sunlight, ultra detailed 4K",
-          2
-        ],
-        [
-          "Close-up: hand pouring olive oil onto fresh bread, tomato slices, basil leaves, warm kitchen light, macro cinematic 4K",
-          2
-        ],
-        [
-          "Medium shot: village piazza in southern Italy at sunset, families dining, mandolin player, joyful, cinematic 4K",
-          3
-        ],
-        [
-          "Wide final: aerial of Rome Colosseum at sunset, eternal city glowing gold, eagles flying, 4K stunning",
-          2
-        ]
+        { "prompt": "Wide establishing shot: cozy study room at rainy twilight, warm desk lamp glowing, bookshelves, rain on window, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: along a wooden desk with open books, steaming coffee cup, soft lamp light, rain outside window, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium shot: person studying at desk in soft warm light, headphones on, notebook and pen, peaceful concentration, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: fountain pen writing on cream paper, ink flowing, warm lamp glow, shallow depth of field, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: cat sleeping on windowsill next to stack of books, rain drops on glass, warm interior light, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: view through rain-streaked window of quiet city street at dusk, streetlights glowing warm, peaceful evening, 4K stunning", "motion_strength": 2 }
       ]
     },
+
     {
-      "slug": "uk-britannia-land-of-hope-2026",
-      "category": "world_music",
-      "country": "United Kingdom",
-      "country_flag": "🇬🇧",
-      "title": "🇬🇧 Britannia — Land of Hope | British Patriotic Anthem 2026 | Assirem Music PROD",
-      "description": "From the Highlands to the Cliffs of Dover — the soul of Britain in song. 🇬🇧\n\nAll English — bagpipes, anthemic choir, and cinematic strings in the spirit of Elgar.\n\n⏱️ Chapters:\n00:00 — Highland dawn\n01:30 — Chorus drop\n03:00 — Bagpipe bridge\n\n🎧 Best for: world music, British heritage, cinematic anthems\n\n#BritishMusic #Britannia #PatrioticAnthem #WorldMusic #AssiremMusicProd #NoCopyright #2026",
-      "tags": [
-        "british music",
-        "britannia",
-        "patriotic anthem",
-        "world music",
-        "bagpipes",
-        "anthem",
-        "ai music",
-        "assirem music prod",
-        "no copyright"
-      ],
-      "playlists": [
-        "🌏 World Music",
-        "🕊️ Cinematic & Orchestral"
-      ],
-      "suno_title": "Britannia Land of Hope",
-      "suno_style": "british anthemic-orchestral, bagpipes, soaring choir, full symphony, brass section, 92 BPM, cinematic, patriotic, male lead voice, elgar influence",
-      "suno_exclude_styles": "trap, edm, drill, country western, ambient, lofi",
-      "suno_vocal_gender": "male",
-      "suno_lyrics": "[Verse 1]\nFrom the Highland glens to Cornish shores\nWhere the pipes still call across the moors\nIn the stones of York the spirits wait\nIn the hills the ancient legends shape\n\n[Pre-Chorus]\nMy heart beats true to thee, my isle\nThrough every storm, through every mile\n\n[Chorus]\nBritannia, land of hope and glory\nWhere the rivers tell their story\nOaks of old and skies of grey\nUnder one eternal day\nBritannia, land of hope and glory\n\n[Verse 2]\nLondon stands beneath her ancient towers\nEdinburgh crowned in granite hours\nDublin's bay and Cardiff's choirs\nAll our four nations, four bright fires\n\n[Chorus]\nBritannia, land of hope and glory\nWhere the rivers tell their story\nOaks of old and skies of grey\nUnder one eternal day\nBritannia, land of hope and glory\n\n[Outro]\nBritannia, forever and always home",
+      "slug": "gym-phonk-beast-mode-workout-2026",
+      "priority": 7,
+      "category": "activity",
+      "activity_type": "gym",
+      "activity_label": "Gym / Workout",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "gym phonk, aggressive trap, heavy 808 bass, distorted cowbell, dark synth stabs, workout motivation, 145 BPM, intense, powerful, adrenaline",
+      "suno_title": "Beast Mode Gym Phonk",
+      "suno_exclude_styles": "pop, acoustic, jazz, bossa nova, lofi, ambient, country",
+      "suno_vocal_gender": null,
       "suno_lyrics_mode": "manual",
-      "suno_weirdness": 30,
-      "suno_style_influence": 50,
-      "intro_fade_sec": 3,
-      "outro_fade_sec": 5,
-      "short_start": 60,
+      "suno_weirdness": 50,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "💪 Beast Mode Gym Phonk 2026 — Workout Motivation 145BPM | Assirem Music PROD",
+      "description": "Activate beast mode — aggressive phonk beats engineered for your heaviest lifts.\n\n145 BPM. Heavy 808s. Distorted cowbells. No mercy.\n\n⏱️ Chapters:\n00:00 — Warm-up intro\n00:30 — 808 drop\n01:40 — Intensity peak\n03:00 — Final set\n\n🎧 Best for: gym, weightlifting, HIIT, pre-workout, running, powerlifting\n\n#GymPhonk #WorkoutMusic #BeastMode #GymMotivation #Phonk #145BPM #AIMusic #AssiremMusicProd #NoCopyright #Fitness2026",
+      "tags": ["gym phonk", "workout music", "beast mode", "gym motivation", "phonk", "145 bpm", "hiit music", "powerlifting", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "💪 Gym & Workout Beats — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Beast Mode Gym Phonk",
+          "subtitle": "Phonk · 145BPM — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
       "scenes": [
-        [
-          "Wide establishing shot: Scottish Highlands at sunrise, mist in glens, ancient stone castle in distance, golden light, cinematic 4K",
-          2
-        ],
-        [
-          "Slow travel along the White Cliffs of Dover at dawn, English Channel below, seabirds wheeling, cinematic 4K",
-          3
-        ],
-        [
-          "Medium shot: kilted Scottish piper on heather hillside playing at sunset, tartan flowing in wind, ultra detailed 4K",
-          3
-        ],
-        [
-          "Close-up: hand pouring tea from porcelain pot into bone china cup, sugar cubes, oak table, warm light, macro cinematic 4K",
-          1
-        ],
-        [
-          "Medium shot: village green cricket match at golden hour, white players, ancient church spire, joyful spectators, cinematic 4K",
-          3
-        ],
-        [
-          "Wide final: aerial of Tower Bridge London at sunset, Thames glowing gold, eagles flying overhead, eternal, 4K stunning",
-          2
-        ]
+        { "prompt": "Wide establishing shot: dark industrial gym at dawn, dust particles in single shaft of light, heavy weights on racks, gritty atmosphere, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: along row of heavy dumbbells and barbells, chalk dust floating, dark moody lighting, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: silhouette of athlete deadlifting heavy barbell, chalk exploding from hands, dramatic backlighting, ultra detailed 4K", "motion_strength": 5 },
+        { "prompt": "Close-up insert: chalk-covered hands gripping barbell knurling, veins visible, sweat droplets, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: boxer hitting heavy bag in slow motion, sweat flying, dark gym, red spotlight, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: athlete standing victorious in empty gym at sunrise, light streaming through industrial windows, dust and chalk in air, 4K stunning", "motion_strength": 2 }
       ]
     },
+
     {
-      "slug": "sbart-w-tal-3dabi-cheb-hasni-blues-2026",
-      "category": "algerian_classics",
-      "title": "صبرت وطال عذابي — Cheb Hasni (Blues Version) | Assirem Music PROD",
-      "description": "Cheb Hasni classic reimagined in a soulful blues style. 🎸\n\nصبرت وطال عذابي — the timeless raï anthem reborn.\n\n#ChebHasni #AlgerianMusic #Raï #Blues #AssiremMusicProd",
-      "tags": [
-        "cheb hasni",
-        "algerian music",
-        "raï",
-        "blues",
-        "سبرت وطال عذابي",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
+      "slug": "coffee-shop-bossa-nova-remote-work-2026",
+      "priority": 8,
+      "category": "activity",
+      "activity_type": "coffee",
+      "activity_label": "Coffee / Remote Work",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "bossa nova, soft jazz, nylon guitar, brushed drums, upright bass, warm piano, 110 BPM, smooth, elegant, cafe ambiance",
+      "suno_title": "Coffee Bossa Nova Morning",
+      "suno_exclude_styles": "metal, edm, trap, phonk, drill, aggressive, distorted",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 24,
+      "suno_style_influence": 52,
+
       "mode": "medium",
-      "scenes": []
+      "title": "☕ Coffee Shop Bossa Nova 2026 — Remote Work & Café du Matin | Assirem Music PROD",
+      "description": "Your morning coffee deserves a soundtrack — smooth bossa nova for remote work and lazy mornings.\n\nNylon guitar, brushed drums, and upright bass. Like sitting in a Parisian café.\n\n⏱️ Chapters:\n00:00 — First sip\n00:45 — Bossa groove\n02:00 — Piano interlude\n03:30 — Gentle outro\n\n🎧 Best for: remote work, morning routine, café ambiance, reading, Sunday morning\n\n#BossaNova #CoffeeShopMusic #RemoteWork #CafeDuMatin #JazzVibes #AIMusic #AssiremMusicProd #NoCopyright #MorningMusic2026",
+      "tags": ["bossa nova", "coffee shop music", "remote work music", "cafe du matin", "jazz vibes", "morning music", "work ambiance", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "☕ Coffee & Jazz Vibes — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Coffee Bossa Nova Morning",
+          "subtitle": "Bossa Nova · Smooth — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: Parisian corner café at morning golden hour, marble tables, espresso cups, croissants, warm sunlight through windows, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through cozy coffee shop interior, wooden shelves, hanging plants, barista pouring latte art, warm tones, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: person working on laptop at window table, coffee cup nearby, plants, morning light, peaceful focus, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: espresso being poured into ceramic cup, golden crema forming, steam rising, marble counter, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: hand turning page of book beside latte art cup, morning sun creating warm shadows on wooden table, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: view from café terrace of quiet European street at morning, cobblestones, flower boxes, golden light, peaceful, 4K stunning", "motion_strength": 2 }
+      ]
     },
+
     {
-      "slug": "sbart-w-tal-3dabi-cheb-hasni-guitare-electrique-2026",
-      "category": "algerian_classics",
-      "title": "صبرت وطال عذابي — Cheb Hasni (Guitare Électrique) | Assirem Music PROD",
-      "description": "Cheb Hasni classic reimagined with electric guitar. 🎸\n\nصبرت وطال عذابي — raï meets rock.\n\n#ChebHasni #AlgerianMusic #Raï #ElectricGuitar #AssiremMusicProd",
-      "tags": [
-        "cheb hasni",
-        "algerian music",
-        "raï",
-        "electric guitar",
-        "guitare electrique",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
+      "slug": "vibe-coding-synthwave-claude-ai-2026",
+      "priority": 9,
+      "category": "activity",
+      "activity_type": "coding",
+      "activity_label": "Coding / Developer",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "synthwave, retrowave, analog synth pads, arpeggiator, electric bass, cyberpunk atmosphere, 118 BPM, focused, futuristic, neon",
+      "suno_title": "Vibe Coding Synthwave Flow",
+      "suno_exclude_styles": "country, folk, classical opera, metal, screamo, acoustic guitar",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 35,
+      "suno_style_influence": 52,
+
       "mode": "medium",
-      "scenes": []
+      "title": "💻 Vibe Coding with Claude AI 2026 — Synthwave Developer Beats | Assirem Music PROD",
+      "description": "Enter the flow state — synthwave beats engineered for coding sessions and late-night programming.\n\nRetro synths, pulsing arpeggios, and neon atmosphere. Perfect for vibe coding with Claude AI, ChatGPT, or any dev workflow.\n\n⏱️ Chapters:\n00:00 — Boot sequence\n00:40 — Synthwave drop\n02:00 — Arpeggiator bridge\n03:15 — Neon outro\n\n🎧 Best for: coding, programming, vibe coding, developer focus, hackathon, game dev\n\n#VibeCoding #ClaudeAI #Synthwave #DeveloperBeats #CodingMusic #ProgrammingMusic #AIMusic #AssiremMusicProd #NoCopyright #DevLife2026",
+      "tags": ["vibe coding", "claude ai", "synthwave", "developer beats", "coding music", "programming music", "hackathon", "chatgpt coding music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "💻 Coding & Developer Beats — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Vibe Coding Synthwave",
+          "subtitle": "Synthwave · Focus — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: futuristic developer workspace at night, triple monitors glowing with code, neon purple and cyan ambient lighting, city skyline through window, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: through cyberpunk city street at night, neon signs reflecting on wet road, holographic billboards, synthwave aesthetic, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: developer typing on mechanical keyboard, code reflecting in glasses, dark room lit only by monitors and LED strips, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: lines of code scrolling on monitor screen, green text on black background, cursor blinking, neon reflections, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: retro-futuristic command center with analog synth keyboard beside coding setup, purple neon glow, focused atmosphere, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: aerial view of futuristic city at night, grid of neon lights, data streams visualized in sky, cyberpunk dreamscape, 4K stunning", "motion_strength": 3 }
+      ]
     },
+
     {
-      "slug": "sbart-w-tal-3dabi-cheb-hasni-revisit-2026",
-      "category": "algerian_classics",
-      "title": "صبرت وطال عذابي — Cheb Hasni (Revisited) | Assirem Music PROD",
-      "description": "Cheb Hasni classic revisited with a modern twist. 🎵\n\nصبرت وطال عذابي — a tribute to the raï legend.\n\n#ChebHasni #AlgerianMusic #Raï #Revisited #AssiremMusicProd",
-      "tags": [
-        "cheb hasni",
-        "algerian music",
-        "raï",
-        "revisited",
-        "tribute",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
+      "slug": "summer-sunset-chill-reading-acoustic-2026",
+      "priority": 10,
+      "category": "activity",
+      "activity_type": "reading",
+      "activity_label": "Reading / Sunset Chill",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "acoustic chill, fingerstyle guitar, soft strings, warm pad, light percussion, nature sounds, 85 BPM, peaceful, golden, contemplative",
+      "suno_title": "Summer Sunset Acoustic Chill",
+      "suno_exclude_styles": "metal, edm, trap, phonk, drill, dubstep, aggressive",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 22,
+      "suno_style_influence": 52,
+
       "mode": "medium",
-      "scenes": []
-    },
-    {
-      "slug": "ya-hasrah-alik-ya-denia-kamel-messaoudi-blues-harmonica",
-      "category": "algerian_classics",
-      "title": "يا حسرة عليك يا دنيا — Kamel Messaoudi (Blues Harmonica) | Assirem Music PROD",
-      "description": "يا حسرة عليك يا دنيا — Kamel Messaoudi reimagined with soulful blues harmonica. 🎵\n\nA timeless Algerian classic meets the blues.\n\n#KamelMessaoudi #AlgerianMusic #BluesHarmonica #Chaabi #AssiremMusicProd",
-      "tags": [
-        "kamel messaoudi",
-        "algerian music",
-        "blues harmonica",
-        "chaabi",
-        "world music",
-        "assirem music prod"
-      ],
-      "playlists": [
-        "🎵 Assirem Music PROD — All Tracks",
-        "🎶 Algerian Classics Revisited"
-      ],
-      "mode": "medium",
-      "scenes": []
+      "title": "🌅 Summer Sunset Chill 2026 — Acoustic Reading Music & Slow Living | Assirem Music PROD",
+      "description": "Golden hour in your ears — acoustic guitar and warm strings for reading, journaling, or watching the sunset.\n\nSlow down. Breathe. Be present.\n\n⏱️ Chapters:\n00:00 — Golden light\n00:45 — Acoustic groove\n02:00 — Strings swell\n03:30 — Peaceful fade\n\n🎧 Best for: reading, journaling, sunset watching, slow morning, Sunday vibes, relaxation\n\n#SunsetChill #AcousticMusic #ReadingMusic #SlowLiving #SummerVibes #PeacefulMusic #AIMusic #AssiremMusicProd #NoCopyright #ChillVibes2026",
+      "tags": ["sunset chill", "acoustic music", "reading music", "slow living", "summer vibes", "peaceful music", "sunday morning", "relaxation", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🌅 Chill & Acoustic Vibes — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Summer Sunset Acoustic Chill",
+          "subtitle": "Acoustic · Peaceful — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: Mediterranean terrace overlooking ocean at golden hour, olive trees, warm stone walls, wine glass on table, 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: along coastal path at sunset, wildflowers swaying, warm golden light on cliffs, calm sea below, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: person reading book in hammock between trees, dappled sunlight, gentle breeze, serene expression, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: hand turning page of weathered book, warm sunset light on pages, wildflower bookmark, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: couple sitting on blanket watching sunset over ocean, guitar beside them, warm golden backlight, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial view of Mediterranean coastline at sunset, golden light painting sea and cliffs, boats anchored in cove, 4K stunning", "motion_strength": 2 }
+      ]
     }
   ]
 }
