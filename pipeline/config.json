@@ -1,0 +1,619 @@
+{
+  "date": "2026-07-02",
+  "priority_slug": "drift-phonk-dark-velocity-2026",
+  "tracks": [
+    {
+      "slug": "drift-phonk-dark-velocity-2026",
+      "priority": 1,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "drift phonk, cowbell melody, heavy distorted 808, aggressive bass, dark energy, high intensity, sidechain compression, 155 BPM, phonk",
+      "suno_title": "Dark Velocity",
+      "suno_exclude_styles": "lofi, jazz, acoustic, bossa nova, country, ambient, soft",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 52,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "DRIFT PHONK Dark Velocity 2026 | Aggressive Phonk Beats | Assirem Music PROD",
+      "description": "The hardest drift phonk beat of summer 2026. Heavy distorted 808s, cowbell patterns, and pure adrenaline.\n\nPerfect for car edits, gym sessions, anime edits, and dark aesthetic content.\n\n⏱️ Chapters:\n00:00 — Engine Start\n01:00 — Main Drop\n02:30 — Second Wave\n03:45 — Final Push\n\n🎧 Best for: drift videos, gym motivation, anime edits, TikTok content\n\n#DriftPhonk #Phonk2026 #DarkBeats #GymMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["drift phonk", "phonk 2026", "dark beats", "cowbell phonk", "gym music", "car music", "anime edits", "aggressive beats", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🔥 Drift Phonk & Dark Beats — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Dark Velocity",
+          "subtitle": "Drift Phonk · Aggressive — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: neon-lit Tokyo highway at night, rain-slicked asphalt reflecting red and purple lights, empty road stretching into darkness, cinematic 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: black sports car drifting around a curve, tire smoke illuminated by neon signs, urban Japanese city backdrop, cinematic 4K", "motion_strength": 5 },
+        { "prompt": "Medium shot: car dashboard interior, glowing gauges and red ambient light, speedometer climbing, rain hitting windshield, ultra detailed 4K", "motion_strength": 3 },
+        { "prompt": "Close-up insert: spinning alloy wheel on wet asphalt, sparks flying, motion blur streaks of city lights, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium dramatic shot: rear view of car accelerating through neon tunnel, brake lights painting red streaks, smoke trail, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: aerial view of illuminated city highway interchange at night, car headlights creating light trails, cyberpunk atmosphere, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "afro-house-amapiano-summer-heat-2026",
+      "priority": 2,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "afro house, amapiano, log drums, shaker percussion, deep bass, African vocal chops, summer groove, euphoric, 118 BPM, dance",
+      "suno_title": "Summer Heat",
+      "suno_exclude_styles": "rock, metal, country, classical, drill, phonk",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 38,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "🌞 Afro House x Amapiano Summer Heat 2026 | Dance Beats | Assirem Music PROD",
+      "description": "Feel the heat 🔥 Afro house meets amapiano in the ultimate summer groove.\n\nFusing Ghanaian azonto energy with South African log drums and deep bass. The sound of summer 2026.\n\n⏱️ Chapters:\n00:00 — Sunrise Groove\n01:15 — Log Drum Drop\n02:30 — Peak Energy\n03:50 — Sunset Outro\n\n🎧 Best for: summer playlists, dance, beach vibes, party music\n\n#AfroHouse #Amapiano #Summer2026 #DanceMusic #AfricanBeats #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["afro house", "amapiano", "summer 2026", "dance music", "african beats", "log drums", "beach music", "party", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🌍 Afro House & Amapiano Vibes — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Summer Heat",
+          "subtitle": "Afro House · Amapiano — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: golden African savanna at sunset, acacia trees silhouetted against orange sky, warm dust in the air, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: vibrant outdoor market in Lagos, colorful fabrics and spices, people dancing and smiling, golden hour light, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: group of dancers in traditional African prints performing amapiano moves on rooftop, city skyline behind, golden light, ultra detailed 4K", "motion_strength": 5 },
+        { "prompt": "Close-up insert: hands playing djembe drum, intricate rhythms, sweat glistening, warm amber light, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: silhouette of woman dancing freely on beach at sunset, waves crashing, hair flowing, backlit golden, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Wide final shot: aerial view of Cape Town coastline at golden hour, mountains meeting ocean, warm light painting the landscape, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "sadboy-summer-melancholic-indie-2026",
+      "priority": 3,
+      "category": "trending",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "indie pop, melancholic, dreamy reverb guitars, lo-fi aesthetic, emotional, slow burn, atmospheric pads, 88 BPM, sad summer",
+      "suno_title": "Sadboy Summer",
+      "suno_exclude_styles": "trap, edm, phonk, metal, aggressive, drill, hard bass",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 42,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "🌙 Sadboy Summer | Melancholic Indie Beats 2026 | Assirem Music PROD",
+      "description": "When summer feels bittersweet 🌙 Dreamy guitars, lo-fi textures, and that melancholic golden hour mood.\n\nThe soundtrack to late-night drives, rainy windows, and quiet reflections.\n\n⏱️ Chapters:\n00:00 — Quiet Dawn\n01:20 — Guitar Drift\n02:40 — Emotional Peak\n03:50 — Fade to Silence\n\n🎧 Best for: sad playlists, late night drives, indie vibes, emotional content\n\n#SadboySummer #IndiePop #Melancholic #LoFi #DreamyBeats #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["sadboy summer", "indie pop", "melancholic", "dreamy", "lo-fi", "emotional beats", "late night", "sad playlist", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🌙 Sadboy & Melancholic Vibes — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Sadboy Summer",
+          "subtitle": "Indie · Melancholic — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 12,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: empty suburban street at golden hour, sprinklers on lawns, long shadows, nostalgic summer afternoon, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: rain droplets on window glass, blurred city lights beyond, warm interior glow, melancholic atmosphere, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium shot: young person sitting on apartment fire escape at dusk, headphones on, city below, golden and blue hour light, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: hand reaching through car window into warm summer rain, water droplets catching sunset light, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: empty swing set in park at twilight, gentle breeze moving the chains, fireflies beginning to glow, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: lone figure walking along empty beach at sunset, footprints in wet sand, pastel sky reflections, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+
+    {
+      "slug": "world-cup-2026-glory-pitch-anthem",
+      "priority": 4,
+      "category": "news_surf",
+      "news_event": "FIFA World Cup 2026 Round of 16 — first 48-team tournament, historic upsets (Morocco beats Netherlands, Paraguay eliminates Germany), hosted by USA/Mexico/Canada — July 2026",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "cinematic orchestral, epic brass fanfare, stadium percussion, anthemic choir, triumphant, soaring strings, 130 BPM, Hans Zimmer style, sports anthem",
+      "suno_title": "Glory on the Pitch",
+      "suno_exclude_styles": "lofi, jazz, ambient, trap, drill, acoustic only, country",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 48,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "⚽ Glory on the Pitch | FIFA World Cup 2026 Anthem | Cinematic Epic | Assirem Music PROD",
+      "description": "The beautiful game deserves an epic anthem ⚽\n\nCinematic orchestral tribute to the FIFA World Cup 2026 — the first-ever 48-team tournament hosted across USA, Mexico, and Canada.\n\nFrom Morocco's stunning upset over the Netherlands to Paraguay eliminating Germany on penalties — this is the soundtrack to football history being made.\n\n⏱️ Chapters:\n00:00 — Stadium Awakens\n01:00 — Brass Fanfare\n02:15 — The Beautiful Game\n03:30 — Glory Moment\n\n🎧 Best for: football highlights, sports edits, motivation, World Cup content\n\n#WorldCup2026 #FIFA #FootballAnthem #CinematicMusic #SportsMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["world cup 2026", "fifa", "football anthem", "cinematic", "epic orchestral", "sports music", "stadium", "soccer", "motivation", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "⚽ Sports & Epic Anthems — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Glory on the Pitch",
+          "subtitle": "FIFA World Cup 2026 · Epic Anthem — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: massive football stadium at golden hour, 80000 seats filling with fans, flags from 48 nations waving, dramatic sky, cinematic 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: tunnel view from locker room to pitch, light growing brighter, echoing crowd roar, dramatic shadows, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Medium shot: football landing in the back of the net in slow motion, goalkeeper diving, crowd erupting behind, dramatic lighting, ultra detailed 4K", "motion_strength": 5 },
+        { "prompt": "Close-up insert: player's boots on pristine green pitch, dew drops on grass, stadium lights creating lens flares, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: diverse crowd of fans celebrating together, painted faces, scarves raised, pure joy and tears, golden stadium light, cinematic 4K", "motion_strength": 4 },
+        { "prompt": "Wide final shot: aerial view of illuminated stadium at night, fireworks exploding above, city skyline beyond, epic atmosphere, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "mongolia-tengri-eternal-steppe-2026",
+      "priority": 5,
+      "category": "world_music",
+      "country": "Mongolia",
+      "country_local": "Монгол Улс",
+      "country_flag": "🇲🇳",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "mongolian throat singing, khoomei, morin khuur, horse head fiddle, vast ambient drone, steppe folk, nomadic, traditional, 78 BPM, UNESCO heritage",
+      "suno_title": "Tengri Eternal Steppe",
+      "suno_exclude_styles": "edm, trap, pop, rock, drill, reggaeton, auto-tune",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 30,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "🇲🇳 Eternal Steppe | Мөнхийн Тал — Mongolian Throat Singing | Assirem Music PROD",
+      "description": "🇲🇳 A journey across the infinite Mongolian steppe.\n\nAuthentic khoomei throat singing meets the haunting melodies of the morin khuur (horse head fiddle) — a UNESCO Intangible Cultural Heritage.\n\nМонгол нутгийн ауу дуу. Хөөмий ба морин хуурын аялгуу.\n\n⏱️ Chapters:\n00:00 — Dawn Over the Steppe\n01:20 — Throat Singing Begins\n02:40 — Morin Khuur Solo\n03:50 — Eternal Horizon\n\n🎧 Best for: world music, meditation, travel content, cultural discovery\n\n#Mongolia #ThroatSinging #Khoomei #MorinKhuur #WorldMusic #UNESCO #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["mongolia", "throat singing", "khoomei", "morin khuur", "steppe", "world music", "traditional", "UNESCO", "nomadic", "монгол", "хөөмий", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🌏 World Music Heritage — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": false,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Eternal Steppe",
+          "subtitle": "Mongolia · Khoomei — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: endless Mongolian steppe at dawn, vast green grasslands meeting dramatic sky, distant Altai mountains, morning mist, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: traditional Mongolian ger (yurt) encampment, smoke rising from chimney, horses grazing nearby, golden morning light, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: elderly Mongolian man in traditional deel robe performing throat singing, weathered face, intense expression, steppe background, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: hands drawing bow across morin khuur horse head fiddle, carved horse head detail, warm firelight, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: Kazakh eagle hunter on horseback, golden eagle perched on leather glove, vast landscape behind, wind in hair, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Wide final shot: aerial view of wild horses galloping across infinite steppe at sunset, dust clouds golden in backlight, eternal landscape, 4K stunning", "motion_strength": 3 }
+      ]
+    },
+
+    {
+      "slug": "deep-focus-lofi-study-beats-2026",
+      "priority": 6,
+      "category": "activity",
+      "activity_type": "focus",
+      "activity_label": "Focus / Deep Work",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "lofi hip hop, study beats, vinyl crackle, warm Rhodes piano, soft boom bap drums, jazzy chords, chill, relaxing, 80 BPM",
+      "suno_title": "Deep Focus Study Beats",
+      "suno_exclude_styles": "trap, edm, metal, phonk, aggressive, distorted, drill",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 25,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "🎯 Deep Focus Lofi | Beats to Study To 2026 | Concentration Music | Assirem Music PROD",
+      "description": "Lock in and focus 🎯 Warm lofi beats with vinyl crackle, jazzy piano, and soft drums.\n\nDesigned for deep work sessions, studying, reading, and concentration.\n\n⏱️ Chapters:\n00:00 — Settle In\n01:30 — Deep Focus Zone\n03:00 — Flow State\n04:00 — Gentle Fade\n\n🎧 Best for: studying, deep work, concentration, reading, homework\n\n#LoFi #StudyBeats #FocusMusic #ConcentrationMusic #BeatsToStudyTo #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["lofi", "study beats", "focus music", "concentration", "beats to study to", "deep work", "chill beats", "homework music", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🎯 Focus & Study Beats — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Deep Focus Study Beats",
+          "subtitle": "Lofi · Concentration — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: cozy study room at night, warm desk lamp glow, bookshelves filled with books, rain on window, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: close view of open notebooks and coffee mug on wooden desk, pen resting on paper, soft amber light, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium shot: person studying at library desk, surrounded by stacked books, warm overhead light, focused expression, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: steaming cup of coffee beside open textbook, reading glasses resting on pages, warm bokeh lights behind, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: cozy window nook with cushions and blankets, rain streaming down glass, city lights blurred beyond, warm interior, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial view of university campus at twilight, warm building lights, autumn trees, peaceful academic atmosphere, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+
+    {
+      "slug": "gym-trap-beast-mode-motivation-2026",
+      "priority": 7,
+      "category": "activity",
+      "activity_type": "gym",
+      "activity_label": "Gym / Workout",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "trap, hard 808 bass, aggressive hi-hats, gym motivation, high energy, dark synths, punchy kicks, 145 BPM, workout music",
+      "suno_title": "Beast Mode Activated",
+      "suno_exclude_styles": "lofi, jazz, bossa nova, ambient, acoustic, soft, folk",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 48,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "💪 Gym Trap Beast Mode 2026 | Workout Motivation Music | HIIT Beats | Assirem Music PROD",
+      "description": "Beast mode activated 💪 Hard-hitting trap beats built for maximum performance.\n\nHeavy 808s, aggressive hi-hats, and dark energy to fuel your most intense workout.\n\n⏱️ Chapters:\n00:00 — Warm Up\n01:00 — Beast Mode Drop\n02:15 — Peak Intensity\n03:30 — Final Set\n\n🎧 Best for: gym, HIIT, pre-workout, running, lifting\n\n#GymMusic #TrapBeats #WorkoutMotivation #BeastMode #HIITMusic #PreWorkout #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["gym music", "trap beats", "workout motivation", "beast mode", "HIIT", "pre-workout", "lifting music", "running music", "145 BPM", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "💪 Gym & Workout Beats — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Beast Mode Activated",
+          "subtitle": "Gym Trap · 145 BPM — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 8,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: dark industrial gym at dawn, shafts of light through high windows, heavy equipment silhouettes, dust particles in air, cinematic 4K ultra detailed", "motion_strength": 3 },
+        { "prompt": "Slow camera travelling: row of heavy dumbbells on rack, chrome reflecting red ambient light, gritty concrete walls, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: athlete performing deadlift, chalk dust rising, muscles straining, dramatic side lighting, sweat visible, ultra detailed 4K", "motion_strength": 5 },
+        { "prompt": "Close-up insert: chalked hands gripping barbell, veins visible, intense grip, dramatic low-key lighting, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium dynamic shot: boxer hitting heavy bag, sweat flying off impact, red gym lighting, explosive power, motion blur, cinematic 4K", "motion_strength": 6 },
+        { "prompt": "Wide final shot: silhouette of athlete standing victorious in doorway of gym, morning light flooding in, steam rising from body, epic atmosphere, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+
+    {
+      "slug": "vibe-coding-synthwave-developer-beats-2026",
+      "priority": 8,
+      "category": "activity",
+      "activity_type": "coding",
+      "activity_label": "Coding / Developer Flow",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "synthwave, retrowave, ambient analog synth, coding music, focus, warm pads, subtle arpeggios, mid-tempo, 105 BPM, electronic",
+      "suno_title": "Vibe Coding Developer Flow",
+      "suno_exclude_styles": "trap, drill, metal, country, folk, aggressive vocals, phonk",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 35,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "💻 Vibe Coding with Claude AI | Synthwave Developer Beats 2026 | Assirem Music PROD",
+      "description": "Enter the flow state 💻 Synthwave beats designed for developers, engineers, and creators.\n\nSmooth retrowave arpeggios and warm analog pads to fuel your coding sessions.\n\nPerfect companion for vibe coding with Claude AI, ChatGPT, or your favorite IDE.\n\n⏱️ Chapters:\n00:00 — Boot Sequence\n01:15 — Flow State\n02:30 — Deep Code\n03:45 — Ship It\n\n🎧 Best for: coding, programming, developer flow, AI pair programming\n\n#VibeCoding #DeveloperBeats #CodingMusic #Synthwave #ClaudeAI #ProgrammingMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["vibe coding", "developer beats", "coding music", "synthwave", "claude ai", "programming music", "focus coding", "developer flow", "retrowave", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "💻 Coding & Developer Flow — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Vibe Coding",
+          "subtitle": "Synthwave · Developer Flow — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: futuristic home office at night, triple monitor setup glowing with code, purple and cyan ambient lighting, city skyline through window, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: close view of code scrolling on dark terminal, green and blue syntax highlighting, soft keyboard reflections, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium shot: developer at minimalist desk, mechanical keyboard, dual monitors, neon retrowave poster on wall, focused concentration, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: fingers typing on mechanical keyboard, RGB key backlighting, soft focus on screen code behind, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: coffee steam rising in front of monitor showing successful build, green checkmarks, warm satisfaction, late night ambiance, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: cyberpunk cityscape at night seen through floor-to-ceiling windows, neon signs reflecting, developer silhouette at desk, synthwave aesthetic, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+
+    {
+      "slug": "coffee-shop-bossa-nova-morning-2026",
+      "priority": 9,
+      "category": "activity",
+      "activity_type": "coffee",
+      "activity_label": "Coffee / Remote Work",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "bossa nova, jazz, nylon guitar, soft brush drums, upright bass, coffee shop ambiance, warm, smooth, 108 BPM, Brazilian",
+      "suno_title": "Coffee Shop Morning",
+      "suno_exclude_styles": "trap, edm, phonk, metal, rock, distorted, aggressive, drill",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 22,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "☕ Coffee Shop Bossa Nova | Morning Jazz 2026 | Remote Work Music | Assirem Music PROD",
+      "description": "Start your morning right ☕ Smooth bossa nova guitar with jazz brushes and warm coffee shop vibes.\n\nThe perfect soundtrack for your morning coffee, remote work, or a quiet café afternoon.\n\n⏱️ Chapters:\n00:00 — First Sip\n01:20 — Bossa Groove\n02:40 — Jazz Interlude\n03:50 — Last Drop\n\n🎧 Best for: coffee shops, morning routine, remote work, relaxation\n\n#BossaNova #CoffeeShopMusic #MorningJazz #RemoteWork #CafeMusic #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["bossa nova", "coffee shop music", "morning jazz", "remote work", "cafe music", "nylon guitar", "chill jazz", "work from home", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "☕ Coffee & Morning Jazz — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "Coffee Shop Morning",
+          "subtitle": "Bossa Nova · Jazz — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 10,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: charming Parisian-style coffee shop at morning, warm light through large windows, cobblestone street outside, golden hour, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: barista pouring latte art into ceramic cup, steam rising, warm wood counter, coffee beans visible, cinematic 4K", "motion_strength": 3 },
+        { "prompt": "Medium shot: person working on laptop at window table, croissant and latte beside, morning sun streaming in, cozy atmosphere, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: fresh coffee beans in burlap sack, warm amber lighting, rich brown tones, aromatic atmosphere, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: couple sharing conversation over espresso at outdoor terrace, Mediterranean architecture, bougainvillea flowers, warm light, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial view of Italian coastal town at golden hour, terracotta rooftops, cafe terraces with umbrellas, Mediterranean sea beyond, 4K stunning", "motion_strength": 2 }
+      ]
+    },
+
+    {
+      "slug": "432hz-meditation-healing-frequencies-2026",
+      "priority": 10,
+      "category": "activity",
+      "activity_type": "meditation",
+      "activity_label": "Meditation / Sleep",
+
+      "suno_lyrics": "[Instrumental]",
+      "suno_style": "432Hz tuning, ambient meditation, healing frequencies, soft evolving pads, tibetan singing bowls, nature sounds, zen, ethereal, 62 BPM, sleep music",
+      "suno_title": "432Hz Healing Frequencies",
+      "suno_exclude_styles": "trap, edm, rock, phonk, drums, bass drop, vocals, aggressive",
+      "suno_vocal_gender": null,
+      "suno_lyrics_mode": "manual",
+      "suno_weirdness": 28,
+      "suno_style_influence": 52,
+
+      "mode": "medium",
+      "title": "🧘 432Hz Meditation | Healing Frequencies & Sleep Music 2026 | Assirem Music PROD",
+      "description": "Find your inner peace 🧘 432Hz healing frequencies with tibetan singing bowls and soft ambient pads.\n\nTuned to the natural frequency of the universe for deep relaxation, meditation, and restful sleep.\n\n⏱️ Chapters:\n00:00 — Breathe In\n01:30 — Deep Calm\n03:00 — Healing Waves\n04:00 — Drift to Sleep\n\n🎧 Best for: meditation, sleep, yoga, breathwork, healing, relaxation\n\n#432Hz #Meditation #HealingFrequencies #SleepMusic #Zen #Ambient #Yoga #AIMusic #AssiremMusicProd #NoCopyright",
+      "tags": ["432Hz", "meditation", "healing frequencies", "sleep music", "zen", "ambient", "yoga", "breathwork", "tibetan bowls", "relaxation", "ai music", "assirem music prod", "no copyright"],
+      "playlist_name": "🧘 Meditation & Healing — Assirem Music PROD",
+      "leonardo_model": "de7d3faf-762f-48e0-b3b7-9d0ac3a3fcf3",
+
+      "distribution": {
+        "youtube": true,
+        "youtube_short": true,
+        "distrokid": true,
+        "tiktok": true,
+        "instagram_reels": true
+      },
+
+      "video": {
+        "intro_fade_sec": 2,
+        "outro_fade_sec": 3,
+        "title_card": {
+          "enabled": true,
+          "duration_sec": 3,
+          "text": "432Hz Healing Frequencies",
+          "subtitle": "Meditation · Sleep — Assirem Music PROD",
+          "style": "minimal_dark"
+        },
+        "end_card": {
+          "enabled": true,
+          "duration_sec": 5,
+          "subscribe_cta": true
+        },
+        "short_clip": {
+          "start_sec": 15,
+          "duration_sec": 55
+        }
+      },
+
+      "scenes": [
+        { "prompt": "Wide establishing shot: misty zen garden at dawn, perfectly raked sand circles around moss-covered stones, cherry blossom petals falling, soft golden light, cinematic 4K ultra detailed", "motion_strength": 2 },
+        { "prompt": "Slow camera travelling: tibetan singing bowl on wooden altar, incense smoke rising in spiral, morning light rays through paper screen, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium shot: still mountain lake reflecting snow-capped peaks, perfect mirror surface, one lotus flower floating, absolute serenity, ultra detailed 4K", "motion_strength": 2 },
+        { "prompt": "Close-up insert: water droplet falling into still pond creating perfect concentric ripples, morning light catching each ring, macro cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Medium emotional shot: ancient forest with sunbeams filtering through canopy, moss-covered roots, fireflies floating gently, mystical atmosphere, cinematic 4K", "motion_strength": 2 },
+        { "prompt": "Wide final shot: aerial view of mountain temple at sunrise, clouds flowing below like ocean, golden light painting peaks, transcendent beauty, 4K stunning", "motion_strength": 2 }
+      ]
+    }
+  ]
+}
